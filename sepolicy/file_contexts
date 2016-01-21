@@ -8,6 +8,9 @@
 # Fingerprint
 /system/bin/fpc_early_loader     u:object_r:fingerprintd_exec:s0
 
+# IR Blaster
+/dev/ttyHSL1                u:object_r:cir_device:s0
+
 # NFC
 /dev/pn548                  u:object_r:nfc_device:s0
 
