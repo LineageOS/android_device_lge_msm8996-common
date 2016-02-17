@@ -238,6 +238,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
+    hardware_properties.msm8996 \
     power.msm8996
 
 # QMI
