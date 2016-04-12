@@ -34,7 +34,6 @@ on init
     export LD_SHIM_LIBS /system/lib/libril.so|liblge.so:/system/lib64/libril.so|liblge.so
 
     # Support legacy paths
-    symlink /sdcard /mnt/sdcard
     symlink /sdcard /storage/sdcard0
 
     mkdir /sns/cal/ 0755 system system
