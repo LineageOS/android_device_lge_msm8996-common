@@ -91,10 +91,14 @@ PRODUCT_PACKAGES += \
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
+	init.target.rc \
     init.qcom.rc \
-    init.qcom.power.rc \
+    init.qcom.factory.rc \
+	init.qcom.sh \
+	init.qcom.class_core.sh \
+	init.class_main.sh \
     init.qcom.usb.rc \
-    init.recovery.qcom.rc \
+    init.qcom.sensors.sh \
     ueventd.qcom.rc
 
 # IPACM

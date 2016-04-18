@@ -107,6 +107,9 @@ TARGET_POWERHAL_VARIANT := qcom
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
+# Recovery
+TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
 
