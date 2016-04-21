@@ -343,6 +343,9 @@
          that can be set by the user. -->
     <integer name="config_screenBrightnessDoze">20</integer>
 
+    <!-- Enable doze powersaving -->
+    <bool name="config_enableAutoPowerModes">true</bool>
+
     <!-- Whether device supports double tap to wake -->
     <bool name="config_supportDoubleTapWake">true</bool>
 
