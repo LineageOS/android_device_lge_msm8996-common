@@ -31,38 +31,27 @@ on early-init
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
     symlink /data/tombstones /tombstones
-    mkdir /dsp 0771 media media
 
-# TODO: This MUST be changed to mount device in LGE platform.
-#on post-fs
-#    export LD_PRELOAD libNimsWrap.so
-# TODO: This MUST be changed to mount device in LGE platform.
-#on fs
-#    wait /dev/block/bootdevice
-#    mount_all fstab.qcom
-#    swapon_all fstab.qcom
-#
-#    # Keeping following partitions outside fstab file. As user may not have
-#    # these partition flashed on the device. Failure to mount any partition in fstab file
-#    # results in failure to launch late-start class.
-#
-#    wait /dev/block/bootdevice/by-name/cache
-#    mount ext4 /dev/block/bootdevice/by-name/cache /cache nosuid nodev barrier=1
-#
-#    wait /dev/block/bootdevice/by-name/persist
-#    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
-#    restorecon_recursive /persist
-#    mkdir /persist/data 0700 system system
-#
-#    wait /dev/block/bootdevice/by-name/dsp
-#    mount ext4 /dev/block/bootdevice/by-name/dsp /dsp nosuid nodev barrier=1
-#    restorecon_recursive /dsp
-#
-#    wait /dev/block/bootdevice/by-name/modem
-#    mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
-#
-#    wait /dev/block/bootdevice/by-name/bluetooth
-#    mount vfat /dev/block/bootdevice/by-name/bluetooth /bt_firmware ro shortname=lower,uid=1002,gid=3002,dmask=227,fmask=337,context=u:object_r:bt_firmware_file:s0
+on fs
+    wait /dev/block/bootdevice
+    mount_all fstab.qcom
+    swapon_all fstab.qcom
+
+    # Keeping following partitions outside fstab file. As user may not have
+    # these partition flashed on the device. Failure to mount any partition in fstab file
+    # results in failure to launch late-start class.
+
+    wait /dev/block/bootdevice/by-name/persist
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/persist
+    mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1 noatime noauto_da_alloc errors=continue
+    restorecon_recursive /persist
+    mkdir /persist/data 0700 system system
+
+    #wait /dev/block/bootdevice/by-name/modem
+    #mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
+
+    # Executing tune2fs to reserve some region in /data.(40MB)
+    exec /system/bin/tune2fs -u system -r 10240 /dev/block/bootdevice/by-name/userdata
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -181,10 +170,10 @@ on property:seempd.start=1
 on property:seempd.start=0
     stop seempd
 
-service secotad /system/bin/secotad
-   class late_start
-   user system
-   group system
+#service secotad /system/bin/secotad
+#   class late_start
+#   user system
+#   group system
 
 # TODO: This MUST be disabled not use 'mpdecision' in LGE platform.
 #service mpdecision /system/bin/mpdecision --avg_comp
@@ -218,10 +207,10 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #    class core
 #    oneshot
 
-service time_daemon /system/bin/time_daemon
-   class late_start
-   user root
-   group root
+#service time_daemon /system/bin/time_daemon
+#   class late_start
+#   user root
+#   group root
 
 service adsprpcd /system/bin/adsprpcd
    class main
@@ -296,7 +285,6 @@ service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
 # TODO: This MUST be disabled not use 'usf-post-boot' in LGE platform.
 #on property:init.svc.bootanim=stopped
 #    start usf-post-boot
-
 
 service pd_mapper /system/vendor/bin/pd-mapper
      class core

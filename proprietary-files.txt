@@ -1,4 +1,5 @@
 # ADSP
+bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
@@ -67,6 +68,7 @@ vendor/lib/hw/activity_recognition.msm8996.so
 vendor/firmware/BCM4345C0_003.001.025.0101.LGE_Alice_NA_ORC.hcd
 
 # Camera
+bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8996.so
 lib/libarcsoft_beauty_shot.so
@@ -330,6 +332,8 @@ vendor/lib/lib-sec-disp.so
 
 # DRM
 bin/qseecomd
+bin/seempd
+vendor/bin/qseeproxydaemon
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
 vendor/lib64/libQSEEComAPI.so
@@ -344,6 +348,8 @@ vendor/lib/libssd.so
 vendor/lib/libtzdrmgenprov.so
 
 # Fingerprint
+bin/fingerprintd
+bin/fpc_early_loader
 lib64/hw/fingerprint.default.so
 lib64/libfpfactory.so
 lib64/libfpfactory_jni.so
@@ -531,22 +537,27 @@ vendor/lib/libperipheral_client.so
 # Perf
 bin/energy-awareness
 bin/msm_irqbalance
--vendor/bin/perfd
+vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
 # Postprocessing
 bin/mm-pp-daemon
+bin/mm-pp-dpps
 vendor/lib64/libmm-als.so
 vendor/lib64/libmm-qdcm.so
 vendor/lib/libmm-als.so
 vendor/lib/libmm-qdcm.so
 
 # QMI
+bin/hvdcp_opti
 bin/irsc_util
+bin/qcom-system-daemon
 lib64/libqdMetaData.so
 lib64/libqti-iop.so
 lib/libqdMetaData.so
+vendor/bin/pd-mapper
+vendor/bin/qti
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
@@ -656,6 +667,7 @@ vendor/lib/libsystem_health_mon.so
 vendor/qcril.db
 
 # Sensors
+bin/sensors.qcom
 lib64/hw/sensors.msm8996.so
 lib64/hw/sensors.vr.so
 lib/hw/sensors.msm8996.so
@@ -681,6 +693,7 @@ vendor/lib/libsubsystem_control.so
 vendor/lib/libSubSystemShutdown.so
 
 # Thermal
+vendor/bin/thermal-engine
 vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 vendor/lib/libthermalclient.so
