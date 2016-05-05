@@ -31,6 +31,7 @@ on early-init
     mkdir /firmware 0771 system system
     mkdir /bt_firmware 0771 system system
     symlink /data/tombstones /tombstones
+    mkdir /dsp 0771 media media
 
 on fs
     wait /dev/block/bootdevice
@@ -48,10 +49,46 @@ on fs
     mkdir /persist/data 0700 system system
 
     #wait /dev/block/bootdevice/by-name/modem
-    #mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337,context=u:object_r:firmware_file:s0
+    #mount vfat /dev/block/bootdevice/by-name/modem /firmware ro shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337
+
+    mkdir /sns 0775 system system
+    wait /dev/block/bootdevice/by-name/sns
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/sns
+    mount ext4 /dev/block/bootdevice/by-name/sns /sns nosuid nodev barrier=1 noatime noauto_da_alloc errors=continue
+
+    mkdir /persist-lg 0771 system system
+    wait /dev/block/bootdevice/by-name/drm
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/drm
+    mount ext4 /dev/block/bootdevice/by-name/drm /persist-lg nosuid nodev barrier=1 noatime noauto_da_alloc errors=continue
+
+    wait /dev/block/bootdevice/by-name/mpt
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/mpt
+    mount ext4 /dev/block/bootdevice/by-name/mpt /mpt nosuid nodev barrier=1 noatime noauto_da_alloc errors=continue
 
     # Executing tune2fs to reserve some region in /data.(40MB)
     exec /system/bin/tune2fs -u system -r 10240 /dev/block/bootdevice/by-name/userdata
+
+    mkdir /cust 0771 system system
+    wait /dev/block/bootdevice/by-name/cust
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/cust
+    mount ext4 /dev/block/bootdevice/by-name/cust /cust rw nosuid nodev barrier=1 noauto_da_alloc
+    restorecon_recursive /cust
+    mount ext4 /dev/block/bootdevice/by-name/cust /cust ro remount nosuid nodev barrier=1 noauto_da_alloc
+
+    mkdir /OP 0771 system system
+    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/OP
+    mount ext4 /dev/block/bootdevice/by-name/OP /OP rw nosuid nodev barrier=1 noauto_da_alloc
+    restorecon_recursive /OP
+    mount ext4 /dev/block/bootdevice/by-name/OP /OP ro remount nosuid nodev barrier=1 noauto_da_alloc
+
+on post-fs
+    chown system system /persist-lg
+    chmod 0771 /persist-lg
+
+    chown system system /sns
+    chmod 0755 /sns
+
+    write /sys/devices/platform/lge-qfprom/sec_read 0
 
 on post-fs-data
     mkdir /data/tombstones 0771 system system
@@ -207,10 +244,10 @@ service thermal-engine /system/vendor/bin/thermal-engine
 #    class core
 #    oneshot
 
-#service time_daemon /system/bin/time_daemon
-#   class late_start
-#   user root
-#   group root
+service time_daemon /system/bin/time_daemon
+   class late_start
+   user root
+   group root
 
 service adsprpcd /system/bin/adsprpcd
    class main

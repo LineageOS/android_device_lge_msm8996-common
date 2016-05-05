@@ -27,19 +27,47 @@
 
 import init.qcom.usb.rc
 import init.target.rc
-#import init.qcom.factory.rc
+import init.qcom.factory.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
     chmod 0755 /sys/kernel/debug
 
+# TODO: This MUST be disabled not use 'sdcard' in LGE device.
+#on init
+
 on init
     # Set permissions for persist partition
-    mkdir /persist 0771 system system
+    #mkdir /persist 0771 system system
 
     # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
+    #symlink /sdcard /mnt/sdcard
+    #symlink /sdcard /storage/sdcard0
+    # Set permissions for persist partition
+    mkdir /persist-lg 0771 system system
+    mkdir /mpt 0755 system system
+    mkdir /storage 0751 system sdcard_r
+
+    # setup_fs
+    wait /dev/block/bootdevice/by-name/userdata
+    wait /dev/block/bootdevice/by-name/cache
+    wait /dev/block/bootdevice/by-name/persist
+    wait /dev/block/bootdevice/by-name/mpt
+    wait /dev/block/bootdevice/by-name/sns
+    wait /dev/block/bootdevice/by-name/drm
+    exec u:r:setup_fs:s0 -- /sbin/setup_fs_static \
+        /dev/block/bootdevice/by-name/cust \
+        /dev/block/bootdevice/by-name/OP \
+        /dev/block/bootdevice/by-name/mpt \
+        /dev/block/bootdevice/by-name/userdata \
+        /dev/block/bootdevice/by-name/cache \
+        /dev/block/bootdevice/by-name/sns \
+        /dev/block/bootdevice/by-name/drm \
+        /dev/block/bootdevice/by-name/persist \
+        no_reboot
+
+    write /proc/sys/kernel/panic_on_oops 1
+    write /proc/sys/vm/max_map_count 1000000
 
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
@@ -52,6 +80,12 @@ on early-boot
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
     #exec u:r:qti_init_shell:s0 -- /init.qcom.early_boot.sh
+
+    write /sys/block/dm-0/queue/read_ahead_kb 2048
+
+on property:sys.boot_completed=1
+    write /sys/block/dm-0/queue/read_ahead_kb 512
+    write /sys/class/i2c-dev/i2c-6/device/6-0072/enable_irq 1
 
 on boot
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
@@ -96,6 +130,9 @@ on boot
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
+
+    # Create a dir for ramoops dumps
+    mkdir /data/ramoops 0750 root log
 
     setprop wifi.interface wlan0
 
@@ -165,7 +202,7 @@ on boot
 
     # Set the console loglevel to < KERN_INFO
     # Set the default message loglevel to KERN_INFO
-    write /proc/sys/kernel/printk "6 6 1 7"
+    write /proc/sys/kernel/printk "7 6 1 7"
 
     # Allow access for CCID command/response timeout configuration
     chown system system /sys/module/ccid_bridge/parameters/bulk_msg_timeout
@@ -319,6 +356,29 @@ on boot
     chown system input /sys/bus/spi/devices/spi8.1/regulator_enable
     chown system input /sys/bus/spi/devices/spi8.1/wakeup_enable
 
+   # LEDs
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+   write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 1
+
+   write /proc/sys/net/core/netdev_max_backlog 5000
+
+   service bdaddr_loader /system/bin/bdaddr_loader
+      user root
+      group bluetooth net_bt_admin misc net_bt_stack
+      disabled
+      oneshot
+
+on post-fs
+    chmod 0660 /dev/lge_dm_tty0
+    chown system system /dev/lge_dm_tty0
+
 # msm specific files that need to be created on /data
 on post-fs-data
     #Create directories for Fingerprint
@@ -335,8 +395,8 @@ on post-fs-data
     #[LGE_CHANGE][CAMERA][jinsang.yun@lge.com]
     mkdir /etc/camera 0770 camera camera
 
-    #mkdir /data/media 0770 media_rw media_rw
-    #chown media_rw media_rw /data/media
+    mkdir /data/media 0770 media_rw media_rw
+    chown media_rw media_rw /data/media
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 
@@ -463,6 +523,10 @@ on post-fs-data
     chown radio radio /data/misc/radio/copy_complete
     chmod 0660 /data/misc/radio/copy_complete
 
+    # lgvrhid
+    mkdir /data/lgvrhid 0755 root root
+    chmod 0660 /sys/bus/i2c/drivers/anx7418/6-0028/sbu2
+
     # File flags for prebuilt ril db file
     write /data/misc/radio/prebuilt_db_support 1
     chown radio radio /data/misc/radio/prebuilt_db_support
@@ -471,16 +535,51 @@ on post-fs-data
     chown radio radio /data/misc/radio/db_check_done
     chmod 0660 /data/misc/radio/db_check_done
 
+    # Persist LG folders
+    mkdir /persist-lg/property 0771 system radio
+    mkdir /persist-lg/autosimlock 0770 system system
+    mkdir /persist-lg/poweron 0775 system system
+    mkdir /persist-lg/tmo 0771 radio radio
+    mkdir /persist-lg/callfw 0770 radio radio
+    mkdir /persist-lg/kmstore 0770 system system
+    mkdir /persist-lg/lgdata 0771 radio radio
+    mkdir /persist-lg/lgdrm 0770 lgdrm lgdrm_acc
+    mkdir /persist-lg/widevine 0770 drm system
+    mkdir /persist-lg/firmware 0771 system system
+    mkdir /persist-lg/secclk 0700 system system
+    mkdir /persist-lg/chargerlogo 0770 system system
+    mkdir /persist-lg/multimedia 0770 media divxdrm
+    mkdir /persist-lg/multimedia/nx 0770 media divxdrm
+    mkdir /persist-lg/multimedia/uma 0770 media divxdrm
+    mkdir /persist-lg/multimedia/scnt 0770 media divxdrm
+    mkdir /persist-lg/multimedia/scnt/sdadf 0770 media divxdrm
+    mkdir /persist-lg/mms 0770 system lgmms
+    mkdir /persist-lg/mmoprt 0771 system system
+    mkdir /persist-lg/encryption 0771 system system
+    mkdir /persist-lg/secureks 0770 system system
+    mkdir /persist-lg/lgdata 0775 radio radio
+    mkdir /persist-lg/audio 0771 system system
+    mkdir /persist-lg/property 0771 system radio
+    chown media media /persist-lg/audio
+
+    #Widevine firmware copy
+    exec /system/bin/cpfirmware widevine /persist-lg/firmware
+
+   # Thermal Daemon
+   chown system system /sys/class/leds/lcd-backlight/thermald_status
+   chmod 0644 /sys/class/leds/lcd-backlight/thermald_status
+
 service iop /system/bin/iop
     class main
     user root
     group root
     disabled
 
-service qcomsysd /system/bin/qcom-system-daemon
-    class main
-    user root
-    group root qcom_diag
+# TODO: This MUST be disabled not use 'qcom system daemon' in LGE platform.
+#service qcomsysd /system/bin/qcom-system-daemon
+#    class main
+#    user root
+#    group root qcom_diag
 
 service ssr_setup /system/bin/ssr_setup
     oneshot
@@ -507,7 +606,7 @@ on property:persist.sys.ssr.enable_ramdumps=0
     #write /dev/kmsg "Boot completed "
 
     # CPE fw_name used by sound trigger HAL
-    #chown media audio /sys/kernel/wcd_cpe0/fw_name
+    chown media audio /sys/kernel/wcd_cpe0/fw_name
 
 on property:persist.radio.atfwd.start=false
     stop atfwd
@@ -1192,7 +1291,20 @@ service fidod /system/bin/fidod
     user system
     group system
 
-service loggy /system/bin/sh  /loggy.sh
+# ramoops backup function service
+service ramoops_backup /system/bin/sh /ramoops_backup.sh
+    class main
+    user root
+    oneshot
+
+# time_in_state
+service time_in_state /system/bin/sh /init.time_in_state.sh
+    class main
+    user root
+    oneshot
+
+# time_in_state
+service loggy /system/bin/sh /loggy.sh
     class main
     user root
     oneshot
