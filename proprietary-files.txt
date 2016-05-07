@@ -69,6 +69,7 @@ bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 lib/hw/camera.msm8996.so
 lib/libarcsoft_beauty_shot.so
+lib/libfilm_emulation.so
 lib/libHDR.so
 lib/libmm-qcamera.so
 lib/libmmcamera_interface.so
@@ -76,6 +77,7 @@ lib/libmmjpeg_interface.so
 lib/libmorpho_image_stab31.so
 lib/libmorpho_superzoom.so
 lib/libqomx_core.so
+lib/libVDBase.so
 lib/libVDLowLightAPI.so
 vendor/lib64/libmmcamera2_frame_algorithm.so
 vendor/lib64/libmmcamera2_is.so
@@ -163,6 +165,8 @@ vendor/lib/libmmcamera_isp_scaler_viewfinder46.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
+vendor/lib/libmmcamera_pdaf.so
+vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
 vendor/lib/libmmcamera_t4ka3.so
 vendor/lib/libmmcamera_t4ka3_eeprom.so
