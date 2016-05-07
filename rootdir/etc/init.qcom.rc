@@ -211,6 +211,8 @@ on boot
     chown wifi wifi /sys/class/net/bond0/bonding/queue_id
 
     # setup permissions for fb0 related nodes
+    chown system system /sys/class/graphics/fb0/msm_cmd_autorefresh_en
+    chmod 644 /sys/class/graphics/fb0/msm_cmd_autorefresh_en
     chown system system /sys/class/graphics/fb0/mdp/vfps
     chmod 644 /sys/class/graphics/fb0/mdp/vfps
     chown system system /sys/class/graphics/fb0/mdp/vfps_fcnt
