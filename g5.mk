@@ -106,8 +106,7 @@ PRODUCT_PACKAGES += \
 	init.class_main.sh \
     init.qcom.usb.rc \
     init.qcom.sensors.sh \
-    ueventd.qcom.rc \
-    loggy.sh
+    ueventd.qcom.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
