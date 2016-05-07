@@ -217,6 +217,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal-engine-8996.conf:system/etc/thermal-engine-8996.conf
 
+# Tools
+PRODUCT_PACKAGES += \
+    libxml2
+
 # USB
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
