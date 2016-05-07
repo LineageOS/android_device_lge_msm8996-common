@@ -95,6 +95,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     liboverlay
 
+# GPS
+PRODUCT_PACKAGES += \
+    gps.msm8996
+
 # Init
 PRODUCT_PACKAGES += \
     fstab.qcom \
