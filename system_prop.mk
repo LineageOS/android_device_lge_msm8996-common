@@ -80,8 +80,3 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
-
-# ADB crap
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.secure=0 \
-	ro.adb.secure=0
