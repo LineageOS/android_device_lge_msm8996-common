@@ -29,42 +29,18 @@
 
 on early-init
     mkdir /firmware 0771 system system
-    mkdir /bt_firmware 0771 system system
     symlink /data/tombstones /tombstones
-    mkdir /dsp 0771 media media
+
+    export ANDROID_DATA /data
+    export ANDROID_ROOT /system
+    export EXTERNAL_STORAGE /sdcard
 
 on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
     swapon_all fstab.qcom
 
-    # Keeping following partitions outside fstab file. As user may not have
-    # these partition flashed on the device. Failure to mount any partition in fstab file
-    # results in failure to launch late-start class.
-
-    # Executing tune2fs to reserve some region in /data.(40MB)
-    exec /system/bin/tune2fs -u system -r 10240 /dev/block/bootdevice/by-name/userdata
-
-    mkdir /cust 0771 system system
-    wait /dev/block/bootdevice/by-name/cust
-    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/cust
-    mount ext4 /dev/block/bootdevice/by-name/cust /cust rw nosuid nodev barrier=1 noauto_da_alloc
-    restorecon_recursive /cust
-    mount ext4 /dev/block/bootdevice/by-name/cust /cust ro remount nosuid nodev barrier=1 noauto_da_alloc
-
-    mkdir /OP 0771 system system
-    exec /system/bin/e2fsck -y /dev/block/bootdevice/by-name/OP
-    mount ext4 /dev/block/bootdevice/by-name/OP /OP rw nosuid nodev barrier=1 noauto_da_alloc
-    restorecon_recursive /OP
-    mount ext4 /dev/block/bootdevice/by-name/OP /OP ro remount nosuid nodev barrier=1 noauto_da_alloc
-
 on post-fs
-    chown system system /persist-lg
-    chmod 0771 /persist-lg
-
-    chown system system /sns
-    chmod 0755 /sns
-
     write /sys/devices/platform/lge-qfprom/sec_read 0
 
 on post-fs-data
@@ -82,14 +58,10 @@ on post-fs-data
     mkdir /data/misc/qvop 0660 system system
     mkdir /data/misc/audio_pp 0771 media audio
 
-# TODO: This MUST be disabled not use led control with wled sys node in LGE platform.
-#on property:init.svc.bootanim=running
-#    write /sys/class/leds/wled/brightness 4095
-
 on boot
     start rmt_storage
     start rfs_access
-# access permission for secure touch
+    # access permission for secure touch
     chmod 0660 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
     chmod 0440 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
     chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
@@ -138,30 +110,6 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-# TODO: This MUST be disabled not use 'qcom' in LGE platform.
-## Allow usb charging to be disabled peristently
-#on property:persist.usb.chgdisabled=1
-#    write /sys/class/power_supply/battery/charging_enabled 0
-#
-#on property:persist.usb.chgdisabled=0
-#    write /sys/class/power_supply/battery/charging_enabled 1
-
-# TODO: This MUST be disabled not use 'qcom qrngp' in LGE platform.
-#service qrngd /system/bin/qrngd -f
-#   class main
-#   user root
-#   group root
-#
-#service qrngp /system/bin/qrngp
-#    class main
-#    user root
-#    group root
-#    oneshot
-#    disabled
-#
-#on property:sys.boot_completed=1
-#    start qrngp
-
 service qseecomd /system/bin/qseecomd
    class core
    user root
@@ -173,7 +121,7 @@ service perfd /system/vendor/bin/perfd
    disabled
 
 service seempd /system/bin/seempd
-#   class late_start
+#  class late_start
    user system
    group system
    socket seempdw dgram 0666 system system
@@ -184,22 +132,10 @@ on property:seempd.start=1
 on property:seempd.start=0
     stop seempd
 
-#service secotad /system/bin/secotad
-#   class late_start
-#   user system
-#   group system
+service mpdecision /system/bin/mpdecision --avg_comp
+    user root
+    disabled
 
-# TODO: This MUST be disabled not use 'mpdecision' in LGE platform.
-#service mpdecision /system/bin/mpdecision --avg_comp
-#   user root
-#   disabled
-
-# TODO: This MUST be disabled not use 'qosmgrd' in LGE platform.
-#service qosmgrd /system/bin/qosmgr /system/etc/qosmgr_rules.xml
-#   user system
-#   group system
-#   disabled
-#
 service thermal-engine /system/vendor/bin/thermal-engine
    class main
    user root
@@ -210,16 +146,6 @@ service thermal-engine /system/vendor/bin/thermal-engine
    socket thermal-send-client stream 0666 system system
    socket thermal-recv-client stream 0660 system system
    socket thermal-recv-passive-client stream 0666 system system
-
-# TODO: This MUST be disabled not use 'security-check1' in LGE platform.
-#service security-check1 /sbin/security_boot_check system
-#    class core
-#    oneshot
-
-# TODO: This MUST be disabled not use 'security-check1' in LGE platform.
-#service security-check2 /sbin/security_boot_check recovery
-#    class core
-#    oneshot
 
 service time_daemon /system/bin/time_daemon
    class late_start
@@ -296,10 +222,6 @@ service usf-post-boot /system/bin/sh /system/etc/usf_post_boot.sh
     disabled
     oneshot
 
-# TODO: This MUST be disabled not use 'usf-post-boot' in LGE platform.
-#on property:init.svc.bootanim=stopped
-#    start usf-post-boot
-
 service pd_mapper /system/vendor/bin/pd-mapper
      class core
      disabled
@@ -325,12 +247,6 @@ on property:persist.sys.pd_enable=0
 #    socket ims_datad stream 0660 system radio
 #    group system wifi radio inet net_raw log qcom_diag net_admin
 #    disabled
-
-# TODO: This MUST be disabled not use 'qimsdatadaemon' in LGE platform.
-## QCA1530 SoC late_start group trigger
-#service gnss-init /system/vendor/bin/gnss.qca1530.sh init
-#   class late_start
-#   oneshot
 
 # TODO: This MUST be disabled not use 'qcom ims daemon' in LGE platform.
 #on property:sys.ims.QMI_DAEMON_STATUS=1
@@ -376,7 +292,6 @@ service ppd /system/bin/mm-pp-dpps
     user system
     group system graphics
     socket pps stream 0660 system system
-#   disabled
 
 service tlocd /system/bin/tloc_daemon
     class late_start

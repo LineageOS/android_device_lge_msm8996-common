@@ -1,0 +1,127 @@
+# Copyright (c) 2016, Code Aurora Forum. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above copyright
+#       notice, this list of conditions and the following disclaimer in the
+#       documentation and/or other materials provided with the distribution.
+#     * Neither the name of Code Aurora nor
+#       the names of its contributors may be used to endorse or promote
+#       products derived from this software without specific prior written
+#       permission.
+#
+# THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
+# AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+# IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NON-INFRINGEMENT ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR
+# CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+# EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+# PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+# OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+# OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+# ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+#
+
+on charger
+   write /sys/class/android_usb/android0/enable 0
+   write /sys/class/android_usb/android0/idVendor 1004
+   write /sys/class/android_usb/android0/idProduct 6300
+   write /sys/class/android_usb/android0/bDeviceClass 0
+   write /sys/class/android_usb/android0/bDeviceSubClass 0
+   write /sys/class/android_usb/android0/bDeviceProtocol 0
+   write /sys/class/android_usb/android0/functions charge_only
+   write /sys/class/android_usb/android0/enable 1
+   write /persist-lg/chargerlogo/autoboot_nosound 0
+   chmod 0666 /persist-lg/chargerlogo/autoboot_nosound
+
+   wait /dev/block/bootdevice/by-name/system
+   mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+   chown root system /sys/class/power_supply/bms/current_now
+   chown root system /sys/class/power_supply/bms/voltage_ocv
+   chmod 0664 /sys/class/power_supply/bms/current_now
+   chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+   start vm_bms
+
+on boot
+   # emotional led
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+   write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 1
+
+   write /sys/kernel/debug/clk/debug_suspend 1
+   write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
+
+   chown system system /sys/class/power_supply/ac/charger_timer
+   chown system system /sys/class/power_supply/battery/charging_enabled
+   chown system system /sys/class/power_supply/battery/safety_timer_enabled
+
+   chown system system /sys/devices/system/cpu/triton/enable
+   chmod 644 /sys/devices/system/cpu/triton/enable
+   chown root system /sys/module/lge_charging_controller/parameters/quick_charging_state
+   chmod 0664 /sys/module/lge_charging_controller/parameters/quick_charging_state
+
+on post-fs-data
+   chown system system /sys/class/leds/lcd-backlight/thermald_status
+   chmod 0644 /sys/class/leds/lcd-backlight/thermald_status
+
+#write params for triton
+on property:sys.boot_completed=1
+   start triton
+   write /sys/devices/system/cpu/triton/debug 16
+   write /sys/devices/system/cpu/triton/enable 1
+   write /sys/devices/system/cpu/triton/enforce 0
+   write /sys/devices/system/cpu/triton/cur_policy 0
+   chown system system /sys/devices/system/cpu/triton/enable
+   chmod 664 /sys/devices/system/cpu/triton/enable
+   chmod 600 /sys/devices/system/cpu/triton/aevents
+   chmod 600 /sys/devices/system/cpu/triton/bevents
+   chown system system /sys/devices/system/cpu/triton/cur_policy
+   chmod 664 /sys/devices/system/cpu/triton/cur_policy
+   chmod 664 /sys/devices/system/cpu/triton/debug
+
+# Power_BSP, add hard reset property
+on property:persist.lge.hardreset=1
+   write /sys/module/msm_poweroff/parameters/hard_reset 1
+on property:persist.lge.hardreset=0
+   write /sys/module/msm_poweroff/parameters/hard_reset 0
+
+# hard reset mode
+on property:persist.sys.enable_hardreset=1
+   write /sys/module/qpnp_power_on/parameters/hardreset_mode 1
+on property:persist.sys.enable_hardreset=0
+   write /sys/module/qpnp_power_on/parameters/hardreset_mode 0
+
+# battery fake mode
+on property:persist.service.fakebatt=1
+   write /sys/class/power_supply/lgcc/pseudo_batt "1 1 100 40 4100000 80 1"
+on property:persist.service.fakebatt=0
+   write /sys/class/power_supply/lgcc/pseudo_batt "0 1 100 40 4100000 80 1"
+
+#usb current max mode property
+on property:persist.service.usbcurrentmax=1
+   write /sys/class/power_supply/lgcc/usb_current_max_mode 1
+on property:persist.service.usbcurrentmax=0
+   write /sys/class/power_supply/lgcc/usb_current_max_mode 0
+
+# triton service
+service triton /system/bin/triton
+   class main
+   user root
+   group system
+   socket triton-client stream 660 system system
+   disabled
+
+# charger service
+service charger /sbin/healthd -c
+    class charger
+    critical
+    seclabel u:r:healthd:s0
