@@ -64,9 +64,6 @@ vendor/lib/libaudioalsa.so
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib/hw/activity_recognition.msm8996.so
 
-# Bluetooth
-vendor/firmware/BCM4345C0_003.001.025.0101.LGE_Alice_NA_ORC.hcd
-
 # Camera
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
@@ -744,11 +741,6 @@ vendor/lib/mediadrm/libdrmclearkeyplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
-
-# WiFi
-etc/firmware/fw_bcmdhd.bin
-etc/firmware/fw_bcmdhd_apsta.bin
-etc/firmware/fw_bcmdhd_mfg.bin
 
 # Misc
 lib64/hw/lgkm.msm8996.so
