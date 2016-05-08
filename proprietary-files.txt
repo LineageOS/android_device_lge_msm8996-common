@@ -386,6 +386,7 @@ lib64/libloc_api_v02.so
 lib64/libloc_ds_api.so
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
+vendor/bin/slim_daemon
 vendor/lib64/hw/flp.default.so
 vendor/lib64/libflp.so
 vendor/lib64/libgeofence.so
@@ -409,6 +410,7 @@ vendor/lib64/libadreno_utils.so
 vendor/lib64/libbccQTI.so
 vendor/lib64/libC2D2.so
 vendor/lib64/libc2d30-a5xx.so
+vendor/lib64/libc2d30_bltlib.so
 vendor/lib64/libCB.so
 vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
@@ -428,6 +430,7 @@ vendor/lib/libadreno_utils.so
 vendor/lib/libbccQTI.so
 vendor/lib/libC2D2.so
 vendor/lib/libc2d30-a5xx.so
+vendor/lib/libc2d30_bltlib.so
 vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
@@ -557,14 +560,6 @@ vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 
-# Postprocessing
-bin/mm-pp-daemon
-bin/mm-pp-dpps
-vendor/lib64/libmm-als.so
-vendor/lib64/libmm-qdcm.so
-vendor/lib/libmm-als.so
-vendor/lib/libmm-qdcm.so
-
 # QMI
 bin/hvdcp_opti
 bin/irsc_util
@@ -664,6 +659,7 @@ vendor/lib64/libcneapiclient.so
 vendor/lib64/libcneconn.so
 vendor/lib64/libcneqmiutils.so
 vendor/lib64/libconfigdb.so
+vendor/lib64/liblqe.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
@@ -675,6 +671,7 @@ vendor/lib/libcneconn.so
 vendor/lib/libcneqmiutils.so
 vendor/lib/libnetmgr.so
 vendor/lib/libconfigdb.so
+vendor/lib/liblqe.so
 vendor/lib/libril-qc-qmi-1.so
 vendor/lib/libril-qc-radioconfig.so
 vendor/lib/libril-qcril-hook-oem.so
