@@ -382,10 +382,8 @@ lib/libfpfactory_jni.so
 
 # GPS
 bin/loc_launcher
-lib64/libgps.utils.so
 lib64/libloc_api_v02.so
 lib64/libloc_ds_api.so
-lib/libgps.utils.so
 lib/libloc_api_v02.so
 lib/libloc_ds_api.so
 vendor/lib64/hw/flp.default.so
