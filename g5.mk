@@ -98,9 +98,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     copybit.msm8996 \
     gralloc.msm8996 \
+    hdmi_cec.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
-    liboverlay
+    liboverlay \
+    libsdmcore \
+    libsdmutils
 
 # GPS
 PRODUCT_PACKAGES += \
