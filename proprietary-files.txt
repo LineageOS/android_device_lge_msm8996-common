@@ -67,6 +67,7 @@ vendor/lib/hw/activity_recognition.msm8996.so
 # Camera
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
+lib64/libn2pm.so
 lib/hw/camera.msm8996.so
 lib/libarcsoft_beauty_shot.so
 lib/libfilm_emulation.so
@@ -76,6 +77,7 @@ lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libmorpho_image_stab31.so
 lib/libmorpho_superzoom.so
+lib/libn2pm.so
 lib/libqomx_core.so
 lib/libVDBase.so
 lib/libVDLowLightAPI.so
@@ -420,6 +422,10 @@ vendor/lib64/libOpenCL.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libRSDriver_adreno.so
+vendor/lib64/libsdm-color.so
+vendor/lib64/libsdm-diag.so
+vendor/lib64/libsdm-disp-apis.so
+vendor/lib64/libsdmextension.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -440,6 +446,7 @@ vendor/lib/libOpenCL.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libRSDriver_adreno.so
+vendor/lib/libsdm-disp-apis.so
 
 # Graphics firmware
 etc/firmware/a530_gpmu.fw2
