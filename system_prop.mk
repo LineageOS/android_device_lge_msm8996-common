@@ -24,9 +24,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-	persist.hwc.mdpcomp.enable=true \
 	ro.qualcomm.cabl=0 \
-	ro.sf.lcd_density=640
+	ro.sf.lcd_density=640 \
+	sdm.perf_hint_window=50
 
 # Fluence
 PRODUCT_PROPERTY_OVERRIDES += \
