@@ -3,6 +3,7 @@ bin/adsprpcd
 vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvadsp_stub.so
 vendor/lib64/libfastcvopt.so
+vendor/lib64/libmdsprpc.so
 vendor/lib/libacdb-fts.so
 vendor/lib/libacdbmapper.so
 vendor/lib/libacdbrtac.so
@@ -10,6 +11,7 @@ vendor/lib/libadsp_hvx_stub.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
+vendor/lib/libmdsprpc.so
 vendor/lib/libscve.so
 vendor/lib/libscve_mv.so
 vendor/lib/libscve_stub.so
@@ -341,6 +343,7 @@ bin/seempd
 vendor/bin/qseeproxydaemon
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
+vendor/lib64/libGPTEE.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libSecureExtAuthJNI.so
@@ -356,6 +359,7 @@ vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib/hw/keystore.msm8996.so
+vendor/lib/libGPTEE.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libSecureExtAuthJNI.so
@@ -418,10 +422,13 @@ vendor/lib64/libgsl.so
 vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libmm-disp-apis.so
+vendor/lib64/libmm-qdcm.so
 vendor/lib64/libOpenCL.so
+vendor/lib64/libmmQSM.so
 vendor/lib64/librs_adreno.so
 vendor/lib64/librs_adreno_sha1.so
 vendor/lib64/libRSDriver_adreno.so
+vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdm-disp-apis.so
@@ -442,10 +449,13 @@ vendor/lib/libgsl.so
 vendor/lib/libllvm-glnext.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libmm-disp-apis.so
+vendor/lib/libmm-qdcm.so
 vendor/lib/libOpenCL.so
+vendor/lib/libmmQSM.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libRSDriver_adreno.so
+vendor/lib/libsd_sdk_display.so
 vendor/lib/libsdm-disp-apis.so
 
 # Graphics firmware
@@ -462,6 +472,14 @@ etc/firmware/a530v1_pm4.fw
 etc/firmware/a530v2_seq.fw2
 etc/firmware/a530v3_gpmu.fw2
 etc/firmware/a530v3_seq.fw2
+
+# Hexagon DSP
+vendor/lib64/libQBLAS-0.13.0.so
+vendor/lib64/libmare-1.1.so
+vendor/lib64/libmare-cpu-1.1.so
+vendor/lib/libQBLAS-0.13.0.so
+vendor/lib/libmare-1.1.so
+vendor/lib/libmare-cpu-1.1.so
 
 # IPA
 bin/ipacm-diag
