@@ -85,7 +85,6 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-TARGET_INIT_VENDOR_LIB := libinit_msm
 
 # Keymaster app checking
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
