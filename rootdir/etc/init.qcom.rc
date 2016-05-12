@@ -254,7 +254,6 @@ on boot
     chmod 664 /sys/class/graphics/fb1/pa
     chmod 600 /sys/class/graphics/fb1/cec/wr_msg
 
-
     # Touch gestures
     chown system system /sys/devices/virtual/input/lge_touch/keyguard
     chmod 664 /sys/devices/virtual/input/lge_touch/keyguard
@@ -365,24 +364,27 @@ on boot
     chown system input /sys/bus/spi/devices/spi8.1/regulator_enable
     chown system input /sys/bus/spi/devices/spi8.1/wakeup_enable
 
-   # LEDs
-   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
-   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
-   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
-   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
-   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
-   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
-   chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
-   chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
-   write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 1
+    # LEDs
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
+    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
+    write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 1
 
-   write /proc/sys/net/core/netdev_max_backlog 5000
+    write /proc/sys/net/core/netdev_max_backlog 5000
 
-   service bdaddr_loader /system/bin/bdaddr_loader
-      user root
-      group bluetooth net_bt_admin misc net_bt_stack
-      disabled
-      oneshot
+on property:sys.boot_completed=1
+    write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
+
+service bdaddr_loader /system/bin/bdaddr_loader
+    user root
+    group bluetooth net_bt_admin misc net_bt_stack
+    disabled
+    oneshot
 
 on post-fs
     chmod 0660 /dev/lge_dm_tty0
