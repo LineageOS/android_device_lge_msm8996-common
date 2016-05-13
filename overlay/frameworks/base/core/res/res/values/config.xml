@@ -204,8 +204,8 @@
     <!-- enable doze powersaving mode -->
     <bool name="config_enableAutoPowerModes">true</bool>
 
-    <!-- Whether device supports double tap to wake
-    <bool name="config_supportDoubleTapWake">true</bool>-->
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 
     <!-- Flag specifying whether VoLTE is available on device
     <bool name="config_device_volte_available">true</bool>-->

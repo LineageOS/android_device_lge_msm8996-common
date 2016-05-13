@@ -275,6 +275,8 @@ on boot
     chmod 664 /sys/devices/virtual/input/lge_touch/debug_option
     chown system system /sys/devices/virtual/input/lge_touch/onhand
     chmod 664 /sys/devices/virtual/input/lge_touch/onhand
+    chown system radio /sys/devices/virtual/input/lge_touch/tap2wake
+    chmod 664 /sys/devices/virtual/input/lge_touch/tap2wake
 
     # External Display Watch
     chown system system /sys/devices/virtual/ext_watch/config_fontonoff
