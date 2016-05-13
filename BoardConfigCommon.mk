@@ -86,9 +86,6 @@ BOARD_VENDOR_QCOM_LOC_PDK_FEATURE_SET := true
 # Init
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 
-# Keymaster app checking
-TARGET_KEYMASTER_WAIT_FOR_QSEE := true
-
 # NFC
 BOARD_NFC_CHIPSET := pn548
 BOARD_NFC_DEVICE := "/dev/pn547"
