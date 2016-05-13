@@ -401,9 +401,11 @@ vendor/lib64/liblbs_core.so
 vendor/lib64/libloc_ext.so
 vendor/lib64/libloc_xtra.so
 vendor/lib64/liblocationservice.so
+vendor/lib64/liblowi_client.so
 vendor/lib/hw/flp.default.so
 vendor/lib/libflp.so
 vendor/lib/liblocationservice.so
+vendor/lib/liblowi_client.so
 
 # Graphics
 lib64/libsdmcore.so
@@ -710,8 +712,8 @@ vendor/qcril.db
 # Sensors
 bin/sensors.qcom
 lib64/hw/sensors.msm8996.so
-lib64/hw/sensors.vr.so
 lib/hw/sensors.msm8996.so
+vendor/lib64/libdataitems.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_lge_cal.so
 vendor/lib64/libsensor_reg.so
@@ -719,7 +721,8 @@ vendor/lib64/libsensor_test.so
 vendor/lib64/libsensor_thresh.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
-vendor/lib/libulp2.so
+vendor/lib64/libulp2.so
+vendor/lib/libdataitems.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_lge_cal.so
 vendor/lib/libsensor_reg.so
@@ -727,6 +730,7 @@ vendor/lib/libsensor_test.so
 vendor/lib/libsensor_thresh.so
 vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
+vendor/lib/libulp2.so
 
 # Subsystem control (is this used?)
 vendor/lib64/libsubsystem_control.so

@@ -1041,7 +1041,6 @@ service sensor-sh /system/bin/sh /init.qcom.sensors.sh
     class core
     user root
     oneshot
-    seclabel u:r:sensors:s0
 
 service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
     class late_start
