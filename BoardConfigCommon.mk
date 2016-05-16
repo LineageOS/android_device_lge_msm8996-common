@@ -18,6 +18,8 @@ BOARD_VENDOR := lge
 
 COMMON_PATH := device/lge/g5-common
 
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
