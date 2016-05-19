@@ -26,88 +26,85 @@
 #
 
 on charger
-   write /sys/class/android_usb/android0/enable 0
-   write /sys/class/android_usb/android0/idVendor 1004
-   write /sys/class/android_usb/android0/idProduct 6300
-   write /sys/class/android_usb/android0/bDeviceClass 0
-   write /sys/class/android_usb/android0/bDeviceSubClass 0
-   write /sys/class/android_usb/android0/bDeviceProtocol 0
-   write /sys/class/android_usb/android0/functions charge_only
-   write /sys/class/android_usb/android0/enable 1
-   write /persist-lg/chargerlogo/autoboot_nosound 0
-   chmod 0666 /persist-lg/chargerlogo/autoboot_nosound
+    write /sys/class/android_usb/android0/enable 0
+    write /sys/class/android_usb/android0/idVendor 1004
+    write /sys/class/android_usb/android0/idProduct 6300
+    write /sys/class/android_usb/android0/bDeviceClass 0
+    write /sys/class/android_usb/android0/bDeviceSubClass 0
+    write /sys/class/android_usb/android0/bDeviceProtocol 0
+    write /sys/class/android_usb/android0/functions charge_only
+    write /sys/class/android_usb/android0/enable 1
+    write /persist-lg/chargerlogo/autoboot_nosound 0
+    chmod 0666 /persist-lg/chargerlogo/autoboot_nosound
 
-   wait /dev/block/bootdevice/by-name/system
-   mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-   chown root system /sys/class/power_supply/bms/current_now
-   chown root system /sys/class/power_supply/bms/voltage_ocv
-   chmod 0664 /sys/class/power_supply/bms/current_now
-   chmod 0664 /sys/class/power_supply/bms/voltage_ocv
-   start vm_bms
+    wait /dev/block/bootdevice/by-name/system
+    mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
+    chown root system /sys/class/power_supply/bms/current_now
+    chown root system /sys/class/power_supply/bms/voltage_ocv
+    chmod 0664 /sys/class/power_supply/bms/current_now
+    chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+    start vm_bms
 
 on boot
-   write /sys/kernel/debug/clk/debug_suspend 1
-   write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
+    write /sys/kernel/debug/clk/debug_suspend 1
+    write /sys/module/msm_show_resume_irq/parameters/debug_mask 1
 
-   chown system system /sys/class/power_supply/ac/charger_timer
-   chown system system /sys/class/power_supply/battery/charging_enabled
-   chown system system /sys/class/power_supply/battery/safety_timer_enabled
+    chown system system /sys/class/power_supply/ac/charger_timer
+    chown system system /sys/class/power_supply/battery/charging_enabled
+    chown system system /sys/class/power_supply/battery/safety_timer_enabled
 
-   chown system system /sys/devices/system/cpu/triton/enable
-   chmod 644 /sys/devices/system/cpu/triton/enable
-   chown root system /sys/module/lge_charging_controller/parameters/quick_charging_state
-   chmod 0664 /sys/module/lge_charging_controller/parameters/quick_charging_state
+    chown system system /sys/devices/system/cpu/triton/enable
+    chmod 644 /sys/devices/system/cpu/triton/enable
+    chown root system /sys/module/lge_charging_controller/parameters/quick_charging_state
+    chmod 0664 /sys/module/lge_charging_controller/parameters/quick_charging_state
 
 on post-fs-data
-   chown system system /sys/class/leds/lcd-backlight/thermald_status
-   chmod 0644 /sys/class/leds/lcd-backlight/thermald_status
+    chown system system /sys/class/leds/lcd-backlight/thermald_status
+    chmod 0644 /sys/class/leds/lcd-backlight/thermald_status
 
 #write params for triton
 on property:sys.boot_completed=1
-   start triton
-   write /sys/devices/system/cpu/triton/debug 16
-   write /sys/devices/system/cpu/triton/enable 1
-   write /sys/devices/system/cpu/triton/enforce 0
-   write /sys/devices/system/cpu/triton/cur_policy 0
-   chown system system /sys/devices/system/cpu/triton/enable
-   chmod 664 /sys/devices/system/cpu/triton/enable
-   chmod 600 /sys/devices/system/cpu/triton/aevents
-   chmod 600 /sys/devices/system/cpu/triton/bevents
-   chown system system /sys/devices/system/cpu/triton/cur_policy
-   chmod 664 /sys/devices/system/cpu/triton/cur_policy
-   chmod 664 /sys/devices/system/cpu/triton/debug
-
-# Power_BSP, add hard reset property
-on property:persist.lge.hardreset=1
-   write /sys/module/msm_poweroff/parameters/hard_reset 1
-on property:persist.lge.hardreset=0
-   write /sys/module/msm_poweroff/parameters/hard_reset 0
+    start triton
+    write /sys/devices/system/cpu/triton/debug 16
+    write /sys/devices/system/cpu/triton/enable 1
+    write /sys/devices/system/cpu/triton/enforce 0
+    write /sys/devices/system/cpu/triton/cur_policy 0
+    chown system system /sys/devices/system/cpu/triton/enable
+    chmod 664 /sys/devices/system/cpu/triton/enable
+    chmod 600 /sys/devices/system/cpu/triton/aevents
+    chmod 600 /sys/devices/system/cpu/triton/bevents
+    chown system system /sys/devices/system/cpu/triton/cur_policy
+    chmod 664 /sys/devices/system/cpu/triton/cur_policy
+    chmod 664 /sys/devices/system/cpu/triton/debug
 
 # hard reset mode
 on property:persist.sys.enable_hardreset=1
-   write /sys/module/qpnp_power_on/parameters/hardreset_mode 1
+    write /sys/module/qpnp_power_on/parameters/hardreset_mode 1
+
 on property:persist.sys.enable_hardreset=0
-   write /sys/module/qpnp_power_on/parameters/hardreset_mode 0
+    write /sys/module/qpnp_power_on/parameters/hardreset_mode 0
 
 # battery fake mode
 on property:persist.service.fakebatt=1
-   write /sys/class/power_supply/lgcc/pseudo_batt "1 1 100 40 4100000 80 1"
+    write /sys/class/power_supply/lgcc/pseudo_batt "1 1 100 40 4100000 80 1"
+
 on property:persist.service.fakebatt=0
-   write /sys/class/power_supply/lgcc/pseudo_batt "0 1 100 40 4100000 80 1"
+    write /sys/class/power_supply/lgcc/pseudo_batt "0 1 100 40 4100000 80 1"
 
 #usb current max mode property
 on property:persist.service.usbcurrentmax=1
-   write /sys/class/power_supply/lgcc/usb_current_max_mode 1
+    write /sys/class/power_supply/lgcc/usb_current_max_mode 1
+
 on property:persist.service.usbcurrentmax=0
-   write /sys/class/power_supply/lgcc/usb_current_max_mode 0
+    write /sys/class/power_supply/lgcc/usb_current_max_mode 0
 
 # triton service
 service triton /system/bin/triton
-   class main
-   user root
-   group system
-   socket triton-client stream 660 system system
-   disabled
+    class main
+    user root
+    group system
+    socket triton-client stream 660 system system
+    disabled
 
 # charger service
 service charger /sbin/healthd -c
