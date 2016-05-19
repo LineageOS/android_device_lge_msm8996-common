@@ -1,4 +1,27 @@
 #!/bin/bash
+#set -x 
+
+oat2dex()
+{
+    APK="$1"
+
+    OAT="`dirname $APK`/arm/`basename $APK .apk`.odex"
+    if [ ! -e $OAT ]; then
+        return 0
+    fi
+
+    HIT=`r2 -q -c '/ dex\n035' "$OAT" 2>/dev/null | grep hit0_0 | awk '{print $1}'`
+    if [ -z "$HIT" ]; then
+        echo "ERROR: Can't find dex header of `basename $APK`"
+        return 1
+    fi
+
+    SIZE=`r2 -e scr.color=false -q -c "px 4 @$HIT+32" $OAT 2>/dev/null | tail -n 1 | awk '{print $2 $3}' | sed -e "s/^/0x/" | rax2 -e`
+    r2 -q -c "pr $SIZE @$HIT > /tmp/classes.dex" "$OAT" 2>/dev/null
+    if [ $? -ne 0 ]; then
+        echo "ERROR: Something went wrong in `basename $APK`"
+    fi
+}
 
 function extract() {
     for FILE in `egrep -v '(^#|^$)' $1`; do
@@ -14,10 +37,13 @@ function extract() {
         fi
         if [ "$SRC" = "adb" ]; then
             # Try CM target first
-            adb pull /system/$DEST $2/$DEST
+            eval $ADB pull /system/$DEST $2/$DEST
             # if file does not exist try OEM target
             if [ "$?" != "0" ]; then
-                adb pull /system/$FILE $2/$DEST
+                eval $ADB pull /system/$FILE $2/$DEST
+            fi
+            if [ "${FILE##*.}" = "apk" ]; then
+                oat2dex /system/$FILE
             fi
         else
             cp $SRC/system/$FILE $2/$DEST
@@ -26,12 +52,25 @@ function extract() {
                 then
                 cp $SRC/system/$DEST $2/$DEST
             fi
+            if [ "${FILE##*.}" = "apk" ]; then
+                oat2dex /system/$FILE
+            fi
+        fi
+
+        if [ -e /tmp/classes.dex ]; then
+            zip -gjq $2/$FILE /tmp/classes.dex
+            rm /tmp/classes.dex
         fi
     done
 }
 
-if [ $# -eq 0 ]; then
+if [ $# -eq 0 ] || [ $# -eq 2 ]; then
   SRC=adb
+  if [ "$1" == "-s" ]; then
+      ADB="adb -s $2"
+  else
+      ADB="adb"
+  fi
 else
   if [ $# -eq 1 ]; then
     SRC=$1
