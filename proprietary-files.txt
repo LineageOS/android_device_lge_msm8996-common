@@ -588,8 +588,8 @@ etc/firmware/rampatch_tlv_3.2.tlv
 vendor/firmware/libpn548ad_fw.so
 
 # Peripheral manager
--bin/pm-proxy
--bin/pm-service
+bin/pm-proxy
+bin/pm-service
 vendor/lib64/libperipheral_client.so
 vendor/lib/libperipheral_client.so
 
