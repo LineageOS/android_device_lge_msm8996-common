@@ -343,7 +343,9 @@ bin/seempd
 vendor/bin/qseeproxydaemon
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
+vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPTEE.so
+vendor/lib64/libqisl.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/librpmb.so
 vendor/lib64/libSecureExtAuthJNI.so
@@ -359,7 +361,9 @@ vendor/lib64/libStDrvInt.so
 vendor/lib64/libtzdrmgenprov.so
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib/hw/keystore.msm8996.so
+vendor/lib/libGPreqcancel.so
 vendor/lib/libGPTEE.so
+vendor/lib/libqisl.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/librpmb.so
 vendor/lib/libSecureExtAuthJNI.so
