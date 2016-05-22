@@ -193,9 +193,11 @@ vendor/lib/libqomx_jpegenc_pipe.so
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
 vendor/lib/libactuator_bu24333gwl.so
+vendor/lib/libactuator_bu64244gwz.so
 vendor/lib/libactuator_bu64297.so
 vendor/lib/libactuator_dw9714.so
 vendor/lib/libactuator_dw9716.so
+vendor/lib/libactuator_dw9761b.so
 vendor/lib/libactuator_lc898122.so
 vendor/lib/libactuator_lc898122_claf.so
 vendor/lib/libactuator_lc898212xd.so
@@ -603,9 +605,14 @@ vendor/lib/libperipheral_client.so
 # Perf
 bin/energy-awareness
 bin/msm_irqbalance
+lib64/libqti_performance.so
+lib/libqti_performance.so
 vendor/bin/perfd
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
+vendor/lib64/libqti-at.so
+vendor/lib64/libqti-gt.so
+vendor/lib64/libqti-wl.so
 
 # QMI
 bin/hvdcp_opti
@@ -670,6 +677,7 @@ bin/netmgrd
 bin/qmuxd
 bin/radish
 bin/rmt_storage
+framework/qti-telephony-common.jar
 lib64/libril.so
 lib64/librilutils.so
 lib64/libuicc.so
@@ -776,7 +784,10 @@ vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 
 # Misc
+bin/triton
+lib64/hw/lgkm.default.so
 lib64/hw/lgkm.msm8996.so
 lib64/hw/wbc_hal.default.so
+lib/hw/lgkm.default.so
 lib/hw/lgkm.msm8996.so
 lib/hw/wbc_hal.default.so
