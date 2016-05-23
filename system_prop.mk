@@ -16,6 +16,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.multiple.enabled=true \
     audio.offload.video=false
 
+# Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera2.portability.force_api=2
+
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
