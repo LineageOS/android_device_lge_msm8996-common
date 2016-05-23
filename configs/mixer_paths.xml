@@ -312,7 +312,7 @@
     <ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="0" />
     <!-- usb headset end -->
     <!-- fm -->
-    <ctl name="Quat MI2S LOOPBACK Volume" value="0" />
+    <ctl name="Quat MI2S LOOPBACK Volume" value="1" />
     <ctl name="SLIMBUS_0_RX Port Mixer QUAT_MI2S_TX" value="0" />
     <ctl name="SLIMBUS_DL_HL Switch" value="0" />
     <ctl name="MultiMedia1 Mixer QUAT_MI2S_TX" value="0" />
@@ -1230,7 +1230,7 @@
     </path>
 
     <path name="play-fm">
-        <ctl name="Quat MI2S LOOPBACK Volume" value="1" />
+        <ctl name="Quat MI2S LOOPBACK Volume" value="0" />
         <ctl name="SLIMBUS_0_RX Port Mixer QUAT_MI2S_TX" value="1" />
         <ctl name="SLIMBUS_DL_HL Switch" value="1" />
     </path>
@@ -1925,6 +1925,7 @@
 
     <path name="speaker-and-headphones">
         <path name="headphones" />
+        <ctl name="RX HPH Mode" value="CLS_H_HIFI" />
         <ctl name="RX INT7_1 MIX1 INP0" value="RX0" />
         <ctl name="RX INT7_1 MIX1 INP1" value="RX1" />
         <ctl name="SpkrLeft COMP Switch" value="1" />
