@@ -15,6 +15,8 @@
  */
 
 #define CAMERA_PARAMETERS_EXTRA_C \
+const char CameraParameters::BURST_SHOT_OFF[] = "burst-shot"; \
+const char CameraParameters::BURST_SHOT_ON[] = "burst-shot"; \
 const char CameraParameters::CAMERA_SWITCHING_VALUE_DEFAULT[] = "0"; \
 const char CameraParameters::CAMERA_SWITCHING_VALUE_NORMAL_TO_WIDE[] = "2"; \
 const char CameraParameters::CAMERA_SWITCHING_VALUE_SAME[] = "1"; \
@@ -46,6 +48,7 @@ const char CameraParameters::IS_LOWLIGHT[] = "is-lowlight"; \
 const char CameraParameters::KEY_BEAUTY[] = "beautyshot"; \
 const char CameraParameters::KEY_BEAUTY_LEVEL[] = "beauty_level"; \
 const char CameraParameters::KEY_BURST_SHOT[] = "burst-shot"; \
+const char CameraParameters::KEY_BURST_SHOT_SUPPORTED[] = "burst-shot-supported"; \
 const char CameraParameters::KEY_CAMERA_SWITCHING[] = "key_switching"; \
 const char CameraParameters::KEY_DUAL_RECORDER[] = "dual-recorder"; \
 const char CameraParameters::KEY_EXIF_DATE[] = "exif-datetime"; \
@@ -130,6 +133,8 @@ const char CameraParameters::ZSL_OFF[] = "off"; \
 const char CameraParameters::ZSL_ON[] = "on"; \
 
 #define CAMERA_PARAMETERS_EXTRA_H \
+    static const char BURST_SHOT_OFF[]; \
+    static const char BURST_SHOT_ON[]; \
     static const char CAMERA_SWITCHING_VALUE_DEFAULT[]; \
     static const char CAMERA_SWITCHING_VALUE_NORMAL_TO_WIDE[]; \
     static const char CAMERA_SWITCHING_VALUE_SAME[]; \
@@ -161,6 +166,7 @@ const char CameraParameters::ZSL_ON[] = "on"; \
     static const char KEY_BEAUTY[]; \
     static const char KEY_BEAUTY_LEVEL[]; \
     static const char KEY_BURST_SHOT[]; \
+    static const char KEY_BURST_SHOT_SUPPORTED[]; \
     static const char KEY_CAMERA_SWITCHING[]; \
     static const char KEY_DUAL_RECORDER[]; \
     static const char KEY_EXIF_DATE[]; \
@@ -266,4 +272,3 @@ const int CameraParameters::PREVIEW_FPS_RANGE_MIN[] = 15000; \
     static const int PREVIEW_FPS_MIN_INDEX[]; \
     static const int PREVIEW_FPS_RANGE_MAX[]; \
     static const int PREVIEW_FPS_RANGE_MIN[]; \ */
-
