@@ -18,6 +18,7 @@
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
+#include <unistd.h>
 
 /* Read plain address from misc partiton and set the Wifi and BT mac addresses accordingly */
 
