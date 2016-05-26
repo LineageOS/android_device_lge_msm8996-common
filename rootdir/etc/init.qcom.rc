@@ -382,11 +382,17 @@ on boot
 on property:sys.boot_completed=1
     write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
 
-service bdaddr_loader /system/bin/bdaddr_loader
+service conn_init /system/bin/hwaddrs
+    class core
     user root
-    group bluetooth net_bt_admin misc net_bt_stack
-    disabled
+    group system wifi
     oneshot
+
+on property:init.svc.conn_init=stopped
+    chmod 0644 /data/misc/wifi/config
+    chown system wifi /data/misc/wifi/config
+    chmod 0644 /data/misc/bdaddr
+    chown bluetooth bluetooth /data/misc/bdaddr
 
 on post-fs
     chmod 0660 /dev/lge_dm_tty0

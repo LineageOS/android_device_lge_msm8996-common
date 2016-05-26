@@ -16,6 +16,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.multiple.enabled=true \
     audio.offload.video=false
 
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bt.bdaddr_path="/data/misc/bdaddr"
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=2
