@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     liboverlay
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    fingerprintd
+
 # GPS
 #PRODUCT_PACKAGES += \
 #    gps.msm8996
