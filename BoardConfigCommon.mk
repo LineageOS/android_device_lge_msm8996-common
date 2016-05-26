@@ -116,6 +116,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
+# RIL
+BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril/
+
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
