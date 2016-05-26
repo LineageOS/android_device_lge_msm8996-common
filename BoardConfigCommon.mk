@@ -95,7 +95,6 @@ TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
 # NFC
 BOARD_NFC_CHIPSET := pn548
 BOARD_NFC_DEVICE := "/dev/pn548"
-TARGET_CUSTOM_NFC_HAL_PATH := "vendor/nxp-nfc/opensource/libnfc-nci"
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)

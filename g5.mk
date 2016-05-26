@@ -170,6 +170,7 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
+    libp61-jcop-kit \
     NfcNci \
     nfc_nci.pn54x.default \
     Tag
