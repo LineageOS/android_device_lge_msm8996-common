@@ -332,6 +332,10 @@ on boot
     chmod 664 /sys/class/panel/img_tune/image_enhance_set
     chmod 664 /sys/class/panel/img_tune/cabc
 
+    # LiveDisplay
+    chown system system /sys/devices/virtual/graphics/fb0/rgb
+    chmod 664 /sys/devices/virtual/graphics/fb0/rgb
+
     # Vibrator adjustment
     chown system system /sys/class/timed_output/vibrator/amp
     chmod 664 /sys/class/timed_output/vibrator/amp
