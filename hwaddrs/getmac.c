@@ -29,22 +29,6 @@ int main() {
 	int i;
 
 	fd1 = open("/dev/block/bootdevice/by-name/misc",O_RDONLY);
-	fd2 = open("/data/misc/wifi/config",O_WRONLY|O_CREAT|O_TRUNC,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
-
-	write(fd2,"cur_etheraddr=",14);
-
-	for (i = 0; i<6; i++) {
-		lseek(fd1,0x3000+i,SEEK_SET);
-		lseek(fd2,0,SEEK_END);
-		read(fd1,&macbyte,1);
-		sprintf(macbuf,"%02x",macbyte);
-		write(fd2,&macbuf,2);
-		if (i!=5) write(fd2,":",1);
-	}
-
-	write(fd2,"\n",1);
-	close(fd2);
-
 	fd2 = open("/data/misc/bdaddr",O_WRONLY|O_CREAT|O_TRUNC,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 	for (i = 0; i<6; i++) {
 		lseek(fd1,0x4000+i,SEEK_SET);
