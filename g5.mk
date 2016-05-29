@@ -128,7 +128,6 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.target.rc \
     init.qcom.rc \
-    init.qcom.factory.rc \
     init.qcom.sh \
     init.qcom.class_core.sh \
     init.qcom.early_boot.sh \
