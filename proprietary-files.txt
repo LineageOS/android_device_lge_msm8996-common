@@ -618,6 +618,7 @@ vendor/lib64/libqti-wl.so
 bin/hvdcp_opti
 bin/irsc_util
 bin/qcom-system-daemon
+bin/tftp_server
 lib64/libqti-iop.so
 vendor/bin/pd-mapper
 vendor/bin/qti
