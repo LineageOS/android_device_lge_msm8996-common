@@ -338,6 +338,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libwpa_client \
+    wificond \
     hostapd \
     dhcpcd.conf \
     wlutil \
