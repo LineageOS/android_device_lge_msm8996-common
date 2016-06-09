@@ -14,7 +14,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.offload.multiaac.enable=true \
     audio.offload.gapless.enabled=true \
     audio.offload.multiple.enabled=true \
-    audio.offload.video=false
+    audio.offload.video=false \
+    ro.audio.flinger_standbytime_ms=300
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
