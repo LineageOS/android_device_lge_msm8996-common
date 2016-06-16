@@ -22,7 +22,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera2.portability.force_api=2
+    camera2.portability.force_api=2 \
+	persist.camera.global.debug=1 \
+	persist.camera.sensor.debug=1
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
