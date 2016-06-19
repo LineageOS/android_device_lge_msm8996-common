@@ -64,6 +64,12 @@ on property:sys.boot_completed=1
     write /sys/class/i2c-dev/i2c-6/device/6-0072/enable_irq 1
 
 on boot
+    # Update foreground and background cpusets
+    write /dev/cpuset/foreground/cpus 0-3
+    write /dev/cpuset/foreground/boost/cpus 2-3
+    write /dev/cpuset/background/cpus 0
+    write /dev/cpuset/system-background/cpus 0-1
+
     chown bluetooth bluetooth /sys/module/bluetooth_power/parameters/power
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
@@ -607,6 +613,7 @@ service iop /system/bin/iop
     user root
     group root
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 # TODO: This MUST be disabled not use 'qcom system daemon' in LGE platform.
 #service qcomsysd /system/bin/qcom-system-daemon
@@ -1227,6 +1234,7 @@ service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqb
     user root
     group root
     disabled
+    writepid /dev/cpuset/system-background/tasks
 
 # Coresight early boot service
 service cs-early-boot /system/bin/sh /persist/coresight/qdss.agent.sh early-boot /system/etc/init.qcom.debug.sh
