@@ -61,6 +61,8 @@ on early-boot
 
 on property:sys.boot_completed=1
     write /sys/block/dm-0/queue/read_ahead_kb 512
+    write /sys/block/sda/queue/read_ahead_kb 2048
+    write /sys/block/sde/queue/read_ahead_kb 2048
     write /sys/class/i2c-dev/i2c-6/device/6-0072/enable_irq 1
 
 on boot
