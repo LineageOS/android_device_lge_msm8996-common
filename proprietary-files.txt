@@ -394,6 +394,8 @@ lib/libfpfactory_jni.so
 
 # GPS
 bin/loc_launcher
+etc/permissions/com.qti.location.sdk.xml
+etc/permissions/com.qualcomm.location.xml
 lib64/hw/gps.default.so
 lib64/libgps.utils.so
 lib64/libloc_api_v02.so
@@ -406,6 +408,8 @@ lib/libloc_api_v02.so
 lib/libloc_core.so
 lib/libloc_ds_api.so
 lib/libloc_eng.so
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
+vendor/bin/slim_daemon
 vendor/lib64/hw/flp.default.so
 vendor/lib64/libflp.so
 vendor/lib64/libgeofence.so
