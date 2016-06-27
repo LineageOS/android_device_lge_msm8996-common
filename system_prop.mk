@@ -26,6 +26,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.camera.global.debug=1 \
 	persist.camera.sensor.debug=1
 
+# CNE and DPM
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.cne.feature=0 \
+    persist.dpm.feature=5 \
+    persist.dpm.nsrm.bkg.evt=3955 \
+    persist.env.fastdorm.enabled=false
+
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.use_data_netmgrd=true \
