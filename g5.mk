@@ -100,6 +100,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     hwaddrs
 
+# Browser
+PRODUCT_PACKAGES += \
+    Gello
+
+# Camera
+PRODUCT_PACKAGES += \
+    Snap
+
 # CNE
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
