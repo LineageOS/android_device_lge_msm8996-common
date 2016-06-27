@@ -255,3 +255,7 @@
 /dev/cxd224x-i2c         0660   nfc        nfc
 # LGE_CHANGE_E, [NFC][sungwook.ahn@lge.com], 2015-04-03, NFC Bring up
 /dev/mobicore-user        0666   system     system
+
+# Device block for FRP
+/dev/block/bootdevice/by-name/frp                                  0660   system     system
+/dev/block/platform/soc/624000.ufshc/by-name/frp                   0660   system     system
