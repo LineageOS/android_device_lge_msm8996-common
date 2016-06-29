@@ -509,7 +509,6 @@ vendor/lib/liblistensoundmodel2.so
 
 # Media
 vendor/lib64/libFileMux.so
-vendor/lib64/libhdcp1prov.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmm-hdcpmgr.so
@@ -517,23 +516,7 @@ vendor/lib64/libmmosal.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxEvrcDec.so
 vendor/lib64/libOmxQcelp13Dec.so
-vendor/lib64/libwfdcommonutils.so
-vendor/lib64/libwfdhdcpcp.so
-vendor/lib64/libwfdmmservice.so
-vendor/lib64/libwfdmmsink.so
-vendor/lib64/libwfdmmsrc.so
-vendor/lib64/libwfdmmutils.so
-vendor/lib64/libwfdnative.so
-vendor/lib64/libwfdrtsp.so
-vendor/lib64/libwfdservice.so
-vendor/lib64/libwfdsm.so
-vendor/lib64/libwfduibcinterface.so
-vendor/lib64/libwfduibcsink.so
-vendor/lib64/libwfduibcsinkinterface.so
-vendor/lib64/libwfduibcsrc.so
-vendor/lib64/libwfduibcsrcinterface.so
 vendor/lib/libFileMux.so
-vendor/lib/libhdcp1prov.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmm-hdcpmgr.so
@@ -541,21 +524,6 @@ vendor/lib/libmmosal.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxEvrcDec.so
 vendor/lib/libOmxQcelp13Dec.so
-vendor/lib/libwfdcommonutils.so
-vendor/lib/libwfdhdcpcp.so
-vendor/lib/libwfdmmservice.so
-vendor/lib/libwfdmmsink.so
-vendor/lib/libwfdmmsrc.so
-vendor/lib/libwfdmmutils.so
-vendor/lib/libwfdnative.so
-vendor/lib/libwfdrtsp.so
-vendor/lib/libwfdservice.so
-vendor/lib/libwfdsm.so
-vendor/lib/libwfduibcinterface.so
-vendor/lib/libwfduibcsink.so
-vendor/lib/libwfduibcsinkinterface.so
-vendor/lib/libwfduibcsrc.so
-vendor/lib/libwfduibcsrcinterface.so
 
 # Misc firmware
 etc/firmware/leia_pfp_470.fw
@@ -590,7 +558,6 @@ vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-perfd-client.so
 vendor/lib64/libqti-at.so
 vendor/lib64/libqti-gt.so
-vendor/lib64/libqti-wl.so
 
 # QMI
 bin/hvdcp_opti
