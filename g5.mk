@@ -112,6 +112,16 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libcnefeatureconfig
 
+# Device init scripts
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    init.qcom.rc \
+    init.qcom.power.rc \
+    init.qcom.usb.rc \
+    init.target.rc \
+    ueventd.qcom.rc \
+    init.qcom.sh
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8996 \
@@ -134,20 +144,6 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/gps/etc/gps.conf:system/etc/gps.conf \
     $(LOCAL_PATH)/gps/etc/izat.conf:system/etc/izat.conf \
     $(LOCAL_PATH)/gps/etc/sap.conf:system/etc/sap.conf
-
-# Init
-PRODUCT_PACKAGES += \
-    fstab.qcom \
-    init.target.rc \
-    init.qcom.rc \
-    init.qcom.sh \
-    init.qcom.class_core.sh \
-    init.qcom.early_boot.sh \
-    init.qcom.post_boot.sh \
-    init.class_main.sh \
-    init.qcom.usb.rc \
-    init.qcom.sensors.sh \
-    ueventd.qcom.rc
 
 # IPACM
 PRODUCT_PACKAGES += \
