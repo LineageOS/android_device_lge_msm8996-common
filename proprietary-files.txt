@@ -430,6 +430,10 @@ vendor/lib/liblocationservice_glue.so
 vendor/lib/liblowi_client.so
 
 # Graphics
+lib64/libsdmcore.so
+lib64/libsdmutils.so
+lib/libsdmcore.so
+lib/libsdmutils.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
