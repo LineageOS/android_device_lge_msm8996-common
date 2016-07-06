@@ -70,7 +70,7 @@ vendor/lib/hw/activity_recognition.msm8996.so
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
 lib64/libn2pm.so
-lib/hw/camera.msm8996.so
+lib/hw/camera.vendor.msm8996.so
 lib/libarcsoft_beauty_shot.so
 lib/libfilm_emulation.so
 lib/libHDR.so
