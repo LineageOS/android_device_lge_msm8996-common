@@ -295,6 +295,7 @@ etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 
 # Comunication and Messaging
+bin/cnd
 bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
@@ -341,7 +342,6 @@ vendor/lib/lib-sec-disp.so
 
 # DRM and SEE
 bin/qseecomd
-bin/seempd
 vendor/bin/qseeproxydaemon
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/keystore.msm8996.so
@@ -560,11 +560,9 @@ vendor/lib64/libqti-at.so
 vendor/lib64/libqti-gt.so
 
 # QMI
-bin/hvdcp_opti
+bin/dpmd
 bin/iop
 bin/irsc_util
-bin/qcom-system-daemon
-bin/tftp_server
 lib64/libqti-iop.so
 vendor/bin/pd-mapper
 vendor/bin/qti
@@ -731,7 +729,6 @@ vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 
 # Misc
-bin/triton
 lib64/hw/lgkm.default.so
 lib64/hw/lgkm.msm8996.so
 lib64/hw/wbc_hal.default.so
