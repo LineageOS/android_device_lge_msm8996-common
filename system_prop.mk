@@ -24,8 +24,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=2 \
-	persist.camera.global.debug=1 \
-	persist.camera.sensor.debug=1
+    persist.camera.global.debug=1 \
+    persist.camera.sensor.debug=1 \
+    persist.camera.HAL3.enabled=1 \
+    persist.camera.dual.camera=1
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
