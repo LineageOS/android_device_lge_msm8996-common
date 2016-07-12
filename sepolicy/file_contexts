@@ -11,6 +11,6 @@
 /persist-lg(/.*)?          u:object_r:persist_drm_file:s0
 
 # Sensors
-/sns(/.*)?                  u:object_r:sensors_data_file:s0
+/sns                        u:object_r:sensors_data_file:s0
 /sns/cal(/.*)?              u:object_r:sensors_data_file:s0
 /persist-lg/sensors(/.*)?   u:object_r:sensors_persist_file:s0
