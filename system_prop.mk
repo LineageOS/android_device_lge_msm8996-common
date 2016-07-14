@@ -116,3 +116,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+# Other
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.factorytest=0
