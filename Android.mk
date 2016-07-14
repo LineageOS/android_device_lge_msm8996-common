@@ -185,22 +185,6 @@ $(MLSERVER_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(MLSERVER_SYMLINKS)
 # END MLSERVER Images
 
-# MODEM Images
-MODEM_IMAGES := \
-    modem.b00 modem.b01 modem.b02 modem.b03 modem.b04 modem.b05 \
-    modem.b06 modem.b07 modem.b08 modem.b09 modem.b10 modem.b11 \
-    modem.b12 modem.b13 modem.b15 modem.b16 modem.b17 modem.b18 modem.b19 modem.b20 modem.mdt
-
-MODEM_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MODEM_IMAGES)))
-$(MODEM_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Modem firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(MODEM_SYMLINKS)
-# END MODEM Images
-
 # QMPSECAP Images
 QMPSECAP_IMAGES := \
     qmpsecap.b00 qmpsecap.b01 qmpsecap.b02 qmpsecap.b03 qmpsecap.b04 \
@@ -321,29 +305,6 @@ $(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 
 ALL_DEFAULT_INSTALLED_MODULES += $(WIDEVINE_SYMLINKS)
 # END WIDEVINE Images
-
-# Miscelenaous Images
-MISC_IMAGES := \
-    mba.mbn
-
-MISC_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(MISC_IMAGES)))
-$(MISC_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
-	@echo "Miscelenaous firmware link: $@"
-	@mkdir -p $(dir $@)
-	@rm -rf $@
-	$(hide) ln -sf /firmware/image/$(notdir $@) $@
-
-ALL_DEFAULT_INSTALLED_MODULES += $(WIDEVINE_SYMLINKS)
-# END Miscelenaous Images
-
-#Create symbolic links
-$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/qca_cld; \
-        ln -sf /system/etc/wifi/WCNSS_qcom_cfg.ini \
-        $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/WCNSS_qcom_cfg.ini; \
-        ln -sf /persist/wlan_mac.bin \
-        $(TARGET_OUT_ETC)/firmware/wlan/qca_cld/wlan_mac.bin; \
-        ln -sf /dev/block/bootdevice/by-name/msadp \
-        $(TARGET_OUT_ETC)/firmware/msadp )
 
 # Same as for wcd9306 files
 $(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9306; \
