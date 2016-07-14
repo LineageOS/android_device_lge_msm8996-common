@@ -313,6 +313,6 @@
 /* Allow Data dpmd to access QMI DFS */
 48:4294967295:1000:3004
 /* DIAG */
-4097:4294967295:3009
+4097:4294967295:2002:2950:3009
 /* Allow VSS GNSS service to be used by system and net_raw processes */
 704:4294967295:1000:3004
