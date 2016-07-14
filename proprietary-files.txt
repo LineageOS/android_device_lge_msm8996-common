@@ -496,7 +496,7 @@ vendor/lib64/libRSDriver_adreno.so
 vendor/lib64/libsd_sdk_display.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdm-disp-apis.so
+-vendor/lib64/libsdm-disp-apis.so
 vendor/lib64/libsdmextension.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
@@ -521,7 +521,7 @@ vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsd_sdk_display.so
-vendor/lib/libsdm-disp-apis.so
+-vendor/lib/libsdm-disp-apis.so
 
 # Hexagon DSP
 vendor/lib64/libQBLAS-0.13.0.so
