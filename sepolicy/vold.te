@@ -1,0 +1,5 @@
+allow vold sensors_data_file:dir { mounton };
+allow vold persist_drm_file:dir { mounton };
+
+allow vold firmware_file:dir { search };
+allow vold firmware_file:file { read open getattr };
