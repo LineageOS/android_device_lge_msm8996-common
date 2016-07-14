@@ -29,6 +29,10 @@
 
 on early-init
     mkdir /firmware 0771 system system
+    mkdir /persist 0771 system system
+    mkdir /persist-lg 0771 system system
+    mkdir /sns 0755 system system
+    mkdir /mpt 0755 system system
     symlink /data/tombstones /tombstones
     chown system root  /sys/module/msm_thermal/core_control/cpus_offlined
     chmod 666 /sys/module/msm_thermal/core_control/cpus_offlined
@@ -44,6 +48,9 @@ on fs
     wait /dev/block/bootdevice
     mount_all fstab.qcom
     swapon_all fstab.qcom
+    restorecon_recursive /sns
+    restorecon_recursive /persist
+    restorecon_recursive /persist-lg
 
 on post-fs
     write /sys/devices/platform/lge-qfprom/sec_read 0
