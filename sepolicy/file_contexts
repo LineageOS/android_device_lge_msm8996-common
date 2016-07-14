@@ -7,6 +7,7 @@
 
 # Fingerprint
 /system/bin/fpc_early_loader     u:object_r:fingerprintd_exec:s0
+/sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
 
 # IR Blaster
 /dev/ttyHSL1                u:object_r:cir_device:s0
