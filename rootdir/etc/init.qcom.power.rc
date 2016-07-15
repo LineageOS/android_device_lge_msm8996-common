@@ -182,19 +182,6 @@ on property:dev.bootcomplete=1
     write /proc/sys/kernel/sched_boost 0
     setprop sys.io.scheduler "bfq"
 
-    start triton
-    write /sys/devices/system/cpu/triton/debug 16
-    write /sys/devices/system/cpu/triton/enable 1
-    write /sys/devices/system/cpu/triton/enforce 0
-    write /sys/devices/system/cpu/triton/cur_policy 0
-    chown system system /sys/devices/system/cpu/triton/enable
-    chmod 664 /sys/devices/system/cpu/triton/enable
-    chmod 600 /sys/devices/system/cpu/triton/aevents
-    chmod 600 /sys/devices/system/cpu/triton/bevents
-    chown system system /sys/devices/system/cpu/triton/cur_policy
-    chmod 664 /sys/devices/system/cpu/triton/cur_policy
-    chmod 664 /sys/devices/system/cpu/triton/debug
-
 on property:init.svc.recovery=running
     trigger enable-low-power
 
@@ -229,14 +216,6 @@ service energy-awareness /system/bin/energy-awareness
     user root
     group system
     oneshot
-
-# triton service
-service triton /system/bin/triton
-    class main
-    user root
-    group system
-    socket triton-client stream 660 system system
-    disabled
 
 service iop /system/bin/iop
     class main
