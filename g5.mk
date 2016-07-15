@@ -109,9 +109,12 @@ PRODUCT_PACKAGES += \
     camera.msm8996 \
     Snap
 
-# CNE
+# Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig
+    cneapiclient \
+    libcnefeatureconfig \
+    com.quicinc.cne \
+    services-ext
 
 # Device init scripts
 PRODUCT_PACKAGES += \

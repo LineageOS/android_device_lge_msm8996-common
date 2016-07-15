@@ -155,6 +155,19 @@ $(HDCP1_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(HDCP1_SYMLINKS)
 # END HDCP1 Images
 
+# IMS Libraries
+IMS_LIBS := libimscamera_jni.so libimsmedia_jni.so
+
+IMS_SYMLINKS := $(addprefix $(TARGET_OUT_VENDOR_APPS)/ims/lib/arm64/,$(notdir $(IMS_LIBS)))
+$(IMS_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "IMS lib link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /system/vendor/lib64/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(IMS_SYMLINKS)
+#  End IMS Libraries
+
 # ISDB Images
 ISDB_IMAGES := \
     isdbtmm.b00 isdbtmm.b01 isdbtmm.b02 isdbtmm.b03 isdbtmm.b04 \
