@@ -92,7 +92,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.rild.nitz_short_ons_3="" \
     ril.subscription.types=NV,RUIM \
     ro.ril.telephony.mqanelements=5 \
-    ro.telephony.ril_class=LgeLteRIL \
     DEVICE_PROVISIONED=1
 
 # Sensors
