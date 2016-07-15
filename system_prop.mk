@@ -59,11 +59,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.gps.qc_nlp_in_use=1 \
     ro.gps.agps_provider=1
 
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1,SIM2,eSE1
-
 # OpenGLES
 # 196608 is decimal for 0x30000 to report version 3.0
 # 196609 is decimal for 0x30001 to report version 3.1
