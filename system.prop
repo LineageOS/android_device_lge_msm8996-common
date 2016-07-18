@@ -25,6 +25,7 @@ persist.camera.global.debug=1
 persist.camera.sensor.debug=1
 persist.camera.HAL3.enabled=1
 persist.camera.dual.camera=1
+ro.camera.notify_nfc=1
 
 # CNE and DPM
 persist.cne.feature=0
