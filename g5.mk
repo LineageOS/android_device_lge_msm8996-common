@@ -186,11 +186,9 @@ PRODUCT_COPY_FILES += \
 # NFC
 PRODUCT_PACKAGES += \
     com.android.nfc_extras \
-    com.nxp.nfc.nq \
-    nfc_nci.nqx.default \
-    NQNfcNci \
-    nqnfcee_access.xml \
-    nqnfcse_access.xml \
+    libp61-jcop-kit \
+    NfcNci \
+    nfc_nci.pn54x.default \
     Tag
 
 PRODUCT_COPY_FILES += \
