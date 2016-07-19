@@ -80,11 +80,6 @@ $(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(WIDEVINE_SYMLINKS)
 # END WIDEVINE Images
 
-# Same as for wcd9306 files
-$(shell mkdir -p $(TARGET_OUT)/etc/firmware/wcd9306; \
-    ln -sf /data/misc/audio/wcd9320_anc.bin \
-	    $(TARGET_OUT)/etc/firmware/wcd9306/wcd9306_anc.bin; \
-    ln -sf /data/misc/audio/mbhc.bin \
-	    $(TARGET_OUT)/etc/firmware/wcd9306/wcd9306_mbhc.bin;)
+include device/lge/g5-common/tftp.mk
 
 endif
