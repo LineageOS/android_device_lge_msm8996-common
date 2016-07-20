@@ -314,8 +314,6 @@ bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
 bin/imswmsproxy
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imsSDP.so
@@ -336,9 +334,6 @@ vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
 vendor/lib64/lib-sec-disp.so
-vendor/lib64/libimscamera_jni.so
-vendor/lib64/libimsmedia_jni.so
-vendor/lib64/librcc.so
 vendor/lib64/libvoice-svc.so
 
 # CNE
@@ -608,6 +603,20 @@ bin/iop
 bin/msm_irqbalance
 lib64/libqti-iop.so
 vendor/bin/perfd
+vendor/etc/perf-profile0.conf
+vendor/etc/perf-profile1.conf
+vendor/etc/perf-profile2.conf
+vendor/etc/perf-profile3.conf
+vendor/etc/perf-profile4.conf
+vendor/etc/perf-profile5.conf
+vendor/etc/perf-profile6.conf
+vendor/etc/perf-profile7.conf
+vendor/etc/perf-profile8.conf
+vendor/etc/perf-profile9.conf
+vendor/etc/perf-profile10.conf
+vendor/etc/perf-profile11.conf
+vendor/etc/perf-profile12.conf
+vendor/etc/perf-profile13.conf
 vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
 vendor/lib/libqti-iop-client.so
@@ -615,7 +624,6 @@ vendor/lib/libqti-perfd-client.so
 
 # QMI
 bin/irsc_util
-etc/permissions/qti_permissions.xml
 vendor/bin/pd-mapper
 vendor/bin/qti
 vendor/lib64/libdiag.so
@@ -668,9 +676,6 @@ vendor/lib/libvqzip.so
 vendor/lib/libxml.so
 
 # Radio
--app/datastatusnotification/datastatusnotification.apk
--app/embms/embms.apk
--app/fastdormancy/fastdormancy.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/ipacm-diag
@@ -678,11 +683,12 @@ bin/netmgrd
 bin/qmuxd
 bin/radish
 bin/rmt_storage
-etc/permissions/embms.xml
+-etc/data/dsi_config.xml
+-etc/data/netmgr_config.xml
+-etc/data/qmi_config.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
-framework/embmslibrary.jar
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
 framework/qti-telephony-common.jar
