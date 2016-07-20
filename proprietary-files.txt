@@ -576,6 +576,9 @@ vendor/lib/libconnctrl.so
 vendor/lib64/libconnctrl.so
 vendor/lib64/libQtiTether.so
 
+# LiveDisplay
+vendor/lib64/libjni_livedisplay.so
+
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
 
