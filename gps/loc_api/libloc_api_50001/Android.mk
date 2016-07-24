@@ -41,7 +41,7 @@ LOCAL_CFLAGS += \
 LOCAL_C_INCLUDES:= \
     $(TARGET_OUT_HEADERS)/gps.utils \
     $(TARGET_OUT_HEADERS)/libloc_core \
-    device/lge-/g5-common/gps/loc_api/libloc_api_50001 \
+    $(LOCAL_PATH) \
     $(TARGET_OUT_HEADERS)/libflp
 
 LOCAL_COPY_HEADERS_TO:= libloc_eng/
@@ -76,6 +76,9 @@ LOCAL_SHARED_LIBRARIES := \
     libloc_core \
     libgps.utils \
     libdl
+
+ifneq ($(filter $(TARGET_DEVICE), apq8084 msm8960), false)
+endif
 
 LOCAL_SRC_FILES += \
     loc.cpp \
