@@ -674,9 +674,6 @@ bin/netmgrd
 bin/qmuxd
 bin/radish
 bin/rmt_storage
--etc/data/dsi_config.xml
--etc/data/netmgr_config.xml
--etc/data/qmi_config.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
