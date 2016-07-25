@@ -49,11 +49,14 @@ fi
 # Initialize the helper for common device
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 
+extract "$MY_DIR"/proprietary-files-qc.txt "$SRC"
+extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC"
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
 
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 
+extract "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt "$SRC"
 extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
 
 "$MY_DIR"/setup-makefiles.sh
