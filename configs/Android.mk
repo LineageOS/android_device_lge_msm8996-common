@@ -1,3 +1,5 @@
+ifneq ($(QCPATH),)
+
 LOCAL_PATH:= $(call my-dir)
 
 # Qualcomm XML Files
@@ -25,3 +27,5 @@ LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := data/qmi_config.xml
 LOCAL_MODULE_PATH  := $(TARGET_OUT_ETC)/data
 include $(BUILD_PREBUILT)
+
+endif
