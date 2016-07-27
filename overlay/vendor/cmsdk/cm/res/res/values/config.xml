@@ -30,11 +30,12 @@
     <!-- Corresponds to color balance level of zero, this is the native
          display temperature -->
     <integer name="config_dayColorTemperature">7500</integer>
-
     <integer name="config_nightColorTemperature">3600</integer>
 
     <!-- Disable this by default, since it's actually using the QC FOSS algorithm for
          OLED displays and can cause a bit of discoloration. Reinvestigate after tuning -->
     <bool name="config_defaultCABC">false</bool>
 
+    <!-- Turn on LiveDisplay auto mode by default -->
+    <integer name="config_defaultLiveDisplayMode">2</integer>
 </resources>
