@@ -1,4 +1,4 @@
-ifneq ($(QCPATH),)
+ifeq ($(QCPATH),)
 
 LOCAL_PATH:= $(call my-dir)
 
