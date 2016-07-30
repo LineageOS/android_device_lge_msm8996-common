@@ -23,6 +23,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.IBinder;
 import android.util.Log;
+import java.io.IOException;
 
 public class DozeService extends Service {
     private static final String TAG = "DozeService";
@@ -64,6 +65,13 @@ public class DozeService extends Service {
 
     private void onDisplayOn() {
         if (DEBUG) Log.d(TAG, "Display on");
+        try {
+          if (DEBUG) Log.d(TAG, "Enabling low-power touch");
+          String[] lpwg = { "/system/bin/sh", "-c", "echo 9 1 1 0 0 > /sys/devices/virtual/input/lge_touch/lpwg_notify", };
+          Runtime.getRuntime().exec(lpwg);
+        } catch (IOException e) {
+          if (DEBUG) Log.d(TAG, "Could not write to lpwg node");
+        }
         if (Utils.pickUpEnabled(this)) {
             mTiltSensor.disable();
         }
