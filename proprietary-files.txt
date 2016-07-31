@@ -267,12 +267,20 @@ lib/libcir_driver.so
 lib64/hw/consumerir.msm8996.so
 lib64/libcir_driver.so
 
-# Misc firmware
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
+# LG Keymaster
+lib/hw/lgkm.default.so
+lib/hw/lgkm.msm8996.so
+lib/liblgkm.so
+lib64/hw/lgkm.default.so
+lib64/hw/lgkm.msm8996.so
+lib64/liblgkm.so
 
 # LiveDisplay
 vendor/lib64/libjni_livedisplay.so
+
+# Misc firmware
+etc/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw
 
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
@@ -316,10 +324,6 @@ lib64/hw/sensors.msm8996.so
 vendor/lib/libsensor_lge_cal.so
 vendor/lib64/libsensor_lge_cal.so
 
-# Misc
-lib/hw/lgkm.default.so
-lib/hw/lgkm.msm8996.so
+# WBC
 lib/hw/wbc_hal.default.so
-lib64/hw/lgkm.default.so
-lib64/hw/lgkm.msm8996.so
 lib64/hw/wbc_hal.default.so
