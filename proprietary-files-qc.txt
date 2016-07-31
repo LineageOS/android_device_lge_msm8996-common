@@ -76,9 +76,10 @@ etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar
-framework/dpmapi.jar
-framework/tcmclient.jar
+-framework/com.qti.dpmframework.jar
+-framework/dpmapi.jar
+-framework/tcmclient.jar
+framework/tcmiface.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
@@ -124,7 +125,7 @@ vendor/lib64/hw/gatekeeper.msm8996.so
 bin/loc_launcher
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
-framework/com.qti.location.sdk.jar
+-framework/com.qti.location.sdk.jar
 -lib64/libloc_api_v02.so
 lib64/libloc_ds_api.so
 -lib/libloc_api_v02.so
