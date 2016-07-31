@@ -49,7 +49,6 @@ on charger
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/module/msm_thermal/parameters/enabled "N"
-    start qcom-sh
 
     chown root system /sys/class/power_supply/bms/current_now
     chown root system /sys/class/power_supply/bms/voltage_ocv
