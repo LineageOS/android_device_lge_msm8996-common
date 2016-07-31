@@ -129,6 +129,7 @@ on enable-low-power
     write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
     # Set big.LITTLE scheduler parameters
+    write /proc/sys/kernel/sched_boost 0
     write /proc/sys/kernel/sched_migration_fixup 1
     write /proc/sys/kernel/sched_downmigrate 45
     write /proc/sys/kernel/sched_upmigrate 45
@@ -170,11 +171,9 @@ on enable-low-power
     #start iop
 
 on class_start:late_start
-    write /proc/sys/kernel/sched_boost 1
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
-    write /proc/sys/kernel/sched_boost 0
     setprop sys.io.scheduler "bfq"
 
 on property:init.svc.recovery=running
