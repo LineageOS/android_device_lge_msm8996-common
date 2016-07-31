@@ -61,8 +61,6 @@ on boot
     chown system system /sys/class/power_supply/battery/charging_enabled
     chown system system /sys/class/power_supply/battery/safety_timer_enabled
 
-    chown system system /sys/devices/system/cpu/triton/enable
-    chmod 644 /sys/devices/system/cpu/triton/enable
     chown root system /sys/module/lge_charging_controller/parameters/quick_charging_state
     chmod 0664 /sys/module/lge_charging_controller/parameters/quick_charging_state
 
