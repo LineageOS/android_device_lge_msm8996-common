@@ -85,7 +85,6 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
     class late_start
     user camera
     group camera system inet input graphics
-    writepid /dev/cpuset/system-background/tasks
 
 # Fingerprint service
 service fingerprintd /system/bin/fingerprintd
@@ -131,7 +130,6 @@ service perfd /system/vendor/bin/perfd
    class main
    user root
    disabled
-   writepid /dev/cpuset/system-background/tasks
 
 service mpdecision /system/bin/mpdecision --avg_comp
     user root
