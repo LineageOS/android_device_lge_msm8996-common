@@ -227,6 +227,17 @@ etc/camera/msm8996_camera_LG.xml
 etc/camera/t4ka3_chromatix.xml
 
 # Camera firmware
+etc/camera/film/0_film.dat
+etc/camera/film/1_film.dat
+etc/camera/film/2_film.dat
+etc/camera/film/3_film.dat
+etc/camera/film/4_film.dat
+etc/camera/film/5_film.dat
+etc/camera/film/6_film.dat
+etc/camera/film/7_film.dat
+etc/camera/film/8_film.dat
+etc/camera/film/9_film.dat
+etc/camera/film/10_film.dat
 etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data1_0x4E.bin
 etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data2_0x4E.bin
 etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data1_0x18.bin
