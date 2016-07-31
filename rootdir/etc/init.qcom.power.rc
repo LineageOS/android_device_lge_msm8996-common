@@ -168,7 +168,7 @@ on enable-low-power
     start perfd
 
     # Start IO prefetcher service
-    start iop
+    #start iop
 
 on class_start:late_start
     write /proc/sys/kernel/sched_boost 1

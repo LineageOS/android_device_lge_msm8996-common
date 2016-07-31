@@ -58,6 +58,7 @@ ro.gps.agps_provider=1
 ro.opengles.version=196610
 
 # Perf
+enable_prefetch=0
 ro.min_freq_0=307200
 ro.min_freq_2=307200
 ro.vendor.extension_library=libqti-perfd-client.so
