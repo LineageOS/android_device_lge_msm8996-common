@@ -53,9 +53,7 @@ persist.loc.nlp_name=com.qualcomm.location
 ro.gps.agps_provider=1
 
 # OpenGLES
-# 196609 is OpenGLES 3.1
-# 196610 is OpenGLES 3.2
-ro.opengles.version=196610
+ro.opengles.version=196609
 
 # Perf
 enable_prefetch=0
