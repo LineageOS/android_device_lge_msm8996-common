@@ -43,6 +43,9 @@ on init
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
 
+    # NXP HAL expects /dev/pn54x
+    symlink /dev/pn548 /dev/pn54x
+
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
