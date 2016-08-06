@@ -228,23 +228,6 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libstagefright_soft_flacdec
 
-# Perf
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/perf/perf-profile0.conf:system/vendor/etc/perf-profile0.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile1.conf:system/vendor/etc/perf-profile1.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile2.conf:system/vendor/etc/perf-profile2.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile3.conf:system/vendor/etc/perf-profile3.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile4.conf:system/vendor/etc/perf-profile4.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile5.conf:system/vendor/etc/perf-profile5.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile6.conf:system/vendor/etc/perf-profile6.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile7.conf:system/vendor/etc/perf-profile7.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile8.conf:system/vendor/etc/perf-profile8.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile9.conf:system/vendor/etc/perf-profile9.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile10.conf:system/vendor/etc/perf-profile10.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile11.conf:system/vendor/etc/perf-profile11.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile12.conf:system/vendor/etc/perf-profile12.conf \
-    $(LOCAL_PATH)/configs/perf/perf-profile13.conf:system/vendor/etc/perf-profile13.conf
-
 # Power
 PRODUCT_PACKAGES += \
     power.msm8996
