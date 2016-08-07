@@ -214,7 +214,9 @@
 # wlan
 /dev/wcnss_wlan           0660   system     system
 /dev/wcnss_ctrl           0660   system     system
-/dev/pn548                0660   nfc         nfc
+
+# NFC
+/dev/pn547                0660   nfc         nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
