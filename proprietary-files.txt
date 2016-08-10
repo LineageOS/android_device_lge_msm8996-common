@@ -10,7 +10,7 @@ etc/acdbdata/Speaker_cal.acdb
 # Camera
 bin/mm-qcamera-app
 bin/mm-qcamera-daemon
-lib/hw/camera.vendor.msm8996.so
+lib/hw/camera.msm8996.so
 lib/libarcsoft_beauty_shot.so
 lib/libfilm_emulation.so
 lib/libHDR.so
