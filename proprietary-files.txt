@@ -19,11 +19,9 @@ lib/libmmcamera_interface.so
 lib/libmmjpeg_interface.so
 lib/libmorpho_image_stab31.so
 lib/libmorpho_superzoom.so
-lib/libn2pm.so
 lib/libqomx_core.so
 lib/libVDBase.so
 lib/libVDLowLightAPI.so
-lib64/libn2pm.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
