@@ -77,6 +77,8 @@ ril.subscription.types=NV,RUIM
 ro.ril.telephony.mqanelements=5
 DEVICE_PROVISIONED=1
 ro.telephony.ril_class=LgeLteRIL
+ro.telephony.default_network=9
+telephony.lteOnGsmDevice=1
 
 # Sensors
 persist.debug.sensors.hal=e
