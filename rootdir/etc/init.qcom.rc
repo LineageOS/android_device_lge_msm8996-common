@@ -1043,9 +1043,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     user system
     group system
 
-on charger
-    setprop persist.sys.usb.config charging
-
 # oneshot service that loads fpc tz app in early phase.
 service fpc_early_loader /system/bin/fpc_early_loader
     class late_start
