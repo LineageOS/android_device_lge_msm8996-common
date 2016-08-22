@@ -20,7 +20,7 @@
     <bool name="config_proximityCheckOnWakeEnabledByDefault">true</bool>
 
     <!-- Ambient lux at which to enable outdoor mode when LiveDisplay is enabled -->
-    <integer name="config_outdoorAmbientLux">12000</integer>
+    <integer name="config_outdoorAmbientLux">6000</integer>
 
     <!-- Color temperature settings for LiveDisplay. These were obtained by
          measuring the display at various color balance levels. -->
