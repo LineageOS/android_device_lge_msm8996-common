@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2016 The Android Open Source Project
+ * Copyright (C) 2016 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -32,11 +33,11 @@
 #define TEMPERATURE_FILE_FORMAT       "/sys/class/thermal/thermal_zone%d/temp"
 #define CPU_ONLINE_FILE_FORMAT        "/sys/devices/system/cpu/cpu%d/online"
 
-#define BATTERY_SENSOR_NUM            23
-#define GPU_SENSOR_NUM                13
+#define BATTERY_SENSOR_NUM            29
+#define GPU_SENSOR_NUM                16
 #define SKIN_SENSOR_NUM               18
 
-const int CPU_SENSORS[] = {8, 9, 10, 11, 14, 15, 16, 7};
+const int CPU_SENSORS[] = {5, 7, 10, 12};
 
 #define CPU_NUM                       (sizeof(CPU_SENSORS) / sizeof(int))
 #define TEMPERATURE_NUM               11
@@ -55,7 +56,7 @@ const int CPU_SENSORS[] = {8, 9, 10, 11, 14, 15, 16, 7};
 #define BATTERY_LABEL                 "battery"
 #define SKIN_LABEL                    "skin"
 
-const char *CPU_LABEL[] = {"CPU0", "CPU1", "CPU2", "CPU3", "CPU4", "CPU5", "CPU6", "CPU7"};
+const char *CPU_LABEL[] = {"CPU0", "CPU1", "CPU2", "CPU3"};
 
 /**
  * Reads device temperature.
@@ -111,7 +112,7 @@ static ssize_t get_cpu_temperatures(temperature_t *list, size_t size) {
         if (cpu >= size) {
             break;
         }
-        // tsens_tz_sensor[7,8,9,10,11,14,15,6]: temperature in Celsius.
+        // tsens_tz_sensor[4,6,9,11]: temperature in Celsius.
         ssize_t result = read_temperature(CPU_SENSORS[cpu], DEVICE_TEMPERATURE_CPU, CPU_LABEL[cpu],
                 1, CPU_THROTTLING_THRESHOLD, CPU_SHUTDOWN_THRESHOLD, UNKNOWN_TEMPERATURE,
                 &list[cpu]);
@@ -138,7 +139,7 @@ static ssize_t get_temperatures(thermal_module_t *module, temperature_t *list, s
 
     // GPU temperature.
     if (current_index < size) {
-        // tsens_tz_sensor12: temperature in Celsius.
+        // tsens_tz_sensor15: temperature in Celsius.
         result = read_temperature(GPU_SENSOR_NUM, DEVICE_TEMPERATURE_GPU, GPU_LABEL, 1,
                 UNKNOWN_TEMPERATURE, UNKNOWN_TEMPERATURE, UNKNOWN_TEMPERATURE,
                 &list[current_index]);
@@ -271,7 +272,7 @@ thermal_module_t HAL_MODULE_INFO_SYM = {
         .module_api_version = THERMAL_HARDWARE_MODULE_API_VERSION_0_1,
         .hal_api_version = HARDWARE_HAL_API_VERSION,
         .id = THERMAL_HARDWARE_MODULE_ID,
-        .name = "Angler Thermal HAL",
+        .name = "G5 Thermal HAL",
         .author = "The Android Open Source Project",
         .methods = &thermal_module_methods,
     },
