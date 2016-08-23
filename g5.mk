@@ -139,6 +139,10 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     liboverlay
 
+# Display calibration
+PRODUCT_PACKAGES += \
+    libjni_livedisplay
+
 # Doze mode
 PRODUCT_PACKAGES += \
     LGDoze

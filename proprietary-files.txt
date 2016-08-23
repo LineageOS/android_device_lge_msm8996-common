@@ -284,9 +284,6 @@ lib64/hw/lgkm.default.so
 lib64/hw/lgkm.msm8996.so
 lib64/liblgkm.so
 
-# LiveDisplay
-vendor/lib64/libjni_livedisplay.so
-
 # Misc firmware
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
