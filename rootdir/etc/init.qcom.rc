@@ -31,7 +31,7 @@ import init.target.rc
 
 on init
     # Load LGE Symbols
-    export LD_SHIM_LIBS /system/lib/libril.so|liblge.so:/system/lib64/libril.so|liblge.so
+    export LD_PRELOAD liblge.so
 
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
