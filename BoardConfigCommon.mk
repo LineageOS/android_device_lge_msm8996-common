@@ -150,6 +150,9 @@ BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril/
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
+# Sensors
+USE_SENSOR_MULTI_HAL := true
+
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WLAN_DEVICE           := bcmdhd

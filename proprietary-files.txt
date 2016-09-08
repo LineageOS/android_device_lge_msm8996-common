@@ -325,8 +325,6 @@ lib64/libvss_resim_idl.so
 lib64/libvss_resim_iface.so
 
 # Sensors
-lib/hw/sensors.msm8996.so
-lib64/hw/sensors.msm8996.so
 vendor/lib/libsensor_lge_cal.so
 vendor/lib64/libsensor_lge_cal.so
 
