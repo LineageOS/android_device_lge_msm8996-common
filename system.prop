@@ -2,30 +2,6 @@
 # System Properties for LG G5
 #
 
-# AV
-ro.qc.sdk.audio.ssr=false
-tunnel.audio.encode=false
-media.aac_51_output_enabled=true
-audio.offload.buffer.size.kb=32
-audio.offload.video=true
-audio.offload.pcm.16bit.enable=false
-audio.offload.pcm.24bit.enable=true
-audio.offload.track.enable=false
-audio.deep_buffer.media=true
-use.voice.path.for.pcm.voip=true
-audio.offload.multiaac.enable=true
-audio.offload.gapless.enabled=true
-audio.safx.pbe.enabled=true
-audio.parser.ip.buffer.size=262144
-audio.offload.passthrough=false
-audio.offload.multiple.enabled=true
-audio.offload.min.duration.secs=30
-af.fast_track_multiplier=1
-audio_hal.period_size=160
-mm.enable.sec.smoothstreaming=false
-av.debug.disable.pers.cache=true
-ro.audio.flinger_standbytime_ms=300
-
 # Bluetooth
 ro.bt.bdaddr_path="/data/misc/bdaddr"
 
