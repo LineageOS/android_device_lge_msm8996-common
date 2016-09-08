@@ -30,9 +30,6 @@ import init.qcom.power.rc
 import init.target.rc
 
 on init
-    # Load LGE Symbols
-    export LD_PRELOAD liblge.so
-
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
 
