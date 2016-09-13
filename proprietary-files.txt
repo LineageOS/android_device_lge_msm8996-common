@@ -20,8 +20,6 @@ lib/libmmjpeg_interface.so
 lib/libmorpho_image_stab31.so
 lib/libmorpho_superzoom.so
 lib/libqomx_core.so
-lib/libVDBase.so
-lib/libVDLowLightAPI.so
 vendor/lib/libjpegdhw.so
 vendor/lib/libjpegdmahw.so
 vendor/lib/libjpegehw.so
@@ -35,27 +33,30 @@ vendor/lib/libmmcamera2_imglib_modules.so
 vendor/lib/libmmcamera2_is.so
 vendor/lib/libmmcamera2_isp_modules.so
 vendor/lib/libmmcamera2_mct.so
+vendor/lib/libmmcamera2_mct_shimlayer.so
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_q3a_core.so
 vendor/lib/libmmcamera2_sensor_modules.so
 vendor/lib/libmmcamera2_stats_algorithm.so
 vendor/lib/libmmcamera2_stats_modules.so
-vendor/lib/libmmcamera2_vpe_module.so
-vendor/lib/libmmcamera2_wnr_module.so
-vendor/lib/libmmcamera_csidtg.so
 vendor/lib/libmmcamera_dbg.so
 vendor/lib/libmmcamera_dummyalgo.so
 vendor/lib/libmmcamera_eebinparse.so
 vendor/lib/libmmcamera_eeprom_checksum.so
 vendor/lib/libmmcamera_eeprom_util.so
 vendor/lib/libmmcamera_eztune_module.so
+vendor/lib/libmmcamera_facedetection_lib.so
 vendor/lib/libmmcamera_faceproc.so
+vendor/lib/libmmcamera_faceproc2.so
 vendor/lib/libmmcamera_hdr_gb_lib.so
 vendor/lib/libmmcamera_hvx_add_constant.so
 vendor/lib/libmmcamera_hvx_grid_sum.so
 vendor/lib/libmmcamera_hvx_zzHDR.so
 vendor/lib/libmmcamera_imglib.so
+vendor/lib/libmmcamera_imglib_faceproc_adspstub.so
+vendor/lib/libmmcamera_imx219_alice.so
+vendor/lib/libmmcamera_imx219_gt24c64_eeprom.so
 vendor/lib/libmmcamera_imx234.so
 vendor/lib/libmmcamera_imx234_eeprom.so
 vendor/lib/libmmcamera_imx268.so
@@ -101,9 +102,11 @@ vendor/lib/libmmcamera_isp_scaler_viewfinder46.so
 vendor/lib/libmmcamera_isp_sce40.so
 vendor/lib/libmmcamera_isp_snr47.so
 vendor/lib/libmmcamera_isp_sub_module.so
+vendor/lib/libmmcamera_paaf_lib.so
 vendor/lib/libmmcamera_pdaf.so
 vendor/lib/libmmcamera_pdafcamif.so
 vendor/lib/libmmcamera_ppbase_module.so
+vendor/lib/libmmcamera_ppeiscore.so
 vendor/lib/libmmcamera_t4ka3.so
 vendor/lib/libmmcamera_t4ka3_eeprom.so
 vendor/lib/libmmcamera_thread_services.so
@@ -111,7 +114,6 @@ vendor/lib/libmmcamera_tintless_algo.so
 vendor/lib/libmmcamera_tintless_bg_pca_algo.so
 vendor/lib/libmmcamera_tuning.so
 vendor/lib/libmmcamera_tuning_lookup.so
-vendor/lib/libmmcamera_vpu_module.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libmmqjpeg_codec.so
 vendor/lib/libmmqjpegdma.so
@@ -131,15 +133,18 @@ vendor/lib64/libscalar.so
 # Camera actuators
 vendor/lib/libactuator_ad5816g.so
 vendor/lib/libactuator_ad5823.so
+vendor/lib/libactuator_ak7345.so
 vendor/lib/libactuator_bu24333gwl.so
 vendor/lib/libactuator_bu64244gwz.so
 vendor/lib/libactuator_bu64297.so
 vendor/lib/libactuator_dw9714.so
 vendor/lib/libactuator_dw9716.so
 vendor/lib/libactuator_dw9761b.so
+vendor/lib/libactuator_dw9763.so
 vendor/lib/libactuator_lc898122.so
-vendor/lib/libactuator_lc898122_claf.so
 vendor/lib/libactuator_lc898212xd.so
+vendor/lib/libactuator_lc898212xd_qc2002.so
+vendor/lib/libactuator_lc898217xc.so
 vendor/lib/libactuator_rohm_bu64243gwz.so
 
 # Camera chromatix
@@ -148,6 +153,25 @@ vendor/lib/libchromatix_csidtg_cpp_preview.so
 vendor/lib/libchromatix_csidtg_postproc.so
 vendor/lib/libchromatix_csidtg_preview.so
 vendor/lib/libchromatix_csidtg_zsl_preview.so
+vendor/lib/libchromatix_imx219_alice_1080p_preview.so
+vendor/lib/libchromatix_imx219_alice_1080p_video.so
+vendor/lib/libchromatix_imx219_alice_a3_default_preview.so
+vendor/lib/libchromatix_imx219_alice_a3_default_video.so
+vendor/lib/libchromatix_imx219_alice_a3_vt.so
+vendor/lib/libchromatix_imx219_alice_common.so
+vendor/lib/libchromatix_imx219_alice_cpp_liveshot.so
+vendor/lib/libchromatix_imx219_alice_cpp_preview.so
+vendor/lib/libchromatix_imx219_alice_cpp_snapshot.so
+vendor/lib/libchromatix_imx219_alice_cpp_video.so
+vendor/lib/libchromatix_imx219_alice_cpp_vt.so
+vendor/lib/libchromatix_imx219_alice_default_video.so
+vendor/lib/libchromatix_imx219_alice_liveshot.so
+vendor/lib/libchromatix_imx219_alice_postproc.so
+vendor/lib/libchromatix_imx219_alice_preview.so
+vendor/lib/libchromatix_imx219_alice_snapshot.so
+vendor/lib/libchromatix_imx219_alice_vt.so
+vendor/lib/libchromatix_imx219_alice_zsl_preview.so
+vendor/lib/libchromatix_imx219_alice_zsl_video.so
 vendor/lib/libchromatix_imx234_4k_preview_bu24333gwl.so
 vendor/lib/libchromatix_imx234_4k_video_bu24333gwl.so
 vendor/lib/libchromatix_imx234_common.so
@@ -165,12 +189,12 @@ vendor/lib/libchromatix_imx234_default_video.so
 vendor/lib/libchromatix_imx234_default_video_bu24333gwl.so
 vendor/lib/libchromatix_imx234_hdr_snapshot_bu24333gwl.so
 vendor/lib/libchromatix_imx234_hdr_video_bu24333gwl.so
+vendor/lib/libchromatix_imx234_hfr_120.so
+vendor/lib/libchromatix_imx234_hfr_120_bu24333gwl.so
 vendor/lib/libchromatix_imx234_hfr_60.so
 vendor/lib/libchromatix_imx234_hfr_60_bu24333gwl.so
 vendor/lib/libchromatix_imx234_hfr_90.so
 vendor/lib/libchromatix_imx234_hfr_90_bu24333gwl.so
-vendor/lib/libchromatix_imx234_hfr_120.so
-vendor/lib/libchromatix_imx234_hfr_120_bu24333gwl.so
 vendor/lib/libchromatix_imx234_panorama_preview_bu24333gwl.so
 vendor/lib/libchromatix_imx234_postproc.so
 vendor/lib/libchromatix_imx234_preview.so
@@ -192,6 +216,8 @@ vendor/lib/libchromatix_imx268_cpp_preview.so
 vendor/lib/libchromatix_imx268_cpp_snapshot.so
 vendor/lib/libchromatix_imx268_cpp_video.so
 vendor/lib/libchromatix_imx268_default_video.so
+vendor/lib/libchromatix_imx268_hfr_60.so
+vendor/lib/libchromatix_imx268_hfr_60_3a.so
 vendor/lib/libchromatix_imx268_liveshot.so
 vendor/lib/libchromatix_imx268_postproc.so
 vendor/lib/libchromatix_imx268_preview.so
@@ -219,9 +245,10 @@ vendor/lib/libchromatix_t4ka3_zsl_preview.so
 vendor/lib/libchromatix_t4ka3_zsl_video.so
 
 # Camera configs
+etc/camera/camera_config.xml
+etc/camera/imx219_alice_chromatix.xml
 etc/camera/imx234_chromatix.xml
 etc/camera/imx268_chromatix.xml
-etc/camera/msm8996_camera_LG.xml
 etc/camera/t4ka3_chromatix.xml
 
 # Camera firmware
@@ -236,20 +263,20 @@ etc/camera/film/7_film.dat
 etc/camera/film/8_film.dat
 etc/camera/film/9_film.dat
 etc/camera/film/10_film.dat
-etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data1_0x4E.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data2_0x4E.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data1_0x18.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data2_0x18.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev4_S_data1_0x36.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev4_S_data2_0x36.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_K2G2IS_rev1_S_data1_0x04.bin
-etc/firmware/bu24234_dl_program_Alice_LGITAct_K2G2IS_rev1_S_data2_0x04.bin
-etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev13_S_data1.bin
-etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev13_S_data2.bin
-etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev3.1_S_data1_0x1F.bin
-etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev3.1_S_data2_0x1F.bin
-etc/firmware/bu24234_dl_program_Alice_MTMAct_K2G2IS_rev1_S_data1_0x03.bin
-etc/firmware/bu24234_dl_program_Alice_MTMAct_K2G2IS_rev1_S_data2_0x03.bin
+media/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data1_0x4E.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data1_0x4E.bin
+media/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data2_0x4E.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev13_S_data2_0x4E.bin
+media/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data1_0x18.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data1_0x18.bin
+media/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data2_0x18.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev2_S_data2_0x18.bin
+media/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev4_S_data1_0x36.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev4_S_data1_0x36.bin
+media/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev4_S_data2_0x36.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_ICG1020S_rev4_S_data2_0x36.bin
+media/bu24234_dl_program_Alice_LGITAct_K2G2IS_rev1_S_data1_0x04.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_K2G2IS_rev1_S_data1_0x04.bin
+media/bu24234_dl_program_Alice_LGITAct_K2G2IS_rev1_S_data2_0x04.bin:etc/firmware/bu24234_dl_program_Alice_LGITAct_K2G2IS_rev1_S_data2_0x04.bin
+media/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev13_S_data1.bin:etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev13_S_data1.bin
+media/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev13_S_data2.bin:etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev13_S_data2.bin
+media/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev3.1_S_data1_0x1F.bin:etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev3.1_S_data1_0x1F.bin
+media/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev3.1_S_data2_0x1F.bin:etc/firmware/bu24234_dl_program_Alice_MTMAct_ICG1020S_rev3.1_S_data2_0x1F.bin
+media/bu24234_dl_program_Alice_MTMAct_K2G2IS_rev1_S_data1_0x03.bin:etc/firmware/bu24234_dl_program_Alice_MTMAct_K2G2IS_rev1_S_data1_0x03.bin
+media/bu24234_dl_program_Alice_MTMAct_K2G2IS_rev1_S_data2_0x03.bin:etc/firmware/bu24234_dl_program_Alice_MTMAct_K2G2IS_rev1_S_data2_0x03.bin
 etc/firmware/cpp_firmware_v1_1_1.fw
 etc/firmware/cpp_firmware_v1_1_6.fw
 etc/firmware/cpp_firmware_v1_2_0.fw
@@ -261,11 +288,11 @@ etc/firmware/cpp_firmware_v1_10_0.fw
 # Fingerprint
 bin/fingerprintd
 bin/fpc_early_loader
-lib/hw/fingerprint.default.so
+lib/hw/fingerprint.msm8996.so
 lib/lib_fpc_tac_shared.so
 lib/libfpfactory.so
 lib/libfpfactory_jni.so
-lib64/hw/fingerprint.default.so
+lib64/hw/fingerprint.msm8996.so
 lib64/lib_fpc_tac_shared.so
 lib64/libfpfactory.so
 lib64/libfpfactory_jni.so
@@ -291,43 +318,6 @@ etc/firmware/leia_pm4_470.fw
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
 
-# Radio
-lib/libril.so
-lib/librilutils.so
-lib/libuicc.so
-lib/libvss_common_core.so
-lib/libvss_common_idl.so
-lib/libvss_common_iface.so
-lib/libvss_dmi_qcci.so
-lib/libvss_gnss_qcci.so
-lib/libvss_ims_qcci.so
-lib/libvss_nv_core.so
-lib/libvss_nv_idl.so
-lib/libvss_nv_iface.so
-lib/libvss_resim_core.so
-lib/libvss_resim_idl.so
-lib/libvss_resim_iface.so
-lib64/libril.so
-lib64/librilutils.so
-lib64/libuicc.so
-lib64/libvss_bsp_qcci.so
-lib64/libvss_common_core.so
-lib64/libvss_common_idl.so
-lib64/libvss_common_iface.so
-lib64/libvss_dmi_qcci.so
-lib64/libvss_gnss_qcci.so
-lib64/libvss_ims_qcci.so
-lib64/libvss_nv_core.so
-lib64/libvss_nv_idl.so
-lib64/libvss_nv_iface.so
-lib64/libvss_resim_core.so
-lib64/libvss_resim_idl.so
-lib64/libvss_resim_iface.so
-
 # Sensors
 vendor/lib/libsensor_lge_cal.so
 vendor/lib64/libsensor_lge_cal.so
-
-# WBC
-lib/hw/wbc_hal.default.so
-lib64/hw/wbc_hal.default.so

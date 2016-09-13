@@ -1,7 +1,9 @@
 # ADSP
 bin/adsprpcd
+vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
 vendor/lib/libfastcvopt.so
+vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvopt.so
 
@@ -30,22 +32,15 @@ vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
-# Bluetooth
-etc/firmware/nvm_tlv.bin
-etc/firmware/nvm_tlv_1.3.bin
-etc/firmware/nvm_tlv_2.1.bin
-etc/firmware/nvm_tlv_3.0.bin
-etc/firmware/nvm_tlv_3.2.bin
-etc/firmware/rampatch_tlv.img
-etc/firmware/rampatch_tlv_1.3.tlv
-etc/firmware/rampatch_tlv_2.1.tlv
-etc/firmware/rampatch_tlv_3.0.tlv
-etc/firmware/rampatch_tlv_3.2.tlv
-
 # CNE
 bin/cnd
 etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml
+etc/cne/wqeclient/profile1.xml
+etc/cne/wqeclient/profile2.xml
+etc/cne/wqeclient/profile3.xml
+etc/cne/wqeclient/profile4.xml
+etc/cne/wqeclient/profile5.xml
 etc/permissions/ConnectivityExt.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
@@ -76,10 +71,9 @@ etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
--framework/com.qti.dpmframework.jar
--framework/dpmapi.jar
--framework/tcmclient.jar
-framework/tcmiface.jar
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
 -priv-app/dpmserviceapp/dpmserviceapp.apk
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
@@ -155,6 +149,7 @@ vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 
 # Graphics
+vendor/lib/hw/vulkan.msm8996.so
 vendor/lib/egl/eglSubDriverAndroid.so
 vendor/lib/egl/libEGL_adreno.so
 vendor/lib/egl/libGLESv1_CM_adreno.so
@@ -177,6 +172,7 @@ vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libsd_sdk_display.so
 -vendor/lib/libsdm-disp-apis.so
+vendor/lib64/hw/vulkan.msm8996.so
 vendor/lib64/egl/eglSubDriverAndroid.so
 vendor/lib64/egl/libEGL_adreno.so
 vendor/lib64/egl/libGLESv1_CM_adreno.so
@@ -247,7 +243,6 @@ vendor/lib64/libperipheral_client.so
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
--vendor/app/colorservice/colorservice.apk
 vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 
@@ -286,20 +281,23 @@ vendor/lib64/libqcmaputils.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
 vendor/lib64/libqmi.so
-vendor/lib64/libqmi_cci.so
+-vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
-vendor/lib64/libqmi_common_so.so
+-vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libqmi_wms_client_helper.so
-vendor/lib64/libqmiservices.so
+-vendor/lib64/libqmiservices.so
 vendor/lib64/libqmiservices_ext.so
 vendor/lib64/libqti-wl.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
+-app/datastatusnotification/datastatusnotification.apk
+-app/embms/embms.apk
+-app/fastdormancy/fastdormancy.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/shutdownlistener/shutdownlistener.apk
 bin/ipacm-diag
@@ -307,29 +305,30 @@ bin/netmgrd
 bin/qmuxd
 bin/radish
 bin/rmt_storage
+bin/tftp_server
+etc/permissions/embms.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
+framework/embmslibrary.jar
 -framework/qcnvitems.jar
 -framework/qcrilhook.jar
 framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
+lib64/libparam.so
+lib64/librilqmiservices.so
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
-vendor/lib/libconfigdb.so
-vendor/lib/liblqe.so
-vendor/lib/libmdmdetect.so
-vendor/lib/libnetmgr.so
-vendor/lib/libril-qc-qmi-1.so
-vendor/lib/libril-qc-radioconfig.so
-vendor/lib/libril-qcril-hook-oem.so
-vendor/lib/libsystem_health_mon.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
+vendor/lib64/libqcmaputils.so
+vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/qcril.db
 
@@ -338,6 +337,8 @@ bin/ims_rtp_daemon
 bin/imscmservice
 bin/imsdatadaemon
 bin/imsqmidaemon
+-vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imsSDP.so
@@ -357,10 +358,14 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
+vendor/lib64/libimscamera_jni.so
+vendor/lib64/libimsmedia_jni.so
+vendor/lib64/librcc.so
 vendor/lib64/libvoice-svc.so
 
 # Sensors
 bin/sensors.qcom
+lib64/hw/sensors.vr.so
 vendor/lib/hw/activity_recognition.msm8996.so
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_reg.so
@@ -391,6 +396,4 @@ vendor/lib/libTimeService.so
 vendor/lib64/libTimeService.so
 
 # Widevine
-vendor/lib/libWVStreamControlAPI_L3.so
-vendor/lib/libwvdrm_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
