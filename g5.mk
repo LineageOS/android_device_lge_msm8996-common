@@ -112,7 +112,6 @@ PRODUCT_PACKAGES += \
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     cneapiclient \
-    libcnefeatureconfig \
     com.quicinc.cne \
     services-ext
 
@@ -258,6 +257,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
+    libprotobuf-cpp-full \
     librmnetctl
 
 # Sensors
