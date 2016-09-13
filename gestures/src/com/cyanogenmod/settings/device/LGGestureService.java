@@ -30,7 +30,7 @@ import android.preference.PreferenceManager;
 import android.provider.Settings;
 import android.util.Log;
 
-import java.io.File;
+import org.cyanogenmod.internal.util.FileUtils;
 
 public class LGGestureService extends Service {
 
