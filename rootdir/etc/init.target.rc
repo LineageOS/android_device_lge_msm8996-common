@@ -34,6 +34,7 @@ on early-init
     mkdir /sns 0755 system system
     mkdir /mpt 0755 system system
     symlink /data/tombstones /tombstones
+    mount debugfs debugfs /sys/kernel/debug
     chown system root  /sys/module/msm_thermal/core_control/cpus_offlined
     chmod 666 /sys/module/msm_thermal/core_control/cpus_offlined
 
