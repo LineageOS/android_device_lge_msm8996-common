@@ -318,6 +318,39 @@ etc/firmware/leia_pm4_470.fw
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
 
+# Radio
+lib/libril.so
+lib/librilutils.so
+lib/libuicc.so
+lib/libvss_common_core.so
+lib/libvss_common_idl.so
+lib/libvss_common_iface.so
+lib/libvss_dmi_qcci.so
+lib/libvss_gnss_qcci.so
+lib/libvss_ims_qcci.so
+lib/libvss_nv_core.so
+lib/libvss_nv_idl.so
+lib/libvss_nv_iface.so
+lib/libvss_resim_core.so
+lib/libvss_resim_idl.so
+lib/libvss_resim_iface.so
+lib64/libril.so
+lib64/librilutils.so
+lib64/libuicc.so
+lib64/libvss_bsp_qcci.so
+lib64/libvss_common_core.so
+lib64/libvss_common_idl.so
+lib64/libvss_common_iface.so
+lib64/libvss_dmi_qcci.so
+lib64/libvss_gnss_qcci.so
+lib64/libvss_ims_qcci.so
+lib64/libvss_nv_core.so
+lib64/libvss_nv_idl.so
+lib64/libvss_nv_iface.so
+lib64/libvss_resim_core.so
+lib64/libvss_resim_idl.so
+lib64/libvss_resim_iface.so
+
 # Sensors
 vendor/lib/libsensor_lge_cal.so
 vendor/lib64/libsensor_lge_cal.so
