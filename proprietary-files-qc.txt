@@ -104,9 +104,6 @@ vendor/lib64/hw/gatekeeper.msm8996.so
 
 # GPS
 bin/loc_launcher
-bin/lowi-server
-bin/xtwifi-client
-bin/xtwifi-inet-agent
 etc/permissions/com.qti.location.sdk.xml
 etc/permissions/com.qualcomm.location.xml
 framework/com.qti.location.sdk.jar
