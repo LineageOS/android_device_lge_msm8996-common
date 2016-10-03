@@ -245,16 +245,8 @@ PRODUCT_PACKAGES += \
     power.msm8996 \
     thermal.msm8996
 
-# QMI
-PRODUCT_PACKAGES += \
-    dsi_config.xml \
-    netmgr_config.xml \
-    qmi_config.xml
-
 # RIL
 PRODUCT_PACKAGES += \
-    libcnefeatureconfig \
-	liblge \
     libprotobuf-cpp-full \
     librmnetctl
 
@@ -272,6 +264,8 @@ PRODUCT_COPY_FILES += \
 
 # Tools
 PRODUCT_PACKAGES += \
+    libcurl \
+    libjson \
     libxml2
 
 # USB

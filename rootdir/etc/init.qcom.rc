@@ -30,9 +30,6 @@ import init.qcom.power.rc
 import init.target.rc
 
 on init
-    # Load LGE Symbols
-    export LD_PRELOAD liblge.so
-
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
 
@@ -652,24 +649,11 @@ service dpmd /system/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
 
-service ims_rtp_daemon /system/bin/ims_rtp_daemon
-   class main
-   user system
-   socket ims_rtpd stream 0660 system radio
-   group radio net_raw diag diag inet log
-   disabled
-
-on property:sys.ims.DATA_DAEMON_STATUS=1
-    start ims_rtp_daemon
-
-service imscmservice /system/bin/imscmservice
+service imsqmidaemon /system/bin/imsqmidaemon
     class main
     user system
-    group radio net_raw diag diag log
-    disabled
-
-on property:sys.ims.DATA_DAEMON_STATUS=1
-    start imscmservice
+    socket ims_qmid stream 0660 system radio
+    group radio net_raw log diag
 
 service imsdatadaemon /system/bin/imsdatadaemon
     class main
@@ -681,11 +665,22 @@ service imsdatadaemon /system/bin/imsdatadaemon
 on property:sys.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
-service imsqmidaemon /system/bin/imsqmidaemon
+service ims_rtp_daemon /system/bin/ims_rtp_daemon
     class main
     user system
-    socket ims_qmid stream 0660 system radio
-    group radio net_raw log diag
+    socket ims_rtpd stream 0660 system radio
+    group radio net_raw diag inet log
+    disabled
+
+service imscmservice /system/bin/imscmservice
+    class main
+    user system
+    group radio net_raw diag diag log
+    disabled
+
+on property:sys.ims.DATA_DAEMON_STATUS=1
+    start ims_rtp_daemon
+    start imscmservice
 
 service irsc_util /system/bin/irsc_util "/etc/sec_config"
     class core

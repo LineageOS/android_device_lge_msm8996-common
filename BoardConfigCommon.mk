@@ -69,6 +69,10 @@ BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
 BOARD_USES_CYANOGEN_HARDWARE := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
 
+# CNE and DPM
+TARGET_LDPRELOAD := libNimsWrap.so
+BOARD_USES_QCNE := true
+
 # Display
 BOARD_USES_ADRENO := true
 TARGET_CONTINUOUS_SPLASH_ENABLED := true
@@ -126,7 +130,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
-#BOARD_RIL_CLASS := ../../../$(COMMON_PATH)/ril/
+TARGET_RIL_VARIANT := caf
 
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
