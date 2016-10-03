@@ -258,6 +258,7 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     libcnefeatureconfig \
+	liblge \
     libprotobuf-cpp-full \
     librmnetctl
 
