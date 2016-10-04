@@ -222,7 +222,7 @@ int IPACM_Config::Init(void)
 		/* copy bridge interface name to ipacmcfg */
 		if( iface_table[i].if_cat == VIRTUAL_IF)
 		{
-			memcpy(ipa_virtual_iface_name, iface_table[i].iface_name, sizeof(ipa_virtual_iface_name));
+			strlcpy(ipa_virtual_iface_name, iface_table[i].iface_name, sizeof(ipa_virtual_iface_name));
 			IPACMDBG_H("ipa_virtual_iface_name(%s) \n", ipa_virtual_iface_name);
 		}
 	}
@@ -286,10 +286,6 @@ int IPACM_Config::Init(void)
 	IPACMDBG_H("ipacm_odu_enable %d\n", ipacm_odu_enable);
 	IPACMDBG_H("ipacm_odu_mode %d\n", ipacm_odu_router_mode);
 	IPACMDBG_H("ipacm_odu_embms_enable %d\n", ipacm_odu_embms_enable);
-
-	ipacm_ip_passthrough_mode = cfg->ip_passthrough_mode;
-	IPACMDBG_H("ipacm_ip_passthrough_mode %d. \n", ipacm_ip_passthrough_mode);
-
 	ipa_num_wlan_guest_ap = cfg->num_wlan_guest_ap;
 	IPACMDBG_H("ipa_num_wlan_guest_ap %d\n",ipa_num_wlan_guest_ap);
 
