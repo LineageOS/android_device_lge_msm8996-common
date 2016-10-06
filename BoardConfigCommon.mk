@@ -140,6 +140,12 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 # Sensors
 USE_SENSOR_MULTI_HAL := true
 
+ifneq ($(HOST_OS),darwin)
+  SDCLANG := true
+  SDCLANG_PATH := prebuilts/clang/linux-x86/host/sdclang-3.8/bin
+  SDCLANG_LTO_DEFS := device/qcom/common/sdllvm-lto-defs.mk
+endif
+
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
 BOARD_WLAN_DEVICE           := bcmdhd
