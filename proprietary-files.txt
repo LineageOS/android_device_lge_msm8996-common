@@ -129,7 +129,6 @@ vendor/lib64/libmmcamera2_stats_algorithm.so
 vendor/lib64/libmmcamera_dbg.so
 vendor/lib64/libmmcamera_tintless_algo.so
 vendor/lib64/libmmcamera_tintless_bg_pca_algo.so
-vendor/lib64/libscalar.so
 
 # Camera actuators
 vendor/lib/libactuator_ad5816g.so
