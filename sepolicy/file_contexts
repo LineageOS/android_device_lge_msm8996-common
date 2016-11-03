@@ -16,7 +16,7 @@
 /dev/ttyHSL1                u:object_r:cir_device:s0
 
 # NFC
-/dev/pn548                  u:object_r:nfc_device:s0
+/dev/pn547                  u:object_r:nfc_device:s0
 
 # Persist
 /persist-lg(/.*)?          u:object_r:persist_drm_file:s0
