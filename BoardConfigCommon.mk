@@ -125,7 +125,8 @@ SF_VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 #TARGET_USES_HWC2 := true
 
 # Encryption
-TARGET_HW_DISK_ENCRYPTION := true
+# TODO: figure out if this is needed with per-file encryption
+#TARGET_HW_DISK_ENCRYPTION := true
 
 # GPS
 BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := msm8996
