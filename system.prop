@@ -54,6 +54,9 @@ persist.data.mode=concurrent
 ro.qualcomm.cabl=0
 ro.sf.lcd_density=640
 
+# Factory Reset Protection (FRP)
+ro.frp.pst=/dev/block/bootdevice/by-name/persistent
+
 # Fluence
 ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.fluence.voicecall=true
