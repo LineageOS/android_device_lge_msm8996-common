@@ -1,24 +1,31 @@
 # Baseband
-/system/etc/set_baseband.sh                         u:object_r:set_baseband_exec:s0
+/system/etc/set_baseband.sh                                         u:object_r:set_baseband_exec:s0
 
 # Bluetooth
-/system/bin/hwaddrs         u:object_r:hwaddrs_exec:s0
-/data/misc/bdaddr           u:object_r:bluetooth_data_file:s0
+/system/bin/hwaddrs                                                 u:object_r:hwaddrs_exec:s0
+/data/misc/bdaddr                                                   u:object_r:bluetooth_data_file:s0
+/sys/devices/bt_bcm4358/rfkill/rfkill0/state                        u:object_r:sysfs_bluetooth_writable:s0
 
 # Fingerprint
-/system/bin/fpc_early_loader     u:object_r:fingerprintd_exec:s0
+/system/bin/fpc_early_loader                                        u:object_r:fingerprintd_exec:s0
 /sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
 
+# FRP partition
+/dev/block/bootdevice/by-name/persistent                            u:object_r:frp_block_device:s0
+
+# Gestures
+/sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
+
 # IR Blaster
-/dev/ttyHSL1                u:object_r:cir_device:s0
+/dev/ttyHSL1                                                        u:object_r:cir_device:s0
 
 # NFC
-/dev/pn548                  u:object_r:nfc_device:s0
+/dev/pn54[478]                                                      u:object_r:nfc_device:s0
 
 # Persist
-/persist-lg(/.*)?          u:object_r:persist_drm_file:s0
+/persist-lg(/.*)?                                                   u:object_r:persist_drm_file:s0
 
 # Sensors
-/sns                        u:object_r:sensors_data_file:s0
-/sns/cal(/.*)?              u:object_r:sensors_data_file:s0
-/persist-lg/sensors(/.*)?   u:object_r:sensors_persist_file:s0
+/sns                                                                u:object_r:sensors_data_file:s0
+/sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
+/persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0

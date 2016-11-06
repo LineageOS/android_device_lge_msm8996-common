@@ -1,0 +1,2 @@
+allow init sensors_data_file:dir mounton;
+allow init persist_drm_file:dir mounton;
