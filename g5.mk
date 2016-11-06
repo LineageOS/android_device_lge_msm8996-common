@@ -276,6 +276,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Virtual Reality
+PRODUCT_PACKAGES += \
+    vr.msm8996
+
 # Wifi
 PRODUCT_PACKAGES += \
     libwpa_client \
