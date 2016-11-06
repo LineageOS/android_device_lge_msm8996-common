@@ -52,6 +52,11 @@ on early-boot
     write /sys/block/sde/queue/read_ahead_kb 2048
     write /sys/class/i2c-dev/i2c-6/device/6-0072/enable_irq 1
 
+    # Allow subsystem (modem etc) debugging
+    write /sys/module/subsystem_restart/parameters/enable_debug ${persist.sys.ssr.enable_debug}
+    write /sys/module/pil_msa/parameters/pbl_mba_boot_timeout_ms ${persist.sys.mba_boot_timeout}
+    write /sys/module/pil_msa/parameters/modem_auth_timeout_ms ${persist.sys.modem_auth_timeout}
+    write /sys/module/peripheral_loader/parameters/proxy_timeout_ms ${persist.sys.pil_proxy_timeout}
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
 
@@ -561,12 +566,6 @@ on post-fs-data
    chown system system /sys/class/leds/lcd-backlight/thermald_status
    chmod 0644 /sys/class/leds/lcd-backlight/thermald_status
 
-service iop /system/bin/iop
-    class main
-    user root
-    group root
-    disabled
-
 service ssr_setup /system/bin/ssr_setup
     oneshot
     disabled
@@ -772,6 +771,7 @@ service qmuxd /system/bin/qmuxd
 
 service netmgrd /system/bin/netmgrd
     class main
+    group radio system wakelock
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
@@ -922,26 +922,9 @@ service battery_monitor /system/bin/battery_monitor
 service ril-daemon /system/bin/rild
     class main
     socket rild stream 660 root radio
-    socket sap_uim_socket1 stream 660 bluetooth bluetooth
     socket rild-debug stream 660 radio system
     user root
     group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log net_raw wakelock
-
-service ril-daemon2 /system/bin/rild -c 2
-    class main
-    socket rild2 stream 660 root radio
-    socket rild-debug2 stream 660 radio system
-    user root
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log net_raw
-
-service ril-daemon3 /system/bin/rild -c 3
-    class late_start
-    socket rild3 stream 660 root radio
-    socket rild-debug3 stream 660 radio system
-    user root
-    disabled
-    group radio cache inet misc audio sdcard_r sdcard_rw qcom_diag diag log net_raw
 
 service ssr_diag /system/bin/ssr_diag
     class late_start

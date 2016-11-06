@@ -164,7 +164,6 @@ service audiod /system/bin/audiod
     user system
     group system
 
-
 service pd_mapper /system/vendor/bin/pd-mapper
     class core
     disabled
