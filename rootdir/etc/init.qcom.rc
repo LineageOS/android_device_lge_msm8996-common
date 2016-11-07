@@ -40,7 +40,7 @@ on init
     write /proc/sys/vm/max_map_count 1000000
 
     # NXP HAL expects /dev/nq-nci
-    symlink /dev/pn544 /dev/nq-nci
+    symlink /dev/pn547 /dev/nq-nci
 
     # Load LGE Symbols
     export LD_SHIM_LIBS /system/lib64/libril.so|liblge.so
