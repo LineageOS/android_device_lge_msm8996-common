@@ -399,6 +399,13 @@ etc/firmware/leia_pm4_470.fw
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
 
+# Radio
+bin/rild
+lib64/libril.so
+lib64/librilutils.so
+lib64/libuicc.so
+vendor/lib64/libril-qc-qmi-1.so
+
 # Radio - VSS
 lib64/libvss_bsp_qcci.so
 lib64/libvss_common_core.so
