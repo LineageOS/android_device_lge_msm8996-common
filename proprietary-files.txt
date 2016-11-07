@@ -399,6 +399,21 @@ etc/firmware/leia_pm4_470.fw
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
 
+# Radio - VSS
+lib64/libvss_bsp_qcci.so
+lib64/libvss_common_core.so
+lib64/libvss_common_idl.so
+lib64/libvss_common_iface.so
+lib64/libvss_dmi_qcci.so
+lib64/libvss_gnss_qcci.so
+lib64/libvss_ims_qcci.so
+lib64/libvss_nv_core.so
+lib64/libvss_nv_idl.so
+lib64/libvss_nv_iface.so
+lib64/libvss_resim_core.so
+lib64/libvss_resim_idl.so
+lib64/libvss_resim_iface.so
+
 # Radio firmware
 vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn
 vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45/ss/mcfg_hw.mbn
