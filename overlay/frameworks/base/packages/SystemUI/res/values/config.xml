@@ -21,9 +21,6 @@
      for different hardware and product builds. -->
 <resources>
 
-    <!-- Vibration duration for MultiWaveView used in SearchPanelView -->
-    <integer translatable="false" name="config_search_panel_view_vibration_duration">10</integer>
-
     <!-- Control whether status bar should distinguish HSPA data icon from UMTS
         data icon on devices -->
     <bool name="config_hspa_data_distinguishable">true</bool>
@@ -50,4 +47,3 @@
     <integer name="doze_pulse_delay_in_intent">0</integer>
 
 </resources>
-
