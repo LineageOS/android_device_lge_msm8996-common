@@ -109,7 +109,7 @@ service qvop-daemon /system/bin/qvop-daemon
 service per_mgr system/bin/pm-service
     class core
     user system
-    group system
+    group system net_raw
     ioprio rt 4
 
 service per_proxy /system/bin/pm-proxy
@@ -178,7 +178,7 @@ on property:persist.sys.pd_enable=0
 service tlocd /system/bin/tloc_daemon
     class late_start
     user system
-    group drmrpc gps
+    group drmrpc gps net_raw
 
 service energy-awareness /system/bin/energy-awareness
     class main
