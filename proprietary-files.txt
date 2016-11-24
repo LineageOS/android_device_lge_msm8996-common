@@ -400,35 +400,35 @@ etc/firmware/leia_pm4_470.fw
 vendor/firmware/libpn548ad_fw.so
 
 # Radio
-bin/ipacm-diag
-bin/netmgrd
-bin/radish
-bin/rild
-bin/rmt_storage
-bin/tftp_server
+bin/ipacm-diag|1ccdc0a7b55f804384f0ea3f40b793a431382afc
+bin/netmgrd|76f481b4f4fd6fea29263117a170da67a0a67f98
+bin/radish|3f7dfda704db5c8f36249147c0266f04a548fc08
+bin/rild|565e6e37b2d69acf0950a4380ee6bb6702939bd3
+bin/rmt_storage|0b8079e76fcb099bbe19bde32440aacf29909db4
+bin/tftp_server|6f113bd600ec8a2f6b991d105522a97a117a012a
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
 etc/permissions/qcrilhook.xml
--framework/qcrilhook.jar
-framework/qti-telephony-common.jar
-framework/QtiTelephonyServicelibrary.jar
-lib64/libril.so
-lib64/librilqmiservices.so
-lib64/librilutils.so
-lib64/libuicc.so
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/qti
-vendor/lib64/libconfigdb.so
-vendor/lib64/liblqe.so
-vendor/lib64/libmdmdetect.so
-vendor/lib64/libnetmgr.so
-vendor/lib64/libqcmaputils.so
-vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so
-vendor/lib64/libril-qc-radioconfig.so
-vendor/lib64/libril-qcril-hook-oem.so
-vendor/lib64/libsettings.so
-vendor/lib64/libsystem_health_mon.so
+-framework/qcrilhook.jar|52a0e673bb287e7b29c660bebb6c1c2dbb985213
+framework/qti-telephony-common.jar|eabfa165b2c4d1d6c7baae424bf13a0e8575e8f6
+framework/QtiTelephonyServicelibrary.jar|0fb2c6ab8f1336e08ee54c889eccd1f81542fd76
+lib64/libril.so|b1f09d89d010eccc8a9af25b1c3ec05ff824e79b
+lib64/librilqmiservices.so|180927c53b02c283fd7f04533e7acc9d3e908e14
+lib64/librilutils.so|1d6bb15911a7d81dd5f493c1dd3e81a57780fc10
+lib64/libuicc.so|814ab5630f302cd8b8ed86b7010dd32ff497d175
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|42de8ddd1ab482b1ddd0bae5ae16d905b4773211
+vendor/bin/qti|fe13705cf466226bcde0ed8ddd51bfe5550bf124
+vendor/lib64/libconfigdb.so|e9b88cc8ce26f128e6890f374791e130b4361fba
+vendor/lib64/liblqe.so|df1a6096ff4a636db716bbf039448914ab69e3c4
+vendor/lib64/libmdmdetect.so|f8ae6590ec59708308fe4172fb1bced46327c171
+vendor/lib64/libnetmgr.so|d1b5f38acf4c02a82a552e6dacdb418d42c30091
+vendor/lib64/libqcmaputils.so|c98b47456d05ce24fc61cbe9277b77d8c9930875
+vendor/lib64/libril-qc-ltedirectdisc.so|c8b3539a7738e93bd3642fe1ce0e82afbe552c80
+vendor/lib64/libril-qc-qmi-1.so|f153f7c522e2ad97b0f1ba2bfc9a7ca41dd254b8
+vendor/lib64/libril-qc-radioconfig.so|b641970d56c9ec5ff80596ce60df2e0b375e75ee
+vendor/lib64/libril-qcril-hook-oem.so|4bcee44ed53503f7082d4e64ac11193d24896f1f
+vendor/lib64/libsettings.so|2c51bb26615718b4ba930fb7c0fb8bae418953e4
+vendor/lib64/libsystem_health_mon.so|857a1eb2a0c56f68e16790ae5041b7aa85fb6ac9
 vendor/qcril.db
 
 # Radio - VSS
@@ -447,21 +447,21 @@ lib64/libvss_resim_idl.so
 lib64/libvss_resim_iface.so
 
 # Radio firmware
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45/ss/mcfg_hw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45_/ss/mcfg_hw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8996/la/ss/mcfg_hw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8996/wp8/ss/mcfg_hw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/default/default/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/row/gen_3gpp/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/us_cellu/commerci/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/non_volt/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/volte/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/claro/commerci/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/sprint/commerci/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/tmo/commerci/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/cdmaless/mcfg_sw.mbn
-vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn|58df6d1657b77154cc3504220727d936df4a35dc
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45/ss/mcfg_hw.mbn|75ee9f6b2f499f1b868df1f0051377f12b3ff8ad
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45_/ss/mcfg_hw.mbn|4d1f168eb68d9fbad42a1b6d812142c3c1733e2a
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8996/la/ss/mcfg_hw.mbn|95c1e2c52f9d0246a39b48bc6c04d766672bc8db
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8996/wp8/ss/mcfg_hw.mbn|a200ac73b2dcc60e9f6ae9155b6109d006823634
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/default/default/mcfg_sw.mbn|885ff1f916f12fa18dfb10661ca8ad920e2f20b0
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/row/gen_3gpp/mcfg_sw.mbn|136f132599e3308bcf9f761ca0cd2ed760ccaa6c
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/us_cellu/commerci/mcfg_sw.mbn|b05bd8ea0f25faa1905462262f7eac6b3f1c2063
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/non_volt/mcfg_sw.mbn|a49cdd970c546e8de668106e70348bc855a45bf7
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/volte/mcfg_sw.mbn|ab327392c808d1029a280c729eb95d866894de86
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/claro/commerci/mcfg_sw.mbn|4db9fe0e3a91672ed5de64478469b3ae746b97ff
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/sprint/commerci/mcfg_sw.mbn|83918ca8336f528d1d2fb3a1401fe48c142a6532
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/tmo/commerci/mcfg_sw.mbn|286f0878287717c1eaf7550139810c289fcc1a51
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/cdmaless/mcfg_sw.mbn|2b5341e1444991267317218e02b81fe5580bdea6
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn|9253d2970e4dc6456b538a0be729b4487da2c6f6
 
 # Sensors
 vendor/lib/libsensor_lge_cal.so

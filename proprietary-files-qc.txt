@@ -33,7 +33,7 @@ vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
 # CNE
-bin/cnd
+bin/cnd|1b62a7788a8ec9f3e96ac2a3c19a3e96a14b02c9
 etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml
 etc/permissions/ConnectivityExt.xml
@@ -42,7 +42,7 @@ etc/permissions/com.quicinc.cne.xml
 framework/ConnectivityExt.jar
 framework/cneapiclient.jar
 framework/com.quicinc.cne.jar
--priv-app/CNEService/CNEService.apk
+-priv-app/CNEService/CNEService.apk|54901075328dffe226324992189db32f1afd9147
 vendor/lib/libcne.so
 vendor/lib/libcneapiclient.so
 vendor/lib/libcneqmiutils.so
@@ -57,7 +57,7 @@ vendor/lib64/libwqe.so
 vendor/lib64/libxml.so
 
 # DPM
-bin/dpmd
+bin/dpmd|47b0dfe22e4731fae961ad021be2ad83196665f2
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/permissions/com.qti.dpmframework.xml
@@ -65,7 +65,7 @@ etc/permissions/dpmapi.xml
 framework/com.qti.dpmframework.jar
 framework/dpmapi.jar
 framework/tcmclient.jar
--priv-app/dpmserviceapp/dpmserviceapp.apk
+-priv-app/dpmserviceapp/dpmserviceapp.apk|27f91229cdbcec87edaf23c6b821c64a108dad83
 vendor/lib/libdpmctmgr.so
 vendor/lib/libdpmfdmgr.so
 vendor/lib/libdpmframework.so
@@ -107,36 +107,36 @@ vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
 
 # GPS
-bin/loc_launcher
-etc/permissions/com.qti.location.sdk.xml
-etc/permissions/com.qualcomm.location.xml
-framework/com.qti.location.sdk.jar
--lib64/libloc_api_v02.so
-lib64/libloc_ds_api.so
--priv-app/com.qualcomm.location/com.qualcomm.location.apk
-vendor/bin/slim_daemon
-vendor/lib64/hw/flp.default.so
-vendor/lib64/libalarmservice_jni.so
-vendor/lib64/libasn1cper.so
-vendor/lib64/libasn1crt.so
-vendor/lib64/libasn1crtx.so
-vendor/lib64/libdataitems.so
-vendor/lib64/libflp.so
-vendor/lib64/libgdtap.so
-vendor/lib64/libgeofence.so
-vendor/lib64/libizat_core.so
-vendor/lib64/liblbs_core.so
-vendor/lib64/libloc_ext.so
-vendor/lib64/liblocationservice.so
-vendor/lib64/liblocationservice_glue.so
-vendor/lib64/liblowi_client.so
-vendor/lib64/liblowi_wifihal.so
-vendor/lib64/liblowi_wifihal_nl.so
-vendor/lib64/libquipc_os_api.so
-vendor/lib64/libulp2.so
-vendor/lib64/libxt_native.so
-vendor/lib64/libxtadapter.so
-vendor/lib64/libxtwifi_ulp_adaptor.so
+bin/loc_launcher|8143a830f4296a908554ab7e3454d7a0457d94c6
+etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
+etc/permissions/com.qualcomm.location.xml|878999ca1861e71cdbda75378164d6113296a428
+framework/com.qti.location.sdk.jar|61a6756bfd926759056037e72d4af1d4e1cdb1ec
+-lib64/libloc_api_v02.so|be9aa5e1758b6f24839e36cd62d86d38262b7ee0
+lib64/libloc_ds_api.so|50fbbc0a72dc926f6a67d9e89410d8f2a384f95d
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk|b6dee565e54915764d3ce31561d26d0b1bff9b61
+vendor/bin/slim_daemon|3fa6e6229bd14871bbf2151840b1aad0a9e1f590
+vendor/lib64/hw/flp.default.so|c316430273d9ed5506198f896654cdb0e27e66e5
+vendor/lib64/libalarmservice_jni.so|2e9fddcc77584903eefe1cd80220285a4c782f5c
+vendor/lib64/libasn1cper.so|9ad8311ae2fa9c93e137b4784b2081752688d91f
+vendor/lib64/libasn1crt.so|987020bd9279c34c463e149b133c75dcc64d0245
+vendor/lib64/libasn1crtx.so|dd0765f26729129ce61a56b3d0214a79ba9aca16
+vendor/lib64/libdataitems.so|02285e62c7d74c58a470d5717a4f7f84ea1236d9
+vendor/lib64/libflp.so|ef0541177147c9d34809b1fca9df07a07d0a77f6
+vendor/lib64/libgdtap.so|a7a3cd90d4ec9dd8e24b0d0e6b9237c7f2f8ade2
+vendor/lib64/libgeofence.so|79f0552befa18b88a018939da28df362b7694d22
+vendor/lib64/libizat_core.so|0b19814b823bd6192c77f0f03ac75d33944423e8
+vendor/lib64/liblbs_core.so|1c91ccba24c46ddd9e86fa075178af44412a1e85
+vendor/lib64/libloc_ext.so|6b55bce0c02b94e081247ba7af331e15f4f0b188
+vendor/lib64/liblocationservice.so|0cc81c162945ce0694c8d841dc206ad2d41d281c
+vendor/lib64/liblocationservice_glue.so|0e5340fda2e31e19242285f3fa0a2b87462eb6c1
+vendor/lib64/liblowi_client.so|65b0f6d13ed8c27e452e8cf29fb92d559f95d95b
+vendor/lib64/liblowi_wifihal.so|55f6b843edf41d85d383ccb0149021d19f9f4160
+vendor/lib64/liblowi_wifihal_nl.so|dc1f6580f8d2737341185cd84b857c44fe094411
+vendor/lib64/libquipc_os_api.so|8b612f61fc551648700d8d2decf28e5533e98724
+vendor/lib64/libulp2.so|a1fff1bad790b6e30f15fc8a02ccb398f4f9a998
+vendor/lib64/libxt_native.so|d5ff891c5e8a24d42e38eb76d51f58e0bdb1d873
+vendor/lib64/libxtadapter.so|3f763934a8a33e2f3c3e3d8f579a694306c21add
+vendor/lib64/libxtwifi_ulp_adaptor.so|6f69ec62b83201373b2ba4df4f68226ff9351d86
 
 # Keystore
 vendor/lib/hw/keystore.msm8996.so
@@ -227,12 +227,12 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio - IMS
-bin/ims_rtp_daemon
-bin/imscmservice
-bin/imsdatadaemon
-bin/imsqmidaemon
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
+bin/ims_rtp_daemon|d711751d84a1946046682f76994994779373b96d
+bin/imscmservice|9df8a5d3626fe8a60f2409dc729f76eacb968673
+bin/imsdatadaemon|6401f7d73b52fea7d46a21d5ac8e2dbbdd461dad
+bin/imsqmidaemon|e04f7b66d9f1b59ca1a9cb49d76f857a75d8b909
+-vendor/app/ims/ims.apk|19a9cb5997603e7da2ca724b547371dabe37aba8
+-vendor/app/imssettings/imssettings.apk|7fd33539960356169d1c29f668751854c1e41b51
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imsSDP.so
@@ -252,8 +252,8 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/libimscamera_jni.so
-vendor/lib64/libimsmedia_jni.so
+vendor/lib64/libimscamera_jni.so|4e756a51d6e159c9b1989cdd717d59b4843ac815
+vendor/lib64/libimsmedia_jni.so|0322d46b38c92964525b6b3d45822a971330b10f
 vendor/lib64/librcc.so
 vendor/lib64/libvoice-svc.so
 
