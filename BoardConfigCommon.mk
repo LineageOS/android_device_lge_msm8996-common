@@ -174,6 +174,7 @@ BOARD_USES_QC_TIME_SERVICES := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 
 # RIL
+BOARD_RIL_CLASS := ../../../device/lge/g5-common/ril/
 TARGET_RIL_VARIANT := caf
 
 # SELinux policies

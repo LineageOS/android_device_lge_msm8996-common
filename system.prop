@@ -52,7 +52,7 @@ persist.env.fastdorm.enabled=false
 
 # Data modules
 ro.use_data_netmgrd=true
-persist.data.netmgrd.qos.enable=false
+persist.data.netmgrd.qos.enable=true
 persist.data.mode=concurrent
 
 # Display
@@ -126,17 +126,8 @@ persist.radio.ignore_dom_time=5
 persist.radio.hw_mbn_update=0
 persist.radio.sw_mbn_update=0
 persist.radio.start_ota_daemon=1
-
-# RmNet Data
-persist.rmnet.data.enable=true
-persist.data.wda.enable=true
-persist.data.df.dl_mode=5
-persist.data.df.ul_mode=5
-persist.data.df.agg.dl_pkt=10
-persist.data.df.agg.dl_size=4096
-persist.data.df.mux_count=8
-persist.data.df.iwlan_mux=9
-persist.data.df.dev_name=rmnet_usb0
+ro.ril.telephony.mqanelements=5
+ro.telephony.ril_class=LgeLteRIL
 
 # Sensors
 persist.debug.sensors.hal=e
