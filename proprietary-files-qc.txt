@@ -275,7 +275,7 @@ vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal
-vendor/bin/thermal-engine
+vendor/bin/thermal-engine|e1c914d4f5a8ee7085b6d347d12ba57067950fce
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
