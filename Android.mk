@@ -50,6 +50,21 @@ $(DXHDCP2_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(DXHDCP2_SYMLINKS)
 # END DXHDCP2 Images
 
+# HASHSTORE Images
+HASHSTORE_IMAGES := \
+    hashstor.b00 hashstor.b01 hashstor.b02 hashstor.b03 hashstor.b04 \
+    hashstor.b05 hashstor.b06 hashstor.mdt
+
+HASHSTORE_SYMLINKS := $(addprefix $(TARGET_OUT_ETC)/firmware/,$(notdir $(HASHSTORE_IMAGES)))
+$(HASHSTORE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
+	@echo "HASHSTORE firmware link: $@"
+	@mkdir -p $(dir $@)
+	@rm -rf $@
+	$(hide) ln -sf /firmware/image/$(notdir $@) $@
+
+ALL_DEFAULT_INSTALLED_MODULES += $(HASHSTORE_SYMLINKS)
+# END HASHSTORE Images
+
 # SECUREKS Images
 SECUREKS_IMAGES := \
     secureks.b00 secureks.b01 secureks.b02 secureks.b03 secureks.b04 \
