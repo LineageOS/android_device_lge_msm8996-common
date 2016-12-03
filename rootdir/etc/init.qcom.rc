@@ -601,12 +601,10 @@ service cnd /system/bin/cnd
     class main
     socket cnd stream 660 root inet
     group root wakelock
-    writepid /dev/cpuset/system-background/tasks
 
 service dpmd /system/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
-    writepid /dev/cpuset/system-background/tasks
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
@@ -650,18 +648,15 @@ service rmt_storage /system/bin/rmt_storage
     class core
     user root
     group system wakelock
-    writepid /dev/cpuset/system-background/tasks
 
 service rfs_access /system/bin/rfs_access
    class core
    user root
    group system net_raw
-   writepid /dev/cpuset/system-background/tasks
 
 service tftp_server /system/bin/tftp_server
     class main
     user root
-    writepid /dev/cpuset/system-background/tasks
 
 service ftmd /system/bin/ftmdaemon
     class late_start
@@ -687,12 +682,10 @@ service qmuxd /system/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps nfc qcom_diag wakelock
-    writepid /dev/cpuset/system-background/tasks
 
 service netmgrd /system/bin/netmgrd
     class main
     group radio system wakelock
-    writepid /dev/cpuset/system-background/tasks
 
 service ipacm-diag /system/bin/ipacm-diag
     class main
@@ -704,13 +697,11 @@ service ipacm /system/bin/ipacm
     class main
     user net_admin
     group net_admin inet
-    writepid /dev/cpuset/system-background/tasks
 
 service qti /system/vendor/bin/qti
     class main
     user radio
     group radio net_raw qcom_diag usb net_admin
-    writepid /dev/cpuset/system-background/tasks
 
 service qcom-sh /system/bin/sh /init.qcom.sh
     class late_start
@@ -727,7 +718,6 @@ service sensors /system/bin/sensors.qcom
     user root
     group root
     disabled
-    writepid /dev/cpuset/system-background/tasks
 
 service set_baseband /system/bin/sh /system/etc/set_baseband.sh
     class late_start
@@ -798,7 +788,6 @@ service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet net_raw qcom_diag net_admin wifi
-    writepid /dev/cpuset/system-background/tasks
 
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
@@ -884,7 +873,6 @@ service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
-    writepid /dev/cpuset/system-background/tasks
 
 # oneshot service that loads fpc tz app in early phase.
 service fpc_early_loader /system/bin/fpc_early_loader
