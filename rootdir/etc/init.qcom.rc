@@ -90,6 +90,9 @@ on boot
     # Enable sched boost
     write /proc/sys/kernel/sched_boost 1
 
+    # Wifi firmware reload path
+    chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
+
     start rmt_storage
     start rfs_access
     # access permission for secure touch
