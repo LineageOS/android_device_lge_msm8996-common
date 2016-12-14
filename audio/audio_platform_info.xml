@@ -28,6 +28,7 @@
     <acdb_ids>
         <device name="SND_DEVICE_OUT_SPEAKER" acdb_id="14"/>
         <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED" acdb_id="101"/>
+        <device name="SND_DEVICE_OUT_SPEAKER_PROTECTED_VBAT" acdb_id="101"/>
     </acdb_ids>
     <bit_width_configs>
         <device name="SND_DEVICE_OUT_SPEAKER" bit_width="24"/>
@@ -48,22 +49,8 @@
         <device name="SND_DEVICE_OUT_SPEAKER_AND_LINE" backend="speaker-and-headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_HEADPHONES" backend="headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_LINE" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_VOIP_HEADPHONES" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_VOIP_HEADPHONES_ADVANCED" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_VOIP_HEADPHONES_AUX" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_LOOPBACK_HEADPHONES" backend="headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_LINE" backend="headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" backend="headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_ADVANCED_44_1" backend="headphones-44.1"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_AUX_44_1" backend="headphones-44.1"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_ADVANCED" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONES_AUX" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_VOICE_HEADPHONES_ADVANCED" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_VOICE_HEADPHONES_AUX" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONE_24BIT" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONE_24BIT_ADVANCED" backend="headphones"/>
-        <device name="SND_DEVICE_LGE_OUT_HEADPHONE_24BIT_AUX" backend="headphones"/>
     </backend_names>
 </audio_platform_info>
-
