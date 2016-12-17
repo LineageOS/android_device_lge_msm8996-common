@@ -118,6 +118,11 @@ persist.rild.nitz_short_ons_2=
 persist.rild.nitz_short_ons_3=
 ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
+<<<<<<< HEAD
+=======
+persist.radio.multisim.config=dsds
+persist.volte_enabled_by_hw=1
+>>>>>>> 393c9e7... op3: Fix enabled typo
 persist.radio.data_ltd_sys_ind=1
 ro.telephony.call_ring.multiple=false
 persist.radio.apm_sim_not_pwdn=1
