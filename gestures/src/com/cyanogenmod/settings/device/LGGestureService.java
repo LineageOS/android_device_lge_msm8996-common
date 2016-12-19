@@ -81,9 +81,9 @@ public class LGGestureService extends Service {
     private boolean writeLPWG(boolean state) {
         if (DEBUG) Log.d(TAG, "Writing to lpwg_notify");
         if (isDoubleTapEnabled()) {
-            return FileUtils.writeLine(LPWG_NOTIFY_SYSFS, (state ? "9 1 1 0 0" : "9 1 0 0 0"));
+            return FileUtils.writeLine(LPWG_NOTIFY_SYSFS, (state ? "9 1 1 1 0" : "9 1 0 1 0"));
         } else {
-            return FileUtils.writeLine(LPWG_NOTIFY_SYSFS, (state ? "9 0 1 0 0" : "9 0 0 0 0"));
+            return FileUtils.writeLine(LPWG_NOTIFY_SYSFS, (state ? "9 0 1 1 0" : "9 0 0 1 0"));
         }
     }
 
