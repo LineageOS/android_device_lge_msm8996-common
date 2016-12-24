@@ -28,16 +28,15 @@ audio.offload.multiple.enabled=true
 audio.offload.min.duration.secs=30
 af.fast_track_multiplier=1
 audio_hal.period_size=160
-qcom.hw.aac.encoder=true
+#qcom.hw.aac.encoder=true
 
 # Bluetooth
 ro.bt.bdaddr_path="/data/misc/bdaddr"
 
 # Camera
-camera2.portability.force_api=2
-persist.camera.global.debug=1
-persist.camera.sensor.debug=1
 ro.camera.notify_nfc=1
+vidc.debug.perf.mode=2
+vidc.enc.dcvs.extra-buff-count=2
 # Enable camera EIS
 # eis.enable: enables electronic image stabilization
 # is_type: sets image stabilization type
