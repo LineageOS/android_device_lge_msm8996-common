@@ -39,10 +39,10 @@ etc/cne/andsfCne.xml
 etc/permissions/ConnectivityExt.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
-framework/ConnectivityExt.jar|2064f0a4418e7a03c60f36aabfdc8bc93e397fa0
+framework/ConnectivityExt.jar|67025d09bbc7bb87bca1d15ab9c133eeb1ef2b9d
 framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
-framework/com.quicinc.cne.jar|71ff108a853e029b5a2df07e144ccf9b13aab650
--priv-app/CNEService/CNEService.apk|54901075328dffe226324992189db32f1afd9147
+framework/com.quicinc.cne.jar|2f3384f53dc7ae8290a04b75f729a58c0e47fd3f
+-priv-app/CNEService/CNEService.apk|f52229e91fc14991c7713602943fe8c7f31944d8
 vendor/lib/libcne.so|5623d34ab4a0277f3b4b9a2116ef34c9396d4e66
 vendor/lib/libcneapiclient.so|144c6b9a586b4d76301069f7af92c8bb4252ca4a
 vendor/lib/libcneqmiutils.so|e034af1900682a8f057b53c284e44ce7c70c6ac3
@@ -226,6 +226,43 @@ vendor/lib64/libqti-wl.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
+# Radio
+-app/datastatusnotification/datastatusnotification.apk|23678d9247705ce286ffee023aca19202d3c7cf4
+-app/embms/embms.apk|ce20e012daf54a0f78b1c7f04a100282cd5ca29b
+-app/fastdormancy/fastdormancy.apk|f669b06814573cc7b69911142ae2b86baa7f7088
+-app/QtiTelephonyService/QtiTelephonyService.apk|9d97cd63e5cc8ca37fe5a5fee99de6535cd0a240
+-app/SimSettings/SimSettings.apk|679d7c660b5f646cbe71fd6c02d4948f11717085
+-app/shutdownlistener/shutdownlistener.apk|6a9e44319d390bba9f424b5e6996e9f5d9b1e7bb
+bin/ipacm-diag
+bin/netmgrd
+bin/radish
+bin/rmt_storage
+bin/tftp_server
+etc/data/dsi_config.xml
+etc/data/netmgr_config.xml
+etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
+etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
+etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
+-framework/embmslibrary.jar|a06799495515305de3e5d432ec62a1f692200c99
+-framework/qcrilhook.jar|764ffa1aea855b1707cbd6b4306016a77e1bc20a
+framework/qti-telephony-common.jar|d01967c370aa01c41bb12952d300504eb31ab3b1
+framework/QtiTelephonyServicelibrary.jar|afdb8071e0b2d86683902768d22e48abbf9311fa
+lib64/librilqmiservices.so
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|f8c6e2885e54548e5660a6c337362d931fb2d531
+vendor/bin/qti
+vendor/lib64/libconfigdb.so
+vendor/lib64/liblqe.so
+vendor/lib64/libmdmdetect.so
+vendor/lib64/libnetmgr.so
+vendor/lib64/libril-qc-ltedirectdisc.so
+vendor/lib64/libril-qc-qmi-1.so
+vendor/lib64/libril-qc-radioconfig.so
+vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/libsettings.so
+vendor/lib64/libsystem_health_mon.so
+vendor/qcril.db
+
 # Radio - IMS
 bin/ims_rtp_daemon|d711751d84a1946046682f76994994779373b96d
 bin/imscmservice|9df8a5d3626fe8a60f2409dc729f76eacb968673
@@ -281,7 +318,7 @@ vendor/bin/thermal-engine|e1c914d4f5a8ee7085b6d347d12ba57067950fce
 vendor/lib64/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk
+-app/TimeService/TimeService.apk|4f477142cde4c0c1f9e9c8bc532fb0aa92b519d5
 bin/time_daemon
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so
