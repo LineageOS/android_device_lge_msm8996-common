@@ -176,6 +176,7 @@ vendor/lib64/libperipheral_client.so
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
+-vendor/app/colorservice/colorservice.apk|57ea38e1c70f6059536ed65d9084ae2a177c4ac8
 vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 
