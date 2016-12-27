@@ -230,13 +230,13 @@
          should be empty.  An example would be "softap.*" -->
     <string-array translatable="false" name="config_tether_wifi_regexs">
         <item>"wlan0"</item>
+        <item>"softap.*"</item>
     </string-array>
 
     <!-- List of regexpressions describing the interface (if any) that represent tetherable
          bluetooth interfaces.  If the device doesn't want to support tethering over bluetooth this
          should be empty. -->
     <string-array translatable="false" name="config_tether_bluetooth_regexs">
-        <item>"bnep\\d"</item>
         <item>"bt-pan"</item>
     </string-array>
 
@@ -317,9 +317,6 @@
     <!-- Is the device capable of hot swapping an ICC Card -->
     <bool name="config_hotswapCapable">true</bool>
 
-    <!-- Flag indicating emergency calls will always use IMS irrespective of the state of
-    the IMS connection -->
-
     <!-- Flag specifying whether VoLTE & VT is available on device -->
     <bool name="config_device_volte_available">true</bool>
 
@@ -348,6 +345,7 @@
     state changes. Voice radio tech change will always trigger an update of
     phone object irrespective of this config -->
     <bool name="config_switch_phone_on_voice_reg_state_change">false</bool>
+
     <!--  Define Google play service package for FRP-->
     <string name="config_persistentDataPackageName" translatable="false">com.google.android.gms</string>
 
@@ -394,11 +392,15 @@
          rmem_min,rmem_def,rmem_max,wmem_min,wmem_def,wmem_max -->
     <string name="config_wifi_tcp_buffers" translatable="false">524288,1048576,2097152,262144,524288,1048576</string>
 
+    <!-- Max number of advertisers supported by bluetooth controller. 0 if the
+         device does not support multiple advertisement-->
+    <integer translatable="false" name="config_bluetooth_max_advertisers">4</integer>
+
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
     <!-- Operating volatage for bluetooth controller. -->
-    <integer name="config_bluetooth_operating_voltage_mv">3500</integer>
+    <integer name="config_bluetooth_operating_voltage_mv">1800</integer>
 
     <!-- Set this to true to enable the platform's auto-power-save modes like doze and
          app standby.  These are not enabled by default because they require a standard
@@ -432,6 +434,9 @@
         <item>"/system/framework/oat/arm64/services.odex"</item>
         <item>"/system/framework/arm64/boot.oat"</item>
         <item>"/system/framework/arm64/boot-core-libart.oat"</item>
-   </string-array>
+    </string-array>
+
+    <!-- Should the pinner service pin the Camera application? -->
+    <bool name="config_pinnerCameraApp">true</bool>
 
 </resources>
