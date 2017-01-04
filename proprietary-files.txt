@@ -51,6 +51,10 @@ lib64/lib_fpc_tac_shared.so
 lib64/libfpfactory.so
 lib64/libfpfactory_jni.so
 
+# GPS
+lib/hw/gps.msm8996.so
+lib64/hw/gps.msm8996.so
+
 # IR
 lib/hw/consumerir.msm8996.so
 lib/libcir_driver.so
