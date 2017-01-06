@@ -447,11 +447,9 @@ on post-fs-data
     chmod 0660 /proc/bluetooth/sleep/lpm
     chmod 0660 /proc/bluetooth/sleep/btwrite
     chmod 0660 /sys/class/rfkill/rfkill0/state
-    chmod 0660 /dev/ttyHS0
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/lpm
     chown bluetooth net_bt_stack /proc/bluetooth/sleep/btwrite
     chown bluetooth net_bt_stack /sys/class/rfkill/rfkill0/state
-    chown bluetooth net_bt_stack /dev/ttyHS0
 
     # Create directory for FOTA
     mkdir /data/fota 0771

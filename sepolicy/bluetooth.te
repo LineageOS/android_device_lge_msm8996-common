@@ -1,0 +1,4 @@
+rw_dir_file(bluetooth, sysfs)
+rw_dir_file(bluetooth, sysfs_bluetooth_writable)
+
+allow bluetooth sysfs:file w_file_perms;

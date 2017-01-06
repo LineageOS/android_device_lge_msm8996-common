@@ -1,1 +1,3 @@
+rw_dir_file(ueventd, sysfs_bluetooth_writable)
+
 allow ueventd sysfs_devices_fingerprint:file { open read write };
