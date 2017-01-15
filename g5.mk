@@ -276,6 +276,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libcurl \
     libjson \
+    libtinyxml \
     libxml2
 
 # USB
