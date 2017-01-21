@@ -42,6 +42,53 @@ public class LgeLteRIL extends RIL implements CommandsInterface {
         super(context, preferredNetworkType, cdmaSubscription, instanceId);
     }
 
+    static String
+    lgeResponseToString(int request)
+    {
+        switch(request) {
+            case RIL_UNSOL_AVAILABLE_RAT: return "RIL_UNSOL_AVAILABLE_RAT";
+            case RIL_UNSOL_LOG_RF_BAND_INFO: return "RIL_UNSOL_LOG_RF_BAND_INFO";
+            case RIL_UNSOL_LTE_REJECT_CAUSE: return "RIL_UNSOL_LTE_REJECT_CAUSE";
+            default: return "<unknown response>";
+        }
+    }
+
+    protected void lgeUnsljLogRet(int response, Object ret) {
+        riljLog("[LGE-UNSL]< " + lgeResponseToString(response) + " " + retToString(response, ret));
+    }
+
+    @Override
+    protected void
+    processUnsolicited (Parcel p, int type) {
+        Object ret;
+        int dataPosition = p.dataPosition(); // save off position within the Parcel
+        int response = p.readInt();
+
+        switch(response) {
+            case RIL_UNSOL_AVAILABLE_RAT: ret = responseInts(p); break;
+            case RIL_UNSOL_LOG_RF_BAND_INFO: ret = responseInts(p); break;
+            case RIL_UNSOL_LTE_REJECT_CAUSE: ret = responseInts(p); break;
+            default:
+                // Rewind the Parcel
+                p.setDataPosition(dataPosition);
+                // Forward responses that we are not overriding to the super class
+                super.processUnsolicited(p, type);
+                return;
+        }
+
+        switch(response) {
+            case RIL_UNSOL_AVAILABLE_RAT:
+                if (RILJ_LOGD) lgeUnsljLogRet(response, ret);
+                break;
+            case RIL_UNSOL_LOG_RF_BAND_INFO:
+                if (RILJ_LOGD) lgeUnsljLogRet(response, ret);
+                break;
+            case RIL_UNSOL_LTE_REJECT_CAUSE:
+                if (RILJ_LOGD) lgeUnsljLogRet(response, ret);
+                break;
+        }
+    }
+
     @Override
     public void
     setNetworkSelectionModeManual(String operatorNumeric, Message response) {
