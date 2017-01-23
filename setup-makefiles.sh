@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,6 +18,10 @@
 
 set -e
 
+export INITIAL_COPYRIGHT_YEAR=2016
+export G5_DEVICE_LIST="g5 h830 h850"
+export V20_DEVICE_LIST="v20 h910 h918 us996"
+
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
 if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
@@ -30,11 +35,11 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-# Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+# Initialize the helper for common platform
+setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and common guards
-write_headers "g5 h830 h850"
+write_headers "$G5_DEVICE_LIST $V20_DEVICE_LIST"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt
@@ -68,6 +73,21 @@ echo "endif" >> "$ANDROIDMK"
 
 printf '\n%s\n' "\$(call inherit-product, vendor/qcom/binaries/msm8996/graphics/graphics-vendor.mk)" >> "$PRODUCTMK"
 
+# We are done with platform
+write_footers
+
+# Reinitialize the helper for common device
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+
+# Copyright headers and guards
+if [ "$DEVICE_COMMON" == "g5-common" ]; then
+    write_headers "$G5_DEVICE_LIST"
+else
+    write_headers "$V20_DEVICE_LIST"
+fi
+
+write_makefiles "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt
+
 # We are done with common
 write_footers
 
@@ -86,15 +106,8 @@ printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
 write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt
 
-# Qualcomm performance blobs - conditional as well
-# in order to support Cyanogen OS builds
-cat << EOF >> "$PRODUCTMK"
-endif
-EOF
-
-cat << EOF >> "$ANDROIDMK"
-endif
-EOF
+printf '\n%s\n' "endif" >> "$PRODUCTMK"
+printf '\n%s\n' "endif" >> "$ANDROIDMK"
 
 # We are done with device
 write_footers

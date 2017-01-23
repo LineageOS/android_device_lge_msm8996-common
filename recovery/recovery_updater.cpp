@@ -184,5 +184,5 @@ Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]
 }
 
 void Register_librecovery_updater_hima() {
-    RegisterFunction("g5.verify_trustzone", VerifyTrustZoneFn);
+    RegisterFunction("msm8996.verify_trustzone", VerifyTrustZoneFn);
 }

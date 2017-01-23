@@ -1,5 +1,6 @@
 #
 # Copyright 2016 The CyanogenMod Project
+# Copyright 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,7 +15,7 @@
 # limitations under the License.
 #
 
-ifneq ($(filter g5 h830 h850,$(TARGET_DEVICE)),)
+ifneq ($(filter g5 h830 h850 v20 h910 h918 us996,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 
@@ -95,6 +96,6 @@ $(WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(WIDEVINE_SYMLINKS)
 # END WIDEVINE Images
 
-include device/lge/g5-common/tftp.mk
+include device/lge/msm8996-common/tftp.mk
 
 endif

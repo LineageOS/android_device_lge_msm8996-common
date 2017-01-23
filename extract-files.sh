@@ -1,6 +1,7 @@
 #!/bin/bash
 #
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -46,12 +47,17 @@ else
     fi
 fi
 
-# Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+# Initialize the helper for common platform
+setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$CM_ROOT" true
 
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC"
 extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC"
 extract "$MY_DIR"/proprietary-files.txt "$SRC"
+
+# Initialize the helper for common device
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+
+extract "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt "$SRC"
 
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
