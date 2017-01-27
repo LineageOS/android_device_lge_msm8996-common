@@ -1,5 +1,6 @@
 /*
  * Copyright 2016 The CyanogenMod Project
+ * Copyright 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +18,23 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#define BTM_DEF_LOCAL_NAME "LG G5"
+#include <cutils/properties.h>
+#include <string.h>
+
+inline const char* BtmGetDefaultName()
+{
+	char product_name[PROPERTY_VALUE_MAX];
+	property_get("ro.product.name", product_name, "");
+
+	if (!strcmp("h1_tmo_us", product_name) || !strcmp("h1_global_com", product_name))
+		return "LG G5";
+	if (!strcmp("elsa_tmo_us", product_name))
+		return "LG V20";
+
+	return "";
+}
+
+#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 
 #define BLE_VND_INCLUDED TRUE
 #define BTM_WBS_INCLUDED TRUE /* Enable WBS */
