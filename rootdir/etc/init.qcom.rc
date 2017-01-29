@@ -725,7 +725,7 @@ service set_baseband /system/bin/sh /system/etc/set_baseband.sh
     oneshot
     disabled
 
-on property:gsm.version.baseband=""
+on property:sys.boot_completed=1
     start set_baseband
 
 on property:ro.use_data_netmgrd=false
