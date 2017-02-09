@@ -26,9 +26,9 @@ inline const char* BtmGetDefaultName()
 	char product_name[PROPERTY_VALUE_MAX];
 	property_get("ro.product.name", product_name, "");
 
-	if (!strcmp("h1_tmo_us", product_name) || !strcmp("h1_global_com", product_name))
+	if (strstr(product_name, "h1"))
 		return "LG G5";
-	if (!strcmp("elsa_tmo_us", product_name))
+	if (strstr(product_name, "elsa"))
 		return "LG V20";
 
 	return "";
