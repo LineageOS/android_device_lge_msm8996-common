@@ -30,6 +30,8 @@ inline const char* BtmGetDefaultName()
 		return "LG G5";
 	if (strstr(product_name, "elsa"))
 		return "LG V20";
+	if (strstr(product_name, "lucye"))
+		return "LG G6";
 
 	return "";
 }

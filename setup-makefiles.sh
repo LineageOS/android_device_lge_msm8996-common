@@ -21,6 +21,7 @@ set -e
 export INITIAL_COPYRIGHT_YEAR=2016
 export G5_DEVICE_LIST="g5 h830 h850"
 export V20_DEVICE_LIST="v20 h910 h918 us996"
+export G6_DEVICE_LIST="g6"
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
@@ -83,7 +84,11 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 if [ "$DEVICE_COMMON" == "g5-common" ]; then
     write_headers "$G5_DEVICE_LIST"
 else
-    write_headers "$V20_DEVICE_LIST"
+    if [ "$DEVICE_COMMON" == "g6-common" ]; then
+        write_headers "$G6_DEVICE_LIST"
+    else
+        write_headers "$V20_DEVICE_LIST"
+    fi
 fi
 
 write_makefiles "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt
