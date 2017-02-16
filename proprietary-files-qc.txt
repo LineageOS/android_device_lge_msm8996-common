@@ -32,6 +32,11 @@ vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
 
+# Bluetooth
+vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
+vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
+vendor/lib/libaptXScheduler.so
+
 # CNE
 bin/cnd|1b62a7788a8ec9f3e96ac2a3c19a3e96a14b02c9
 etc/cne/SwimConfig.xml

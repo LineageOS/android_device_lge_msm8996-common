@@ -31,6 +31,7 @@ audio_hal.period_size=160
 #qcom.hw.aac.encoder=true
 
 # Bluetooth
+persist.bt.enableAptXHD=true
 ro.bt.bdaddr_path="/data/misc/bdaddr"
 
 # Camera
