@@ -606,6 +606,7 @@ service cnd /system/bin/cnd
 service dpmd /system/bin/dpmd
     class late_start
     socket dpmd stream 660 root system
+    group system readproc
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
