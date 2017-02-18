@@ -1,0 +1,1 @@
+allow tftp_server self:capability net_raw;
