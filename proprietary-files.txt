@@ -77,9 +77,6 @@ etc/firmware/leia_pm4_470.fw
 vendor/firmware/libpn548ad_fw.so
 
 # Radio
-bin/rild
-lib64/libril.so
-lib64/librilutils.so
 lib64/libuicc.so
 
 # Radio - VSS
