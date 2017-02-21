@@ -112,6 +112,7 @@ IPACM_Config::IPACM_Config()
 {
 	iface_table = NULL;
 	alg_table = NULL;
+	pNatIfaces = NULL;
 	memset(&ipa_client_rm_map_tbl, 0, sizeof(ipa_client_rm_map_tbl));
 	memset(&ipa_rm_tbl, 0, sizeof(ipa_rm_tbl));
 	ipa_rm_a2_check=0;
@@ -286,6 +287,10 @@ int IPACM_Config::Init(void)
 	IPACMDBG_H("ipacm_odu_enable %d\n", ipacm_odu_enable);
 	IPACMDBG_H("ipacm_odu_mode %d\n", ipacm_odu_router_mode);
 	IPACMDBG_H("ipacm_odu_embms_enable %d\n", ipacm_odu_embms_enable);
+
+	ipacm_ip_passthrough_mode = cfg->ip_passthrough_mode;
+	IPACMDBG_H("ipacm_ip_passthrough_mode %d. \n", ipacm_ip_passthrough_mode);
+
 	ipa_num_wlan_guest_ap = cfg->num_wlan_guest_ap;
 	IPACMDBG_H("ipa_num_wlan_guest_ap %d\n",ipa_num_wlan_guest_ap);
 
@@ -477,7 +482,7 @@ int IPACM_Config::AddNatIfaces(char *dev_name)
 
 	if (ipa_nat_iface_entries < ipa_num_ipa_interfaces)
 	{
-		memcpy(pNatIfaces[ipa_nat_iface_entries - 1].iface_name,
+		strlcpy(pNatIfaces[ipa_nat_iface_entries - 1].iface_name,
 					 dev_name, IPA_IFACE_NAME_LEN);
 
 		IPACMDBG_H("Add Nat IfaceName: %s ,update nat-ifaces number: %d\n",
