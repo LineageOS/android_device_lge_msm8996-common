@@ -42,9 +42,6 @@ on init
     # NXP HAL expects /dev/nq-nci
     symlink /dev/pn547 /dev/nq-nci
 
-    # Load LGE Symbols
-    export LD_SHIM_LIBS /system/lib64/libril.so|liblge.so
-
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864

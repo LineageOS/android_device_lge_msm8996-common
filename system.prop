@@ -122,8 +122,6 @@ persist.data.qmi.adb_logmask=0
 persist.net.doxlat=true
 persist.oem.dump=0
 persist.radio.ignore_dom_time=5
-ro.ril.telephony.mqanelements=5
-ro.telephony.ril_class=LgeLteRIL
 
 # Radio - Data/RMNet
 persist.data.df.agg.dl_pkt=10
