@@ -133,6 +133,8 @@ bin/loc_launcher|8143a830f4296a908554ab7e3454d7a0457d94c6
 etc/permissions/com.qti.location.sdk.xml|cb68a566bd77dcc75bb7547199d528289fac01cb
 etc/permissions/com.qualcomm.location.xml|878999ca1861e71cdbda75378164d6113296a428
 framework/com.qti.location.sdk.jar|61a6756bfd926759056037e72d4af1d4e1cdb1ec
+lib/hw/gps.msm8996.so
+lib64/hw/gps.msm8996.so
 -lib64/libloc_api_v02.so|be9aa5e1758b6f24839e36cd62d86d38262b7ee0
 lib64/libloc_ds_api.so|50fbbc0a72dc926f6a67d9e89410d8f2a384f95d
 -priv-app/com.qualcomm.location/com.qualcomm.location.apk|b6dee565e54915764d3ce31561d26d0b1bff9b61
