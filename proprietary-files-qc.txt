@@ -41,6 +41,26 @@ vendor/lib/libaptXScheduler.so
 bin/cnd|1b62a7788a8ec9f3e96ac2a3c19a3e96a14b02c9
 etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml
+etc/cne/wqeclient/ATT/ATT_profile1.xml
+etc/cne/wqeclient/ATT/ATT_profile2.xml
+etc/cne/wqeclient/ATT/ATT_profile3.xml
+etc/cne/wqeclient/ATT/ATT_profile4.xml
+etc/cne/wqeclient/profile1.xml
+etc/cne/wqeclient/profile2.xml
+etc/cne/wqeclient/profile3.xml
+etc/cne/wqeclient/profile4.xml
+etc/cne/wqeclient/profile5.xml
+etc/cne/wqeclient/ROW/ROW_profile1.xml
+etc/cne/wqeclient/ROW/ROW_profile2.xml
+etc/cne/wqeclient/ROW/ROW_profile3.xml
+etc/cne/wqeclient/ROW/ROW_profile4.xml
+etc/cne/wqeclient/ROW/ROW_profile5.xml
+etc/cne/wqeclient/VZW/VZW_profile1.xml
+etc/cne/wqeclient/VZW/VZW_profile2.xml
+etc/cne/wqeclient/VZW/VZW_profile3.xml
+etc/cne/wqeclient/VZW/VZW_profile4.xml
+etc/cne/wqeclient/VZW/VZW_profile5.xml
+etc/cne/wqeclient/VZW/VZW_profile6.xml
 etc/permissions/ConnectivityExt.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
@@ -230,12 +250,12 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
--app/datastatusnotification/datastatusnotification.apk|23678d9247705ce286ffee023aca19202d3c7cf4
--app/embms/embms.apk|ce20e012daf54a0f78b1c7f04a100282cd5ca29b
--app/fastdormancy/fastdormancy.apk|f669b06814573cc7b69911142ae2b86baa7f7088
--app/QtiTelephonyService/QtiTelephonyService.apk|9d97cd63e5cc8ca37fe5a5fee99de6535cd0a240
--app/SimSettings/SimSettings.apk|679d7c660b5f646cbe71fd6c02d4948f11717085
--app/shutdownlistener/shutdownlistener.apk|6a9e44319d390bba9f424b5e6996e9f5d9b1e7bb
+-app/datastatusnotification/datastatusnotification.apk
+-app/embms/embms.apk
+-app/fastdormancy/fastdormancy.apk
+-app/QtiTelephonyService/QtiTelephonyService.apk
+-app/SimSettings/SimSettings.apk
+-app/shutdownlistener/shutdownlistener.apk
 bin/ipacm-diag
 bin/netmgrd
 bin/radish
@@ -243,17 +263,19 @@ bin/rmt_storage
 bin/tftp_server
 etc/data/dsi_config.xml
 etc/data/netmgr_config.xml
-etc/permissions/embms.xml|5e1b492874c221a7e1188fc3a5369d32b3e67969
-etc/permissions/qcnvitems.xml|dc0e70cace2317b5169a454cbc2bbf8887c18d55
+etc/permissions/embms.xml
+etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml|b297c8a27443570377d78586b00198839ce326bb
--framework/embmslibrary.jar|a06799495515305de3e5d432ec62a1f692200c99
--framework/qcrilhook.jar|764ffa1aea855b1707cbd6b4306016a77e1bc20a
-framework/qti-telephony-common.jar|d01967c370aa01c41bb12952d300504eb31ab3b1
-framework/QtiTelephonyServicelibrary.jar|afdb8071e0b2d86683902768d22e48abbf9311fa
-lib64/librilqmiservices.so
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk|f8c6e2885e54548e5660a6c337362d931fb2d531
+etc/permissions/telephonyservice.xml
+-framework/embmslibrary.jar
+-framework/qcrilhook.jar
+-framework/qcnvitems.jar
+framework/qti-telephony-common.jar
+framework/QtiTelephonyServicelibrary.jar
+lib64/libparam.so
+-priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/qti
+vendor/lib/libmdmdetect.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
@@ -262,17 +284,23 @@ vendor/lib64/libril-qc-ltedirectdisc.so
 vendor/lib64/libril-qc-qmi-1.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
+vendor/lib64/librilqmiservices.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/qcril.db
 
 # Radio - IMS
-bin/ims_rtp_daemon|d711751d84a1946046682f76994994779373b96d
-bin/imscmservice|9df8a5d3626fe8a60f2409dc729f76eacb968673
-bin/imsdatadaemon|6401f7d73b52fea7d46a21d5ac8e2dbbdd461dad
-bin/imsqmidaemon|e04f7b66d9f1b59ca1a9cb49d76f857a75d8b909
--vendor/app/ims/ims.apk|19a9cb5997603e7da2ca724b547371dabe37aba8
--vendor/app/imssettings/imssettings.apk|7fd33539960356169d1c29f668751854c1e41b51
+bin/ims_rtp_daemon
+bin/imscmservice
+bin/imsdatadaemon
+bin/imsqmidaemon
+etc/permissions/imscm.xml
+etc/permissions/qti-vzw-ims-internal.xml
+framework/imscmlibrary.jar
+framework/rcsimssettings.jar
+-vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
+vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-ims-rcscmjni.so
 vendor/lib64/lib-imsSDP.so
@@ -292,8 +320,9 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
-vendor/lib64/libimscamera_jni.so|4e756a51d6e159c9b1989cdd717d59b4843ac815
-vendor/lib64/libimsmedia_jni.so|0322d46b38c92964525b6b3d45822a971330b10f
+vendor/lib64/libimscamera_jni.so
+vendor/lib64/libimsmedia_jni.so
+vendor/lib64/librcc.so
 vendor/lib64/libvoice-svc.so
 
 # Sensors
