@@ -38,7 +38,7 @@ vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
 vendor/lib/libaptXScheduler.so
 
 # CNE
-bin/cnd|1b62a7788a8ec9f3e96ac2a3c19a3e96a14b02c9
+bin/cnd
 etc/cne/SwimConfig.xml
 etc/cne/andsfCne.xml
 etc/cne/wqeclient/ATT/ATT_profile1.xml
@@ -64,43 +64,43 @@ etc/cne/wqeclient/VZW/VZW_profile6.xml
 etc/permissions/ConnectivityExt.xml
 etc/permissions/cneapiclient.xml
 etc/permissions/com.quicinc.cne.xml
-framework/ConnectivityExt.jar|67025d09bbc7bb87bca1d15ab9c133eeb1ef2b9d
-framework/cneapiclient.jar|3cb56a579341acfb16d2be2e41bac2c7b6ac34b4
-framework/com.quicinc.cne.jar|2f3384f53dc7ae8290a04b75f729a58c0e47fd3f
--priv-app/CNEService/CNEService.apk|f52229e91fc14991c7713602943fe8c7f31944d8
-vendor/lib/libcne.so|5623d34ab4a0277f3b4b9a2116ef34c9396d4e66
-vendor/lib/libcneapiclient.so|144c6b9a586b4d76301069f7af92c8bb4252ca4a
-vendor/lib/libcneqmiutils.so|e034af1900682a8f057b53c284e44ce7c70c6ac3
-vendor/lib/libvendorconn.so|df43df11672421d4fa0ad33bb9ef659d747d821c
-vendor/lib/libwqe.so|3c0e38baae5e874aee2d4b90f094ef3b187e236f
-vendor/lib/libxml.so|1b41f3c0b00aeca841f9cad0a98a3d1a3d00acdd
-vendor/lib64/libcne.so|4bdf115fb9a2bec2e6301c665c811a8b869a5f5d
-vendor/lib64/libcneapiclient.so|6ba82a6bf8d7b4b2b56c7bcd82630a8c9fdb8005
-vendor/lib64/libcneqmiutils.so|a50b83c14437961aae22da4fd9d9228c31ba34a2
-vendor/lib64/libvendorconn.so|8f72686061211f8e2adeaaa64d4fab50b6bca835
-vendor/lib64/libwqe.so|e38b1402e7be1a141457debdba850505647849e1
-vendor/lib64/libxml.so|682520567675f0b00461d075165702642fc95770
+framework/ConnectivityExt.jar
+framework/cneapiclient.jar
+framework/com.quicinc.cne.jar
+-priv-app/CNEService/CNEService.apk
+vendor/lib/libcne.so
+vendor/lib/libcneapiclient.so
+vendor/lib/libcneqmiutils.so
+vendor/lib/libvendorconn.so
+vendor/lib/libwqe.so
+vendor/lib/libxml.so
+vendor/lib64/libcne.so
+vendor/lib64/libcneapiclient.so
+vendor/lib64/libcneqmiutils.so
+vendor/lib64/libvendorconn.so
+vendor/lib64/libwqe.so
+vendor/lib64/libxml.so
 
 # DPM
-bin/dpmd|47b0dfe22e4731fae961ad021be2ad83196665f2
+bin/dpmd
 etc/dpm/dpm.conf
 etc/dpm/nsrm/NsrmConfiguration.xml
 etc/permissions/com.qti.dpmframework.xml
 etc/permissions/dpmapi.xml
-framework/com.qti.dpmframework.jar|7d855e9cf5d10cd88cdcd9c9bd16120afcaa7e72
-framework/dpmapi.jar|0015235ff71d52d1b340b10ce4fa737fa26975ef
-framework/tcmclient.jar|e7149c664f4b1841139ab816c0d4e0942df0583c
--priv-app/dpmserviceapp/dpmserviceapp.apk|27f91229cdbcec87edaf23c6b821c64a108dad83
-vendor/lib/libdpmctmgr.so|a0ad58f83cd3ca8245a7c916911c3f6c63265e19
-vendor/lib/libdpmfdmgr.so|a5ffcca7db3f3b24179d312a98b35cd3e10c79b9
-vendor/lib/libdpmframework.so|15f3300d0aa6cd7be535e6646491a6ad085cff22
-vendor/lib/libdpmnsrm.so|0041280f3e03c8efba0235df5ee304c10fc359e3
-vendor/lib/libdpmtcm.so|0015df6ccd4b49c8eb25e732343405e7f2534462
-vendor/lib64/libdpmctmgr.so|8f0ed06e8724289ee88864175a9dce3811ecf386
-vendor/lib64/libdpmfdmgr.so|b7b1a4ad1bfc7849c6993b1d5d9354004fb2e11a
-vendor/lib64/libdpmframework.so|58e38b7dcf1e5e7249a6d1d5fa5f411dc087d4b6
-vendor/lib64/libdpmnsrm.so|2cb63f7d50e9a5e86ead198589a6a8c74634b09d
-vendor/lib64/libdpmtcm.so|97601abe2bbbc34134ea0e656c1afdcf3e8d928a
+framework/com.qti.dpmframework.jar
+framework/dpmapi.jar
+framework/tcmclient.jar
+-priv-app/dpmserviceapp/dpmserviceapp.apk
+vendor/lib/libdpmctmgr.so
+vendor/lib/libdpmfdmgr.so
+vendor/lib/libdpmframework.so
+vendor/lib/libdpmnsrm.so
+vendor/lib/libdpmtcm.so
+vendor/lib64/libdpmctmgr.so
+vendor/lib64/libdpmfdmgr.so
+vendor/lib64/libdpmframework.so
+vendor/lib64/libdpmnsrm.so
+vendor/lib64/libdpmtcm.so
 
 # DRM
 bin/qseecomd
@@ -328,9 +328,9 @@ etc/permissions/embms.xml
 etc/permissions/qcnvitems.xml
 etc/permissions/qcrilhook.xml
 etc/permissions/telephonyservice.xml
--framework/embmslibrary.jar
--framework/qcrilhook.jar
+framework/embmslibrary.jar
 -framework/qcnvitems.jar
+-framework/qcrilhook.jar
 framework/qti-telephony-common.jar
 framework/QtiTelephonyServicelibrary.jar
 lib64/libparam.so
