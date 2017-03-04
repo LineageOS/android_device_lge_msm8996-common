@@ -44,6 +44,8 @@ media.camera.ts.monotonic=0
 # is_type: sets image stabilization type
 persist.camera.eis.enable=1
 persist.camera.is_type=4
+#Expose aux camera for below packages
+camera.aux.packagelist=org.cyanogenmod.snap
 
 # CNE and DPM
 persist.cne.feature=1
