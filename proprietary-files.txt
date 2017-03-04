@@ -39,18 +39,6 @@ etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw
 
-# Fingerprint
-bin/fingerprintd
-bin/fpc_early_loader
-lib/hw/fingerprint.msm8996.so
-lib/lib_fpc_tac_shared.so
-lib/libfpfactory.so
-lib/libfpfactory_jni.so
-lib64/hw/fingerprint.msm8996.so
-lib64/lib_fpc_tac_shared.so
-lib64/libfpfactory.so
-lib64/libfpfactory_jni.so
-
 # IR
 lib/hw/consumerir.msm8996.so
 lib/libcir_driver.so
