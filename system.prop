@@ -166,3 +166,6 @@ persist.timed.enable=true
 
 # WiFi
 wifi.interface=wlan0
+
+# Dalvik 
+dalvik.vm.heapsize=60m
