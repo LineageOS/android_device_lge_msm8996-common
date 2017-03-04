@@ -41,6 +41,9 @@ on init
 
     # NXP HAL expects /dev/nq-nci
     symlink /dev/pn547 /dev/nq-nci
+    
+    #shims
+    export LD_SHIM_LIBS /system/vendor/lib64/lib-imsvt.so|libshims_ims.so
 
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
