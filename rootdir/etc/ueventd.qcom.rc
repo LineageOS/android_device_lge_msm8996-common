@@ -226,6 +226,11 @@
 /dev/pn548                0660   nfc         nfc
 /dev/pn54x                0660   nfc         nfc
 /dev/nq-nci               0660   nfc         nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  init_deinit 0200 nfc nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  set_pwr     0200 nfc nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  res_ready   0400 nfc nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  recv_rsp    0600 nfc nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  send_cmd    0200 nfc nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
