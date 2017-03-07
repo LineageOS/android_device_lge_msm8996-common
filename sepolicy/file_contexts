@@ -13,6 +13,9 @@
 # Gestures
 /sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
 
+# Init
+/system/bin/init\.power\.sh                                         u:object_r:init_power_exec:s0
+
 # IR Blaster
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0
 
@@ -24,6 +27,9 @@
 
 # Persist
 /persist-lg(/.*)?                                                   u:object_r:persist_drm_file:s0
+
+# Power management
+/sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_power_management:s0
 
 # Sensors
 /sns                                                                u:object_r:sensors_data_file:s0
