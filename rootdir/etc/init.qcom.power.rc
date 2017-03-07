@@ -34,6 +34,44 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
 on boot
+    chown system system /dev/stune
+    chown system system /dev/stune/foreground
+    chown system system /dev/stune/background
+    chown system system /dev/stune/system-background
+    chown system system /dev/stune/top-app
+    chown system system /dev/stune/tasks
+    chown system system /dev/stune/foreground/tasks
+    chown system system /dev/stune/background/tasks
+    chown system system /dev/stune/system-background/tasks
+    chown system system /dev/stune/top-app/tasks
+    chmod 0775 /dev/stune/tasks
+    chmod 0775 /dev/stune/foreground/tasks
+    chmod 0775 /dev/stune/background/tasks
+    chmod 0775 /dev/stune/system-background/tasks
+    chmod 0775 /dev/stune/top-app/tasks
+
+    # change permissions for all cpusets
+    chown system system /dev/cpuset
+    chown system system /dev/cpuset/foreground
+    chown system system /dev/cpuset/foreground/boost
+    chown system system /dev/cpuset/background
+    chown system system /dev/cpuset/system-background
+    chown system system /dev/cpuset/top-app
+    chown system system /dev/cpuset/tasks
+    chown system system /dev/cpuset/foreground/tasks
+    chown system system /dev/cpuset/foreground/boost/tasks
+    chown system system /dev/cpuset/background/tasks
+    chown system system /dev/cpuset/system-background/tasks
+    chown system system /dev/cpuset/top-app/tasks
+
+    chmod 0775 /dev/cpuset/foreground/tasks
+    chmod 0775 /dev/cpuset/foreground/boost/tasks
+    chmod 0775 /dev/cpuset/background/tasks
+    chmod 0775 /dev/cpuset/system-background
+    chmod 0775 /dev/cpuset/system-background/tasks
+    chmod 0775 /dev/cpuset/top-app/tasks
+    chmod 0775 /dev/cpuset/tasks
+
     # Update foreground and background cpusets
     write /dev/cpuset/foreground/cpus 0-3
     write /dev/cpuset/foreground/boost/cpus 0-3
