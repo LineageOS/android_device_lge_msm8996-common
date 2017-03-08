@@ -1,6 +1,3 @@
-# Baseband
-/system/etc/set_baseband.sh                                         u:object_r:set_baseband_exec:s0
-
 # Bluetooth
 /system/bin/hwaddrs                                                 u:object_r:hwaddrs_exec:s0
 /data/misc/bdaddr                                                   u:object_r:bluetooth_data_file:s0

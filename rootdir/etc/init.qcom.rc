@@ -711,16 +711,6 @@ service sensors /system/bin/sensors.qcom
     group root
     disabled
 
-service set_baseband /system/bin/sh /system/etc/set_baseband.sh
-    class late_start
-    user root
-    seclabel u:r:set_baseband:s0
-    oneshot
-    disabled
-
-on property:gsm.version.baseband=""
-    start set_baseband
-
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
     stop netmgrd
