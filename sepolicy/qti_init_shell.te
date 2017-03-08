@@ -1,1 +1,0 @@
-allow qti_init_shell set_baseband_exec:file r_file_perms;
