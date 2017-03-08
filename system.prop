@@ -59,7 +59,7 @@ persist.data.iwlan.enable=true
 
 # Display
 ro.qualcomm.cabl=0
-ro.sf.lcd_density=640
+ro.sf.lcd_density=560
 
 # Factory Reset Protection (FRP)
 ro.frp.pst=/dev/block/bootdevice/by-name/persistent
