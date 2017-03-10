@@ -158,9 +158,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # pdfium
 TARGET_NEEDS_PDFIUM_BIGINT := true
 
-# Power
-TARGET_POWERHAL_VARIANT := qcom
-
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
