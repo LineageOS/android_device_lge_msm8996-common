@@ -1,1 +1,8 @@
 allow system_server cir_device:chr_file rw_file_perms;
+
+# communicate with perfd
+allow system_server perfd:unix_stream_socket connectto;
+allow system_server mpctl_data_file:dir search;
+allow system_server mpctl_data_file:sock_file write;
+allow system_server mpctl_socket:dir search;
+allow system_server mpctl_socket:sock_file write;
