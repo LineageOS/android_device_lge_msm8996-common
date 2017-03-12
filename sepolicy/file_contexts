@@ -1,5 +1,4 @@
 # Bluetooth
-/system/bin/hwaddrs                                                 u:object_r:hwaddrs_exec:s0
 /data/misc/bdaddr                                                   u:object_r:bluetooth_data_file:s0
 /sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0

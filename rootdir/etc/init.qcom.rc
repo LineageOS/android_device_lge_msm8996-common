@@ -323,12 +323,6 @@ on boot
 on property:sys.boot_completed=1
     write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
 
-service conn_init /system/bin/hwaddrs
-    class core
-    user root
-    group system wifi
-    oneshot
-
 on property:init.svc.conn_init=stopped
     chmod 0644 /data/misc/wifi/config
     chown system wifi /data/misc/wifi/config
