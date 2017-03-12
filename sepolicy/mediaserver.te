@@ -1,0 +1,6 @@
+# communicate with perfd
+allow mediaserver perfd:unix_stream_socket connectto;
+allow mediaserver mpctl_data_file:dir search;
+allow mediaserver mpctl_data_file:sock_file write;
+allow mediaserver mpctl_socket:dir search;
+allow mediaserver mpctl_socket:sock_file write;

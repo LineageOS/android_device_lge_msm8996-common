@@ -35,8 +35,6 @@ on early-init
     mkdir /mpt 0755 system system
     symlink /data/tombstones /tombstones
     mount debugfs debugfs /sys/kernel/debug
-    chown system root  /sys/module/msm_thermal/core_control/cpus_offlined
-    chmod 666 /sys/module/msm_thermal/core_control/cpus_offlined
 
     export ANDROID_DATA /data
     export ANDROID_ROOT /system
@@ -72,16 +70,6 @@ on post-fs-data
     mkdir /data/misc/tloc/ 0700 system drmrpc
     mkdir /data/misc/qvop 0660 system system
     mkdir /data/misc/audio_pp 0771 media audio
-
-on boot
-    start rmt_storage
-    start rfs_access
-    # access permission for secure touch
-    chmod 0660 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
-    chmod 0440 /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
-    chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch_enable
-    chown system drmrpc /sys/devices/soc/75ba000.i2c/i2c-12/12-004a/secure_touch
-    write /sys/devices/soc/75ba000.i2c/i2c-12/12-0020/input/input0/update_fw 1
 
 # Start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
@@ -125,14 +113,29 @@ on property:sys.shutdown.requested=*
     stop per_proxy
 
 service qseecomd /system/bin/qseecomd
-   class core
-   user root
-   group root
+    class core
+    user root
+    group root
+
+service energy-awareness /system/bin/energy-awareness
+    class main
+    user root
+    group system
+    oneshot
+
+service iop /system/bin/iop
+    class main
+    user root
+    group root
+    disabled
+    socket iop seqpacket 0666 root system
+    writepid /dev/cpuset/system-background/tasks
 
 service perfd /system/vendor/bin/perfd
-   class main
-   user root
-   disabled
+    class main
+    user root
+    group root system
+    writepid /dev/cpuset/system-background/tasks
 
 service mpdecision /system/bin/mpdecision --avg_comp
     user root
