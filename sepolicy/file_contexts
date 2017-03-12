@@ -18,6 +18,7 @@
 
 # Init
 /system/bin/init\.power\.sh                                         u:object_r:init_power_exec:s0
+/system/bin/init\.qcom\.qseecomd\.sh                                u:object_r:init-qcom-qseecomd-sh_exec:s0
 
 # IR Blaster
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0

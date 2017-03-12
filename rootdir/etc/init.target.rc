@@ -45,7 +45,7 @@ on init
 
 on fs
     wait /dev/block/bootdevice
-    mount_all fstab.qcom
+    mount_all fstab.qcom --early
     swapon_all fstab.qcom
     restorecon_recursive /sns
     restorecon_recursive /persist
@@ -53,8 +53,28 @@ on fs
 
 on post-fs
     write /sys/devices/platform/lge-qfprom/sec_read 0
+    start qseecomd
+    # busy loop to wait for qseecomd started
+    exec - root root system -- /system/bin/init.qcom.qseecomd.sh
+
+on late-fs
+    # Enable audio and video device for bootanim
+    write /sys/kernel/boot_adsp/boot 1
+    write /sys/kernel/boot_slpi/boot 1
+    chmod 0664 /sys/devices/virtual/graphics/fb0/msm_cmd_autorefresh_en
+    chown system graphics /sys/devices/virtual/graphics/fb0/msm_cmd_autorefresh_en
+
+    # Start bootanim and its dependencies
+    start servicemanager
+    start surfaceflinger
+    start audioserver
+    start bootanim
+    # mount RW partitions which need run fsck
+    mount_all fstab.${ro.hardware} --late
 
 on post-fs-data
+    # restart qseecomd once we have /data/
+    restart qseecomd
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
     mkdir /tombstones/lpass 0771 system system
