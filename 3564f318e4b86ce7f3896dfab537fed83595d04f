@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ba57610f_d1e3f603",
+        "filename": "power/power-8996.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 2967
+      },
+      "writtenOn": "2017-03-12T09:40:17Z",
+      "side": 1,
+      "message": "we should remove this",
+      "range": {
+        "startLine": 55,
+        "startChar": 11,
+        "endLine": 55,
+        "endChar": 35
+      },
+      "revId": "3564f318e4b86ce7f3896dfab537fed83595d04f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
