@@ -156,6 +156,9 @@ persist.sensors.wul_thresh2=15
 persist.sensors.wul_delay=3000
 persist.sensors.onhand.en=0
 
+# Tethering
+net.tethering.noprovisioning=true
+
 # Time services
 persist.timed.enable=true
 
