@@ -70,6 +70,10 @@ on boot
     # Bring up CPUs
     exec - root root system -- /system/bin/init.power.sh
 
+    # Set permissions by node reads by dumpstate
+    chmod 0644 /sys/devices/system/cpu/present
+    chmod 0644 /sys/devices/system/cpu/online
+
     # update cpusets now that processors are up
     write /dev/cpuset/top-app/cpus 0-3
     write /dev/cpuset/foreground/cpus 0-3
@@ -937,3 +941,6 @@ on property:sys.boot_completed=1
     setprop sys.io.scheduler "bfq"
     # Set idle GPU to 133 Mhz
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
+    # Set permissions for dumpstate nodes
+    chmod 0644 /d/rpm_stats
+    chmod 0644 /d/dpm_master_stats

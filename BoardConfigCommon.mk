@@ -158,6 +158,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # pdfium
 TARGET_NEEDS_PDFIUM_BIGINT := true
 
+# Power
+BOARD_HAL_STATIC_LIBRARIES := libdumpstate.msm8996
+
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 
