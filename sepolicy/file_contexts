@@ -16,6 +16,9 @@
 # IR Blaster
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0
 
+# Netmgr
+/data/misc/netmgr(/.*)?                                             u:object_r:net_data_file:s0
+
 # NFC
 /dev/pn54[478]                                                      u:object_r:nfc_device:s0
 

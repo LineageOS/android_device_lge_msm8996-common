@@ -1,0 +1,2 @@
+allow rild diag_prop:property_service set;
+get_prop(rild, diag_prop);
