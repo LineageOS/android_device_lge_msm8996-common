@@ -17,6 +17,11 @@ import hashlib
 import common
 import re
 
+def FullOTA_PostValidate(info):
+    info.script.AppendExtra('run_program("/tmp/install/bin/e2fsck_static", "-fy", "/dev/block/bootdevice/by-name/system");');
+    info.script.AppendExtra('run_program("/tmp/install/bin/resize2fs_static", "/dev/block/bootdevice/by-name/system");');
+    info.script.AppendExtra('run_program("/tmp/install/bin/e2fsck_static", "-fy", "/dev/block/bootdevice/by-name/system");');
+
 def FullOTA_Assertions(info):
   AddTrustZoneAssertion(info, info.input_zip)
   return
