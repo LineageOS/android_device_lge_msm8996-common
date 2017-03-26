@@ -87,6 +87,10 @@ persist.hwc.enable_vds=1
 sdm.debug.disable_rotator_split=1
 debug.sf.disable_hwc_vds=1
 
+# NFC
+ro.nfc.port=I2C
+persist.nfc.smartcard.config=SIM1,SIM2,eSE1
+
 # OpenGLES
 ro.opengles.version=196610
 
