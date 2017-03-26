@@ -24,6 +24,12 @@
     <!-- Restart preview for front camera onPictureTaken -->
     <bool name="front_camera_restart_preview_onPictureTaken">true</bool>
 
+    <!-- Restart preview for back camera onPictureTaken -->
+    <bool name="back_camera_restart_preview_onPictureTaken">true</bool>
+
+    <!-- Restart preview for additional camera onPictureTaken -->
+    <bool name="additional_camera_restart_preview_onPictureTaken">true</bool>
+
     <!-- Set's manufacturer specific parameters on startup.
          Example: lge-camera=1;cam-mode=0 -->
     <string name="manufacturer_key_values">lge-camera=1</string>
@@ -45,6 +51,4 @@
          is the percentage of camera preview height/width to scale to. -->
     <integer name="panorama_frame_size_reduction">100</integer>
 
-    <!-- Force use camera api v2 -->
-    <bool name="use_camera_api_v2">false</bool>
 </resources>
