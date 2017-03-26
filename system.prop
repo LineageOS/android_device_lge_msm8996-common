@@ -38,6 +38,7 @@ ro.bt.bdaddr_path="/data/misc/bdaddr"
 ro.camera.notify_nfc=1
 vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
+vidc.enc.disable.pq=true
 media.camera.ts.monotonic=0
 # Enable camera EIS
 # eis.enable: enables electronic image stabilization
