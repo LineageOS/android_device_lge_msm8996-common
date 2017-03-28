@@ -16,15 +16,19 @@
         android:label="GestureHandler"
         android:persistent="true">
 
-        <receiver android:name="com.cyanogenmod.settings.device.BootCompletedReceiver">
+        <!-- Boot receiver -->
+        <receiver android:name=".BootCompletedReceiver"
+            android:directBootAware="true"
+            android:enabled="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-                <category android:name="android.intent.category.DEFAULT" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.cyanogenmod.settings.device.LGGestureService"
+            android:name=".LGGestureService"
             android:permission="LGGestureService">
         </service>
 
