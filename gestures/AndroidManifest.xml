@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="org.cyanogenmod.settings.device"
+    package="com.cyanogenmod.settings.device"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -16,15 +16,21 @@
         android:label="GestureHandler"
         android:persistent="true">
 
-        <receiver android:name="com.cyanogenmod.settings.device.BootCompletedReceiver">
+        <!-- Boot receiver -->
+        <receiver android:name=".BootCompletedReceiver"
+            android:directBootAware="true"
+            android:defaultToDeviceProtectedStorage="true"
+            android:enabled="true"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.LOCKED_BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
         <service
-            android:name="com.cyanogenmod.settings.device.LGGestureService"
+            android:name=".LGGestureService"
             android:permission="LGGestureService">
         </service>
 
