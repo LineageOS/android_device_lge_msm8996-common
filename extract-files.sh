@@ -31,38 +31,53 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
-if [ $# -eq 0 ]; then
+# clean_vendor actually does the opposite of the variable. If set to true, it will
+# leave vendor/ intact, if false, it will sanitize before extracting new blobs
+clean_vendor=false
+drop_system=false
+
+while [ "$1" != "" ]; do
+    case $1 in
+        -p | --path )           shift
+                                SRC=$1
+                                ;;
+        -s | --section )        shift
+                                SECTION=$1
+                                clean_vendor=true
+                                ;;
+        -d | --drop-system )    drop_system=true
+                                ;;
+        -c | --clean-vendor )   clean_vendor=true
+    esac
+    shift
+done
+
+if [ -z "$SRC" ]; then
     SRC=adb
-else
-    if [ $# -eq 1 ]; then
-        SRC=$1
-    else
-        echo "$0: bad number of arguments"
-        echo ""
-        echo "usage: $0 [PATH_TO_EXPANDED_ROM]"
-        echo ""
-        echo "If PATH_TO_EXPANDED_ROM is not specified, blobs will be extracted from"
-        echo "the device using adb pull."
-        exit 1
-    fi
+fi
+
+if [[ "$SRC" == "adb" && "$drop_system" == "true" ]]; then
+    echo "ERROR: --drop-system requires a physical file path and cannot be used with ADB extraction."
+    echo "Please set a path (--path) and try again"
+    exit
 fi
 
 # Initialize the helper for common platform
-setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$CM_ROOT" true $clean_vendor
 
-extract "$MY_DIR"/proprietary-files-qc.txt "$SRC"
-extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC"
-extract "$MY_DIR"/proprietary-files.txt "$SRC"
+extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 # Initialize the helper for common device
-setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
+setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true $clean_vendor
 
-extract "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt "$SRC"
+extract "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt "$SRC" "$SECTION"
 
 # Reinitialize the helper for device
-setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
+setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false $clean_vendor
 
-extract "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt "$SRC"
-extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC"
+extract "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
