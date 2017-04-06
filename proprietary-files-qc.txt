@@ -124,6 +124,10 @@ vendor/lib64/libsecureui.so|e80ad4bddeba5e8348d483a0944dd7267d1f224f
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
+# DSP
+vendor/lib/libsymphonypower-1.1.1.so
+vendor/lib/libsymphony-1.1.1.so
+
 # Gatekeeper
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
