@@ -1,3 +1,19 @@
+# Camera postprocessing
+vendor/lib/libchromaflash.so
+vendor/lib/libllvd_smore.so
+vendor/lib/liboptizoom.so
+vendor/lib/libseemore.so
+vendor/lib/libtrueportrait.so
+vendor/lib/libubifocus.so
+
+# Camera postprocessing - mmcamera
+vendor/lib/libmmcamera_chromaflash_lib.so
+vendor/lib/libmmcamera_llvd.so
+vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_stillmore_lib.so
+vendor/lib/libmmcamera_trueportrait_lib.so
+vendor/lib/libmmcamera_ubifocus_lib.so
+
 # Camera firmware
 etc/camera/film/0_film.dat
 etc/camera/film/1_film.dat
