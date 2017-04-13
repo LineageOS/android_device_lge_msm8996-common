@@ -160,6 +160,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     gps.msm8996 \
     libgnsspps \
+    libloc_ds_api \
+    libloc_api_v02 \
     libcurl
 
 PRODUCT_COPY_FILES += \
