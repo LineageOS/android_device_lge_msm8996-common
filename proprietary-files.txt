@@ -37,6 +37,9 @@ etc/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw
 
+# Hotword Enrollment
+priv-app/HotwordEnrollment/HotwordEnrollment.apk
+
 # IR
 lib/hw/consumerir.msm8996.so
 lib/libcir_driver.so
