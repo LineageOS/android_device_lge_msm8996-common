@@ -105,6 +105,8 @@ vendor/lib64/libdpmtcm.so
 # DRM
 bin/qseecomd
 vendor/bin/qseeproxydaemon
+vendor/lib/libcppf.so
+vendor/lib/liboemcrypto.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libqisl.so
