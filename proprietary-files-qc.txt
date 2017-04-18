@@ -240,18 +240,40 @@ vendor/lib/libadpcmdec.so
 vendor/lib/libsmwrapper.so
 
 # Media
+lib/libOmxVpp.so
+lib/libvpplibrary.so
+lib64/libOmxVpp.so
+lib64/libvpplibrary.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
+vendor/lib/libOmxAlacDec.so
+vendor/lib/libOmxAlacDecSw.so
+vendor/lib/libOmxAmrwbplusDec.so
+vendor/lib/libOmxApeDec.so
+vendor/lib/libOmxApeDecSw.so
 vendor/lib/libOmxEvrcDec.so
+vendor/lib/libOmxMux.so
 vendor/lib/libOmxQcelp13Dec.so
+vendor/lib/libOmxVideoDSMode.so
+vendor/lib/libOmxWmaDec.so
 vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal.so
+vendor/lib/libvpphvx.so
+vendor/lib/libvqzip.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libOmxAacDec.so
+vendor/lib64/libOmxAlacDec.so
+vendor/lib64/libOmxAlacDecSw.so
+vendor/lib64/libOmxAmrwbplusDec.so
+vendor/lib64/libOmxApeDec.so
+vendor/lib64/libOmxApeDecSw.so
 vendor/lib64/libOmxEvrcDec.so
+vendor/lib64/libOmxMux.so
 vendor/lib64/libOmxQcelp13Dec.so
+vendor/lib64/libOmxWmaDec.so
 vendor/lib64/libmm-color-convertor.so
 vendor/lib64/libmmosal.so
+vendor/lib64/libvpphvx.so
 
 # Network
 -priv-app/QtiTetherService/QtiTetherService.apk
@@ -297,7 +319,6 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqti-wl.so
 vendor/lib/libquipc_os_api.so
 vendor/lib/libsmemlog.so
-vendor/lib/libvqzip.so
 vendor/lib64/libdiag.so|19f27ab6bb4a5c1430165434da856fe231ce3918
 -vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
