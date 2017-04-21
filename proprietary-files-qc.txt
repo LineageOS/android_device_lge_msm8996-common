@@ -246,6 +246,7 @@ lib/libOmxVpp.so
 lib/libvpplibrary.so
 lib64/libOmxVpp.so
 lib64/libvpplibrary.so
+vendor/lib/libgpustats.so
 vendor/lib/libI420colorconvert.so
 vendor/lib/libOmxAacDec.so
 vendor/lib/libOmxAlacDec.so
@@ -262,6 +263,7 @@ vendor/lib/libmm-color-convertor.so
 vendor/lib/libmmosal.so
 vendor/lib/libvpphvx.so
 vendor/lib/libvqzip.so
+vendor/lib64/libgpustats.so
 vendor/lib64/libI420colorconvert.so
 vendor/lib64/libOmxAacDec.so
 vendor/lib64/libOmxAlacDec.so
