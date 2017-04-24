@@ -245,7 +245,7 @@ int __attribute__ ((weak)) power_hint_override(struct power_module *module, powe
 void interaction(int duration, int num_args, int opt_list[]);
 void release_request(int lock_handle);
 
-long long calc_timespan_us(struct timespec start, struct timespec end) {
+static long long calc_timespan_us(struct timespec start, struct timespec end) {
     long long diff_in_us = 0;
     diff_in_us += (end.tv_sec - start.tv_sec) * USINSEC;
     diff_in_us += (end.tv_nsec - start.tv_nsec) / NSINUS;
@@ -423,6 +423,8 @@ static void power_hint(struct power_module *module, power_hint_t hint,
                 pthread_mutex_unlock(&s_interaction_lock);
                 return;
             }
+            pthread_mutex_unlock(&s_interaction_lock);
+
 
             int duration = 1500; // 1.5s by default
             if (data) {
@@ -435,6 +437,7 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             struct timespec cur_boost_timespec;
             clock_gettime(CLOCK_MONOTONIC, &cur_boost_timespec);
 
+            pthread_mutex_lock(&s_interaction_lock);
             long long elapsed_time = calc_timespan_us(s_previous_boost_timespec, cur_boost_timespec);
             // don't hint if previous hint's duration covers this hint's duration
             if ((s_previous_duration * 1000) > (elapsed_time + duration * 1000)) {
@@ -443,18 +446,18 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             }
             s_previous_boost_timespec = cur_boost_timespec;
             s_previous_duration = duration;
+            pthread_mutex_unlock(&s_interaction_lock);
 
             // Scheduler is EAS.
-            if (true || strncmp(governor, SCHED_GOVERNOR, strlen(SCHED_GOVERNOR)) == 0) {
-                // Setting the value of foreground schedtune boost to 50 and
+            if (strncmp(governor, SCHED_GOVERNOR, strlen(SCHED_GOVERNOR)) == 0) {
+                // Setting the value of foreground schedtune boost to 10 and
                 // scaling_min_freq to 1100MHz.
-                int resources[] = {0x40800000, 1100, 0x40800100, 1100, 0x42C0C000, 0x32, 0x41800000, 0x33};
+                int resources[] = {0x40800000, 1100, 0x40800100, 1100, 0x42C0C000, 0x10, 0x41800000, 0x33};
                 interaction(duration, sizeof(resources)/sizeof(resources[0]), resources);
             } else { // Scheduler is HMP.
                 int resources[] = {0x41800000, 0x33, 0x40800000, 1000, 0x40800100, 1000, 0x40C00000, 0x1};
                 interaction(duration, sizeof(resources)/sizeof(resources[0]), resources);
             }
-            pthread_mutex_unlock(&s_interaction_lock);
         }
         break;
         case POWER_HINT_VIDEO_ENCODE:
@@ -464,11 +467,6 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             process_video_decode_hint(data);
         break;
     }
-}
-
-int __attribute__ ((weak)) get_number_of_profiles()
-{
-    return 0;
 }
 
 int __attribute__ ((weak)) set_interactive_override(struct power_module *module, int on)
@@ -801,14 +799,6 @@ static int get_platform_low_power_stats(struct power_module *module,
     return 0;
 }
 
-int get_feature(struct power_module *module __unused, feature_t feature)
-{
-    if (feature == POWER_FEATURE_SUPPORTED_PROFILES) {
-        return get_number_of_profiles();
-    }
-    return -1;
-}
-
 struct power_module HAL_MODULE_INFO_SYM = {
     .common = {
         .tag = HARDWARE_MODULE_TAG,
@@ -825,6 +815,5 @@ struct power_module HAL_MODULE_INFO_SYM = {
     .setInteractive = set_interactive,
     .get_number_of_platform_modes = get_number_of_platform_modes,
     .get_platform_low_power_stats = get_platform_low_power_stats,
-    .get_voter_list = get_voter_list,
-    .getFeature = get_feature
+    .get_voter_list = get_voter_list
 };
