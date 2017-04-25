@@ -13,6 +13,9 @@
 # Gestures
 /sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
 
+# HID Devices
+/dev/hidg[0-9]                                                      u:object_r:hid_device:s0
+
 # IR Blaster
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0
 
