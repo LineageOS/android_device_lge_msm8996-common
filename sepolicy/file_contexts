@@ -13,6 +13,9 @@
 # Gestures
 /sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
 
+# HID Devices
+/dev/hidg[0-9]                                                      u:object_r:hid_device:s0
+
 # Init
 /system/bin/init\.power\.sh                                         u:object_r:init_power_exec:s0
 /system/bin/init\.qcom\.qseecomd\.sh                                u:object_r:init-qcom-qseecomd-sh_exec:s0
