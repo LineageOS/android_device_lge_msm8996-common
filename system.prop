@@ -44,6 +44,7 @@ vidc.debug.perf.mode=2
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.disable.pq=true
 media.camera.ts.monotonic=0
+persist.audio.camcorder.stereo=true
 
 # CNE and DPM
 persist.cne.feature=1
