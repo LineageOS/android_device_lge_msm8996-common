@@ -449,7 +449,7 @@ static void power_hint(struct power_module *module, power_hint_t hint,
             pthread_mutex_unlock(&s_interaction_lock);
 
             // Scheduler is EAS.
-            if (true || strncmp(governor, SCHED_GOVERNOR, strlen(SCHED_GOVERNOR)) == 0) {
+            if (strncmp(governor, SCHED_GOVERNOR, strlen(SCHED_GOVERNOR)) == 0) {
                 // Setting the value of foreground schedtune boost to 10 and
                 // scaling_min_freq to 1100MHz.
                 int resources[] = {0x40800000, 1100, 0x40800100, 1100, 0x42C0C000, 0x10, 0x41800000, 0x33};
