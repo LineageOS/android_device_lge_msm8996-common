@@ -35,6 +35,9 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     wait /dev/block/bootdevice
 
+    # Setup zram options
+    write /sys/block/zram0/comp_algorithm lz4
+
 on init
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
