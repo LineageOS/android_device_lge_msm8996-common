@@ -181,11 +181,12 @@ public:
     SystemStatusPQWM1parser(const char *str_in, uint32_t len_in)
         : SystemStatusNmeaBase(str_in, len_in)
     {
+        memset(&mM1, 0, sizeof(mM1));
         if (mField.size() < eMax) {
             LOC_LOGE("PQWM1parser - invalid size=%d", mField.size());
+            mM1.mTimeValid = 0;
             return;
         }
-        memset(&mM1, 0, sizeof(mM1));
         mM1.mGpsWeek = atoi(mField[eGpsWeek].c_str());
         mM1.mGpsTowMs = atoi(mField[eGpsTowMs].c_str());
         mM1.mTimeValid = atoi(mField[eTimeValid].c_str());
@@ -1396,7 +1397,7 @@ bool SystemStatus::setNmeaString(const char *data, uint32_t len)
     }
 
     char buf[SystemStatusNmeaBase::NMEA_MAXSIZE + 1] = { 0 };
-    strlcpy(buf, data, (len < strlen(data))? len : strlen(data));
+    strlcpy(buf, data, sizeof(buf));
 
     pthread_mutex_lock(&mMutexSystemStatus);
 
