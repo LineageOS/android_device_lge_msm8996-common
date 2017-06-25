@@ -125,6 +125,8 @@ vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 
 # DSP
+lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
+lib/rfsa/adsp/libmorpho_video_denoiser_hvx_skel.so
 vendor/lib/libsymphonypower-1.1.1.so
 vendor/lib/libsymphony-1.1.1.so
 
