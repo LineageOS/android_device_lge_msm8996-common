@@ -180,6 +180,8 @@ net.tethering.noprovisioning=true
 
 # Time services
 persist.timed.enable=true
+persist.delta_time.enable=true
 
 # WiFi
 wifi.interface=wlan0
+
