@@ -21,7 +21,7 @@ set -e
 export INITIAL_COPYRIGHT_YEAR=2016
 export G5_DEVICE_LIST="g5 h830 h850"
 export V20_DEVICE_LIST="v20 h910 h918 us996 ls997 vs995"
-export G6_DEVICE_LIST="g6 h872"
+export G6_DEVICE_LIST="g6 h870 h872 us997"
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
