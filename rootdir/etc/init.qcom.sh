@@ -329,7 +329,11 @@ echo 1 > /data/misc/radio/db_check_done
 rm -rf /data/misc/radio/modem_config
 mkdir /data/misc/radio/modem_config
 chmod 770 /data/misc/radio/modem_config
-cp -r /system/vendor/firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+if [ -d "/firmware/image/modem_pr/" ]; then
+  cp -r /firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+else
+  cp -r /system/vendor/firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+fi
 chown -hR radio.radio /data/misc/radio/modem_config
 echo 1 > /data/misc/radio/copy_complete
 
