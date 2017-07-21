@@ -1,1 +1,6 @@
+# Camera
+sys.ois.                   u:object_r:camera_prop:s0
+sys.camera.                u:object_r:camera_prop:s0
+
+# Radio
 oem.device.imeicache       u:object_r:diag_prop:s0
