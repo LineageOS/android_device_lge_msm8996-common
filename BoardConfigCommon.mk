@@ -173,6 +173,9 @@ TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 PRODUCT_BOOT_JARS += tcmiface tcmclient com.qti.dpmframework dpmapi com.qti.location.sdk
+$(call project-set-path,qcom-audio,hardware/qcom/audio-caf/msm8998)
+$(call project-set-path,qcom-display,hardware/qcom/display-caf/msm8998)
+$(call project-set-path,qcom-media,hardware/qcom/media-caf/msm8998)
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
