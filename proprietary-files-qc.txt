@@ -347,12 +347,14 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
+-app/atfwd/atfwd.apk
 -app/datastatusnotification/datastatusnotification.apk
 -app/embms/embms.apk
 -app/fastdormancy/fastdormancy.apk
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/SimSettings/SimSettings.apk
 -app/shutdownlistener/shutdownlistener.apk
+bin/ATFWD-daemon
 bin/ipacm-diag
 bin/netmgrd
 bin/radish
