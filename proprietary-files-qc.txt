@@ -351,6 +351,7 @@ vendor/lib64/libsmemlog.so
 -app/QtiTelephonyService/QtiTelephonyService.apk
 -app/SimSettings/SimSettings.apk
 -app/shutdownlistener/shutdownlistener.apk
+bin/ATFWD-daemon
 bin/ipacm-diag
 bin/netmgrd
 bin/radish

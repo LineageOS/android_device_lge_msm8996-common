@@ -836,6 +836,11 @@ on property:drmdiag.load=1
 on property:drmdiag.load=0
     stop drmdiag
 
+service atfwd /system/bin/ATFWD-daemon
+    class late_start
+    user system
+    group system radio
+
 service hostapd /system/bin/hostapd /data/hostapd/hostapd.conf
     class late_start
     user root
