@@ -33,6 +33,7 @@
 
 # Power management
 /sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_power_management:s0
+/sys/devices/soc/6a00000.ssusb/power_supply/usb(/.*)?               u:object_r:sysfs_battery_supply:s0
 
 # Sensors
 /sns                                                                u:object_r:sensors_data_file:s0
