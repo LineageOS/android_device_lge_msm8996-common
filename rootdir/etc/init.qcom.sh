@@ -317,6 +317,17 @@ case "$emmc_boot"
     ;;
 esac
 
+contains() {
+    string="$1"
+    substring="$2"
+    if test "${string#*$substring}" != "$string"
+    then
+        return 1    # $substring is in $string
+    else
+        return 0    # $substring is not in $string
+    fi
+}
+
 #
 # Copy qcril.db if needed for RIL
 #
@@ -326,16 +337,50 @@ echo 1 > /data/misc/radio/db_check_done
 #
 # Make modem config folder and copy firmware config to that folder for RIL
 #
+if [ -f /data/misc/radio/ver_info.txt ]; then
+    prev_version_info=`cat /data/misc/radio/ver_info.txt`
+else
+    prev_version_info=""
+fi
+
+cur_version_info=`cat /firmware/verinfo/ver_info.txt`
+
+# HERE : LG_FW_MCFG_QCRIL_DB_ALWAYS_UPDATE
+
+build_product=`getprop ro.build.product`
+product_name=`getprop ro.product.name`
+
+# START MCFG Operation.
 rm -rf /data/misc/radio/modem_config
 mkdir /data/misc/radio/modem_config
 chmod 770 /data/misc/radio/modem_config
-if [ -d "/firmware/image/modem_pr/" ]; then
-  cp -r /firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+
+# LUCYE, lucye MCFG conf. for all N.A. operators including VZW, SPR, etc
+# secheol.pyo@lge.com, 2016-11-17
+if [ contains "product_name" "lucye" ]; then
+    cp -r /firmware/image/modem_pr/mcfg/configs/cust/* /data/misc/radio/modem_config
 else
-  cp -r /system/vendor/firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+    if [ -d "/firmware/image/modem_pr/" ]; then
+        cp -r /firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+    else
+        cp -r /system/vendor/firmware/image/modem_pr/mcfg/configs/* /data/misc/radio/modem_config
+    fi
 fi
 chown -hR radio.radio /data/misc/radio/modem_config
+cp /firmware/verinfo/ver_info.txt /data/misc/radio/ver_info.txt
+chown radio.radio /data/misc/radio/ver_info.txt
+
+# LUCYE, MCFG selection for hidden menu.
+# secheol.pyo@lge.com, 2016-12-19
+if [ contains "product_name" "lucye" ]; then
+    chown -h radio.system /data/misc/radio/modem_config
+    chmod -R 770 /data/misc/radio/modem_config/mcfg_sw
+    chown -hR radio.system /data/misc/radio/modem_config/mcfg_sw
+fi
+cp /firmware/image/modem_pr/mbn_ota.txt /data/misc/radio/modem_config
+chown radio.radio /data/misc/radio/modem_config/mbn_ota.txt
 echo 1 > /data/misc/radio/copy_complete
+# END MCFG Operation.
 
 #check build variant for printk logging
 #current default minimum boot-time-default
