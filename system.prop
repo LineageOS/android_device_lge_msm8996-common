@@ -33,6 +33,8 @@ audio_hal.period_size=192
 use.qti.sw.alac.decoder=true
 use.qti.sw.ape.decoder=true
 flac.sw.decoder.24bit.support=true
+persist.speaker.prot.enable=true
+persist.spkr.cal.duration=5
 
 # Bluetooth
 persist.bt.enableAptXHD=true
