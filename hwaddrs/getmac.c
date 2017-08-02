@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011-2015 The CyanogenMod Project
+ * Copyright (C) 2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -34,7 +35,7 @@ int main() {
 	write(fd2,"cur_etheraddr=",14);
 
 	for (i = 0; i<6; i++) {
-		lseek(fd1,0x3000+i,SEEK_SET);
+		lseek(fd1,0x6000+i,SEEK_SET);
 		lseek(fd2,0,SEEK_END);
 		read(fd1,&macbyte,1);
 		sprintf(macbuf,"%02x",macbyte);
@@ -47,7 +48,7 @@ int main() {
 
 	fd2 = open("/data/misc/bdaddr",O_WRONLY|O_CREAT|O_TRUNC,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 	for (i = 0; i<6; i++) {
-		lseek(fd1,0x4000+i,SEEK_SET);
+		lseek(fd1,0x8000+i,SEEK_SET);
 		lseek(fd2,0,SEEK_END);
 		read(fd1,&macbyte,1);
 		sprintf(macbuf,"%02x",macbyte);
