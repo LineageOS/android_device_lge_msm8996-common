@@ -201,7 +201,10 @@ vendor/lib/libmmQSM.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 vendor/lib/libsd_sdk_display.so
+vendor/lib/libsdm-color.so
+vendor/lib/libsdm-diag.so
 -vendor/lib/libsdm-disp-apis.so
+vendor/lib/libsdmextension.so
 vendor/lib/libtinyxml2_1.so
 vendor/lib64/hw/vulkan.msm8996.so
 vendor/lib64/egl/eglSubDriverAndroid.so
@@ -235,6 +238,10 @@ vendor/lib64/libsdm-diag.so
 vendor/lib64/libsdmextension.so
 vendor/lib64/libtinyxml2_1.so
 vendor/lib64/libuiblur.so
+
+# Graphics - HDR
+vendor/lib/libhdr_tm.so
+vendor/lib64/libhdr_tm.so
 
 # Keystore
 vendor/lib/hw/keystore.msm8996.so
