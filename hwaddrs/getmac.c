@@ -46,7 +46,7 @@ int main() {
 	write(fd2,"\n",1);
 	close(fd2);
 
-	fd2 = open("/data/misc/bdaddr",O_WRONLY|O_CREAT|O_TRUNC,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	fd2 = open("/data/misc/bluetooth/bdaddr",O_WRONLY|O_CREAT|O_TRUNC,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 	for (i = 0; i<6; i++) {
 		lseek(fd1,0x8000+i,SEEK_SET);
 		lseek(fd2,0,SEEK_END);

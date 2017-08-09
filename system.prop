@@ -41,7 +41,7 @@ persist.spkr.cal.duration=5
 
 # Bluetooth
 persist.bt.enableAptXHD=true
-ro.bt.bdaddr_path="/data/misc/bdaddr"
+ro.bt.bdaddr_path="/data/misc/bluetooth/bdaddr"
 
 # Camera
 ro.camera.notify_nfc=1
