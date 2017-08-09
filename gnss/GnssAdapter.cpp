@@ -61,6 +61,7 @@ GnssAdapter::GnssAdapter() :
     mGnssSvIdUsedInPosAvail(false),
     mControlCallbacks(),
     mPowerVoteId(0),
+    mNmeaMask(0),
     mNiData(),
     mAgpsManager(),
     mAgpsCbInfo()
@@ -520,11 +521,15 @@ GnssAdapter::setConfigCommand()
             // set nmea mask type
             uint32_t mask = 0;
             if (NMEA_PROVIDER_MP == ContextBase::mGps_conf.NMEA_PROVIDER) {
-                mask = LOC_NMEA_ALL_SUPPORTED_MASK;
-            } else {
-                mask = LOC_NMEA_MASK_DEBUG_V02;
+                mask |= LOC_NMEA_ALL_GENERAL_SUPPORTED_MASK;
             }
-            mApi.setNMEATypes(mask);
+            if (mApi.isFeatureSupported(LOC_SUPPORTED_FEATURE_DEBUG_NMEA_V02)) {
+                mask |= LOC_NMEA_MASK_DEBUG_V02;
+            }
+            if (mask != 0) {
+                mApi.setNMEATypes(mask);
+            }
+            mAdapter.mNmeaMask= mask;
 
             mApi.setXtraVersionCheck(ContextBase::mGps_conf.XTRA_VERSION_CHECK);
             if (ContextBase::mSap_conf.GYRO_BIAS_RANDOM_WALK_VALID ||
@@ -766,6 +771,7 @@ GnssAdapter::gnssUpdateConfigCommand(GnssConfig config)
                     ContextBase::mGps_conf.SUPL_MODE = newSuplMode;
                     mAdapter.getUlpProxy()->setCapabilities(
                         ContextBase::getCarrierCapabilities());
+                    mAdapter.broadcastCapabilities(mAdapter.getCapabilities());
                 }
                 err = LOCATION_ERROR_SUCCESS;
                 if (index < mCount) {
@@ -1011,7 +1017,7 @@ GnssAdapter::updateClientsEventMask()
         if (it->second.gnssSvCb != nullptr) {
             mask |= LOC_API_ADAPTER_BIT_SATELLITE_REPORT;
         }
-        if (it->second.gnssNmeaCb != nullptr) {
+        if ((it->second.gnssNmeaCb != nullptr) && (mNmeaMask)) {
             mask |= LOC_API_ADAPTER_BIT_NMEA_1HZ_REPORT;
         }
         if (it->second.gnssMeasurementsCb != nullptr) {
@@ -1080,14 +1086,11 @@ GnssAdapter::requestCapabilitiesCommand(LocationAPI* client)
 
     struct MsgRequestCapabilities : public LocMsg {
         GnssAdapter& mAdapter;
-        LocApiBase& mApi;
         LocationAPI* mClient;
         inline MsgRequestCapabilities(GnssAdapter& adapter,
-                                      LocApiBase& api,
                                       LocationAPI* client) :
             LocMsg(),
             mAdapter(adapter),
-            mApi(api),
             mClient(client) {}
         inline virtual void proc() const {
             LocationCallbacks callbacks = mAdapter.getClientCallbacks(mClient);
@@ -1096,34 +1099,58 @@ GnssAdapter::requestCapabilitiesCommand(LocationAPI* client)
                 return;
             }
 
-            LocationCapabilitiesMask mask = 0;
-            // time based tracking always supported
-            mask |= LOCATION_CAPABILITIES_TIME_BASED_TRACKING_BIT;
-            if (mApi.isMessageSupported(LOC_API_ADAPTER_MESSAGE_DISTANCE_BASE_LOCATION_BATCHING)){
-                mask |= LOCATION_CAPABILITIES_TIME_BASED_BATCHING_BIT |
-                        LOCATION_CAPABILITIES_DISTANCE_BASED_BATCHING_BIT;
-            }
-            if (mApi.isMessageSupported(LOC_API_ADAPTER_MESSAGE_DISTANCE_BASE_TRACKING)) {
-                mask |= LOCATION_CAPABILITIES_DISTANCE_BASED_TRACKING_BIT;
-            }
-            // geofence always supported
-            mask |= LOCATION_CAPABILITIES_GEOFENCE_BIT;
-            if (mApi.gnssConstellationConfig()) {
-                mask |= LOCATION_CAPABILITIES_GNSS_MEASUREMENTS_BIT;
-            }
-            uint32_t carrierCapabilities = ContextBase::getCarrierCapabilities();
-            if (carrierCapabilities & LOC_GPS_CAPABILITY_MSB) {
-                mask |= LOCATION_CAPABILITIES_GNSS_MSB_BIT;
-            }
-            if (LOC_GPS_CAPABILITY_MSA & carrierCapabilities) {
-                mask |= LOCATION_CAPABILITIES_GNSS_MSA_BIT;
-            }
-
+            LocationCapabilitiesMask mask = mAdapter.getCapabilities();
             callbacks.capabilitiesCb(mask);
         }
     };
 
-    sendMsg(new MsgRequestCapabilities(*this, *mLocApi, client));
+    sendMsg(new MsgRequestCapabilities(*this, client));
+}
+
+LocationCapabilitiesMask
+GnssAdapter::getCapabilities()
+{
+    LocationCapabilitiesMask mask = 0;
+    uint32_t carrierCapabilities = ContextBase::getCarrierCapabilities();
+    // time based tracking always supported
+    mask |= LOCATION_CAPABILITIES_TIME_BASED_TRACKING_BIT;
+    // geofence always supported
+    mask |= LOCATION_CAPABILITIES_GEOFENCE_BIT;
+    if (carrierCapabilities & LOC_GPS_CAPABILITY_MSB) {
+        mask |= LOCATION_CAPABILITIES_GNSS_MSB_BIT;
+    }
+    if (LOC_GPS_CAPABILITY_MSA & carrierCapabilities) {
+        mask |= LOCATION_CAPABILITIES_GNSS_MSA_BIT;
+    }
+    if (mLocApi == nullptr)
+        return mask;
+    if (mLocApi->isMessageSupported(LOC_API_ADAPTER_MESSAGE_DISTANCE_BASE_LOCATION_BATCHING)) {
+        mask |= LOCATION_CAPABILITIES_TIME_BASED_BATCHING_BIT |
+                LOCATION_CAPABILITIES_DISTANCE_BASED_BATCHING_BIT;
+    }
+    if (mLocApi->isMessageSupported(LOC_API_ADAPTER_MESSAGE_DISTANCE_BASE_TRACKING)) {
+        mask |= LOCATION_CAPABILITIES_DISTANCE_BASED_TRACKING_BIT;
+    }
+    if (mLocApi->isMessageSupported(LOC_API_ADAPTER_MESSAGE_OUTDOOR_TRIP_BATCHING)) {
+        mask |= LOCATION_CAPABILITIES_OUTDOOR_TRIP_BATCHING_BIT;
+    }
+    if (mLocApi->gnssConstellationConfig()) {
+        mask |= LOCATION_CAPABILITIES_GNSS_MEASUREMENTS_BIT;
+    }
+    if (mLocApi->isFeatureSupported(LOC_SUPPORTED_FEATURE_DEBUG_NMEA_V02)) {
+        mask |= LOCATION_CAPABILITIES_DEBUG_NMEA_BIT;
+    }
+    return mask;
+}
+
+void
+GnssAdapter::broadcastCapabilities(LocationCapabilitiesMask mask)
+{
+    for (auto it = mClientData.begin(); it != mClientData.end(); ++it) {
+        if (nullptr != it->second.capabilitiesCb) {
+            it->second.capabilitiesCb(mask);
+        }
+    }
 }
 
 LocationCallbacks
@@ -1978,38 +2005,51 @@ GnssAdapter::reportSvEvent(const GnssSvNotification& svNotify,
 void
 GnssAdapter::reportSv(GnssSvNotification& svNotify)
 {
-    if (mGnssSvIdUsedInPosAvail) {
-        int numSv = svNotify.count;
-        int16_t gnssSvId = 0;
-        uint64_t svUsedIdMask = 0;
-        for (int i=0; i < numSv; i++) {
-            gnssSvId = svNotify.gnssSvs[i].svId;
-            switch (svNotify.gnssSvs[i].type) {
-                case GNSS_SV_TYPE_GPS:
+    int numSv = svNotify.count;
+    int16_t gnssSvId = 0;
+    uint64_t svUsedIdMask = 0;
+    for (int i=0; i < numSv; i++) {
+        svUsedIdMask = 0;
+        gnssSvId = svNotify.gnssSvs[i].svId;
+        switch (svNotify.gnssSvs[i].type) {
+            case GNSS_SV_TYPE_GPS:
+                if (mGnssSvIdUsedInPosAvail) {
                     svUsedIdMask = mGnssSvIdUsedInPosition.gps_sv_used_ids_mask;
-                    break;
-                case GNSS_SV_TYPE_GLONASS:
+                }
+                break;
+            case GNSS_SV_TYPE_GLONASS:
+                if (mGnssSvIdUsedInPosAvail) {
                     svUsedIdMask = mGnssSvIdUsedInPosition.glo_sv_used_ids_mask;
-                    break;
-                case GNSS_SV_TYPE_BEIDOU:
+                }
+                break;
+            case GNSS_SV_TYPE_BEIDOU:
+                if (mGnssSvIdUsedInPosAvail) {
                     svUsedIdMask = mGnssSvIdUsedInPosition.bds_sv_used_ids_mask;
-                    break;
-                case GNSS_SV_TYPE_GALILEO:
+                }
+                break;
+            case GNSS_SV_TYPE_GALILEO:
+                if (mGnssSvIdUsedInPosAvail) {
                     svUsedIdMask = mGnssSvIdUsedInPosition.gal_sv_used_ids_mask;
-                    break;
-                case GNSS_SV_TYPE_QZSS:
+                }
+                break;
+            case GNSS_SV_TYPE_QZSS:
+                if (mGnssSvIdUsedInPosAvail) {
                     svUsedIdMask = mGnssSvIdUsedInPosition.qzss_sv_used_ids_mask;
-                    break;
-                default:
-                    svUsedIdMask = 0;
-                    break;
-            }
+                }
+                // QZSS SV id's need to reported as it is to framework, since
+                // framework expects it as it is. See GnssStatus.java.
+                // SV id passed to here by LocApi is 1-based.
+                svNotify.gnssSvs[i].svId += (QZSS_SV_PRN_MIN - 1);
+                break;
+            default:
+                svUsedIdMask = 0;
+                break;
+        }
 
-            // If SV ID was used in previous position fix, then set USED_IN_FIX
-            // flag, else clear the USED_IN_FIX flag.
-            if (svUsedIdMask & (1 << (gnssSvId - 1))) {
-                svNotify.gnssSvs[i].gnssSvOptionsMask |= GNSS_SV_OPTIONS_USED_IN_FIX_BIT;
-            }
+        // If SV ID was used in previous position fix, then set USED_IN_FIX
+        // flag, else clear the USED_IN_FIX flag.
+        if (svUsedIdMask & (1 << (gnssSvId - 1))) {
+            svNotify.gnssSvs[i].gnssSvOptionsMask |= GNSS_SV_OPTIONS_USED_IN_FIX_BIT;
         }
     }
 
@@ -2700,7 +2740,7 @@ void GnssAdapter::convertSatelliteInfo(std::vector<GnssDebugSatelliteInfo>& out,
         case GNSS_SV_TYPE_QZSS:
             svid_min = GNSS_BUGREPORT_QZSS_MIN;
             svid_num = QZSS_NUM;
-            svid_idx = GPS_NUM+GLO_NUM;
+            svid_idx = GPS_NUM+GLO_NUM+BDS_NUM+GAL_NUM;
             if (!in.mSvHealth.empty()) {
                 eph_health_good_mask = in.mSvHealth.back().mQzssGoodMask;
                 eph_health_bad_mask  = in.mSvHealth.back().mQzssBadMask;
@@ -2713,7 +2753,7 @@ void GnssAdapter::convertSatelliteInfo(std::vector<GnssDebugSatelliteInfo>& out,
         case GNSS_SV_TYPE_BEIDOU:
             svid_min = GNSS_BUGREPORT_BDS_MIN;
             svid_num = BDS_NUM;
-            svid_idx = GPS_NUM+GLO_NUM+QZSS_NUM;
+            svid_idx = GPS_NUM+GLO_NUM;
             if (!in.mSvHealth.empty()) {
                 eph_health_good_mask = in.mSvHealth.back().mBdsGoodMask;
                 eph_health_bad_mask  = in.mSvHealth.back().mBdsBadMask;
@@ -2726,7 +2766,7 @@ void GnssAdapter::convertSatelliteInfo(std::vector<GnssDebugSatelliteInfo>& out,
         case GNSS_SV_TYPE_GALILEO:
             svid_min = GNSS_BUGREPORT_GAL_MIN;
             svid_num = GAL_NUM;
-            svid_idx = GPS_NUM+GLO_NUM+QZSS_NUM+BDS_NUM;
+            svid_idx = GPS_NUM+GLO_NUM+BDS_NUM;
             if (!in.mSvHealth.empty()) {
                 eph_health_good_mask = in.mSvHealth.back().mGalGoodMask;
                 eph_health_bad_mask  = in.mSvHealth.back().mGalBadMask;

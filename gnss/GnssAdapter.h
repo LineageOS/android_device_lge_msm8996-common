@@ -92,6 +92,7 @@ class GnssAdapter : public LocAdapterBase {
     /* ==== CONTROL ======================================================================== */
     LocationControlCallbacks mControlCallbacks;
     uint32_t mPowerVoteId;
+    uint32_t mNmeaMask;
 
     /* ==== NI ============================================================================= */
     NiData mNiData;
@@ -138,6 +139,8 @@ public:
     void updateClientsEventMask();
     void stopClientSessions(LocationAPI* client);
     LocationCallbacks getClientCallbacks(LocationAPI* client);
+    LocationCapabilitiesMask getCapabilities();
+    void broadcastCapabilities(LocationCapabilitiesMask);
 
     /* ==== TRACKING ======================================================================= */
     /* ======== COMMANDS ====(Called from Client Thread)==================================== */
