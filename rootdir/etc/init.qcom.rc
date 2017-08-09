@@ -367,8 +367,8 @@ service conn_init /system/bin/hwaddrs
 on property:init.svc.conn_init=stopped
     chmod 0644 /data/misc/wifi/config
     chown system wifi /data/misc/wifi/config
-    chmod 0644 /data/misc/bdaddr
-    chown bluetooth bluetooth /data/misc/bdaddr
+    chmod 0644 /data/misc/bluetooth/bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
 
 on post-fs
     chmod 0660 /dev/lge_dm_tty0
