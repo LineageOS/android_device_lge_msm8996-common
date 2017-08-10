@@ -14,9 +14,10 @@
 # limitations under the License.
 #
 
-BOARD_VENDOR := lge
-
 COMMON_PATH := device/lge/msm8996-common
+
+# inherit from common lge
+-include device/lge/common/BoardConfigCommon.mk
 
 TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
