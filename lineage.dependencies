@@ -4,6 +4,10 @@
     "target_path": "device/qcom/common"
   },
   {
+    "repository": "android_device_lge_common",
+    "target_path": "device/lge/common"
+  },
+  {
     "repository": "android_kernel_lge_msm8996",
     "target_path": "kernel/lge/msm8996"
   },
