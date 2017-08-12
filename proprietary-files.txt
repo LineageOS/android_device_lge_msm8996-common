@@ -39,10 +39,8 @@ etc/firmware/cpp_firmware_v1_12_0.fw
 -priv-app/HotwordEnrollment/HotwordEnrollment:priv-app/HotwordEnrollment/HotwordEnrollment.apk:PRESIGNED
 
 # IR
-lib/hw/consumerir.msm8996.so
-lib/libcir_driver.so
-lib64/hw/consumerir.msm8996.so
-lib64/libcir_driver.so
+-lib/libcir_driver.so
+-lib64/libcir_driver.so
 
 # LG Keymaster
 lib/hw/lgkm.default.so
