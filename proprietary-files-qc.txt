@@ -334,7 +334,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqti-wl.so
 vendor/lib/libquipc_os_api.so
 vendor/lib/libsmemlog.so
-vendor/lib64/libdiag.so|19f27ab6bb4a5c1430165434da856fe231ce3918
+vendor/lib64/libdiag.so
 -vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
@@ -450,13 +450,13 @@ vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
 # Thermal
-vendor/bin/thermal-engine|e1c914d4f5a8ee7085b6d347d12ba57067950fce
+vendor/bin/thermal-engine
 -vendor/lib/libthermalclient.so
 -vendor/lib64/libthermalclient.so
 vendor/lib64/libthermalioctl.so
 
 # Time services
--app/TimeService/TimeService.apk|4f477142cde4c0c1f9e9c8bc532fb0aa92b519d5
+-app/TimeService/TimeService.apk
 bin/time_daemon
 -vendor/lib/libtime_genoff.so
 vendor/lib/libTimeService.so

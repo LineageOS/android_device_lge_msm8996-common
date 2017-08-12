@@ -1,8 +1,6 @@
 # Camera postprocessing
 vendor/lib/libchromaflash.so
-vendor/lib/libllvd_smore.so
 vendor/lib/liboptizoom.so
-vendor/lib/libseemore.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 
