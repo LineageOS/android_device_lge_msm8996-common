@@ -326,6 +326,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory
 
+# Vibrator
+PRODUCT_PACKAGES += \
+    android.hardware.vibrator@1.0-impl \
+    android.hardware.vibrator@1.0-service
+
 # Virtual Reality
 PRODUCT_PACKAGES += \
     vr.msm8996
