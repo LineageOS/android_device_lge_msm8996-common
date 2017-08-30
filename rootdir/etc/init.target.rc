@@ -77,7 +77,7 @@ on post-fs-data
     mkdir /data/misc/audio_pp 0771 media audio
 
 # Start camera server as daemon
-service qcamerasvr /vendor/bin/mm-qcamera-daemon
+service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
     class main
     user camera
     group camera system inet input graphics
@@ -93,42 +93,42 @@ service qvop-daemon /system/bin/qvop-daemon
     group system drmrpc
 
 # Start up peripheral manager
-service per_mgr /vendor/bin/pm-service
+service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
     group system net_raw
     ioprio rt 4
 
-service per_proxy /vendor/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
     disabled
 
 on property:init.svc.per_mgr=running
-    start per_proxy
+    start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
-    stop per_proxy
+    stop vendor.per_proxy
 
-service qseecomd /vendor/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
 
-service energy-awareness /vendor/bin/energy-awareness
+service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system
     oneshot
 
-service perfd /vendor/bin/perfd
+service vendor.perfd /vendor/bin/perfd
     class main
     user root
     group root system
     writepid /dev/cpuset/system-background/tasks
 
-service thermal-engine /system/vendor/bin/thermal-engine -c /vendor/etc/thermal-engine-8996.conf
+service vendor.thermal-engine /vendor/bin/thermal-engine -c /vendor/etc/thermal-engine-8996.conf
     class main
     user root
     socket thermal-send-client stream 0666 system system
@@ -139,17 +139,17 @@ service thermal-engine /system/vendor/bin/thermal-engine -c /vendor/etc/thermal-
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
 
-service time_daemon /vendor/bin/time_daemon
+service vendor.time_daemon /vendor/bin/time_daemon
     class late_start
     user root
     group root
 
-service adsprpcd /vendor/bin/adsprpcd
+service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user media
     group media
 
-service audiod /vendor/bin/audiod
+service vendor.audiod /vendor/bin/audiod
     class late_start
     user system
     group system
@@ -159,7 +159,7 @@ service tlocd /system/bin/tloc_daemon
     user system
     group drmrpc gps net_raw
 
-service mdtp_service /system/vendor/bin/mdtp_service
+service vendor.mdtp_service /vendor/bin/mdtp_service
    class late_start
    user system
    group system
