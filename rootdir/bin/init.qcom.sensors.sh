@@ -39,7 +39,7 @@ start_sensors()
         mkdir -p /data/misc/sensors
         chmod -h 775 /data/misc/sensors
 
-        start sensors
+        start vendor.sensors
     fi
 }
 
