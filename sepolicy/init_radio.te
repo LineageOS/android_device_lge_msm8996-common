@@ -4,6 +4,8 @@ type init_radio_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(init_radio)
 
+allow init_radio self:capability dac_override;
+
 # copy files from /firmware to /data/misc/radio
 allow init_radio vendor_shell_exec:file rx_file_perms;
 allow init_radio vendor_toolbox_exec:file rx_file_perms;
@@ -14,3 +16,11 @@ allow init_radio self:capability chown;
 allow init_radio radio_data_file:dir create_dir_perms;
 allow init_radio radio_data_file:file create_file_perms;
 allow init_radio radio_data_file:file w_file_perms;
+
+allow init_radio vendor_radio_data_file:dir { remove_name rw_dir_perms setattr };
+allow init_radio vendor_radio_data_file:file {
+    create
+    rw_file_perms
+    setattr
+    unlink
+};

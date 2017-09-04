@@ -1,0 +1,6 @@
+userdebug_or_eng(`
+# debugfs entries are only needed in user-debug or eng builds
+
+# Allow wifi hal to access wlan debugfs files and directories
+allow hal_wifi debugfs_wlan:dir r_dir_perms;
+')
