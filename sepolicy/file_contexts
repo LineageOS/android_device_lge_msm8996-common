@@ -1,5 +1,5 @@
 # Bluetooth
-/system/bin/hwaddrs                                                 u:object_r:hwaddrs_exec:s0
+/(vendor|system/vendor)/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
 /sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0
 
@@ -7,7 +7,7 @@
 /sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
 
 # Fingerprint
-/system/bin/fpc_early_loader                                        u:object_r:fingerprintd_exec:s0
+/(vendor|system/vendor)/bin/fpc_early_loader                        u:object_r:fpc_early_loader_exec:s0
 /sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
 
 # FRP partition
@@ -18,9 +18,13 @@
 
 # Init
 /(vendor|system/vendor)/bin/init\.power\.sh                         u:object_r:init_power_exec:s0
+/(vendor|system/vendor)/bin/init\.radio\.sh                         u:object_r:qti_init_shell_exec:s0
 
 # IR Blaster
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0
+
+# Lights
+/sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns         u:object_r:sysfs_leds:s0
 
 # Netmgr
 /data/misc/netmgr(/.*)?                                             u:object_r:net_data_file:s0
@@ -32,7 +36,6 @@
 /persist-lg(/.*)?                                                   u:object_r:persist_drm_file:s0
 
 # Power management
-/sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_power_management:s0
 /sys/devices/soc/qpnp-smbcharger-16/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/soc:lge-battery-veneer/power_supply/battery-veneer(/.*)?   u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/6a00000.ssusb/power_supply/usb(/.*)?                       u:object_r:sysfs_usb_supply:s0
