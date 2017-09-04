@@ -1,0 +1,7 @@
+# open DRM firmware
+# LG puts firmware in /persist-lg/firmware/...
+allow hal_drm_default persist_drm_file:dir search;
+allow hal_drm_default persist_drm_file:file r_file_perms;
+# ... but they also leave qcoms copy in /firmware/image/
+allow hal_drm_default firmware_file:dir search;
+allow hal_drm_default firmware_file:file r_file_perms;
