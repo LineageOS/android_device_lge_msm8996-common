@@ -32,7 +32,6 @@
 /persist-lg(/.*)?                                                   u:object_r:persist_drm_file:s0
 
 # Power management
-/sys/module/lpm_levels/parameters(/.*)?                             u:object_r:sysfs_power_management:s0
 /sys/devices/soc/qpnp-smbcharger-16/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/soc:lge-battery-veneer/power_supply/battery-veneer(/.*)?   u:object_r:sysfs_battery_supply:s0
 /sys/devices/soc/6a00000.ssusb/power_supply/usb(/.*)?                       u:object_r:sysfs_usb_supply:s0
