@@ -233,6 +233,7 @@ PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libdashplayer \
     libdivxdrmdecrypt \
+    libhypv_intercept \
     libmm-omxcore \
     libextmedia_jni \
     libOmxAacEnc \
