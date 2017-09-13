@@ -701,7 +701,7 @@ service tftp_server /system/bin/tftp_server
 service ftmd /system/bin/ftmdaemon
     class late_start
     user root
-    group bluetooth net_bt_admin misc net_bt_stack qcom_diag net_bt
+    group bluetooth net_bt_admin misc qcom_diag net_bt
     disabled
     oneshot
 
