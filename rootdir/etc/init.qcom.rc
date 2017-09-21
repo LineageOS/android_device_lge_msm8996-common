@@ -494,6 +494,12 @@ on post-fs-data
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
 
+    mkdir /data/audio/ 0770 media audio
+
+    # Create a folder for audio delta files
+    mkdir /data/audio/acdbdata 0770 media audio
+    mkdir /data/audio/acdbdata/delta 0770 media audio
+
     setprop vold.post_fs_data_done 1
 
     # Create a folder for SRS to be able to create a usercfg file
