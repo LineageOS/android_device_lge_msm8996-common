@@ -378,7 +378,7 @@ on boot
 on property:sys.boot_completed=1
     write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
 
-service conn_init /system/bin/hwaddrs
+service conn_init /vendor/bin/hwaddrs
     class core
     user root
     group system wifi
