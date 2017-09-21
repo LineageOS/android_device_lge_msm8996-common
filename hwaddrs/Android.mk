@@ -24,4 +24,6 @@ LOCAL_PRELINK_MODULE := false
 
 LOCAL_MODULE := hwaddrs
 
+LOCAL_VENDOR_MODULE := true
+
 include $(BUILD_EXECUTABLE)
