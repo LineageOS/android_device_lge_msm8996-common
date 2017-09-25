@@ -53,6 +53,9 @@ on init
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
 
+    # Camera shims
+    export LD_SHIM_LIBS "/system/lib/hw/camera.msm8996.so|/system/lib/libshim_camera.so:/system/vendor/lib/libmmcamera_ppeiscore.so|/system/lib/libshim_camera.so"
+
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
