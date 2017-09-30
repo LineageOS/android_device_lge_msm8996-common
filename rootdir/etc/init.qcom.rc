@@ -43,6 +43,12 @@ service charger /sbin/healthd -c
     critical
     seclabel u:r:healthd:s0
 
+on early-init
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+    chown root system /dev/kmsg
+    chmod 0620 /dev/kmsg
+
 on init
     # Support legacy paths
     symlink /sdcard /storage/sdcard0
@@ -55,6 +61,9 @@ on init
 
     # Camera shims
     export LD_SHIM_LIBS "/system/lib/hw/camera.msm8996.so|/system/lib/libshim_camera.so:/system/vendor/lib/libmmcamera_ppeiscore.so|/system/lib/libshim_camera.so"
+
+on post-fs
+    chmod 0755 /sys/kernel/debug/tracing
 
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
