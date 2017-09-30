@@ -484,8 +484,8 @@ on post-fs-data
     chown system system /data/fota
 
     # Make sure the default firmware is loaded
-    write /sys/module/bcmdhd/parameters/firmware_path "/system/etc/firmware/fw_bcmdhd.bin"
-    write /sys/module/bcmdhd/parameters/nvram_path "/system/etc/wifi/bcmdhd.cal"
+    write /sys/module/bcmdhd/parameters/firmware_path "/vendor/firmware/fw_bcmdhd.bin"
+    write /sys/module/bcmdhd/parameters/nvram_path "/vendor/etc/wifi/bcmdhd.cal"
 
     # Create directory for hostapd
     mkdir /data/hostapd 0770 system wifi
