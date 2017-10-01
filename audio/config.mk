@@ -3,7 +3,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_aosp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
 else
 PRODUCT_COPY_FILES += \
-    $(AUDIO_HAL_ROOT)/audio/audio_policy_caf.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
+    $(LOCAL_PATH)/audio/audio_policy_caf.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
 endif
 
 PRODUCT_COPY_FILES += \
