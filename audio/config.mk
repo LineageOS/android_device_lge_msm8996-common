@@ -1,3 +1,6 @@
+TARGET_USES_AOSP_FOR_AUDIO := true
+USE_XML_AUDIO_POLICY_CONF := 1
+
 ifeq ($(TARGET_USES_AOSP_FOR_AUDIO), true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy_aosp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy.conf
