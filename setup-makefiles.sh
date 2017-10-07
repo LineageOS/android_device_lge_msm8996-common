@@ -43,14 +43,14 @@ setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$CM_ROOT" true
 write_headers "$G5_DEVICE_LIST $V20_DEVICE_LIST $G6_DEVICE_LIST"
 
 # The standard blobs
-write_makefiles "$MY_DIR"/proprietary-files.txt
+write_makefiles "$MY_DIR"/proprietary-files.txt true
 
 # Qualcomm BSP blobs - we put a conditional around here
 # in case the BSP is actually being built
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$PRODUCTMK"
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
-write_makefiles "$MY_DIR"/proprietary-files-qc.txt
+write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
 
 # Qualcomm performance blobs - conditional as well
 # in order to support Cyanogen OS builds
@@ -67,7 +67,7 @@ endif
 ifneq (\$(TARGET_HAVE_QC_PERF),true)
 EOF
 
-write_makefiles "$MY_DIR"/proprietary-files-qc-perf.txt
+write_makefiles "$MY_DIR"/proprietary-files-qc-perf.txt true
 
 echo "endif" >> "$PRODUCTMK"
 echo "endif" >> "$ANDROIDMK"
@@ -89,7 +89,7 @@ else
     fi
 fi
 
-write_makefiles "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt
+write_makefiles "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt true
 
 # We are done with common
 write_footers
@@ -100,14 +100,14 @@ setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 # Copyright headers and guards
 write_headers
 
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt
+write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt true
 
 # Qualcomm BSP blobs - we put a conditional around here
 # in case the BSP is actually being built
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$PRODUCTMK"
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt
+write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt true
 
 printf '\n%s\n' "endif" >> "$PRODUCTMK"
 printf '\n%s\n' "endif" >> "$ANDROIDMK"
