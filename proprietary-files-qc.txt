@@ -280,8 +280,8 @@ vendor/lib64/libvpphvx.so
 vendor/lib64/libvpplibrary.so
 
 # Perf
-bin/energy-awareness
-bin/msm_irqbalance
+vendor/bin/energy-awareness
+vendor/bin/msm_irqbalance
 
 # Peripheral manager
 vendor/bin/pm-proxy
@@ -298,8 +298,7 @@ vendor/lib64/libdisp-aba.so
 # QMI
 etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
-vendor/bin/pd-mapper
-vendor/lib/libdiag.so|3451105092e41be855d4d3857e58e2582c78972a
+vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
@@ -314,7 +313,6 @@ vendor/lib/libqmi_client_qmux.so
 -vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
-vendor/lib/libqti-wl.so
 vendor/lib/libquipc_os_api.so
 vendor/lib/libsmemlog.so
 vendor/lib64/libdiag.so
@@ -332,7 +330,6 @@ vendor/lib64/libqmi_client_qmux.so
 -vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-vendor/lib64/libqti-wl.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
@@ -418,6 +415,7 @@ vendor/lib64/lib-rtpcommon.so
 vendor/lib64/lib-rtpcore.so
 vendor/lib64/lib-rtpdaemoninterface.so
 vendor/lib64/lib-rtpsl.so
+vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 

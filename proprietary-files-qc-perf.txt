@@ -1,24 +1,4 @@
 # Perf
-bin/iop
-lib64/libqti-iop.so
 vendor/bin/perfd
-vendor/etc/perf-profile0.conf
-vendor/etc/perf-profile1.conf
-vendor/etc/perf-profile2.conf
-vendor/etc/perf-profile3.conf
-vendor/etc/perf-profile4.conf
-vendor/etc/perf-profile5.conf
-vendor/etc/perf-profile6.conf
-vendor/etc/perf-profile200.conf
-vendor/etc/perf-profile210.conf
-vendor/etc/perf-profile250.conf
-vendor/etc/perf-profile251.conf
-vendor/etc/perf-profile252.conf
-vendor/etc/perf-profile550.conf
-vendor/etc/perf-profile551.conf
-vendor/etc/perf-profile552.conf
-vendor/etc/perf-profile553.conf
-vendor/lib/libqti-iop-client.so
 vendor/lib/libqti-perfd-client.so
-vendor/lib64/libqti-iop-client.so
 vendor/lib64/libqti-perfd-client.so
