@@ -112,19 +112,11 @@ service qseecomd /vendor/bin/qseecomd
     user root
     group root
 
-service energy-awareness /system/bin/energy-awareness
+service energy-awareness /vendor/bin/energy-awareness
     class main
     user root
     group system
     oneshot
-
-service iop /system/bin/iop
-    class main
-    user root
-    group root
-    disabled
-    socket iop seqpacket 0666 root system
-    writepid /dev/cpuset/system-background/tasks
 
 service perfd /vendor/bin/perfd
     class main
@@ -162,27 +154,10 @@ service audiod /vendor/bin/audiod
     user system
     group system
 
-service pd_mapper /system/vendor/bin/pd-mapper
-    class core
-    disabled
-
-on property:persist.sys.pd_enable=1
-    start pd_mapper
-    write /sys/class/service_locator/service_locator_status 1
-
-on property:persist.sys.pd_enable=0
-    write /sys/class/service_locator/service_locator_status 0
-
 service tlocd /system/bin/tloc_daemon
     class late_start
     user system
     group drmrpc gps net_raw
-
-service energy-awareness /system/bin/energy-awareness
-    class main
-    user root
-    group system
-    oneshot
 
 service mdtp_service /system/vendor/bin/mdtp_service
    class late_start
