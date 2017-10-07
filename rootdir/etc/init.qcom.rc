@@ -938,7 +938,7 @@ service vm_bms /system/bin/vm_bms
     group root
     disabled
 
-service msm_irqbalance /system/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
+service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
     class main
     user root
     group root
