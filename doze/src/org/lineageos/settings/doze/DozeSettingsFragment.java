@@ -91,9 +91,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        // get shared preference
-        mPreferences = getActivity().getSharedPreferences("doze_settings", Activity.MODE_PRIVATE);
-
         if (savedInstanceState == null && !mPreferences.getBoolean("first_help_shown", false)) {
             showHelp();
         }
@@ -193,7 +190,16 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         return false;
     }
 
-    public static class HelpDialogFragment extends DialogFragment {
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getActivity().onBackPressed();
+            return true;
+        }
+        return false;
+    }
+
+    private static class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             return new AlertDialog.Builder(getActivity())
