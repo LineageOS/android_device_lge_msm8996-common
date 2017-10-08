@@ -57,7 +57,6 @@ fi
 setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$CM_ROOT" true $clean_vendor
 
 extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files-qc-perf.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 # Initialize the helper for common device

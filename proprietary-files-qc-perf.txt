@@ -1,4 +1,0 @@
-# Perf
-vendor/bin/perfd
-vendor/lib/libqti-perfd-client.so
-vendor/lib64/libqti-perfd-client.so

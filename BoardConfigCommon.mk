@@ -132,8 +132,9 @@ BOARD_USES_QCNE := true
 
 # CPU
 ENABLE_CPUSETS := true
-ENABLE_SCHEDBOOST := true
-TARGET_USES_INTERACTION_BOOST := true
+# Disable EAS until fully brought up on new kernel
+#ENABLE_SCHEDBOOST := true
+#TARGET_USES_INTERACTION_BOOST := true
 
 # Display
 BOARD_USES_ADRENO := true
@@ -191,8 +192,7 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_NEEDS_PDFIUM_BIGINT := true
 
 # Power
-TARGET_PROVIDES_POWERHAL := true
-BOARD_HAL_STATIC_LIBRARIES := libdumpstate.msm8996
+TARGET_POWERHAL_VARIANT := qcom
 
 # Properties
 TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
