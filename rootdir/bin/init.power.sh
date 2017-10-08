@@ -1,6 +1,14 @@
 #!/system/bin/sh
 
 ################################################################################
+# local definitions
+
+soc_revision=`cat /sys/devices/soc0/revision`
+soc_id=`cat /sys/devices/soc0/soc_id`
+
+################################################################################
+
+################################################################################
 # helper functions to allow Android init like script
 
 function write() {
@@ -35,18 +43,22 @@ write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
 
 # EAS: Capping the max frequency of silver core to 1.6GHz
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
+if [ "$soc_id" == "246" ]; then
+  write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
+else
+  write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2188800
+fi
 
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 1
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_migration_notif 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:39000"
+write /sys/devices/system/cpu/cpu2/cpufreq/interactive/above_hispeed_delay "19000 1400000:39000 1700000:19000 2100000:79000"
 
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/go_hispeed_load 90
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/timer_rate 20000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/hispeed_freq 1248000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/io_is_busy 1
-write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 1500000:90 1800000:95"
+write /sys/devices/system/cpu/cpu2/cpufreq/interactive/target_loads "85 1500000:90 1800000:70 2100000:95"
 
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/min_sample_time 19000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 39000
@@ -102,6 +114,22 @@ for memlat in /sys/class/devfreq/*qcom,memlat-cpu* ; do
     write $memlat/governor "mem_latency"
     write $memlat/polling_interval 10
 done
+
+# This doesn't affect msm8996pro since it's revisions only go to 1.1
+if [ "$soc_revision" == "2.0" ]; then
+  #Disable suspend for v2.0
+  write /sys/power/wake_lock pwr_dbg
+elif [ "$soc_revision" == "2.1" ]; then
+  # Enable C4.D4.E4.M3 LPM modes
+  # Disable D3 state
+  write /sys/module/lpm_levels/system/pwr/pwr-l2-gdhs/idle_enabled 0
+  write /sys/module/lpm_levels/system/perf/perf-l2-gdhs/idle_enabled 0
+  # Disable DEF-FPC mode
+  write /sys/module/lpm_levels/system/pwr/cpu0/fpc-def/idle_enabled N
+  write /sys/module/lpm_levels/system/pwr/cpu1/fpc-def/idle_enabled N
+  write /sys/module/lpm_levels/system/perf/cpu2/fpc-def/idle_enabled N
+  write /sys/module/lpm_levels/system/perf/cpu3/fpc-def/idle_enabled N
+fi
 
 # Enable all LPMs by default
 # This will enable C4, D4, D3, E4 and M3 LPMs

@@ -52,24 +52,12 @@ printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
 
-# Qualcomm performance blobs - conditional as well
-# in order to support Cyanogen OS builds
 cat << EOF >> "$PRODUCTMK"
 endif
 
 -include vendor/extra/devices.mk
-ifneq (\$(call is-qc-perf-target),true)
 EOF
 
-cat << EOF >> "$ANDROIDMK"
-endif
-
-ifneq (\$(TARGET_HAVE_QC_PERF),true)
-EOF
-
-write_makefiles "$MY_DIR"/proprietary-files-qc-perf.txt true
-
-echo "endif" >> "$PRODUCTMK"
 echo "endif" >> "$ANDROIDMK"
 
 # We are done with platform
