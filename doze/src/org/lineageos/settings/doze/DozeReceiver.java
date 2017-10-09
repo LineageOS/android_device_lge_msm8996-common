@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.cyanogenmod.settings.doze;
+package org.lineageos.settings.doze;
 
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 
-import cyanogenmod.preference.RemotePreferenceUpdater;
+import lineageos.preference.RemotePreferenceUpdater;
 
 public class DozeReceiver extends RemotePreferenceUpdater {
 
