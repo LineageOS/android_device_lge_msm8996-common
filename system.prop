@@ -69,7 +69,7 @@ ro.qualcomm.cabl=0
 ro.sf.lcd_density=560
 
 # Factory Reset Protection (FRP)
-ro.frp.pst=/dev/block/bootdevice/by-name/persistent
+ro.frp.pst=/dev/block/platform/soc/624000.ufshc/by-name/persistent
 
 # Fluence
 ro.qc.sdk.audio.fluencetype=fluence
