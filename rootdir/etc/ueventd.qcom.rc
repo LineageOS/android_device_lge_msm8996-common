@@ -244,7 +244,6 @@
 
 # LGE Broadcast
 /dev/broadcast0           0660   media     media
-/dev/block/bootdevice/by-name/persistent        0600    system  system
 
 # LGE Broadcast (JAP)
 /dev/broadcast_*          0660   system      system
@@ -258,5 +257,5 @@
 /dev/lirc0                0660   system     system
 
 # Device block for FRP
-/dev/block/bootdevice/by-name/frp                                  0660   system     system
-/dev/block/platform/soc/624000.ufshc/by-name/frp                   0660   system     system
+/dev/block/platform/soc/624000.ufshc/by-name/persistent            0660   system     system
+/dev/block/bootdevice/by-name/persistent                           0660   system     system
