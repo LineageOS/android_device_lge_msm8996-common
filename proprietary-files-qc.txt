@@ -422,12 +422,16 @@ vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
 vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
--vendor/app/ims/ims.apk
--vendor/app/imssettings/imssettings.apk
 lib/com.qualcomm.qti.imscmservice@1.0.so
+lib/libimscamera_jni.so
+lib/libimsmedia_jni.so
 lib/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
+lib64/libimscamera_jni.so
+lib64/libimsmedia_jni.so
 lib64/vendor.qti.imsrtpservice@1.0.so
+-vendor/app/ims/ims.apk
+-vendor/app/imssettings/imssettings.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
