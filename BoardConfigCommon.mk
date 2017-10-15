@@ -122,8 +122,8 @@ BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
-# CMHW
-BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
+# lineagehw
+BOARD_HARDWARE_CLASS += $(COMMON_PATH)/lineagehw
 BOARD_USES_CYANOGEN_HARDWARE := true
 TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
 
