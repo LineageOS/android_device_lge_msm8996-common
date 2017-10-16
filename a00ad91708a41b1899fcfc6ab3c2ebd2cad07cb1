@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "507d6ebf_4bd650db",
+        "filename": "doze/AndroidManifest.xml",
+        "patchSetId": 3
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2017-10-16T21:16:56Z",
+      "side": 0,
+      "message": "Don\u0027t use IA for this. Replace the AOSP setting with the patch I uploaded.",
+      "range": {
+        "startLine": 37,
+        "startChar": 16,
+        "endLine": 37,
+        "endChar": 87
+      },
+      "revId": "a00ad91708a41b1899fcfc6ab3c2ebd2cad07cb1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
