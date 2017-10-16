@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.usb.rc
-import init.target.rc
+import /vendor/etc/init/hw/init.qcom.usb.rc
+import /vendor/etc/init/hw/init.target.rc
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
@@ -93,7 +93,7 @@ on early-boot
 
 on boot
     # Bring up CPUs
-    exec - root root system -- /system/bin/init.power.sh
+    start power-sh
 
     # Set permissions by node reads by dumpstate
     chmod 0644 /sys/devices/system/cpu/present
@@ -802,17 +802,25 @@ service qti /vendor/bin/qti
     group radio net_raw oem_2901 usb net_admin
     writepid /dev/cpuset/system-background/tasks
 
-service qcom-sh /system/bin/sh /init.qcom.sh
+service power-sh /vendor/bin/init.power.sh
+    class main
+    user root
+    group root system
+    disabled
+    oneshot
+
+service qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
     oneshot
 
-service radio-sh /system/bin/sh /init.radio.sh
+service radio-sh /vendor/bin/init.radio.sh
     class late_start
     user root
+    group root radio
     oneshot
 
-service sensor-sh /system/bin/sh /init.qcom.sensors.sh
+service sensor-sh /vendor/bin/init.qcom.sensors.sh
     class core
     user root
     oneshot
