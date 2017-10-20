@@ -39,10 +39,10 @@ while [ "$1" != "" ]; do
         -n | --no-cleanup )     CLEAN_VENDOR=false
                                 ;;
         -s | --section )        shift
-                                SECTION=$1
+                                SECTION="$1"
                                 CLEAN_VENDOR=false
                                 ;;
-        * )                     SRC=$1
+        * )                     SRC="$1"
                                 ;;
     esac
     shift
@@ -66,7 +66,7 @@ extract "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt "$SRC" "$SECTION"
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false $CLEAN_VENDOR
 
-extract "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR/../$DEVICE/proprietary-files-qc.txt" "$SRC" "$SECTION"
+extract "$MY_DIR/../$DEVICE/proprietary-files.txt" "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
