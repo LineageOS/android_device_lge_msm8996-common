@@ -53,7 +53,7 @@ printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 write_makefiles "$MY_DIR"/proprietary-files-qc.txt
 
 # Qualcomm performance blobs - conditional as well
-# in order to support Cyanogen OS builds
+# in order to support Lineage OS builds
 cat << EOF >> "$PRODUCTMK"
 endif
 
@@ -79,17 +79,23 @@ write_footers
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and guards
-if [ "$DEVICE_COMMON" == "g5-common" ]; then
+case "$DEVICE_COMMON" in
+g5-common)
     write_headers "$G5_DEVICE_LIST"
-else
-    if [ "$DEVICE_COMMON" == "g6-common" ]; then
-        write_headers "$G6_DEVICE_LIST"
-    else
-        write_headers "$V20_DEVICE_LIST"
-    fi
-fi
+;;
+g6-common)
+    write_headers "$G6_DEVICE_LIST"
+;;
+v20-common)
+    write_headers "$V20_DEVICE_LIST"
+;;
+*)
+    printf 'Unknown device common: "%s"\n' "$DEVICE_COMMON"
+    exit 1
+;;
+esac
 
-write_makefiles "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt
+write_makefiles "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt"
 
 # We are done with common
 write_footers
@@ -100,14 +106,14 @@ setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT"
 # Copyright headers and guards
 write_headers
 
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files.txt
+write_makefiles "$MY_DIR/../$DEVICE/proprietary-files.txt"
 
 # Qualcomm BSP blobs - we put a conditional around here
 # in case the BSP is actually being built
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$PRODUCTMK"
 printf '\n%s\n' "ifeq (\$(QCPATH),)" >> "$ANDROIDMK"
 
-write_makefiles "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt
+write_makefiles "$MY_DIR/../$DEVICE/proprietary-files-qc.txt"
 
 printf '\n%s\n' "endif" >> "$PRODUCTMK"
 printf '\n%s\n' "endif" >> "$ANDROIDMK"
