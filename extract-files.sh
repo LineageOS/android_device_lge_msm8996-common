@@ -37,10 +37,10 @@ clean_vendor=false
 while [ "$1" != "" ]; do
     case $1 in
         -p | --path )           shift
-                                SRC=$1
+                                SRC="$1"
                                 ;;
         -s | --section )        shift
-                                SECTION=$1
+                                SECTION="$1"
                                 clean_vendor=false
                                 ;;
         -c | --clean-vendor )   clean_vendor=true
@@ -68,7 +68,7 @@ extract "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt "$SRC" "$SECTION"
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$CM_ROOT" false $clean_vendor
 
-extract "$MY_DIR"/../$DEVICE/proprietary-files-qc.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR/../$DEVICE/proprietary-files-qc.txt" "$SRC" "$SECTION"
+extract "$MY_DIR/../$DEVICE/proprietary-files.txt" "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
