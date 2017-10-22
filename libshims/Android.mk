@@ -20,6 +20,8 @@ LOCAL_SRC_FILES := \
     camera_shim.cpp
 
 LOCAL_SHARED_LIBRARIES := \
+    liblog \
+    libutils \
     libgui \
     libui
 
