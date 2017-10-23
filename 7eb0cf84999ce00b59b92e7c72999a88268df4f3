@@ -45,6 +45,30 @@
       "revId": "7eb0cf84999ce00b59b92e7c72999a88268df4f3",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ef0f9bbc_b5ed049f",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-10-23T18:07:51Z",
+      "side": 1,
+      "message": "Well, someone might be testing something and then accidentally forget a portion of a commit.  This was mostly a case of reaching this point cannot be legal, so generate an error.",
+      "parentUuid": "9260f37c_d18ea59f",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 59
+      },
+      "revId": "7eb0cf84999ce00b59b92e7c72999a88268df4f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
