@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4f651dd1_d266e0e1",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2017-10-23T17:07:38Z",
+      "side": 1,
+      "message": "Eeek no. This was for CyanogenOS",
+      "range": {
+        "startLine": 56,
+        "startChar": 22,
+        "endLine": 56,
+        "endChar": 29
+      },
+      "revId": "7eb0cf84999ce00b59b92e7c72999a88268df4f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9260f37c_d18ea59f",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 3
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2017-10-23T17:07:38Z",
+      "side": 1,
+      "message": "This shouldn\u0027t be necessary. I don\u0027t see why anyone would inherit this script if they\u0027re not g5, g6 or v20.",
+      "range": {
+        "startLine": 93,
+        "startChar": 4,
+        "endLine": 93,
+        "endChar": 59
+      },
+      "revId": "7eb0cf84999ce00b59b92e7c72999a88268df4f3",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
