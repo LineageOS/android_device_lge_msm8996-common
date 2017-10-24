@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52e1926a_120872e4",
+        "filename": "Android.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-10-24T00:04:16Z",
+      "side": 1,
+      "message": "As previously stated, there are so many variants which start with \u0027H\u0027 that one starts to ignore the prefix and only look at the number.\n\nThe complete list of which there are references to is:\nH910, H915(Canada, note \"DirtyElf\"), H918, H990, VS995, US996, LS997, H998(unreleased, referenced in H990 bootloader).\n\nMeanwhile the existing list is \"v20 h910 h918 us996 ls997 vs995\" which isn\u0027t sorted.  I suspect the H915 may be able to use H910 builds.",
+      "revId": "7d52d7591c1e9bc1916284cbd5e07ece648c02b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a2f96dc_a430f090",
+        "filename": "setup-makefiles.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2017-10-24T00:04:16Z",
+      "side": 1,
+      "message": "Same as Android.mk.",
+      "revId": "7d52d7591c1e9bc1916284cbd5e07ece648c02b6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
