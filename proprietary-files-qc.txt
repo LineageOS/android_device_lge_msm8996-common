@@ -139,6 +139,7 @@ lib/vendor.qti.gnss@1.0.so
 lib64/vendor.qti.gnss@1.0.so
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
+vendor/bin/lowi-server
 vendor/bin/slim_daemon
 vendor/bin/xtra-daemon
 vendor/etc/init/vendor.qti.gnss@1.0-service.rc
@@ -423,10 +424,12 @@ vendor/radio/qcril_database/qcril.db
 
 # Radio - IMS
 lib/com.qualcomm.qti.imscmservice@1.0.so
+lib/lib-imsvt.so
 lib/libimscamera_jni.so
 lib/libimsmedia_jni.so
 lib/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
+lib64/lib-imsvt.so
 lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
 lib64/vendor.qti.imsrtpservice@1.0.so
