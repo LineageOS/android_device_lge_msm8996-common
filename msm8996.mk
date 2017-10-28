@@ -275,6 +275,13 @@ PRODUCT_PACKAGES += \
     power.qcom \
     thermal.msm8996
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
+
+# Qualcomm broadcast whitelist
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
+
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_msm8996
