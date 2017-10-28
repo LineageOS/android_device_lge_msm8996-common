@@ -313,6 +313,11 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
+# Treble
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_PACKAGES += \
+    vndk-sp \
+
 # USB
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service \
