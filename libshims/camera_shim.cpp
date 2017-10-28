@@ -16,17 +16,7 @@
 
 #include <string>
 
-#include <utils/Errors.h>
-
 #include <ui/GraphicBuffer.h>
-
-#include "gui/DisplayEventReceiver.h"
-#include <gui/IDisplayEventConnection.h>
-#include <gui/ISurfaceComposer.h>
-
-#include <private/gui/ComposerService.h>
-
-#include <private/gui/BitTube.h>
 
 extern "C" void _ZN7android13GraphicBufferC1EjjijjjP13native_handleb(
         const native_handle_t* handle,
@@ -53,18 +43,8 @@ extern "C" void _ZN7android13GraphicBufferC1EjjijjP13native_handleb(
         inFormat, static_cast<uint32_t>(1), static_cast<uint64_t>(inUsage), inStride);
 }
 
-namespace android {
+extern "C" void _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE();
 
-DisplayEventReceiver::DisplayEventReceiver() {
-    status_t err;
-    sp<ISurfaceComposer> sf(ComposerService::getComposerService());
-    if (sf != NULL) {
-        mEventConnection = sf->createDisplayEventConnection(ISurfaceComposer::eVsyncSourceApp);
-        if (mEventConnection != NULL) {
-            mDataChannel = std::make_unique<gui::BitTube>();
-            err = mEventConnection->stealReceiveChannel(mDataChannel.get());
-        }
-    }
+extern "C" void _ZN7android20DisplayEventReceiverC1Ev() {
+    _ZN7android20DisplayEventReceiverC1ENS_16ISurfaceComposer11VsyncSourceE;
 }
-
-}; // namespace android
