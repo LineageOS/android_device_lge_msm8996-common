@@ -141,3 +141,6 @@ if [[ $(getprop ro.debuggable) == "1" && ! -e /sys/class/tty/ttyHSL0 ]]
 then
     write /sys/module/printk/parameters/console_suspend N
 fi
+
+# Signal perfd that boot has completed
+setprop sys.post_boot.parsed 1
