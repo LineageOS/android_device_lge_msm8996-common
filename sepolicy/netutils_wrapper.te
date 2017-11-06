@@ -1,0 +1,2 @@
+# Shutup logspam
+dontaudit netutils_wrapper self:capability sys_module;
