@@ -275,11 +275,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-impl \
-    android.hardware.power@1.0-service \
+    android.hardware.power@1.1-service-qti \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service \
-    power.qcom \
     thermal.msm8996
 
 PRODUCT_COPY_FILES += \
