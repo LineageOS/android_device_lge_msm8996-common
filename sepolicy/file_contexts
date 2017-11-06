@@ -3,12 +3,16 @@
 /sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0
 
+# Camera
+/data/misc/camera/cam_socket[0-9]                                   u:object_r:camera_socket:s0
+
 # CPU tunable for EAS
 /sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
 
 # Fingerprint
 /(vendor|system/vendor)/bin/fpc_early_loader                        u:object_r:fpc_early_loader_exec:s0
 /sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
+/sys/devices/soc/75ba000\.spi/spi_master/spi12/spi12\.[0-1](/.*)?   u:object_r:sysfs_devices_fingerprint:s0
 
 # FRP partition
 /dev/block/platform/soc/624000.ufshc/by-name/persistent             u:object_r:frp_block_device:s0
@@ -48,3 +52,9 @@
 /sns                                                                u:object_r:sensors_data_file:s0
 /sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
 /persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0
+
+# SPI
+/sys/bus/spi/devices                                                u:object_r:sysfs_spi:s0
+
+# WLAN
+/sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
