@@ -9,6 +9,9 @@
 # CPU tunable for EAS
 /sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
 
+# Encryption metadata partition
+/dev/block/bootdevice/by-name/encrypt                               u:object_r:metadata_block_device:s0
+
 # Fingerprint
 /(vendor|system/vendor)/bin/fpc_early_loader                        u:object_r:fpc_early_loader_exec:s0
 /sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
