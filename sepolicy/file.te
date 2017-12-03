@@ -1,4 +1,5 @@
 type cir_device, dev_type;
+type encrypt_block_device, dev_type;
 type proc_irq, fs_type;
 type proc_kernel_sched, fs_type;
 type sysfs_devices_fingerprint, sysfs_type, file_type;
