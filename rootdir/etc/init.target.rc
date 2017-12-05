@@ -129,7 +129,7 @@ service vendor.perfd /vendor/bin/perfd
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.thermal-engine /vendor/bin/thermal-engine -c /vendor/etc/thermal-engine-8996.conf
-    class main
+    class hal
     user root
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
