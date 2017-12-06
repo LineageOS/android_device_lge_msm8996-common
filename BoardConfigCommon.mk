@@ -122,9 +122,10 @@ USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
 # CMHW
-BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
-BOARD_USES_CYANOGEN_HARDWARE := true
-TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
+#BOARD_HARDWARE_CLASS += $(COMMON_PATH)/cmhw
+#BOARD_USES_CYANOGEN_HARDWARE := true
+#TARGET_TAP_TO_WAKE_NODE := "/sys/devices/virtual/input/lge_touch/tap2wake"
+BOARD_HARDWARE_CLASS += hardware/lineage/livedisplay/lineagehw
 
 # CNE and DPM
 BOARD_USES_QCNE := true
@@ -202,9 +203,6 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.full
-
-# RIL
-TARGET_RIL_VARIANT := caf
 
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
