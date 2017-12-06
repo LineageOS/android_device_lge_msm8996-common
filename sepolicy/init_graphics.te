@@ -1,0 +1,15 @@
+type init_graphics, domain;
+type init_graphics_exec, exec_type, vendor_file_type,file_type;
+
+init_daemon_domain(init_graphics)
+
+allow init_graphics init_graphics_exec:file { rx_file_perms entrypoint };
+allow init_graphics vendor_shell_exec:file {rx_file_perms entrypoint };
+allow init_graphics vendor_toolbox_exec:file  rx_file_perms;
+
+# For getting idle_time value
+# this is needed for dynamic_fps and bw_mode_bitmap
+allow init_graphics sysfs_graphics:file {rw_file_perms setattr};
+
+# To get GPU frequencies
+allow init_graphics sysfs_kgsl:file r_file_perms;
