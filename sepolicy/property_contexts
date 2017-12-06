@@ -1,4 +1,6 @@
 # Camera
+persist.data.front.        u:object_r:camera_prop:s0
+persist.data.rear.         u:object_r:camera_prop:s0
 sys.ois.                   u:object_r:camera_prop:s0
 sys.camera.                u:object_r:camera_prop:s0
 
