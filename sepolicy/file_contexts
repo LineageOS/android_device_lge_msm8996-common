@@ -22,6 +22,7 @@
 
 # Init
 /(vendor|system/vendor)/bin/init\.power\.sh                         u:object_r:init_power_exec:s0
+/(vendor|system/vendor)/bin/init\.qcom\.graphics\.sh                u:object_r:init_graphics_exec:s0
 /(vendor|system/vendor)/bin/init\.radio\.sh                         u:object_r:init_radio_exec:s0
 
 # IR Blaster
