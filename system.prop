@@ -169,6 +169,9 @@ persist.radio.sw_mbn_volte=1
 persist.radio.start_ota_daemon=1
 persist.volte_enalbed_by_hw=1
 
+# SDCardFS
+ro.sys.sdcardfs=true
+
 # Sensors
 persist.debug.sensors.hal=e
 debug.qualcomm.sns.daemon=e
