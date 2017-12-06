@@ -1,13 +1,20 @@
+# Bluetooth - aptX
+lib64/libaptX_encoder.so
+lib64/libaptXHD_encoder.so
+
 # Camera postprocessing
 vendor/lib/libchromaflash.so
 vendor/lib/liboptizoom.so
+vendor/lib/libseemore.so
 vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
+vendor/lib64/libseemore.so
 
 # Camera postprocessing - mmcamera
 vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_llvd.so
 vendor/lib/libmmcamera_optizoom_lib.so
+vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so

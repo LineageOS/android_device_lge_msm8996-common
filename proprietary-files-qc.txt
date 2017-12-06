@@ -18,6 +18,7 @@ vendor/lib/libaudcal.so
 -vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libmdsprpc.so
+-vendor/lib/libqct_resampler.so
 vendor/lib/libqtigef.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
@@ -35,11 +36,6 @@ vendor/lib64/libqtigef.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
 vendor/lib64/soundfx/libqcvirt.so
-
-# Bluetooth
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXScheduler.so
 
 # CNE
 etc/permissions/com.quicinc.cne.xml
@@ -326,6 +322,7 @@ vendor/lib64/libperipheral_client.so
 
 # Postprocessing
 etc/permissions/com.qti.snapdragon.sdk.display.xml:vendor/etc/permissions/com.qti.snapdragon.sdk.display.xml
+framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar
 vendor/bin/mm-pp-dpps
 vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
@@ -425,11 +422,13 @@ vendor/radio/qcril_database/qcril.db
 # Radio - IMS
 lib/com.qualcomm.qti.imscmservice@1.0.so
 lib/lib-imsvt.so
+lib/libdiag_system.so
 lib/libimscamera_jni.so
 lib/libimsmedia_jni.so
 lib/vendor.qti.imsrtpservice@1.0.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/lib-imsvt.so
+lib64/libdiag_system.so
 lib64/libimscamera_jni.so
 lib64/libimsmedia_jni.so
 lib64/vendor.qti.imsrtpservice@1.0.so
