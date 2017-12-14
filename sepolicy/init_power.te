@@ -23,3 +23,6 @@ allow init_power sysfs_devfreq:file w_file_perms;
 
 # write to files proc/sys/kernel/sched_*
 allow init_power proc_kernel_sched:file w_file_perms;
+
+# allow setting sys.post_boot.parsed
+set_prop(init_power, post_boot_prop)
