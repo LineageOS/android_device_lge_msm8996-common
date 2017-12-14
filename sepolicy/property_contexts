@@ -4,5 +4,8 @@ persist.data.rear.         u:object_r:camera_prop:s0
 sys.ois.                   u:object_r:camera_prop:s0
 sys.camera.                u:object_r:camera_prop:s0
 
+# Perfd
+sys.post_boot.             u:object_r:post_boot_prop:s0
+
 # Radio
 oem.device.imeicache       u:object_r:diag_prop:s0
