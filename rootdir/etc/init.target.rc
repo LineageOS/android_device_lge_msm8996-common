@@ -39,6 +39,8 @@ on early-init
     export EXTERNAL_STORAGE /sdcard
 
 on init
+   wait /dev/qseecom
+   start vendor.qseecomd
    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on fs
