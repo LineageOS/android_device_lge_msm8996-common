@@ -26,11 +26,11 @@
     <!-- Color temperature settings for LiveDisplay. These were obtained by
          measuring the display at various color balance levels. -->
     <integer name="config_minColorTemperature">2500</integer>
-    <integer name="config_maxColorTemperature">25000</integer>
+    <integer name="config_maxColorTemperature">10000</integer>
 
     <!-- Corresponds to color balance level of zero, this is the native
          display temperature -->
-    <integer name="config_dayColorTemperature">7500</integer>
+    <integer name="config_dayColorTemperature">6600</integer>
     <integer name="config_nightColorTemperature">3600</integer>
 
     <!-- For high brightness mode -->
