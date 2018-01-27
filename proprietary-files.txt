@@ -43,7 +43,7 @@ etc/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw
 
 # Hotword Enrollment
--priv-app/HotwordEnrollment/HotwordEnrollment:priv-app/HotwordEnrollment/HotwordEnrollment.apk:PRESIGNED
+-priv-app/HotwordEnrollment/HotwordEnrollment.apk;PRESIGNED
 
 # IR
 -lib/libcir_driver.so
@@ -90,15 +90,15 @@ vendor/lib64/libsensor_lge_cal.so
 -priv-app/SprintHM/SprintHM.apk
 
 # Verizon
--app/VZWAPNLib/VZWAPNLib.apk:app/VZWAPNLib/VZWAPNLib.apk:PRESIGNED
--app/vzw_msdc_api/vzw_msdc_api.apk:app/vzw_msdc_api/vzw_msdc_api.apk:PRESIGNED
+-app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
+-app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
 etc/permissions/com.verizon.apn.xml
 etc/permissions/com.verizon.embms.xml
 etc/permissions/com.verizon.provider.xml
 etc/permissions/qti-vzw-ims-internal.xml
 etc/permissions/vzw_sso_permissions.xml
--framework/VerizonUnifiedSettings.jar:PRESIGNED
--priv-app/VZWAPNService/VZWAPNService.apk:priv-app/VZWAPNService/VZWAPNService.apk:PRESIGNED
--priv-app/VZWAVS/VZWAVS.apk:priv-app/VZWAVS/VZWAVS.apk:PRESIGNED
--priv-app/VzwLcSilent/VzwLcSilent.apk:priv-app/VzwLcSilent/VzwLcSilent.apk:PRESIGNED
--priv-app/VzwOmaTrigger/VzwOmaTrigger.apk:priv-app/VzwOmaTrigger/VzwOmaTrigger.apk:PRESIGNED
+-framework/VerizonUnifiedSettings.jar;PRESIGNED
+-priv-app/VZWAPNService/VZWAPNService.apk;PRESIGNED
+-priv-app/VZWAVS/VZWAVS.apk;PRESIGNED
+-priv-app/VzwLcSilent/VzwLcSilent.apk;PRESIGNED
+-priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
