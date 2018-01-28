@@ -1,2 +1,4 @@
 # Shutup logspam
 dontaudit netutils_wrapper self:capability sys_module;
+
+allow netutils_wrapper netmgrd:netlink_socket { read write };

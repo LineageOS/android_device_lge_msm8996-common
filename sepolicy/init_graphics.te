@@ -6,16 +6,21 @@ init_daemon_domain(init_graphics)
 allow init_graphics self:capability { chown fowner fsetid };
 
 allow init_graphics init_graphics_exec:file { rx_file_perms entrypoint };
-allow init_graphics vendor_shell_exec:file {rx_file_perms entrypoint };
+allow init_graphics vendor_shell_exec:file { rx_file_perms entrypoint };
 allow init_graphics vendor_toolbox_exec:file rx_file_perms;
 
 # For getting idle_time value
 # this is needed for dynamic_fps and bw_mode_bitmap
-allow init_graphics sysfs_graphics:file {rw_file_perms setattr};
+allow init_graphics sysfs_graphics:dir r_dir_perms;
+allow init_graphics sysfs_graphics:file { rw_file_perms setattr };
+allow init_graphics sysfs_graphics:lnk_file { rw_file_perms setattr };
 
 # To get GPU frequencies
 allow init_graphics sysfs_kgsl:dir r_dir_perms;
 allow init_graphics sysfs_kgsl:file r_file_perms;
 
-# alow setting ro.gpu.available_frequencies
+# allow setting ro.gpu.available_frequencies
 set_prop(init_graphics, freq_prop)
+
+# allow setting UBWC props
+set_prop(init_graphics, debug_gralloc_prop)

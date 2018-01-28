@@ -20,6 +20,9 @@
 # Gestures
 /sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
 
+# Graphics
+/sys/devices/virtual/graphics/fb[0-2](/.*)?                         u:object_r:sysfs_graphics:s0
+
 # Init
 /(vendor|system/vendor)/bin/init\.power\.sh                         u:object_r:init_power_exec:s0
 /(vendor|system/vendor)/bin/init\.qcom\.graphics\.sh                u:object_r:init_graphics_exec:s0
@@ -48,6 +51,9 @@
 /sys/devices/soc/757a000.i2c/i2c-6/6-0020/power_supply/usb_pd               u:object_r:sysfs_usb_supply:s0
 /sys/devices/soc/qpnp-smbcharger-16/power_supply/dc(/.*)?                   u:object_r:sysfs_usb_supply:s0
 /sys/devices/soc/757a000.i2c/i2c-6/6-0061/power_supply/dc-wireless(/.*)?    u:object_r:sysfs_usb_supply:s0
+
+# RMTS
+/sys/kernel/debug/rmt_storage(/.*)?                                 u:object_r:debugfs_rmts:s0
 
 # Sensors
 /sns                                                                u:object_r:sensors_data_file:s0
