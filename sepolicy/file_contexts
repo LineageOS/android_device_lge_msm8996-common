@@ -31,8 +31,9 @@
 /(vendor|system/vendor)/bin/init\.qcom\.graphics\.sh                u:object_r:init_graphics_exec:s0
 /(vendor|system/vendor)/bin/init\.radio\.sh                         u:object_r:init_radio_exec:s0
 
-# IR Blaster
+# IR
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service.lge       u:object_r:hal_ir_default_exec:s0
 
 # Lights
 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns         u:object_r:sysfs_leds:s0
