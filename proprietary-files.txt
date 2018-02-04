@@ -20,27 +20,27 @@ vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
 
 # Camera firmware
-etc/camera/film/0_film.dat
-etc/camera/film/1_film.dat
-etc/camera/film/2_film.dat
-etc/camera/film/3_film.dat
-etc/camera/film/4_film.dat
-etc/camera/film/5_film.dat
-etc/camera/film/6_film.dat
-etc/camera/film/7_film.dat
-etc/camera/film/8_film.dat
-etc/camera/film/9_film.dat
-etc/camera/film/10_film.dat
-etc/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw
-etc/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_12_0.fw
+etc/camera/film/0_film.dat:vendor/etc/camera/film/0_film.dat
+etc/camera/film/1_film.dat:vendor/etc/camera/film/1_film.dat
+etc/camera/film/2_film.dat:vendor/etc/camera/film/2_film.dat
+etc/camera/film/3_film.dat:vendor/etc/camera/film/3_film.dat
+etc/camera/film/4_film.dat:vendor/etc/camera/film/4_film.dat
+etc/camera/film/5_film.dat:vendor/etc/camera/film/5_film.dat
+etc/camera/film/6_film.dat:vendor/etc/camera/film/6_film.dat
+etc/camera/film/7_film.dat:vendor/etc/camera/film/7_film.dat
+etc/camera/film/8_film.dat:vendor/etc/camera/film/8_film.dat
+etc/camera/film/9_film.dat:vendor/etc/camera/film/9_film.dat
+etc/camera/film/10_film.dat:vendor/etc/camera/film/10_film.dat
+etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
+etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
+etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 
 # Hotword Enrollment
 -priv-app/HotwordEnrollment/HotwordEnrollment.apk;PRESIGNED
@@ -58,8 +58,8 @@ lib64/hw/lgkm.msm8996.so
 lib64/liblgkm.so
 
 # Misc firmware
-etc/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw
+etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
+etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
 
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so
