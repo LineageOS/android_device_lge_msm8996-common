@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a150cf14_babe3f97",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 186,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2018-02-05T20:19:01Z",
+      "side": 1,
+      "message": "BOARD_USERDATAIMAGE_PARTITION_SIZE is also just plain wrong, I\u0027m left suspecting that things work with that value since LineageOS rarely wipes userdata (and if it does, `mkfs` will format based on the device size not the value here).",
+      "revId": "6b10d9b22d6ca09f1c7cc1af1b8bae876cb5f53c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

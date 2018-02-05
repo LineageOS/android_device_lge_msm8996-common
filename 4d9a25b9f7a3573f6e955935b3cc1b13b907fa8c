@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fe96a0de_be302888",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2018-02-05T20:19:01Z",
+      "side": 0,
+      "message": "I\u0027ve got no idea whether this is correct for other devices, but the H990 the correct value is 536870912, not 1291845632.  As such this simply won\u0027t work on that device.",
+      "revId": "4d9a25b9f7a3573f6e955935b3cc1b13b907fa8c",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
