@@ -660,6 +660,8 @@ on property:persist.debug.trace=1
     write /proc/sys/kernel/core_pattern "/data/core/%E.%p.%e"
 
 on property:vold.decrypt=trigger_restart_framework
+    stop camera-provider-2-4
+    start camera-provider-2-4
     start qcom-c_main-sh
     start config_bt_addr
     start config_bluetooth
