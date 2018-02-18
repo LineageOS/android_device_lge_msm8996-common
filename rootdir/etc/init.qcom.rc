@@ -66,9 +66,6 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
-    # Camera shims
-    export LD_SHIM_LIBS "/system/vendor/lib/hw/camera.msm8996.so|/system/vendor/lib/libshim_camera.so:/system/vendor/lib/libmmcamera_ppeiscore.so|/system/vendor/lib/libshim_camera.so"
-
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 

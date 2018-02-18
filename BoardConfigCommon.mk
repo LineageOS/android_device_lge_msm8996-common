@@ -119,6 +119,9 @@ BOARD_CHARGING_CMDLINE_NAME := "androidboot.mode"
 BOARD_CHARGING_CMDLINE_VALUE := "chargerlogo"
 
 # Camera
+TARGET_LD_SHIM_LIBS := \
+    /system/vendor/lib/hw/camera.msm8996.so|/system/vendor/lib/libshim_camera.so \
+    /system/vendor/lib/libmmcamera_ppeiscore.so|/system/vendor/lib/libshim_camera.so
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
