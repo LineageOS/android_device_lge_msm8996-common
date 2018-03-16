@@ -48,6 +48,9 @@ service charger /system/bin/charger
 on early-init
     chown root system /dev/kmsg
     chmod 0620 /dev/kmsg
+    start vendor.qseecomd
+    wait_for_prop sys.listeners.registered true
+    write /dev/ipa 1
 
 on early-init
     # Setup zram options
