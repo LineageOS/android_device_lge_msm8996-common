@@ -46,6 +46,9 @@
 # Netmgr
 /data/misc/netmgr(/.*)?                                             u:object_r:net_data_file:s0
 
+# Neural Networks HAL
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@1\.0-service-hvx   u:object_r:hal_neuralnetworks_hvx_exec:s0
+
 # NFC
 /dev/pn54[478]                                                      u:object_r:nfc_device:s0
 /data/vendor/nfc(/.*)?                                              u:object_r:nfc_vendor_data_file:s0
