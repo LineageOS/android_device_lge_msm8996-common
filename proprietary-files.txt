@@ -42,6 +42,9 @@ etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 
+# Hexagon Controller
+vendor/lib64/libhexagon_nn_controller.so
+
 # Hotword Enrollment
 -priv-app/HotwordEnrollment/HotwordEnrollment.apk;PRESIGNED
 
