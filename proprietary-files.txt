@@ -42,6 +42,17 @@ etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 
+# DSP
+vendor/lib/dsp/EtsiEaacPlusEncAndCmnModule.so.1
+vendor/lib/dsp/HeaacDecoderModule.so.1
+vendor/lib/dsp/SAPlusCmnModule.so.1
+vendor/lib/dsp/fastrpc_shell_0
+vendor/lib/dsp/fluence_voiceplus_module.so.1
+vendor/lib/dsp/libsysmon_skel.so
+vendor/lib/dsp/map_SHARED_LIBS_AAAAAAAAQ.txt
+vendor/lib/dsp/map_avs_shared_libs.txt
+vendor/lib/dsp/mmecns_module.so.1
+
 # Hotword Enrollment
 -priv-app/HotwordEnrollment/HotwordEnrollment.apk;PRESIGNED
 
