@@ -40,5 +40,7 @@ inline const char* BtmGetDefaultName()
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
 #define BLE_VND_INCLUDED  TRUE
+#define BTM_WBS_INCLUDED TRUE /* Enable WBS */
+#define BTIF_HF_WBS_PREFERRED TRUE /* Use WBS */
 
 #endif
