@@ -37,6 +37,8 @@
 
 # Lights
 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns         u:object_r:sysfs_leds:s0
+/sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
+/sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
 
 # Netmgr
 /data/misc/netmgr(/.*)?                                             u:object_r:net_data_file:s0
