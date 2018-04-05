@@ -5,6 +5,8 @@
 
 # Camera
 /data/misc/camera/cam_socket[0-9]                                   u:object_r:camera_socket:s0
+/sys/devices/soc/8c0000\.qcom,msm-cam/video4linux/video0(/.*)?      u:object_r:sysfs_graphics:s0
+/sys/devices/soc/aa4000\.qcom,fd/video4linux/video1(/.*)?           u:object_r:sysfs_graphics:s0
 
 # CPU tunable for EAS
 /sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
