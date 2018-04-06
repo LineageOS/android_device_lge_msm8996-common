@@ -22,6 +22,30 @@
       "revId": "1a34b6d8a1b74264e7b4195d6906c9282285056f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d5593288_c7b260e2",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2018-04-06T03:07:38Z",
+      "side": 1,
+      "message": "Wahoo P Preview. https://github.com/Rashed97/proprietary_vendor_lge/blob/5e23d7151413dd8b2d1a167066824173bea8ab63/msm8996-common/proprietary/vendor/lib64/libhexagon_nn_controller.so",
+      "parentUuid": "435c8457_35c625e5",
+      "range": {
+        "startLine": 46,
+        "startChar": 0,
+        "endLine": 46,
+        "endChar": 40
+      },
+      "revId": "1a34b6d8a1b74264e7b4195d6906c9282285056f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
