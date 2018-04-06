@@ -2,6 +2,9 @@
 # Vendor Properties for LG MSM8996
 #
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
+
 # Art
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.sys.fw.dex2oat_thread_count=4
