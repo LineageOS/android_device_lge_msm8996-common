@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2015 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (c) 2015 The CyanogenMod Project
+ *               2017-2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,9 +38,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+import android.widget.TextView;
 
 public class DozeSettingsFragment extends PreferenceFragment implements OnPreferenceChangeListener,
         CompoundButton.OnCheckedChangeListener {
+
+    private TextView mTextView;
 
     private SharedPreferences mPreferences;
 
@@ -140,17 +143,17 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        View switchBar = view.findViewById(R.id.switch_bar);
-        mSwitch = (Switch) switchBar.findViewById(android.R.id.switch_widget);
-        mSwitch.setChecked(Utils.isDozeEnabled(getActivity()));
-        mSwitch.setOnCheckedChangeListener(this);
+        boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
 
-        switchBar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                mSwitch.setChecked(!mSwitch.isChecked());
-            }
-        });
+        mTextView = view.findViewById(R.id.switch_text);
+        mTextView.setText(getString(dozeEnabled ?
+                R.string.switch_bar_on : R.string.switch_bar_off));
+
+        View switchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = switchBar.findViewById(android.R.id.switch_widget);
+        switchWidget.setChecked(dozeEnabled);
+        switchWidget.setOnCheckedChangeListener(this);
+        switchBar.setOnClickListener(v -> switchWidget.setChecked(!switchWidget.isChecked()));
     }
 
 
@@ -196,12 +199,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
             return new AlertDialog.Builder(getActivity())
                     .setTitle(R.string.doze_settings_help_title)
                     .setMessage(R.string.doze_settings_help_text)
-                    .setNegativeButton(R.string.dlg_ok, new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            dialog.cancel();
-                        }
-                    })
+                    .setNegativeButton(R.string.dialog_ok, (dialog, which) -> dialog.cancel())
                     .create();
         }
 
