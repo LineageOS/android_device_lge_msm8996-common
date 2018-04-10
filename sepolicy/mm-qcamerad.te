@@ -1,3 +1,4 @@
+typeattribute mm-qcamerad binder_in_vendor_violators;
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket1";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket3";
@@ -5,3 +6,4 @@ type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
 allow mm-qcamerad sysfs_graphics:dir r_dir_perms;
+binder_use(mm-qcamerad);
