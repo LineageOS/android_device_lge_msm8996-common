@@ -8,6 +8,7 @@
 #<src>                                                <mnt_point>       <type>  <mnt_flags and options>                                                   <fs_mgr_flags>
 /dev/block/bootdevice/by-name/boot                    /boot             emmc    defaults                                                                  defaults
 /dev/block/bootdevice/by-name/recovery                /recovery         emmc    defaults                                                                  defaults
+/dev/block/bootdevice/by-name/system                  /system           ext4    ro,barrier=1,noatime                                                      wait,recoveryonly
 /dev/block/bootdevice/by-name/cache                   /cache            ext4    discard,nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue    wait,check
 /dev/block/bootdevice/by-name/userdata                /data             ext4    discard,nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue    wait,check,encryptable=/dev/block/bootdevice/by-name/encrypt
 /dev/block/bootdevice/by-name/persist                 /persist          ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue            wait,notrim
