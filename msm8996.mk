@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgenlock \
     liboverlay \
-    libqdMetaData.system
+    libqdMetaData.system \
+    libvulkan
 
 # Doze mode
 PRODUCT_PACKAGES += \
@@ -335,10 +336,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
-# Treble
-PRODUCT_PACKAGES += \
-    vndk-sp \
-
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
@@ -355,6 +352,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
+
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk_package
 
 # Wifi
 PRODUCT_PACKAGES += \
