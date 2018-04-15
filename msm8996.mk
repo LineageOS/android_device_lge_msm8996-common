@@ -148,6 +148,7 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgenlock \
     liboverlay \
+    libqdMetaData.system \
     libvulkan
 
 # Doze mode
