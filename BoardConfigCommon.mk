@@ -114,8 +114,8 @@ BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Camera
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib/hw/camera.msm8996.so|/system/vendor/lib/libshim_camera.so \
-    /system/vendor/lib/libmmcamera_ppeiscore.so|/system/vendor/lib/libshim_camera.so
+    /vendor/lib/hw/camera.msm8996.so|/vendor/lib/libshim_camera.so \
+    /vendor/lib/libmmcamera_ppeiscore.so|/vendor/lib/libshim_camera.so
 USE_CAMERA_STUB := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -171,6 +171,9 @@ BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE := 536870912
+TARGET_COPY_OUT_VENDOR := vendor
 TARGET_EXFAT_DRIVER := sdfat
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USES_MKE2FS := true
@@ -200,6 +203,11 @@ TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
+
+# Treble
+BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
+PRODUCT_FULL_TREBLE_OVERRIDE := true
+PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27
 
 # Wi-Fi
 WPA_SUPPLICANT_VERSION      := VER_0_8_X
