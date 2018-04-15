@@ -148,7 +148,8 @@ PRODUCT_PACKAGES += \
     libdisplayconfig \
     libgenlock \
     liboverlay \
-    libqdMetaData.system
+    libqdMetaData.system \
+    libvulkan
 
 # Doze mode
 PRODUCT_PACKAGES += \
@@ -332,10 +333,6 @@ PRODUCT_PACKAGES += \
     libjson \
     libtinyxml \
     libxml2
-
-# Treble
-PRODUCT_PACKAGES += \
-    vndk-sp \
 
 # Telephony
 PRODUCT_PACKAGES += \
