@@ -332,7 +332,6 @@ PRODUCT_PACKAGES += \
     libxml2
 
 # Treble
-PRODUCT_FULL_TREBLE_OVERRIDE := true
 PRODUCT_PACKAGES += \
     vndk-sp \
 
