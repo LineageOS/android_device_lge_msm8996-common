@@ -145,7 +145,8 @@ PRODUCT_PACKAGES += \
     memtrack.msm8996 \
     libdisplayconfig \
     libgenlock \
-    liboverlay
+    liboverlay \
+    libvulkan
 
 # Doze mode
 PRODUCT_PACKAGES += \
@@ -339,10 +340,6 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libxml2
 
-# Treble
-PRODUCT_PACKAGES += \
-    vndk-sp \
-
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
@@ -363,6 +360,10 @@ PRODUCT_PACKAGES += \
 # Virtual Reality
 PRODUCT_PACKAGES += \
     vr.msm8996
+
+# VNDK
+PRODUCT_PACKAGES += \
+    vndk_package
 
 # Wifi
 PRODUCT_PACKAGES += \
