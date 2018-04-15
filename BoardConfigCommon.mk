@@ -190,9 +190,6 @@ TARGET_NEEDS_PDFIUM_BIGINT := true
 # Power
 TARGET_HAS_NO_WIFI_STATS := true
 
-# Properties
-TARGET_SYSTEM_PROP += $(COMMON_PATH)/system.prop
-
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
