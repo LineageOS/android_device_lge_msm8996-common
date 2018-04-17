@@ -82,3 +82,12 @@ LOCAL_SRC_FILES    := etc/ueventd.qcom.rc
 # this needs to be in /vendor/ueventd.rc
 LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR)
 include $(BUILD_PREBUILT)
+
+# testing for logs
+include $(CLEAR_VARS)
+LOCAL_MODULE       := loggy.sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := ETC
+LOCAL_SRC_FILES    := bin/loggy.sh
+LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_EXECUTABLES)
+include $(BUILD_PREBUILT)
