@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "06bf037c_1a383b34",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2018-04-17T14:24:38Z",
+      "side": 1,
+      "message": "/dev/block/bootdevice/by-name/encrypt  too?",
+      "range": {
+        "startLine": 14,
+        "startChar": 22,
+        "endLine": 14,
+        "endChar": 31
+      },
+      "revId": "ce578dd3c7931e1788e58138d29b56f5956a1379",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
