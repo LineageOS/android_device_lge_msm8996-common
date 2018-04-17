@@ -375,3 +375,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/filter_ie:system/etc/wifi/filter_ie \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+#
+# loggy
+PRODUCT_PACKAGES += \
+	loggy.sh
