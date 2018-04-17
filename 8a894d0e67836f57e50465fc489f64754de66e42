@@ -22,6 +22,30 @@
       "revId": "8a894d0e67836f57e50465fc489f64754de66e42",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2c81e66c_149a62ee",
+        "filename": "system.prop",
+        "patchSetId": 3
+      },
+      "lineNbr": 187,
+      "author": {
+        "id": 11801
+      },
+      "writtenOn": "2018-04-17T15:18:00Z",
+      "side": 1,
+      "message": "Yea, rashed said he\u0027d fix it when he gets to a computer.",
+      "parentUuid": "d8e4f2c2_8830cf8b",
+      "range": {
+        "startLine": 187,
+        "startChar": 0,
+        "endLine": 187,
+        "endChar": 0
+      },
+      "revId": "8a894d0e67836f57e50465fc489f64754de66e42",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
