@@ -1,6 +1,7 @@
 type cir_device, dev_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type debugfs_rmts, debugfs_type, fs_type;
+type nfc_vendor_data_file, file_type, data_file_type;
 type proc_irq, fs_type;
 type proc_kernel_sched, fs_type;
 type sysfs_devices_fingerprint, sysfs_type, file_type;
