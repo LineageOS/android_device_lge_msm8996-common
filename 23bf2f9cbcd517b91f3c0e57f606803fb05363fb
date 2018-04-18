@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "08d02976_c2e8b77e",
+        "filename": "rootdir/etc/fstab.qcom",
+        "patchSetId": 6
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2018-04-18T02:42:03Z",
+      "side": 1,
+      "message": "Oh derp.... This got added by accident.",
+      "parentUuid": "3d915805_bab8bb37",
+      "range": {
+        "startLine": 15,
+        "startChar": 165,
+        "endLine": 15,
+        "endChar": 179
+      },
+      "revId": "23bf2f9cbcd517b91f3c0e57f606803fb05363fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "7cae33f8_770db4ea",
         "filename": "rootdir/etc/fstab.qcom",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2018-04-18T02:35:44Z",
       "side": 1,
       "message": "bad, keep it as max_comp_streams",
+      "range": {
+        "startLine": 46,
+        "startChar": 173,
+        "endLine": 46,
+        "endChar": 184
+      },
+      "revId": "23bf2f9cbcd517b91f3c0e57f606803fb05363fb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "35de80e5_18239df6",
+        "filename": "rootdir/etc/fstab.qcom",
+        "patchSetId": 6
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2018-04-18T02:42:03Z",
+      "side": 1,
+      "message": "As did this",
+      "parentUuid": "7cae33f8_770db4ea",
       "range": {
         "startLine": 46,
         "startChar": 173,
