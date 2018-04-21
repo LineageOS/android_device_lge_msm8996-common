@@ -46,8 +46,8 @@ etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 -priv-app/HotwordEnrollment/HotwordEnrollment.apk;PRESIGNED
 
 # IR
--lib/libcir_driver.so
--lib64/libcir_driver.so
+-lib/libcir_driver.so:vendor/lib/libcir_driver.so
+-lib64/libcir_driver.so:vendor/lib64/libcir_driver.so
 
 # LG Keymaster
 lib/hw/lgkm.default.so
