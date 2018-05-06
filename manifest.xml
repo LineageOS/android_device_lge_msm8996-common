@@ -494,4 +494,32 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl">
+        <name>vendor.lge.hardware.lgatcmd</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILgAtCmd</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lge.hardware.radio</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>ILgeRadio</name>
+            <instance>lge_radio</instance>
+            <instance>lge_radio2</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.lge.hardware.vss_ims</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IVssIms</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </manifest>
