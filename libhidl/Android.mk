@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2017-2018 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -44,3 +44,36 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_CLASS := SHARED_LIBRARIES
 LOCAL_VENDOR_MODULE := true
 include $(BUILD_SHARED_LIBRARY)
+
+define define-hidl-vendor-lib
+include $$(CLEAR_VARS)
+LOCAL_MODULE := $1_vendor
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PREBUILT_MODULE_FILE := $$(TARGET_OUT_INTERMEDIATE_LIBRARIES)/$1.so
+LOCAL_STRIP_MODULE := false
+LOCAL_MULTILIB := first
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_VENDOR_MODULE := true
+include $$(BUILD_PREBUILT)
+
+ifneq ($$(TARGET_2ND_ARCH),)
+ifneq ($$(TARGET_TRANSLATE_2ND_ARCH),true)
+include $$(CLEAR_VARS)
+LOCAL_MODULE := $1_vendor
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_PREBUILT_MODULE_FILE := $$($$(TARGET_2ND_ARCH_VAR_PREFIX)TARGET_OUT_INTERMEDIATE_LIBRARIES)/$1.so
+LOCAL_STRIP_MODULE := false
+LOCAL_MULTILIB := 32
+LOCAL_MODULE_TAGS := optional
+LOCAL_VENDOR_MODULE := true
+include $$(BUILD_PREBUILT)
+endif # TARGET_TRANSLATE_2ND_ARCH is not true
+endif # TARGET_2ND_ARCH is not empty
+endef
+
+HIDL_VENDOR_LIBRARIES := \
+    android.system.net.netd@1.0
+
+$(foreach lib,$(HIDL_VENDOR_LIBRARIES),\
+    $(eval $(call define-hidl-vendor-lib,$(lib))))
