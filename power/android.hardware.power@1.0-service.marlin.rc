@@ -1,0 +1,6 @@
+service power-hal-1-0 /vendor/bin/hw/android.hardware.power@1.0-service.marlin
+    chmod 0644 /d/rpm_stats
+    chmod 0644 /d/dpm_master_stats
+    class hal
+    user system
+    group system
