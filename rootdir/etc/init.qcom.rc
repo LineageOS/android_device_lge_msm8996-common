@@ -66,6 +66,67 @@ on init
     chown root system /sys/fs/cgroup/memory/bg/tasks
     chmod 0660 /sys/fs/cgroup/memory/bg/tasks
 
+    # Setup cpusets used by the VR services.
+    mkdir /dev/cpuset/kernel 0750 root system
+    write /dev/cpuset/kernel/cpus 0
+    write /dev/cpuset/kernel/mems 0
+    chown system system /dev/cpuset/kernel/tasks
+    chmod 0660 /dev/cpuset/kernel/tasks
+
+    mkdir /dev/cpuset/system 0750 root system
+    write /dev/cpuset/system/cpus 0
+    write /dev/cpuset/system/mems 0
+    chown system system /dev/cpuset/system/tasks
+    chmod 0660 /dev/cpuset/system/tasks
+
+    mkdir /dev/cpuset/system/performance 0750 root system
+    write /dev/cpuset/system/performance/cpus 0
+    write /dev/cpuset/system/performance/mems 0
+    chown system system /dev/cpuset/system/performance/tasks
+    chmod 0660 /dev/cpuset/system/performance/tasks
+
+    mkdir /dev/cpuset/system/background 0750 root system
+    write /dev/cpuset/system/background/cpus 0
+    write /dev/cpuset/system/background/mems 0
+    chown system system /dev/cpuset/system/background/tasks
+    chmod 0660 /dev/cpuset/system/background/tasks
+
+    mkdir /dev/cpuset/application 0750 root system
+    write /dev/cpuset/application/cpus 0
+    write /dev/cpuset/application/mems 0
+    chown system system /dev/cpuset/application/tasks
+    chmod 0660 /dev/cpuset/application/tasks
+
+    mkdir /dev/cpuset/application/performance 0750 root system
+    write /dev/cpuset/application/performance/cpus 0
+    write /dev/cpuset/application/performance/mems 0
+    chown system system /dev/cpuset/application/performance/tasks
+    chmod 0660 /dev/cpuset/application/performance/tasks
+
+    mkdir /dev/cpuset/application/background 0750 root system
+    write /dev/cpuset/application/background/cpus 0
+    write /dev/cpuset/application/background/mems 0
+    chown system system /dev/cpuset/application/background/tasks
+    chmod 0660 /dev/cpuset/application/background/tasks
+
+    # set default schedTune value for foreground/top-app (only affects EAS)
+    write /dev/stune/foreground/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 10
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/rt/schedtune.boost 30
+    write /dev/stune/rt/schedtune.prefer_idle 1
+
+    # Create UDS structure for base VR services.
+    mkdir /dev/socket/pdx 0775 system system
+    mkdir /dev/socket/pdx/system 0775 system system
+    mkdir /dev/socket/pdx/system/buffer_hub 0775 system system
+    mkdir /dev/socket/pdx/system/performance 0775 system system
+    mkdir /dev/socket/pdx/system/vr 0775 system system
+    mkdir /dev/socket/pdx/system/vr/display 0775 system system
+    mkdir /dev/socket/pdx/system/vr/pose 0775 system system
+    mkdir /dev/socket/pdx/system/vr/sensors 0775 system system
+
+
 on post-fs
     chmod 0755 /sys/kernel/debug/tracing
 
@@ -510,9 +571,12 @@ on post-fs-data
     mkdir /data/misc/SelfHost/socket/ 2770 system system
 
     # Create PERFD deamon related dirs
-    mkdir /data/vendor/perfd 0770 root system
-    chmod 2770 /data/vendor/perfd
-    rm /data/vendor/perfd/default_values
+    setprop ro.min_freq_0 384000
+    mkdir /data/misc/perfd 0755 root system
+    chmod 2755 /data/misc/perfd
+    mkdir /data/system/perfd 0770 root system
+    rm /data/system/perfd/default_values
+    chmod 2770 /data/system/perfd
 
     # NFC local data and nfcee xml storage
     mkdir /data/nfc 0770 nfc nfc
@@ -581,9 +645,6 @@ on post-fs-data
     mkdir /persist-lg/audio 0771 system system
     mkdir /persist-lg/property 0771 system radio
     chown media media /persist-lg/audio
-
-    #Widevine firmware copy
-    exec /system/bin/cpfirmware widevine /persist-lg/firmware
 
     # Thermal Daemon
     chown system system /sys/class/leds/lcd-backlight/thermald_status
