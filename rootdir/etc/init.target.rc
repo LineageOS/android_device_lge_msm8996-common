@@ -35,6 +35,10 @@ on early-init
     mkdir /mpt 0755 system system
     symlink /data/tombstones /tombstones
     mount debugfs debugfs /sys/kernel/debug
+    chmod 0755 /sys/kernel/debug
+    chmod 0644 /sys/kernel/debug/rpm_stats
+    chmod 0644 /sys/kernel/debug/rpm_master_stats
+    chmod 0644 /sys/kernel/debug/system_stats
 
     export ANDROID_DATA /data
     export ANDROID_ROOT /system
@@ -123,10 +127,6 @@ service perfd /vendor/bin/perfd
     user root
     group root system
     writepid /dev/cpuset/system-background/tasks
-
-service mpdecision /system/bin/mpdecision --avg_comp
-    user root
-    disabled
 
 service thermal-engine /system/vendor/bin/thermal-engine
     class main
