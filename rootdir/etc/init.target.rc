@@ -123,9 +123,6 @@ service perfd /vendor/bin/perfd
     user root
     group root system
     writepid /dev/cpuset/system-background/tasks
-
-service mpdecision /system/bin/mpdecision --avg_comp
-    user root
     disabled
 
 service thermal-engine /system/vendor/bin/thermal-engine
@@ -163,3 +160,6 @@ service mdtp_service /system/vendor/bin/mdtp_service
    class late_start
    user system
    group system
+
+on property:sys.post_boot.parsed=1
+    start perfd
