@@ -1,4 +1,5 @@
 type cir_device, dev_type;
+type perfd_data_file, file_type, data_file_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type debugfs_rmts, debugfs_type, fs_type;
 type nfc_vendor_data_file, file_type, data_file_type;
