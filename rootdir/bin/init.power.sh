@@ -65,15 +65,9 @@ write /sys/devices/system/cpu/cpu2/cpufreq/interactive/max_freq_hysteresis 39000
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_min_freq 300000
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 0
 
-# if EAS is present, switch to schedutil governor (no effect if not EAS)
-write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
-write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
-
-# set schedutil adjustments
-write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 6000
-write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1000
-write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 6000
-write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 2000
+# if EAS is present, switch to sched governor (no effect if not EAS)
+write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "sched"
+write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "sched"
 
 # re-enable thermal hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
@@ -83,7 +77,6 @@ write /sys/module/cpu_boost/parameters/input_boost_freq "0:1324800 2:1324800"
 write /sys/module/cpu_boost/parameters/input_boost_ms 40
 
 # Setting b.L scheduler parameters
-write /proc/sys/kernel/sched_boost 0
 write /proc/sys/kernel/sched_migration_fixup 1
 write /proc/sys/kernel/sched_upmigrate 95
 write /proc/sys/kernel/sched_downmigrate 90
@@ -91,6 +84,17 @@ write /proc/sys/kernel/sched_freq_inc_notify 400000
 write /proc/sys/kernel/sched_freq_dec_notify 400000
 write /proc/sys/kernel/sched_spill_nr_run 3
 write /proc/sys/kernel/sched_init_task_load 100
+
+# Update DVR cpusets to boot-time values.
+write /dev/cpuset/kernel/cpus 0-3
+write /dev/cpuset/system/cpus 0-3
+write /dev/cpuset/system/performance/cpus 0-3
+write /dev/cpuset/system/background/cpus 0-3
+write /dev/cpuset/system/cpus 0-3
+write /dev/cpuset/application/cpus 0-3
+write /dev/cpuset/application/performance/cpus 0-3
+write /dev/cpuset/application/background/cpus 0-3
+write /dev/cpuset/application/cpus 0-3
 
 # Enable bus-dcvs
 for cpubw in /sys/class/devfreq/*qcom,cpubw* ; do
