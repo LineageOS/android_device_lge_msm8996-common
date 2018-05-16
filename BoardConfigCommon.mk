@@ -130,9 +130,8 @@ BOARD_USES_QCNE := true
 
 # CPU
 ENABLE_CPUSETS := true
-# Disable EAS until fully brought up on new kernel
-#ENABLE_SCHEDBOOST := true
-#TARGET_USES_INTERACTION_BOOST := true
+ENABLE_SCHEDBOOST := true
+TARGET_USES_INTERACTION_BOOST := true
 
 # Display
 BOARD_USES_ADRENO := true
