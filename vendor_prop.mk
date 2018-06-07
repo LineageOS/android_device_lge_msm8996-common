@@ -47,7 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1 \
     vidc.debug.perf.mode=2 \
     vidc.enc.dcvs.extra-buff-count=2 \
-    media.camera.ts.monotonic=0 \
     persist.audio.camcorder.stereo=true \
     persist.camera.preview.ubwc=0 \
     persist.camera.video.ubwc=0
