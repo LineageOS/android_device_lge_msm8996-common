@@ -40,6 +40,14 @@ LOCAL_REQUIRED_MODULES := init.radio.sh
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
+LOCAL_MODULE       := init.class_main.sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES    := bin/init.class_main.sh
+LOCAL_VENDOR_MODULE    := true
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.sensors.sh
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := EXECUTABLES
