@@ -199,6 +199,9 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.full
 include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 
+# Thermal
+USE_DEVICE_SPECIFIC_THERMAL := true
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
