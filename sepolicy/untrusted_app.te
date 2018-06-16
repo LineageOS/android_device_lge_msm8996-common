@@ -4,3 +4,6 @@ allow untrusted_app sysfs_battery_supply:lnk_file r_file_perms;
 # allow apps to read charging status
 r_dir_file(untrusted_app, sysfs_usb_supply)
 allow untrusted_app sysfs_usb_supply:lnk_file r_file_perms;
+
+#gcam idio telegram thx
+allow untrusted_app vendor_file:file {read getattr};

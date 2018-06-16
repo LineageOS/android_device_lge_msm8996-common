@@ -1,3 +1,30 @@
+set_prop(mediaserver, camera_prop);
+#gcamfixtest
+#============= mediaserver ==============
+allow mediaserver audio_device:chr_file { ioctl open read write };
+allow mediaserver camera_data_file:dir create_dir_perms;
+allow mediaserver camera_data_file:file create_file_perms;
+allow mediaserver sensorservice_service:service_manager find;
+allow mediaserver sysfs:dir { open read };
+#allow mediaserver sysfs_als:file { getattr open write };
+allow mediaserver sysfs_batteryinfo:dir search;
+allow mediaserver sysfs_batteryinfo:file { getattr open read };
+allow mediaserver sysfs_batteryinfo:lnk_file read;
+#allow mediaserver sysfs_bus_i2c:dir { open read search };
+#allow mediaserver sysfs_bus_i2c:lnk_file read;
+#allow mediaserver sysfs_camera_torch:dir search;
+#allow mediaserver sysfs_camera_torch:file { open read write };
+#allow mediaserver system_server:unix_stream_socket { read write };
+
+#gcamfix2
+allow mediaserver sysfs_camera:dir search;
+allow mediaserver sysfs_camera:file { getattr open read };
+#allow mediaserver camera_socket:sock_file write;
+#allow mediaserver mm-qcamerad:unix_dgram_socket sendto;
+#allow mediaserver thermal-engine:unix_stream_socket connectto;
+#allow mediaserver vendor_file:file execmod;
+#allow mediaserver system_file:file execmod;
+
 # communicate with perfd
 allow mediaserver mpctl_data_file:dir search;
 allow mediaserver mpctl_data_file:sock_file write;

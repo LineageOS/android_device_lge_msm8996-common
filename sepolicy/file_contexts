@@ -74,3 +74,8 @@
 
 # WLAN
 /sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
+
+# GCAM fix
+/data/cam_socket.*                                      u:object_r:camera_socket:s0
+/sys/devices/(.*)/video4linux/(.*)/name                 u:object_r:sysfs_camera:s0
+/sys/devices/virtual/camera(/.*)?                       u:object_r:sysfs_camera:s0
