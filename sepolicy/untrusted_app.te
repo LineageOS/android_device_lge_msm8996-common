@@ -7,3 +7,12 @@ allow untrusted_app sysfs_usb_supply:lnk_file r_file_perms;
 
 #gcam idio telegram thx
 allow untrusted_app vendor_file:file {read getattr};
+
+#gcamtest3
+allow untrusted_app_25 rootfs:dir { read };
+allow untrusted_app_25 rootfs:dir { search };
+allow untrusted_app_25 rootfs:dir { getattr };
+
+#allow untrusted_app_25 vendor_file:file { read };
+#allow untrusted_app_25 vendor_file:file { search };
+#allow untrusted_app_25 vendor_file:file { getattr };

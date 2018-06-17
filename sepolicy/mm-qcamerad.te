@@ -4,9 +4,12 @@ type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket3";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket4";
-#allow mm-qcamerad camera_socket:sock_file { create unlink write };
+
+#gcam test2
+allow mm-qcamerad camera_socket:sock_file { create unlink write };
+allow mm-qcamerad camera_socket:sock_file { create unlink };
+
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
-#allow mm-qcamerad camera_socket:sock_file { create unlink };
 #gcamfix
 #allow mm-qcamerad system_server:unix_stream_socket rw_socket_perms;
 #allow mm-qcamerad sensorservice_service:service_manager find;
@@ -19,3 +22,6 @@ allow mm-qcamerad sysfs_camera:file rw_file_perms;
 allow mm-qcamerad system_data_file:dir w_dir_perms;
 #allow mm-qcamerad vendor_file:file execmod;
 #allow mm-qcamerad system_file:file execmod;
+
+#gcamtest3
+allow mm-qcamerad sysfs_graphics:dir { search };

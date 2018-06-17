@@ -1,0 +1,2 @@
+#gcamtest 3
+#allow zygote sda14:file { getattr };
