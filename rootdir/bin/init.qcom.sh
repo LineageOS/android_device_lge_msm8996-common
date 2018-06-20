@@ -322,3 +322,9 @@ case "$buildvariant" in
         echo "4 4 1 4" > /proc/sys/kernel/printk
         ;;
 esac
+
+# Multi-sim check
+multisim=`getprop persist.radio.multisim.config`
+if [ "$multisim" = "dsds" ] ; then
+   start ril-daemon2
+fi
