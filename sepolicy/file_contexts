@@ -77,7 +77,7 @@
 /sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
 
 # perfd
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service.marlin         u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.0-service.lge.msm8996         u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/perfd                                   u:object_r:perfd_exec:s0
 /data/misc/perfd(/.*)?                                              u:object_r:perfd_data_file:s0
 /data/system/perfd(/.*)?                                            u:object_r:perfd_data_file:s0
