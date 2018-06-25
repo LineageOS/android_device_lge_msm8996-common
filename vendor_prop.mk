@@ -51,6 +51,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.preview.ubwc=0 \
     persist.camera.video.ubwc=0
 
+#    vendor.camera.aux.packagelist=all
+
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.cne.feature=1 \
@@ -174,6 +176,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1 \
     persist.radio.NO_STAPA=1 \
     persist.radio.VT_HYBRID_ENABLE=1
+
+# Security Patch Level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2017-11-16
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
