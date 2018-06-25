@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "cb8ac79b_90b87cdd",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-06-25T16:47:13Z",
+      "side": 1,
+      "message": "Example: https://review.lineageos.org/#/c/LineageOS/android_device_htc_flounder/+/218072/",
+      "parentUuid": "e607044a_c0194a1d",
+      "range": {
+        "startLine": 9,
+        "startChar": 19,
+        "endLine": 9,
+        "endChar": 35
+      },
+      "revId": "3c08e34d01e4500d0efc10bf3494dcd20f285306",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "524d3484_a230fd72",
         "filename": "/COMMIT_MSG",
         "patchSetId": 3
