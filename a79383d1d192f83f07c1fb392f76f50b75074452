@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "76b3ea47_a107f087",
+        "filename": "vendor_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-06-25T16:36:15Z",
+      "side": 1,
+      "message": "Doesn\u0027t belong to this change.",
+      "range": {
+        "startLine": 54,
+        "startChar": 5,
+        "endLine": 54,
+        "endChar": 38
+      },
+      "revId": "a79383d1d192f83f07c1fb392f76f50b75074452",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
