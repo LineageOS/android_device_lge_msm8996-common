@@ -175,6 +175,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.NO_STAPA=1 \
     persist.radio.VT_HYBRID_ENABLE=1
 
+# Security Patch Level
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2017-11-16
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.sensors.hal=e \
