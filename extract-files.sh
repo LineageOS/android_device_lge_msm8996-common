@@ -63,6 +63,9 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$LINEAGE_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR"/../$DEVICE_COMMON/proprietary-files.txt "$SRC" "$SECTION"
 
+# Replace libcamera_client with a shared lib wrapper containing android.hardware.camera.common@1.0-helper
+patch_blob "--replace-needed libcamera_client.so android.hardware.camera.common@1.0-helper.so" "vendor/lib/hw/camera.msm8996.so"
+
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false $CLEAN_VENDOR
 
