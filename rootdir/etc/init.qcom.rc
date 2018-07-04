@@ -27,6 +27,7 @@
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.${ro.product.device}.rc
 
 on charger
     write /sys/devices/system/cpu/cpu2/online 0
