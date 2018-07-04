@@ -27,6 +27,7 @@
 
 import /vendor/etc/init/hw/init.qcom.usb.rc
 import /vendor/etc/init/hw/init.target.rc
+import /vendor/etc/init/hw/init.${ro.product.device}.rc
 
 # Added for LineageOS device-specific portions
 import /vendor/etc/init/hw/init.device.rc
