@@ -168,6 +168,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     GestureHandler
 
+# GMS
+PRODUCT_GMS_CLIENTID_BASE := android-om-lg
+
 # GPS
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl-qti \
