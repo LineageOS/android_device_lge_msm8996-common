@@ -358,21 +358,7 @@ on boot
     chown system input /sys/bus/spi/devices/spi8.1/regulator_enable
     chown system input /sys/bus/spi/devices/spi8.1/wakeup_enable
 
-    # LEDs
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/input_patterns
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns
-    chown system system /sys/devices/virtual/lg_rgb_led/use_patterns/setting
-    chmod 0644 /sys/devices/virtual/lg_rgb_led/use_patterns/setting
-    write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 1
-
     write /proc/sys/net/core/netdev_max_backlog 5000
-
-on property:sys.boot_completed=1
-    write /sys/devices/virtual/lg_rgb_led/use_patterns/setting 0
 
 service conn_init /vendor/bin/hwaddrs
     class core
