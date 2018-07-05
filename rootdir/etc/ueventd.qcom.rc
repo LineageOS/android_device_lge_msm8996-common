@@ -259,3 +259,6 @@
 # Device block for FRP
 /dev/block/platform/soc/624000.ufshc/by-name/persistent            0660   system     system
 /dev/block/bootdevice/by-name/persistent                           0660   system     system
+
+# Immersion vibrator
+/dev/tspdrv 0660 system system
