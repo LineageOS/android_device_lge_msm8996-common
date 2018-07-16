@@ -43,7 +43,9 @@ etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
 etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
 
 # Hotword Enrollment
--priv-app/HotwordEnrollment/HotwordEnrollment.apk;PRESIGNED
+-priv-app/HotwordEnrollmentOKGoogleWCD9335/HotwordEnrollmentOKGoogleWCD9335.apk;PRESIGNED
+-priv-app/HotwordEnrollmentTGoogleWCD9335/HotwordEnrollmentTGoogleWCD9335.apk;PRESIGNED
+-priv-app/HotwordEnrollmentXGoogleWCD9335/HotwordEnrollmentXGoogleWCD9335.apk;PRESIGNED
 
 # IR
 -lib/libcir_driver.so:vendor/lib/libcir_driver.so
