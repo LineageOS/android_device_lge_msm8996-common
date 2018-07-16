@@ -196,6 +196,9 @@ BOARD_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 # Thermal
 USE_DEVICE_SPECIFIC_THERMAL := true
 
+# QTI
+TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
+
 # Use Snapdragon LLVM, if available
 TARGET_USE_SDCLANG := true
 
