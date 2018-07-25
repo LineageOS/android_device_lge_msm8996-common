@@ -213,5 +213,12 @@ WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
+TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm8996
+
+# Assertions
+TARGET_BOARD_INFO_FILE ?= $(COMMON_PATH)/board-info.txt
+
 # inherit from the proprietary version
 -include vendor/lge/msm8996-common/BoardConfigVendor.mk
