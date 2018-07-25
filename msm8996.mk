@@ -364,3 +364,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/filter_ie:system/etc/wifi/filter_ie \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf
+
+# Creating /vendor
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/bin/busybox:install/bin/busybox \
+    $(LOCAL_PATH)/prebuilt/bin/e2fsck:install/bin/e2fsck \
+    $(LOCAL_PATH)/prebuilt/bin/mke2fs:install/bin/mke2fs \
+    $(LOCAL_PATH)/prebuilt/bin/resize2fs:install/bin/resize2fs \
+    $(LOCAL_PATH)/prebuilt/bin/sgdisk:install/bin/sgdisk \
+    $(LOCAL_PATH)/prebuilt/bin/vendor.sh:install/bin/vendor.sh
