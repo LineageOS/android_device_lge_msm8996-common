@@ -25,7 +25,7 @@
 
     <!-- Color temperature settings for LiveDisplay. These were obtained by
          measuring the display at various color balance levels. -->
-    <integer name="config_minColorTemperature">2500</integer>
+    <integer name="config_minColorTemperature">1500</integer>
     <integer name="config_maxColorTemperature">10000</integer>
 
     <!-- Corresponds to color balance level of zero, this is the native
