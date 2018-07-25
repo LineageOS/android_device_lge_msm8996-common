@@ -371,3 +371,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/wifi/filter_ie:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/filter_ie \
     $(LOCAL_PATH)/configs/wifi/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf
+
+# /vendor
+PRODUCT_PACKAGES += \
+   resize2fs_static \
+   toybox_msm8996 \
+   mke2fs_msm8996 \
+   e2fsck_msm8996 \
+   sgdisk_msm8996
+
+# Creating /vendor
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/scripts/vendor.sh:install/bin/vendor.sh
