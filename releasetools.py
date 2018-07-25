@@ -25,6 +25,14 @@ def IncrementalOTA_Assertions(info):
   AddTrustZoneAssertion(info, info.target_zip)
   return
 
+def FullOTA_InstallBegin(info):
+  CreateVendorPartition(info)
+  return
+
+def IncrementalOTA_InstallBegin(info):
+  CreateVendorPartition(info)
+  return
+
 def AddTrustZoneAssertion(info, input_zip):
   android_info = info.input_zip.read("OTA/android-info.txt")
   m = re.search(r'require\s+version-trustzone\s*=\s*(\S+)', android_info)
@@ -40,3 +48,9 @@ def AddTrustZoneAssertion(info, input_zip):
       cmd = 'assert(msm8996.verify_min_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
       info.script.AppendExtra(cmd)
   return
+
+def CreateVendorPartition(info):
+  info.script.AppendExtra('ui_print("Checking for vendor partition...");');
+  info.script.AppendExtra('if run_program("/tmp/install/bin/vendor.sh") != 0 then');
+  info.script.AppendExtra('abort("Create /vendor partition failed.");');
+  info.script.AppendExtra('endif;');
