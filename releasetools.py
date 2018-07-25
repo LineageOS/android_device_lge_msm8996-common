@@ -33,4 +33,10 @@ def AddTrustZoneAssertion(info, input_zip):
     if len(versions) and '*' not in versions:
       cmd = 'assert(msm8996.verify_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
       info.script.AppendExtra(cmd)
+  m = re.search(r'require\s+version-min-trustzone\s*=\s*(\S+)', android_info)
+  if m:
+    versions = m.group(1).split('|')
+    if len(versions) and '*' not in versions:
+      cmd = 'assert(msm8996.verify_min_trustzone(' + ','.join(['"%s"' % tz for tz in versions]) + ') == "1");'
+      info.script.AppendExtra(cmd)
   return
