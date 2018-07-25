@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2016, The CyanogenMod Project
+ * Copyright (C) 2015, The CyanogenMod Project
+ * Copyright (C) 2018, The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +25,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include <ctype.h>
+
+#include <android-base/logging.h>
 
 #include "edify/expr.h"
 #include "updater/install.h"
@@ -31,13 +35,15 @@
 #define MAX(a, b) (((a) > (b)) ? (a) : (b))
 
 #define ALPHABET_LEN 256
-#define KB 1024
 
+#ifdef USES_BOOTDEVICE_PATH
 #define TZ_PART_PATH "/dev/block/bootdevice/by-name/tz"
+#else
+#define TZ_PART_PATH "/dev/block/platform/msm_sdcc.1/by-name/tz"
+#endif
 #define TZ_VER_STR "QC_IMAGE_VERSION_STRING="
 #define TZ_VER_STR_LEN 24
 #define TZ_VER_BUF_LEN 255
-#define TZ_SZ 500 * KB    /* MMAP 500K of TZ, TZ partition is 500K */
 
 /* Boyer-Moore string search implementation from Wikipedia */
 
@@ -120,6 +126,7 @@ static char * bm_search(const char *str, size_t str_len, const char *pat,
 static int get_tz_version(char *ver_str, size_t len) {
     int ret = 0;
     int fd;
+    int tz_size;
     char *tz_data = NULL;
     char *offset = NULL;
 
@@ -129,21 +136,27 @@ static int get_tz_version(char *ver_str, size_t len) {
         goto err_ret;
     }
 
-    tz_data = (char *) mmap(NULL, TZ_SZ, PROT_READ, MAP_PRIVATE, fd, 0);
+    tz_size = lseek64(fd, 0, SEEK_END);
+    if (tz_size == -1) {
+        ret = errno;
+        goto err_fd_close;
+    }
+
+    tz_data = (char *) mmap(NULL, tz_size, PROT_READ, MAP_PRIVATE, fd, 0);
     if (tz_data == (char *)-1) {
         ret = errno;
         goto err_fd_close;
     }
 
     /* Do Boyer-Moore search across TZ data */
-    offset = bm_search(tz_data, TZ_SZ, TZ_VER_STR, TZ_VER_STR_LEN);
+    offset = bm_search(tz_data, tz_size, TZ_VER_STR, TZ_VER_STR_LEN);
     if (offset != NULL) {
         strncpy(ver_str, offset + TZ_VER_STR_LEN, len);
     } else {
         ret = -ENOENT;
     }
 
-    munmap(tz_data, TZ_SZ);
+    munmap(tz_data, tz_size);
 err_fd_close:
     close(fd);
 err_ret:
@@ -151,38 +164,103 @@ err_ret:
 }
 
 /* verify_trustzone("TZ_VERSION", "TZ_VERSION", ...) */
-Value * VerifyTrustZoneFn(const char *name, State *state, int argc, Expr *argv[]) {
+Value * VerifyTrustZoneFn(const char *name, State *state, const std::vector<std::unique_ptr<Expr>>& argv) {
     char current_tz_version[TZ_VER_BUF_LEN];
-    int i, ret;
+    size_t i;
+    int ret;
 
     ret = get_tz_version(current_tz_version, TZ_VER_BUF_LEN);
     if (ret) {
-        return ErrorAbort(state, "%s() failed to read current TZ version: %d",
+        return ErrorAbort(state, kFreadFailure, "%s() failed to read current TZ version: %d",
                 name, ret);
     }
 
-    char** tz_version = ReadVarArgs(state, argc, argv);
-    if (tz_version == NULL) {
-        return ErrorAbort(state, "%s() error parsing arguments", name);
+    std::vector<std::string> tz_version;
+    if (!ReadArgs(state, argv, &tz_version)) {
+        return ErrorAbort(state, kArgsParsingFailure, "%s() error parsing arguments", name);
     }
 
     ret = 0;
-    for (i = 0; i < argc; i++) {
-        uiPrintf(state, "Checking for TZ version %s\n", tz_version[i]);
-        if (strncmp(tz_version[i], current_tz_version, strlen(tz_version[i])) == 0) {
+    for (i = 0; i < argv.size(); i++) {
+       LOG(INFO) << "\nComparing TZ version " << tz_version[i].c_str() << " == " << current_tz_version;
+       uiPrintf(state,"Comparing TZ versions:\n");
+       uiPrintf(state,"  Must be TZ version: %s\n", tz_version[i].c_str());
+       uiPrintf(state,"  Current TZ version: %s\n", current_tz_version);
+        if (strncmp(tz_version[i].c_str(), current_tz_version, tz_version[i].length()) == 0) {
             ret = 1;
             break;
         }
     }
 
-    for (i = 0; i < argc; i++) {
-        free(tz_version[i]);
+    return StringValue(strdup(ret ? "1" : "0"));
+}
+
+/* compares two versions */
+int versionCompare(std::string v1, std::string v2) {
+    // vnum stores each numeric part of version
+    unsigned long vnum1 = 0, vnum2 = 0;
+
+    // lop untill both string are processed
+    for (unsigned long i=0,j=0; (i<v1.length() || j<v2.length()); ) {
+        // storing numeric part of version 1 in vnum1
+        while (i < v1.length() && !isdigit(v1[i]) ) {
+            vnum1 = vnum1 * 10 + (v1[i] - '0');
+            i++;
+        }
+
+        //  storing numeric part of version 2 in vnum2
+        while (j < v1.length() && !isdigit(v2[j]) ) {
+            vnum2 = vnum2 * 10 + (v2[j] - '0');
+            j++;
+        }
+
+        if (vnum1 > vnum2)
+            return 1;
+        if (vnum2 > vnum1)
+            return -1;
+
+        // if equal, reset variables and go for next numeric
+        // part
+        vnum1 = vnum2 = 0;
+        i++;
+        j++;
     }
-    free(tz_version);
+    return 0;
+}
+
+/* verify_min_trustzone("TZ_VERSION", "TZ_VERSION", ...) */
+Value * VerifyMinTrustZoneFn(const char *name, State *state, const std::vector<std::unique_ptr<Expr>>& argv) {
+    char current_tz_version[TZ_VER_BUF_LEN];
+    size_t i;
+    int ret;
+
+    ret = get_tz_version(current_tz_version, TZ_VER_BUF_LEN);
+    if (ret) {
+        return ErrorAbort(state, kFreadFailure, "%s() failed to read current TZ version: %d",
+                name, ret);
+    }
+
+    std::vector<std::string> tz_version;
+    if (!ReadArgs(state, argv, &tz_version)) {
+        return ErrorAbort(state, kArgsParsingFailure, "%s() error parsing arguments", name);
+    }
+
+    ret = 0;
+    for (i = 0; i < argv.size(); i++) {
+       LOG(INFO) << "\nComparing TZ version " << tz_version[i].c_str() << " <= " << current_tz_version;
+       uiPrintf(state,"Comparing TZ versions:\n");
+       uiPrintf(state,"      Min TZ version: %s\n", tz_version[i].c_str());
+       uiPrintf(state,"  Current TZ version: %s\n", current_tz_version);
+        if ( versionCompare(tz_version[i].c_str(), current_tz_version) <= 0 ) {
+            ret = 1;
+            break;
+        }
+    }
 
     return StringValue(strdup(ret ? "1" : "0"));
 }
 
-void Register_librecovery_updater_hima() {
+void Register_librecovery_updater_msm8996() {
     RegisterFunction("msm8996.verify_trustzone", VerifyTrustZoneFn);
+    RegisterFunction("msm8996.verify_min_trustzone", VerifyMinTrustZoneFn);
 }
