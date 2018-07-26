@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1fdf7b08_9cef461a",
+        "filename": "BoardConfigCommon.mk",
+        "patchSetId": 7
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-07-26T16:09:24Z",
+      "side": 1,
+      "message": "By the way, you can omit this path completely.",
+      "range": {
+        "startLine": 120,
+        "startChar": 37,
+        "endLine": 120,
+        "endChar": 49
+      },
+      "revId": "9bf69ed0305db0c6c679cd056797b4eb94e0fa2a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
