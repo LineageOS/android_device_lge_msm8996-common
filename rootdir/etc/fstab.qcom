@@ -19,24 +19,6 @@
 /dev/block/bootdevice/by-name/mpt                     /mpt              ext4    nosuid,nodev,barrier=1,noatime,noauto_da_alloc,errors=continue            wait,notrim
 
 /dev/block/bootdevice/by-name/misc                    /misc             emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/modem                   /radio            emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/tz                      /tz               emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/rpm                     /rpm              emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/aboot                   /aboot            emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/pmic                    /pmic             emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/hyp                     /hyp              emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/sec                     /sec              emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/keymaster               /keymaster        emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/cmnlib                  /cmnlib           emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/persistent              /persistent       emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/sbl1bak                 /sbl1bak          emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/tzbak                   /tzbak            emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/rpmbak                  /rpmbak           emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/abootbak                /abootbak         emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/pmicbak                 /pmicbak          emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/hypbak                  /hypbak           emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/keymasterbak            /keymasterbak     emmc    defaults                                                                  defaults
-/dev/block/bootdevice/by-name/cmnlibbak               /cmnlibbak        emmc    defaults                                                                  defaults
 
 /devices/soc/74a4900.sdhci/mmc_host*	                        auto    auto    defaults                                                                  voldmanaged=sdcard1:auto,encryptable=/dev/block/bootdevice/by-name/encrypt
 /devices/soc/6a00000.ssusb/6a00000.dwc3/xhci-hcd.0.auto/usb*    auto    auto    defaults                                                                  voldmanaged=usb:auto
