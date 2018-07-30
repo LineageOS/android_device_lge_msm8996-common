@@ -45,6 +45,7 @@ TARGET_NO_BOOTLOADER := true
 # Kernel
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom user_debug=31 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 cma=32M@0-0xffffffff
+BOARD_BOOTIMAGE_CMDLINE := skip_initramfs rootwait ro init=/init root=/dev/dm-0 dm=\"system none ro,0 1 android-verity $(TARGET_SYSTEM_PARTITION)\"
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x02000000
@@ -168,9 +169,11 @@ BOARD_NFC_CHIPSET := pn548
 BOARD_NFC_HAL_SUFFIX := $(TARGET_BOARD_PLATFORM)
 
 # Partitions
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_USES_FULL_RECOVERY_IMAGE = true
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_VENDORIMAGE_PARTITION_SIZE := 536866816
 TARGET_COPY_OUT_VENDOR := vendor
@@ -190,6 +193,9 @@ BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+
+# Root
+BOARD_ROOT_EXTRA_FOLDERS := firmware mpt persist persist-lg sns
 
 # SELinux policies
 include device/qcom/sepolicy/sepolicy.mk
