@@ -43,6 +43,10 @@
 /sys/devices(/platform)?/soc/[a-z0-9]+.qcom,mdss_mdp/[a-z0-9]+.qcom,mdss_mdp:qcom,mdss_fb_primary/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
 /sys/devices/soc.0/[a-z0-9]+.qcom,mdss_mdp/qcom,mdss_fb_primary.+[a-z0-9]/leds/lcd-backlight-ex(/.*)?   u:object_r:sysfs_graphics:s0
 
+# MPT
+/mpt(/.*)?                      u:object_r:mpt_file:s0
+/vendor/mpt(/.*)?               u:object_r:mpt_file:s0
+
 # Netmgr
 /data/misc/netmgr(/.*)?                                             u:object_r:net_data_file:s0
 
@@ -69,6 +73,7 @@
 /sns                                                                u:object_r:sensors_data_file:s0
 /sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
 /persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0
+/vendor/sns(/.*)?                                                   u:object_r:sensors_data_file:s0
 
 # SPI
 /sys/bus/spi/devices                                                u:object_r:sysfs_spi:s0
