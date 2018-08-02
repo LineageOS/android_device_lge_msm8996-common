@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1565785e_39738f2d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 15450
+      },
+      "writtenOn": "2018-08-02T13:37:50Z",
+      "side": 1,
+      "message": "MB or MByte",
+      "revId": "e10fe28cc39393c67fcf27c4003c63800392cff1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "33e14483_83845c5a",
+        "filename": "scripts/vendor.sh",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 15450
+      },
+      "writtenOn": "2018-08-02T13:37:50Z",
+      "side": 1,
+      "message": "Same \"MB or MByte\"",
+      "revId": "e10fe28cc39393c67fcf27c4003c63800392cff1",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
