@@ -16,6 +16,24 @@
       "revId": "a798f87660c6dd1ad5282aff11cf62c027cc8064",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "248814c5_e352025d",
+        "filename": "scripts/vendor.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2018-08-07T19:03:21Z",
+      "side": 1,
+      "message": "\u003e Question: is the determination to make the partition 512MB or\n \u003e 500MB? Refer to #221841.\n\n512mg",
+      "parentUuid": "584f55c5_cffb2ad1",
+      "revId": "a798f87660c6dd1ad5282aff11cf62c027cc8064",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
