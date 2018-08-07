@@ -34,6 +34,42 @@
       "revId": "a798f87660c6dd1ad5282aff11cf62c027cc8064",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1c666d03_fe17b786",
+        "filename": "scripts/vendor.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2018-08-07T22:44:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "248814c5_e352025d",
+      "revId": "a798f87660c6dd1ad5282aff11cf62c027cc8064",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab90573d_2925901b",
+        "filename": "scripts/vendor.sh",
+        "patchSetId": 7
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2018-08-07T22:44:21Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "584f55c5_cffb2ad1",
+      "revId": "a798f87660c6dd1ad5282aff11cf62c027cc8064",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
