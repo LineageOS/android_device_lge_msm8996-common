@@ -1,0 +1,12 @@
+allow timeservice_app system_app_data_file:dir { getattr search };
+#
+# Add rules for access permissions
+allow timeservice_app rtc_device:chr_file r_file_perms;
+allow timeservice_app alarm_device:chr_file rw_file_perms;
+
+allow timeservice_app time_data_file:file create_file_perms;
+allow timeservice_app time_data_file:dir w_dir_perms;
+allow timeservice_app self:socket create_socket_perms_no_ioctl;
+
+allow timeservice_app persist_time_file:file create_file_perms;
+allow timeservice_app persist_time_file:dir w_dir_perms;
