@@ -151,8 +151,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system
 
 # Doze mode
-PRODUCT_PACKAGES += \
-    LGDoze
+#PRODUCT_PACKAGES += \
+#    LGDoze
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -165,8 +165,8 @@ PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-service
 
 # Gesture handler
-PRODUCT_PACKAGES += \
-    GestureHandler
+#PRODUCT_PACKAGES += \
+#    GestureHandler
 
 # GMS
 PRODUCT_GMS_CLIENTID_BASE := android-om-lg
