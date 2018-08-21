@@ -64,7 +64,7 @@ etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
 
 # NFC firmware
-vendor/firmware/libpn548ad_fw.so
+vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 
 # Radio firmware
 vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn|58df6d1657b77154cc3504220727d936df4a35dc
