@@ -20,8 +20,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 
 LOCAL_RESOURCE_DIR := \
     $(LOCAL_PATH)/res \
-    frameworks/support/v7/preference/res \
-    frameworks/support/v14/preference/res \
+    frameworks/support/preference/res \
     frameworks/support/v7/appcompat/res \
     frameworks/support/v7/recyclerview/res
 
