@@ -206,3 +206,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    qemu.hw.mainkeys=0
