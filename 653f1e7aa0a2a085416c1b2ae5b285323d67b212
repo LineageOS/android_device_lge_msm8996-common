@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b8c6587a_a95e16a8",
+        "filename": "scripts/vendor.sh",
+        "patchSetId": 22
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 5503
+      },
+      "writtenOn": "2018-09-01T18:44:13Z",
+      "side": 1,
+      "message": "We are kanging this for axon7 and I noticed that the rpm partition starts immediately after the gpt. If you try to resize the gpt, it will destroy the rpm partition. You provably want to check for that.",
+      "revId": "653f1e7aa0a2a085416c1b2ae5b285323d67b212",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
