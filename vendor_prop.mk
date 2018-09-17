@@ -122,11 +122,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_width=3072 \
     ro.hwui.text_large_cache_height=2048
 
-# NFC
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.nfc.port=I2C \
-    persist.nfc.smartcard.config=SIM1,SIM2,eSE1
-
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610
