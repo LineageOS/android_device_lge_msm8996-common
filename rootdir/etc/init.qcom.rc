@@ -48,9 +48,6 @@ on early-init
     chmod 0620 /dev/kmsg
 
 on init
-    # Support legacy paths
-    symlink /sdcard /storage/sdcard0
-
     mkdir /sns/cal/ 0755 system system
     mkdir /sns/fingerprint 0775 system system
 
