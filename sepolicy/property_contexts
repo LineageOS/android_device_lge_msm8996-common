@@ -9,3 +9,5 @@ sys.post_boot.             u:object_r:post_boot_prop:s0
 
 # Radio
 oem.device.imeicache       u:object_r:diag_prop:s0
+
+persist.net.doxlat         u:object_r:vendor_xlat_prop:s0
