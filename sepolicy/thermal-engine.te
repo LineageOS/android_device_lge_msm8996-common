@@ -9,3 +9,4 @@ type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-s
 type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-recv-client";
 type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-recv-passive-client";
 set_prop(thermal-engine,system_prop);
+r_dir_file(thermal-engine, sysfs_batteryinfo)

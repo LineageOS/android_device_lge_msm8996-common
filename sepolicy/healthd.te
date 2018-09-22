@@ -1,2 +1,4 @@
 allow healthd sysfs_thermal:dir search;
 allow healthd sysfs_thermal:file { read open };
+
+r_dir_file(healthd, sysfs_batteryinfo)
