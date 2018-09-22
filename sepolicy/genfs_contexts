@@ -3,6 +3,7 @@ genfscon proc /bluetooth/sleep/lpm                   u:object_r:proc_bluetooth_w
 genfscon proc /bluetooth/sleep/btwrite               u:object_r:proc_bluetooth_writable:s0
 genfscon sysfs /class/rfkill/rfkill0/state           u:object_r:sysfs_bluetooth_writable:s0
 
+<<<<<<< HEAD
 # CPU
 genfscon proc /sys/kernel/sched_boost                u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_downmigrate          u:object_r:proc_kernel_sched:s0
@@ -15,3 +16,10 @@ genfscon proc /sys/kernel/sched_small_task           u:object_r:proc_kernel_sche
 genfscon proc /sys/kernel/sched_spill_nr_run         u:object_r:proc_kernel_sched:s0
 genfscon proc /sys/kernel/sched_upmigrate            u:object_r:proc_kernel_sched:s0
 genfscon proc /irq                                   u:object_r:proc_irq:s0
+
+genfscon sysfs /devices/soc/qpnp-smbcharger-21/power_supply          u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/6a00000.ssusb/power_supply               u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/msm-bcl-19/power_supply                  u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/qpnp-fg-22/power_supply                  u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/75b5000.i2c/i2c-7/7-001d/power_supply    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply                u:object_r:sysfs_batteryinfo:s0
