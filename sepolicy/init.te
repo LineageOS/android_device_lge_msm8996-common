@@ -3,6 +3,7 @@ allow init mpt_file:dir mounton;
 allow init sensors_data_file:dir mounton;
 allow init persist_drm_file:dir mounton;
 allow init proc_kernel_sched:file rw_file_perms;
+allow init sysfs_mmc_host:file { setattr w_file_perms };
 
 #allow init firmware_file:dir { create_dir_perms setattr };
 #allow firmware_file rootfs:filesystem associate;
