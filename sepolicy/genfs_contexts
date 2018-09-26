@@ -17,3 +17,5 @@ genfscon proc /sys/kernel/sched_upmigrate            u:object_r:proc_kernel_sche
 genfscon proc /irq                                   u:object_r:proc_irq:s0
 
 genfscon sysfs /devices/soc/qpnp-rtc-8/rtc           u:object_r:sysfs_rtc:s0
+genfscon sysfs /devices/soc/74a4900.sdhci/mmc_host/mmc0 u:object_r:sysfs_mmc_host:s0
+genfscon sysfs /devices/soc/74a4900.sdhci/mmc_host/mmc1 u:object_r:sysfs_mmc_host:s0
