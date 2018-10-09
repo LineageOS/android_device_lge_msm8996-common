@@ -776,7 +776,7 @@ service vendor.sensor-sh /vendor/bin/init.qcom.sensors.sh
     user root
     oneshot
 
-service vendor.sensors /vendor/bin/sensors.qcom
+service vendor.sensors /vendor/bin/sensors.qti
     class core
     user root
     group root
