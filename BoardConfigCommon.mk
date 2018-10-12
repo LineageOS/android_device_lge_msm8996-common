@@ -184,8 +184,19 @@ BOARD_USES_QCOM_HARDWARE := true
 BOARD_USES_QC_TIME_SERVICES := true
 
 # Recovery
+BOOTLOADER_MESSAGE_OFFSET := 128
 TARGET_RECOVERY_DEVICE_DIRS += $(COMMON_PATH)
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
+
+# Releasetools
+TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2-common/releasetools
+
+# RIL
+TARGET_RIL_VARIANT := caf
+
+# SDClang
+TARGET_USE_SDCLANG := true
+>>>>>>> bf3b4841... g2-common: Propagate bootloader message offset via make variable
 
 # SELinux policies
 include device/qcom/sepolicy-legacy-um/sepolicy.mk
