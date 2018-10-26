@@ -7,9 +7,9 @@ LOCAL_CFLAGS += -DUSES_BOOTDEVICE_PATH
 endif
 
 LOCAL_C_INCLUDES := \
-    $(call project-path-for,recovery) \
-    $(call project-path-for,recovery)/updater/include \
-    bootable/recovery \
+    bootable/recovery/edify/include \
+    bootable/recovery/otautil/include \
+    bootable/recovery/updater/include \
     system/core/base/include
 LOCAL_SRC_FILES := recovery_updater.cpp
 LOCAL_MODULE := librecovery_updater_msm8996
