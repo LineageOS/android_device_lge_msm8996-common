@@ -28,7 +28,7 @@
   <string name="pocket_gesture_title">Џеп</string>
   <string name="pocket_gesture_summary">Пулсно обавештење при уклањању из џепа</string>
   <!-- Help text -->
-  <string name="dlg_ok">У реду</string>
+  <string name="dialog_ok">У реду</string>
   <string name="doze_settings_help_title">Помоћ</string>
   <string name="doze_settings_help_text">Ова функција користи активирање сензора да покрене пулсно обавештење. Изабрани сензор је омогућен једино када уређај прима обавештење, то помаже смањењу потрожње батерије. Ту је и опција омогућења изабраног сензора чим се екран искључи, то ће узроковати већој потрожњи батерије.</string>
 </resources>

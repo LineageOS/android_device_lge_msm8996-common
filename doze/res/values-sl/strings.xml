@@ -28,7 +28,7 @@
   <string name="pocket_gesture_title">Žep</string>
   <string name="pocket_gesture_summary">Utripaj obvestila ob odstranitvi iz žepa</string>
   <!-- Help text -->
-  <string name="dlg_ok">V redu</string>
+  <string name="dialog_ok">V redu</string>
   <string name="doze_settings_help_title">Pomoč</string>
   <string name="doze_settings_help_text">Te značilnosti uporabljajo dogodke tipal za sprožitev utripanja obvestil ob spanju. Izbrano tipalo se omogoči samo, ko naprava prejme obvestilo. To pomaga zmanjšati porabo energije. Obstaja tudi možnost omogočanja izbranega tipala, takoj ko se zaslon izklopi, vendar bo to povzročilo večjo porabo energije.</string>
 </resources>

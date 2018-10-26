@@ -28,7 +28,7 @@
   <string name="pocket_gesture_title">Poltsikoratu</string>
   <string name="pocket_gesture_summary">Jakinarazpen argia poltsikotik ateratzean</string>
   <!-- Help text -->
-  <string name="dlg_ok">Ados</string>
+  <string name="dialog_ok">Ados</string>
   <string name="doze_settings_help_title">Laguntza</string>
   <string name="doze_settings_help_text">Ezaugarri hauek sentsoreen gertakizunak erabiltzen dituzte jakinarazpen argi bat pizteko. Sentsorea jakinarazpen bat jasotzean gaituko da, honi esker bateria erabilera murrizten da. Badago ere pantaila itzali eta berehala sentsorea pizteko aukera, honek bateria gehiago erabiliko du.</string>
 </resources>

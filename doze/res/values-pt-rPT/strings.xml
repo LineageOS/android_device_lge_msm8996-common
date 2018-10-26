@@ -27,7 +27,7 @@
   <string name="pocket_gesture_title">Bolso</string>
   <string name="pocket_gesture_summary">Mostrar notificações ao retirar do bolso</string>
   <!-- Help text -->
-  <string name="dlg_ok">OK</string>
+  <string name="dialog_ok">OK</string>
   <string name="doze_settings_help_title">Ajuda</string>
   <string name="doze_settings_help_text">Estes recursos utilizam eventos de sensores para mostrarem notificações enquanto o dispositivo está em repouso. O sensor escolhido só é ativado quando o dispositivo recebe uma notificação, o que ajuda a reduzir a utilização da bateria. Há também uma opção para ativar o sensor escolhido assim que o ecrã se desliga, o que resultará numa maior utilização da bateria.</string>
 </resources>

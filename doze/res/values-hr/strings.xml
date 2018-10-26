@@ -28,7 +28,7 @@
   <string name="pocket_gesture_title">Džep</string>
   <string name="pocket_gesture_summary">Prikaz obavijesti kada izvadite uređaj iz džepa</string>
   <!-- Help text -->
-  <string name="dlg_ok">OK</string>
+  <string name="dialog_ok">OK</string>
   <string name="doze_settings_help_title">Pomoć</string>
   <string name="doze_settings_help_text">Te značajke koriste događaje senzora za pokretanje pulsiranja obavijesti. Odabrani senzor je omogućen jedino kada uređaj primi obavijest, to pomaže smanjenju potrošnje baterije. Tu je i opcija omogućenja odabranog senzora čim se zaslon isključi, to će uzrokovati veću potrošnju baterije.</string>
 </resources>

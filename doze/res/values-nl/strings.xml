@@ -26,6 +26,6 @@
   <string name="pocket_gesture_title">Broekzak</string>
   <string name="pocket_gesture_summary">Meldingen laten knipperen bij verwijderen uit broekzak</string>
   <!-- Help text -->
-  <string name="dlg_ok">OK</string>
+  <string name="dialog_ok">OK</string>
   <string name="doze_settings_help_title">Help</string>
 </resources>
