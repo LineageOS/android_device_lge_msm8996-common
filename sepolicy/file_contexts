@@ -52,7 +52,6 @@
 
 # NFC
 /dev/pn54[478]                                                      u:object_r:nfc_device:s0
-/data/vendor/nfc(/.*)?                                              u:object_r:nfc_vendor_data_file:s0
 
 # Persist
 /persist-lg(/.*)?                                                   u:object_r:persist_drm_file:s0
