@@ -23,4 +23,4 @@ allow init_graphics sysfs_kgsl:file r_file_perms;
 set_prop(init_graphics, freq_prop)
 
 # allow setting UBWC props
-set_prop(init_graphics, debug_gralloc_prop)
+set_prop(init_graphics, vendor_gralloc_prop)
