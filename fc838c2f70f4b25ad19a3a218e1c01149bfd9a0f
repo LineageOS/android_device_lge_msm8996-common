@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bb3d6aaa_b6178812",
+        "filename": "msm8996.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-11T19:07:18Z",
+      "side": 1,
+      "message": "Unrelated to this change.",
+      "range": {
+        "startLine": 70,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 148
+      },
+      "revId": "fc838c2f70f4b25ad19a3a218e1c01149bfd9a0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4b42964b_7be03146",
+        "filename": "vendor_prop.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2018-11-11T19:07:18Z",
+      "side": 1,
+      "message": "The original change removes this prop, so the question is why do you add it?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 6,
+        "endChar": 58
+      },
+      "revId": "fc838c2f70f4b25ad19a3a218e1c01149bfd9a0f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
