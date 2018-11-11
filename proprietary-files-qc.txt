@@ -138,6 +138,7 @@ vendor/lib/libsymphony-1.1.1.so
 # GPS
 lib/vendor.qti.gnss@1.0.so
 lib64/vendor.qti.gnss@1.0.so
+lib64/android.hardware.gnss@8.0.so
 vendor/bin/hw/vendor.qti.gnss@1.0-service
 vendor/bin/loc_launcher
 vendor/bin/lowi-server
@@ -170,6 +171,8 @@ vendor/lib64/libulp2.so
 vendor/lib64/libxtadapter.so
 vendor/lib64/libxtwifi_ulp_adaptor.so
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so
+vendor/lib64/libhui.so
+vendor/lib64/libux.so
 
 # Graphics
 etc/permissions/com.qti.snapdragon.sdk.display.xml
