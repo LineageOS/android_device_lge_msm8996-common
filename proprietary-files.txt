@@ -15,11 +15,25 @@ vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_llvd.so
 vendor/lib/libmmcamera_optizoom_lib.so
 vendor/lib/libmmcamera_quadracfa.so
+vendor/lib/libremosaic_daemon.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
+vendor/lib/libts_detected_face_hal.so
+vendor/lib/libts_face_beautify_hal.so
+vendor/lib64/libts_detected_face_hal.so
+vendor/lib64/libts_face_beautify_hal.so
 
 # Camera firmware
+etc/camera/selfie/1_selfie.dat:vendor/etc/camera/selfie/1_selfie.dat
+etc/camera/selfie/2_selfie.dat:vendor/etc/camera/selfie/2_selfie.dat
+etc/camera/selfie/3_selfie.dat:vendor/etc/camera/selfie/3_selfie.dat
+etc/camera/selfie/4_selfie.dat:vendor/etc/camera/selfie/4_selfie.dat
+etc/camera/selfie/5_selfie.dat:vendor/etc/camera/selfie/5_selfie.dat
+etc/camera/selfie/6_selfie.dat:vendor/etc/camera/selfie/6_selfie.dat
+etc/camera/selfie/7_selfie.dat:vendor/etc/camera/selfie/7_selfie.dat
+etc/camera/selfie/8_selfie.dat:vendor/etc/camera/selfie/8_selfie.dat
+etc/camera/selfie/9_selfie.dat:vendor/etc/camera/selfie/9_selfie.dat
 etc/camera/film/0_film.dat:vendor/etc/camera/film/0_film.dat
 etc/camera/film/1_film.dat:vendor/etc/camera/film/1_film.dat
 etc/camera/film/2_film.dat:vendor/etc/camera/film/2_film.dat
