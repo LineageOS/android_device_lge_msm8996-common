@@ -43,8 +43,38 @@
 #define MAX_SATELLITES_IN_USE 12
 #define LOC_NI_NO_RESPONSE_TIME 20
 #define LOC_GPS_NI_RESPONSE_IGNORE 4
+#define ODCPI_EXPECTED_INJECTION_TIME_MS 10000
 
 class GnssAdapter;
+
+class OdcpiTimer : public LocTimer {
+public:
+    OdcpiTimer(GnssAdapter* adapter) :
+            LocTimer(), mAdapter(adapter), mActive(false) {}
+
+    inline void start() {
+        mActive = true;
+        LocTimer::start(ODCPI_EXPECTED_INJECTION_TIME_MS, false);
+    }
+    inline void stop() {
+        mActive = false;
+        LocTimer::stop();
+    }
+    inline void restart() {
+        stop();
+        start();
+    }
+    inline bool isActive() {
+        return mActive;
+    }
+
+private:
+    // Override
+    virtual void timeOutCallback() override;
+
+    GnssAdapter* mAdapter;
+    bool mActive;
+};
 
 typedef struct {
     pthread_t               thread;        /* NI thread */
@@ -81,6 +111,7 @@ namespace loc_core {
 }
 
 class GnssAdapter : public LocAdapterBase {
+
     /* ==== ULP ============================================================================ */
     UlpProxyBase* mUlpProxy;
 
@@ -102,14 +133,23 @@ class GnssAdapter : public LocAdapterBase {
     /* ==== NI ============================================================================= */
     NiData mNiData;
 
-    /* ==== AGPS ========================================================*/
+    /* ==== AGPS =========================================================================== */
     // This must be initialized via initAgps()
     AgpsManager mAgpsManager;
     AgpsCbInfo mAgpsCbInfo;
-    XtraSystemStatusObserver mXtraObserver;
+    void initAgps(const AgpsCbInfo& cbInfo);
+
+    /* ==== ODCPI ========================================================================== */
+    OdcpiRequestCallback mOdcpiRequestCb;
+    bool mOdcpiRequestActive;
+    OdcpiTimer mOdcpiTimer;
+    OdcpiRequestInfo mOdcpiRequest;
+    void odcpiTimerExpire();
 
     /* === SystemStatus ===================================================================== */
     SystemStatus* mSystemStatus;
+    std::string mServerUrl;
+    XtraSystemStatusObserver mXtraObserver;
 
     /*==== CONVERSION ===================================================================*/
     static void convertOptions(LocPosMode& out, const LocationOptions& options);
@@ -150,6 +190,7 @@ public:
     LocationCallbacks getClientCallbacks(LocationAPI* client);
     LocationCapabilitiesMask getCapabilities();
     void broadcastCapabilities(LocationCapabilitiesMask);
+    LocationError setSuplHostServer(const char* server, int port);
 
     /* ==== TRACKING ======================================================================= */
     /* ======== COMMANDS ====(Called from Client Thread)==================================== */
@@ -170,7 +211,7 @@ public:
     void saveTrackingSession(LocationAPI* client, uint32_t sessionId,
                              const LocationOptions& options);
     void eraseTrackingSession(LocationAPI* client, uint32_t sessionId);
-    void setUlpPositionMode(const LocPosMode& mode) { mUlpPositionMode = mode; }
+    bool setUlpPositionMode(const LocPosMode& mode);
     LocPosMode& getUlpPositionMode() { return mUlpPositionMode; }
     LocationError startTrackingMultiplex(const LocationOptions& options);
     LocationError startTracking(const LocationOptions& options);
@@ -197,13 +238,23 @@ public:
     void setConfigCommand();
     uint32_t* gnssUpdateConfigCommand(GnssConfig config);
     uint32_t gnssDeleteAidingDataCommand(GnssAidingData& data);
+    void gnssUpdateXtraThrottleCommand(const bool enabled);
 
+    void initDefaultAgpsCommand();
     void initAgpsCommand(const AgpsCbInfo& cbInfo);
-    void dataConnOpenCommand(
-            AGpsExtType agpsType,
-            const char* apnName, int apnLen, LocApnIpType ipType);
+    void dataConnOpenCommand(AGpsExtType agpsType,
+            const char* apnName, int apnLen, AGpsBearerType bearerType);
     void dataConnClosedCommand(AGpsExtType agpsType);
     void dataConnFailedCommand(AGpsExtType agpsType);
+
+    /* ========= ODCPI ===================================================================== */
+    /* ======== COMMANDS ====(Called from Client Thread)==================================== */
+    void initOdcpiCommand(const OdcpiRequestCallback& callback);
+    void injectOdcpiCommand(const Location& location);
+    /* ======== UTILITIES ================================================================== */
+    void initOdcpi(const OdcpiRequestCallback& callback);
+    void injectOdcpi(const Location& location);
+    void odcpiTimerExpireEvent();
 
     /* ======== RESPONSES ================================================================== */
     void reportResponse(LocationError err, uint32_t sessionId);
@@ -215,6 +266,8 @@ public:
     void setPowerVoteId(uint32_t id) { mPowerVoteId = id; }
     uint32_t getPowerVoteId() { return mPowerVoteId; }
     bool resolveInAddress(const char* hostAddress, struct in_addr* inAddress);
+    virtual bool isInSession() { return !mTrackingSessions.empty(); }
+    void initDefaultAgps();
 
     /* ==== REPORTS ======================================================================== */
     /* ======== EVENTS ====(Called from QMI/ULP Thread)===================================== */
@@ -236,8 +289,11 @@ public:
     virtual bool requestSuplES(int connHandle);
     virtual bool reportDataCallOpened();
     virtual bool reportDataCallClosed();
+    virtual bool reportOdcpiRequestEvent(OdcpiRequestInfo& request);
 
     /* ======== UTILITIES ================================================================= */
+    bool needReport(const UlpLocation& ulpLocation,
+            enum loc_sess_status status, LocPosTechMask techMask);
     void reportPosition(const UlpLocation &ulpLocation,
                         const GpsLocationExtended &locationExtended,
                         enum loc_sess_status status,
@@ -246,6 +302,7 @@ public:
     void reportNmea(const char* nmea, size_t length);
     bool requestNiNotify(const GnssNiNotification& notify, const void* data);
     void reportGnssMeasurementData(const GnssMeasurementsNotification& measurements);
+    void reportOdcpiRequest(const OdcpiRequestInfo& request);
 
     /*======== GNSSDEBUG ================================================================*/
     bool getDebugReport(GnssDebugReport& report);
@@ -254,6 +311,8 @@ public:
 
     /*==== SYSTEM STATUS ================================================================*/
     inline SystemStatus* getSystemStatus(void) { return mSystemStatus; }
+    std::string& getServerUrl(void) { return mServerUrl; }
+    void setServerUrl(const char* server) { mServerUrl.assign(server); }
 
     /*==== CONVERSION ===================================================================*/
     static uint32_t convertGpsLock(const GnssConfigGpsLock gpsLock);
@@ -276,10 +335,6 @@ public:
 
     void injectLocationCommand(double latitude, double longitude, float accuracy);
     void injectTimeCommand(int64_t time, int64_t timeReference, int32_t uncertainty);
-
-    inline void updateConnectionStatusCommand(bool connected, uint8_t type) {
-        mXtraObserver.updateConnectionStatus(connected, type);
-    }
 
 };
 
