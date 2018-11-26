@@ -24,7 +24,7 @@ LOCAL_MODULE       := init.qcom.rc
 LOCAL_MODULE_TAGS  := optional eng
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/init.qcom.rc
-LOCAL_REQUIRED_MODULES := init.power.sh init.qcom.graphics.sh
+LOCAL_REQUIRED_MODULES := init.power.sh init.class_main.sh init.qcom.graphics.sh
 LOCAL_VENDOR_MODULE    := true
 LOCAL_MODULE_RELATIVE_PATH := init/hw
 include $(BUILD_PREBUILT)
@@ -37,6 +37,14 @@ LOCAL_SRC_FILES    := bin/init.qcom.sh
 LOCAL_VENDOR_MODULE    := true
 # init.radio.sh is defined in variant trees
 LOCAL_REQUIRED_MODULES := init.radio.sh
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE       := init.class_main.sh
+LOCAL_MODULE_TAGS  := optional eng
+LOCAL_MODULE_CLASS := EXECUTABLES
+LOCAL_SRC_FILES    := bin/init.class_main.sh
+LOCAL_VENDOR_MODULE    := true
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
