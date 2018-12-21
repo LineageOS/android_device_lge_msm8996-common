@@ -44,7 +44,7 @@ on charger
 service charger /charger
     class charger
     critical
-    seclabel u:r:charger:s0
+    seclabel u:r:healthd:s0
 
 on early-init
     chown root system /dev/kmsg
