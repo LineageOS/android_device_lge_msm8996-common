@@ -100,10 +100,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.hw=1 \
     debug.egl.hw=1 \
+    debug.gralloc.gfx_ubwc_disable=0 \
+    debug.sf.enable_hwc_vds=1 \
     debug.gralloc.enable_fb_ubwc=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
-    persist.sys.wfd.virtual=0 \
     sdm.perf_hint_window=50 \
     persist.hwc.enable_vds=1 \
     sdm.debug.disable_rotator_split=1
@@ -121,6 +122,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_small_cache_height=2048 \
     ro.hwui.text_large_cache_width=3072 \
     ro.hwui.text_large_cache_height=2048
+
+# Media
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.vidc.enc.disable.pq=true \
+    vendor.video.disable.ubwc=1
 
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \
