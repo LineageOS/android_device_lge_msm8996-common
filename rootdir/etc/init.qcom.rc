@@ -775,8 +775,8 @@ service vendor.ipacm-diag /vendor/bin/ipacm-diag
 
 service vendor.ipacm /vendor/bin/ipacm
     class main
-    user net_admin
-    group net_admin inet
+    user radio
+    group radio inet
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.qti /vendor/bin/qti
