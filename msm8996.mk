@@ -328,6 +328,7 @@ PRODUCT_PACKAGES += \
     CarrierConfigOverlay \
     libjson \
     libprotobuf-cpp-full \
+    libqti_vndfwk_detect \
     librmnetctl
 
 # Seccomp policy
