@@ -17,6 +17,8 @@ allow timekeep vendor_time_data_file:file create_file_perms;
 # Set persist.vendor.timeadjust
 set_prop(timekeep, vendor_timekeep_prop)
 
+allow timekeep sysfs:file r_file_perms;
+
 # Read /sys/class/rtc/rtc0/since_epoch
 allow timekeep sysfs_rtc:dir search;
 allow timekeep sysfs_rtc:{ file lnk_file } r_file_perms;
