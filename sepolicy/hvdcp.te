@@ -1,0 +1,1 @@
+dontaudit hvdcp self:capability { dac_override };
