@@ -16,29 +16,13 @@
 
 #pragma once
 
-#include <fcntl.h>
-
 #include <cstdint>
-#include <string>
-#include <vector>
 
 namespace android {
 namespace hardware {
 namespace bluetooth {
 namespace V1_0 {
 namespace implementation {
-
-// The property key stores the storage location of Bluetooth Device Address
-static constexpr char PROPERTY_BT_BDADDR_PATH[] = "ro.bt.bdaddr_path";
-
-// Check for a legacy address stored as a property.
-static constexpr char PERSIST_BDADDR_PROPERTY[] =
-    "persist.service.bdroid.bdaddr";
-
-// If there is no valid bdaddr available from PROPERTY_BT_BDADDR_PATH and there
-// is no available persistent bdaddr available from PERSIST_BDADDR_PROPERTY,
-// use a factory set address.
-static constexpr char FACTORY_BDADDR_PROPERTY[] = "ro.boot.btmacaddr";
 
 // Encapsulate handling for Bluetooth Addresses:
 class BluetoothAddress {
