@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9a2d006c_7adf1ec0",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-03-15T21:49:12Z",
+      "side": 1,
+      "message": "Need to remove",
+      "revId": "5245669624399a3569f93ab14ba0779a95f6e018",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
