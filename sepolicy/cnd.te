@@ -1,2 +1,5 @@
 allow cnd diag_prop:property_service set;
 get_prop(cnd, diag_prop);
+allow cnd sysfs:file r_file_perms;
+allow cnd sysfs_data:file r_file_perms;
+allow cnd hal_cne_hwservice:hwservice_manager find;
