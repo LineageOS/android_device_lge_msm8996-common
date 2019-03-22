@@ -4,7 +4,7 @@ type init_radio_exec, exec_type, vendor_file_type, file_type;
 
 init_daemon_domain(init_radio)
 
-allow init_radio self:capability { dac_override fowner };
+allow init_radio self:capability { fowner };
 
 # copy files from /firmware to /data/misc/radio
 allow init_radio vendor_shell_exec:file rx_file_perms;
