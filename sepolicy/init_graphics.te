@@ -24,3 +24,4 @@ set_prop(init_graphics, freq_prop)
 
 # allow setting UBWC props
 set_prop(init_graphics, vendor_gralloc_prop)
+allow init_graphics debug_prop:property_service set;
