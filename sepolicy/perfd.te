@@ -37,6 +37,7 @@ allow perfd sysfs_lib:file { write };
 allow perfd sysfs_msm_power:file w_file_perms;
 allow perfd sysfs_cpu_boost:file w_file_perms;
 allow perfd sysfs_devfreq:file w_file_perms;
+allow perfd sysfs_kgsl:file w_file_perms;
 
 # perfd uses kill(pid, 0) to determine if a process exists.
 # Determining if a process exists does not require the kill capability
