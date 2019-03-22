@@ -8,6 +8,8 @@ allow perfd cgroup:file r_file_perms;
 allow perfd cameraserver:process signull;
 
 # files in /data/misc/perfd and /data/system/perfd
+typeattribute perfd data_between_core_and_vendor_violators;
+allow perfd perfd_data_file:dir create_dir_perms;
 allow perfd perfd_data_file:dir create_dir_perms;
 allow perfd perfd_data_file:{ file sock_file } create_file_perms;
 
@@ -27,6 +29,8 @@ allow perfd sysfs_msm_perf:file write;
 allow perfd sysfs_devices_system_cpu:file write;
 allow perfd sysfs_power_management:file write;
 
+allow perfd mpctl_data_file:dir {search write add_name };
+allow perfd mpctl_data_file:sock_file write;
 
 allow perfd proc_kernel_sched:file w_file_perms;
 allow perfd gpu_device:chr_file rw_file_perms;
@@ -37,6 +41,7 @@ allow perfd sysfs_lib:file { write };
 allow perfd sysfs_msm_power:file w_file_perms;
 allow perfd sysfs_cpu_boost:file w_file_perms;
 allow perfd sysfs_devfreq:file w_file_perms;
+allow perfd sysfs_kgsl:file w_file_perms;
 
 # perfd uses kill(pid, 0) to determine if a process exists.
 # Determining if a process exists does not require the kill capability
