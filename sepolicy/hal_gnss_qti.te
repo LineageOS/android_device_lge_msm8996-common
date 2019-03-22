@@ -1,0 +1,5 @@
+allow hal_gnss sysfs:file r_file_perms;
+allow hal_gnss sysfs_data:file r_file_perms;
+allow hal_gnss sysfs:dir r_dir_perms;
+
+allow hal_gnss_qti property_socket:property_service set;
