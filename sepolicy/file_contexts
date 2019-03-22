@@ -69,6 +69,9 @@
 /sys/kernel/debug/rmt_storage(/.*)?                                 u:object_r:debugfs_rmts:s0
 
 # Sensors
+/sns/cal/sns.reg                                                    u:object_r:sensors_data_file:s0
+/sns.reg                                                            u:object_r:sensors_data_file:s0
+/sns/cal                                                            u:object_r:sensors_data_file:s0
 /sns                                                                u:object_r:sensors_data_file:s0
 /sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
 /persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0
