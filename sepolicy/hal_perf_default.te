@@ -1,3 +1,4 @@
 allow hal_perf_default post_boot_prop:file r_file_perms;
 allow hal_perf_default proc_kernel_sched:file rw_file_perms;
 set_prop(hal_perf_default, freq_prop)
+set_prop(hal_perf_default, vendor_mpctl_prop)
