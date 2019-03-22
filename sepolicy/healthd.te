@@ -1,2 +1,7 @@
 allow healthd sysfs_thermal:dir search;
 allow healthd sysfs_thermal:file { read open };
+
+r_dir_file(healthd, sysfs_type)
+allow healthd sysfs:file write;
+allow healthd sysfs_usb:file write;
+allow healthd sysfs_batteryinfo:file r_file_perms;
