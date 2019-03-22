@@ -6,8 +6,8 @@ allow mediadrmserver mpctl_socket:sock_file write;
 
 # open DRM firmware
 # LG puts firmware in /persist-lg/firmware/...
-allow mediadrmserver persist_drm_file:dir search;
-allow mediadrmserver persist_drm_file:file r_file_perms;
+allow mediadrmserver mediadrm_vendor_data_file:dir search;
+allow mediadrmserver mediadrm_vendor_data_file:file r_file_perms;
 # ... but they also leave qcoms copy in /firmware/image/
 allow mediadrmserver firmware_file:dir search;
 allow mediadrmserver firmware_file:file r_file_perms;
