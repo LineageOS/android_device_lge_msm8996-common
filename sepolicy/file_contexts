@@ -88,3 +88,7 @@
 
 # CND
 /data/connectivity(/.*)?              u:object_r:cnd_data_file:s0
+
+# sysfs_ssr
+/sys/devices/soc/[0-9a-f]+\.qcom,lpass/subsys[0-9]+/name           u:object_r:sysfs_ssr:s0
+/sys/devices/soc/[0-9a-f]+\.qcom,mss/subsys[0-9]+/name             u:object_r:sysfs_ssr:s0

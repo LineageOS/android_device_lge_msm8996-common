@@ -4,6 +4,10 @@ type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket3";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket4";
 allow mm-qcamerad camera_socket:sock_file { create unlink write };
+allow mm-qcamerad camera_socket:dir { remove_name add_name };
+allow mm-qcamerad camera_socket:dir w_dir_perms;
+allow mm-qcamerad camera_data_file:file create_file_perms;
+allow mm-qcamerad camera_data_file:dir w_dir_perms;
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
 allow mm-qcamerad sysfs_graphics:dir r_dir_perms;
 binder_use(mm-qcamerad);
