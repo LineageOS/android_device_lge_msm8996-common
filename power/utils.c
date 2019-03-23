@@ -33,8 +33,8 @@
 #include <errno.h>
 #include <stdlib.h>
 #include <string.h>
-#include <sys/stat.h>
 #include <unistd.h>
+#include <sys/stat.h>
 
 #include "utils.h"
 #include "list.h"
@@ -42,7 +42,7 @@
 #include "power-common.h"
 
 #define LOG_TAG "QCOM PowerHAL"
-#include <log/log.h>
+#include <utils/Log.h>
 
 #ifndef INTERACTION_BOOST
 #define INTERACTION_BOOST
