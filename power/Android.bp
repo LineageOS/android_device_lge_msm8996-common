@@ -19,8 +19,8 @@ cc_binary {
     proprietary: true,
     owner: "qcom",
 
-    name: "android.hardware.power@1.0-service.lge.msm8996",
-    init_rc: ["android.hardware.power@1.0-service.lge.msm8996.rc"],
+    name: "android.hardware.power@1.1-service.lge.msm8996",
+    init_rc: ["android.hardware.power@1.1-service.lge.msm8996.rc"],
     srcs: [
         "service.cpp",
         "Power.cpp",
@@ -39,7 +39,7 @@ cc_binary {
         "libhidltransport",
         "liblog",
         "libutils",
-        "android.hardware.power@1.0",
+        "android.hardware.power@1.1",
     ],
 
     header_libs: ["libhardware_headers"],
