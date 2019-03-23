@@ -35,39 +35,70 @@ extern "C" {
 
 #include <hardware/power.h>
 
-enum stats_type {
-    //Platform Stats
+enum platform_param_id {
+    VLOW_COUNT = 0,
+    ACCUMULATED_VLOW_TIME,
+    VMIN_COUNT,
+    ACCUMULATED_VMIN_TIME,
+    RPM_PARAM_COUNT,
+
+    XO_ACCUMULATED_DURATION_APSS = RPM_PARAM_COUNT,
+    XO_COUNT_APSS,
+    XO_ACCUMULATED_DURATION_MPSS,
+    XO_COUNT_MPSS,
+    XO_ACCUMULATED_DURATION_ADSP,
+    XO_COUNT_ADSP,
+    XO_ACCUMULATED_DURATION_SLPI,
+    XO_COUNT_SLPI,
+
+    //Don't add any lines after that line
+    PLATFORM_PARAM_COUNT
+};
+
+enum platform_mode_id {
     RPM_MODE_XO = 0,
     RPM_MODE_VMIN,
-    RPM_MODE_MAX,
-    XO_VOTERS_START = RPM_MODE_MAX,
-    VOTER_APSS = XO_VOTERS_START,
-    VOTER_MPSS,
-    VOTER_ADSP,
-    VOTER_SLPI,
-    VOTER_PRONTO,
-    VOTER_TZ,
-    VOTER_LPASS,
-    VOTER_SPSS,
-    MAX_PLATFORM_STATS,
+
+    //Don't add any lines after that line
+    RPM_MODE_COUNT
+};
+
+#define XO_VOTERS 4
+#define VMIN_VOTERS 0
+
+enum voter_id {
+    APSS,
+    MPSS,
+    ADSP,
+    SLPI,
+
+    //Don't add any lines after that line
+    VOTER_COUNT
 };
 
 enum subsystem_type {
-    //Don't add any lines after this line
+    SUBSYSTEM_WLAN,
+
+    //Don't add any lines after that line
     SUBSYSTEM_COUNT
 };
 
-#define PLATFORM_SLEEP_MODES_COUNT RPM_MODE_MAX
+enum wlan_param_id {
+    CUMULATIVE_SLEEP_TIME_MS,
+    CUMULATIVE_TOTAL_ON_TIME_MS,
+    DEEP_SLEEP_ENTER_COUNTER,
+    LAST_DEEP_SLEEP_ENTER_TSTAMP_MS,
 
-#define MAX_RPM_PARAMS 2
-#define XO_VOTERS (MAX_PLATFORM_STATS - XO_VOTERS_START)
-#define VMIN_VOTERS 0
+    //Don't add any lines after that line
+    WLAN_PARAM_COUNT
+};
 
-struct stat_pair {
-    enum stats_type stat;
-    const char *label;
-    const char **parameters;
-    size_t num_parameters;
+enum wlan_state_id {
+    WLAN_STATE_ACTIVE = 0,
+    WLAN_STATE_DEEP_SLEEP,
+
+    //Don't add any lines after that line
+    WLAN_STATE_COUNT
 };
 
 
@@ -75,6 +106,7 @@ void power_init(void);
 void power_hint(power_hint_t hint, void *data);
 void power_set_interactive(int on);
 int extract_platform_stats(uint64_t *list);
+int extract_wlan_stats(uint64_t *list);
 
 #ifdef __cplusplus
 }
