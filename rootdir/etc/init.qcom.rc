@@ -363,7 +363,7 @@ on boot
 service vendor.conn_init /vendor/bin/hwaddrs
     class core
     user root
-    group system wifi
+    group system wifi bluetooth
     oneshot
 
 on property:init.svc.conn_init=stopped
