@@ -29,6 +29,7 @@
 
 // Validates the contents of the given file
 int checkAddr(char* filepath, int key) {
+	chmod(filepath,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 	char charbuf[17];
 	int i, notallzeroes = 0, ret = 0;
 	int checkfd = open(filepath, O_RDONLY);
@@ -102,6 +103,7 @@ void writeAddr(char* filepath, int offset, int key) {
 			macbytes[0], macbytes[1], macbytes[2], macbytes[3], macbytes[4], macbytes[5]);
 	write(writefd, &macbuf, 18);
 	close(writefd);
+	chmod(filepath,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 }
 
 // Simple file copy
@@ -118,6 +120,7 @@ void copyAddr(char* source, char* dest) {
 
 	close(sourcefd);
 	close(destfd);
+	chmod(dest,S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 }
 
 int main() {
