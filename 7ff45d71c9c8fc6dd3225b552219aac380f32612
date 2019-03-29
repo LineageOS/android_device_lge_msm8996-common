@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d276a36b_7db29d51",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 126,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 1,
+      "message": "undo",
+      "range": {
+        "startLine": 126,
+        "startChar": 0,
+        "endLine": 126,
+        "endChar": 21
+      },
+      "revId": "7ff45d71c9c8fc6dd3225b552219aac380f32612",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb6bb916_5b2c9059",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 584,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 1,
+      "message": "trash",
+      "range": {
+        "startLine": 583,
+        "startChar": 0,
+        "endLine": 584,
+        "endChar": 50
+      },
+      "revId": "7ff45d71c9c8fc6dd3225b552219aac380f32612",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c213ffa_8d4463fa",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 608,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 1,
+      "message": "trash",
+      "range": {
+        "startLine": 586,
+        "startChar": 0,
+        "endLine": 608,
+        "endChar": 30
+      },
+      "revId": "7ff45d71c9c8fc6dd3225b552219aac380f32612",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cf11d7db_b6282400",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 656,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 1,
+      "message": "this needs to be checked",
+      "range": {
+        "startLine": 656,
+        "startChar": 0,
+        "endLine": 656,
+        "endChar": 56
+      },
+      "revId": "7ff45d71c9c8fc6dd3225b552219aac380f32612",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}

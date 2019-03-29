@@ -1,0 +1,96 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9b0e887b_91d85dc6",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 445,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 0,
+      "message": "undo",
+      "range": {
+        "startLine": 409,
+        "startChar": 0,
+        "endLine": 445,
+        "endChar": 82
+      },
+      "revId": "c53462f50548a3e982d99091f4e82c519372c0f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1799821c_0f00cc4e",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 557,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 0,
+      "message": "undo",
+      "range": {
+        "startLine": 470,
+        "startChar": 0,
+        "endLine": 557,
+        "endChar": 0
+      },
+      "revId": "c53462f50548a3e982d99091f4e82c519372c0f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "182b7623_44dc2ff2",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 571,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 0,
+      "message": "undo",
+      "range": {
+        "startLine": 557,
+        "startChar": 0,
+        "endLine": 571,
+        "endChar": 18
+      },
+      "revId": "c53462f50548a3e982d99091f4e82c519372c0f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "092cbac2_80e9fe70",
+        "filename": "configs/libnfc-nxp.conf",
+        "patchSetId": 8
+      },
+      "lineNbr": 589,
+      "author": {
+        "id": 3962
+      },
+      "writtenOn": "2019-03-29T19:49:40Z",
+      "side": 0,
+      "message": "undo",
+      "range": {
+        "startLine": 584,
+        "startChar": 0,
+        "endLine": 589,
+        "endChar": 19
+      },
+      "revId": "c53462f50548a3e982d99091f4e82c519372c0f7",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
