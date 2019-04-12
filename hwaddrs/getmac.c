@@ -33,7 +33,8 @@ static const char TAG[] = "hwaddrs";
 
 
 // Validates the contents of the given file
-int checkAddr(const char *const filepath, const char *const prefix)
+int checkAddr(const char *const filepath, const char *const prefix,
+const int mode)
 {
 	int notallzeroes = 0;
 	int checkfd = open(filepath, O_RDONLY);
@@ -41,10 +42,14 @@ int checkAddr(const char *const filepath, const char *const prefix)
 	do {
 		char charbuf[20]; /* needs to be more than 18 characters */
 		int i;
+		struct stat stat;
 
 		if (checkfd < 0) break; // doesn't exist/error
 
 		errno = 0; /* successful system calls don't clear errno */
+
+		if (fstat(checkfd, &stat) < 0 || !S_ISREG(stat.st_mode)) break;
+		if (mode != (stat.st_mode&mode)) break;
 
 		if (prefix) {
 			if (strlen(prefix) > sizeof(charbuf)) {
@@ -254,8 +259,8 @@ TAG, "unlink() failed: %s", strerror(errno));
 void handlemac(const char *const datamisc, const char *const persist,
 int offset, const char *const prefix)
 {
-	if (!checkAddr(datamisc, prefix)) {
-		if (!checkAddr(persist, prefix))
+	if (!checkAddr(datamisc, prefix, S_IRUSR|S_IRGRP|S_IROTH)) {
+		if (!checkAddr(persist, prefix, 0))
 			writeAddr(persist, offset, prefix);
 		copyAddr(persist, datamisc);
 	}
