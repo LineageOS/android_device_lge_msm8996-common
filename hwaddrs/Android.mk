@@ -20,7 +20,7 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := getmac.c
 
-LOCAL_SHARED_LIBRARIES := libcutils
+LOCAL_SHARED_LIBRARIES := libcutils liblog
 
 LOCAL_PRELINK_MODULE := false
 
