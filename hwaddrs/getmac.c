@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2011-2015 The CyanogenMod Project
- * Copyright (C) 2017 The LineageOS Project
+ * Copyright (C) 2017-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
  * limitations under the License.
  */
 
+#include <log/log.h>
 #include <ctype.h>
 #include <cutils/properties.h>
 #include <fcntl.h>
@@ -27,15 +28,23 @@
 #include <time.h>
 #include <unistd.h>
 
+
+static const char TAG[] = "hwaddrs";
+
+
 // Validates the contents of the given file
 int checkAddr(char* filepath, int key) {
-	char charbuf[17];
-	int i, notallzeroes = 0, ret = 0;
+	int notallzeroes = 0;
 	int checkfd = open(filepath, O_RDONLY);
 
-	if (checkfd < 0) return 0; // doesn't exist/error
-
 	do {
+		char charbuf[17];
+		int i;
+
+		if (checkfd < 0) break; // doesn't exist/error
+
+		errno = 0; /* successful system calls don't clear errno */
+
 		if (key == 1) {
 			if (read(checkfd, charbuf, 14) != 14) break;
 			if (strncmp(charbuf, "cur_etheraddr=", 14) != 0) break;
@@ -44,15 +53,29 @@ int checkAddr(char* filepath, int key) {
 		if (read(checkfd, charbuf, 17) != 17) break;
 		for (i = 0; i < 17; i++) {
 			if (i % 3 != 2) {
-				if (!isxdigit(charbuf[i])) break;
+				if (!isxdigit(charbuf[i])) {
+					notallzeroes = 0;
+					break;
+				}
 				if (charbuf[i] != '0') notallzeroes = 1;
-			} else if (charbuf[i] != ':') break;
+			} else if (charbuf[i] != ':') {
+				notallzeroes = 0;
+				break;
+			}
 		}
-		ret = notallzeroes;
 	} while (0);
 
-	close(checkfd);
-	return ret;
+	if (!notallzeroes && errno != ENOENT) {
+		__android_log_print(ANDROID_LOG_INFO, TAG,
+"Removing corrupt \"%s\" file", filepath);
+		if (unlink(filepath) < 0) __android_log_print(ANDROID_LOG_ERROR,
+TAG, "unlink() failed: %s", strerror(errno));
+	} else __android_log_print(ANDROID_LOG_INFO, TAG,
+"File \"%s\" %s", filepath, notallzeroes?"validated":"doesn't exist");
+
+	if (checkfd >= 0) close(checkfd);
+
+	return notallzeroes;
 }
 
 // Writes a file using an address from the misc partition
@@ -62,7 +85,7 @@ void writeAddr(char* filepath, int offset, int key) {
 	char macbuf[19];
 	int i, macnums = 0;
 	int miscfd = open("/dev/block/bootdevice/by-name/misc", O_RDONLY);
-	int writefd = open(filepath, O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR);
 
 	lseek(miscfd, offset, SEEK_SET);
 
@@ -108,7 +131,7 @@ void writeAddr(char* filepath, int offset, int key) {
 void copyAddr(char* source, char* dest) {
 	char buffer;
 	int sourcefd = open(source, O_RDONLY);
-	int destfd = open(dest, O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	int destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IRGRP|S_IROTH);
 
 	if (sourcefd < 0 || destfd < 0) return; // doesn't exist/error
 
@@ -123,6 +146,9 @@ void copyAddr(char* source, char* dest) {
 int main() {
 	char *datamiscpath, *persistpath;
 	srand(time(NULL));
+
+	/* we are apparently invoked with a restrictive umask */
+	umask(S_IWUSR|S_IWGRP|S_IWOTH);
 
 	datamiscpath = "/data/misc/wifi/config";
 	persistpath = "/persist/.macaddr";
