@@ -6,5 +6,9 @@
   {
     "repository": "android_kernel_lge_msm8996",
     "target_path": "kernel/lge/msm8996"
-  }
+  },
+ {
+   "repository": "android_packages_resources_devicesettings",
+   "target_path": "packages/resources/devicesettings"
+ }
 ]
