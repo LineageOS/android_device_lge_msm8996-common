@@ -683,6 +683,7 @@ service vendor.dpmd /vendor/bin/dpmd
     socket dpmd stream 660 root system
     group system readproc
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
@@ -806,7 +807,7 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
 service vendor.radio-sh /vendor/bin/init.radio.sh
     class late_start
     user root
-    group root radio
+    group root radio nfc shell
     oneshot
 
 service vendor.sensor-sh /vendor/bin/init.qcom.sensors.sh
