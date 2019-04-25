@@ -13,5 +13,4 @@ LOCAL_C_INCLUDES := \
     system/core/base/include
 LOCAL_SRC_FILES := recovery_updater.cpp
 LOCAL_MODULE := librecovery_updater_msm8996
-LOCAL_MODULE_TAGS := eng
 include $(BUILD_STATIC_LIBRARY)
