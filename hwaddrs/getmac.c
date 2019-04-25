@@ -85,18 +85,39 @@ int checkAddr(char* filepath, int key) {
 void writeAddr(char* filepath, int offset, int key) {
 	uint8_t macbytes[6];
 	char macbuf[19];
-	int i, macnums = 0;
-	int miscfd = open("/dev/block/bootdevice/by-name/misc", O_RDONLY);
+	unsigned int i, macnums = 0;
+	int miscfd = -1;
 	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	const char *errmsg=NULL;
 
-	lseek(miscfd, offset, SEEK_SET);
-
-	for (i = 0; i < 6; i++) {
-		read(miscfd, &macbytes[i], 1);
-		macnums |= macbytes[i];
+	if(writefd<0) {
+		errmsg="open() of \"%s\" failed: %s";
+		goto abort;
 	}
 
+	do {
+		if((miscfd=open("/dev/block/bootdevice/by-name/misc", O_RDONLY))<0) {
+			errmsg="open";
+			break;
+		}
+
+		if(pread(miscfd, macbytes, sizeof(macbytes), offset)!=sizeof(macbytes)) {
+			errmsg="pread";
+			break;
+		}
+
+		for (i = 0; i < sizeof(macbytes); ++i) macnums |= macbytes[i];
+	} while(0);
+
+	if(errmsg) __android_log_print(ANDROID_LOG_ERROR, TAG,
+"%s() of misc failed: %s", errmsg, strerror(errno));
+
+	/* close()ing if open() failed is suboptimal, but harmless */
 	close(miscfd);
+	miscfd=-1;
+
+	__android_log_print(ANDROID_LOG_INFO, TAG, "Using %s for \"%s\"",
+macnums?"data from misc":"random data", filepath);
 
 	if (macnums == 0) {
 		char product_name[PROPERTY_VALUE_MAX];
@@ -122,27 +143,85 @@ void writeAddr(char* filepath, int offset, int key) {
 		macbytes[5] = (uint8_t) rand() % 256;
 	}
 
-	if (key == 1) write(writefd, "cur_etheraddr=", 14);
+	if (key == 1) if(write(writefd, "cur_etheraddr=", 14)!=14) {
+		errmsg="write() of \"%s\" failed: %s";
+		goto abort;
+	}
 	sprintf(macbuf, "%02x:%02x:%02x:%02x:%02x:%02x\n",
 			macbytes[0], macbytes[1], macbytes[2], macbytes[3], macbytes[4], macbytes[5]);
-	write(writefd, &macbuf, 18);
-	close(writefd);
+	if(write(writefd, &macbuf, 18)!=18) {
+		errmsg="write() of \"%s\" failed: %s";
+		goto abort;
+	}
+	if(close(writefd)<0) {
+		errmsg="close() of \"%s\" failed: %s";
+		goto abort;
+	}
+	return;
+
+abort:
+	__android_log_print(ANDROID_LOG_ERROR, TAG, errmsg, filepath,
+strerror(errno));
+
+	if(miscfd>=0) close(miscfd);
+	if(writefd>=0) {
+		/* unlink() first so file contents may never exit FS journal */
+		unlink(filepath);
+		__android_log_print(ANDROID_LOG_INFO, TAG,
+"Removing failed \"%s\" file", filepath);
+		close(writefd);
+	}
 }
 
 // Simple file copy
 void copyAddr(char* source, char* dest) {
-	char buffer;
+	char buffer[128];
+	ssize_t bufcnt;
 	int sourcefd = open(source, O_RDONLY);
 	int destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	const char *errmsg;
 
-	if (sourcefd < 0 || destfd < 0) return; // doesn't exist/error
+	if(sourcefd<0) {
+		errmsg="open() of \"%3$s\" failed: %2$s";
+		goto abort;
+	}
+	if(destfd<0) {
+		errmsg="open() of \"%s\" failed: %s";
+		goto abort;
+	}
 
-	while (read(sourcefd, &buffer, 1) != 0) {
-		write(destfd, &buffer, 1);
+	while((bufcnt=read(sourcefd, buffer, sizeof(buffer))) > 0) {
+		if(write(destfd, buffer, bufcnt)!=bufcnt) {
+			errmsg="write() of \"%s\" failed: %s";
+			goto abort;
+		}
+	}
+
+	if(bufcnt<0) {
+		errmsg="read() of \"%3$s\" failed: %2$s";
+		goto abort;
 	}
 
 	close(sourcefd);
-	close(destfd);
+	sourcefd=-1;
+	if(close(destfd)<0) {
+		errmsg="close() of \"%s\" failed: %s";
+		goto abort;
+	}
+	return;
+
+abort:
+	__android_log_print(ANDROID_LOG_ERROR, TAG, errmsg,
+dest, strerror(errno), source);
+
+	if(sourcefd>=0) close(sourcefd);
+	if(destfd>=0) {
+		/* unlink() first so file contents may never exit FS journal */
+		unlink(dest);
+		__android_log_print(ANDROID_LOG_INFO, TAG,
+"Removing failed \"%s\" file", dest);
+		close(destfd);
+	}
 }
 
 int main() {
