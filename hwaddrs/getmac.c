@@ -27,13 +27,15 @@
 #include <sys/types.h>
 #include <time.h>
 #include <unistd.h>
+#include <cutils/android_filesystem_config.h>
 
 
 static const char TAG[]="hwaddrs";
 
 
 // Validates the contents of the given file
-int checkAddr(const char *const filepath, const char *const prefix)
+int checkAddr(const char *const filepath, const char *const prefix,
+const uid_t uid, const gid_t gid)
 {
 	int notallzeroes = 0;
 	int checkfd = open(filepath, O_RDONLY);
@@ -48,6 +50,7 @@ int checkAddr(const char *const filepath, const char *const prefix)
 
 		if(fstat(checkfd, &stat)<0 || !S_ISREG(stat.st_mode)) break;
 		if(mode!=(stat.st_mode&mode)) break;
+		if(uid!=stat.st_uid || gid!=stat.st_gid) break;
 
 		if (prefix) {
 			if (read(checkfd, charbuf, strlen(prefix)) != strlen(prefix)) break;
@@ -248,10 +251,21 @@ dest, strerror(errno), source);
 
 
 void handlemac(const char *const datamisc, const char *const persist,
-int offset, const char *const prefix)
+int offset, const char *const prefix, const uid_t uid, const gid_t gid)
 {
-	if(!checkAddr(datamisc, prefix)) {
-		if(!checkAddr(persist, prefix))
+	if(seteuid(uid)<0) {
+		__android_log_print(ANDROID_LOG_ERROR, TAG,
+"seteuid(%d) failed: %s", uid, strerror(errno));
+		return;
+	}
+	if(setegid(gid)<0) {
+		__android_log_print(ANDROID_LOG_ERROR, TAG,
+"setegid(%d) failed: %s", gid, strerror(errno));
+		return;
+	}
+
+	if(!checkAddr(datamisc, prefix, uid, gid)) {
+		if(!checkAddr(persist, prefix, uid, gid))
 			writeAddr(persist, offset, prefix);
 		copyAddr(persist, datamisc);
 	}
@@ -264,10 +278,10 @@ int main()
 	umask(S_IWGRP | S_IWOTH);
 
 	handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
-"cur_etheraddr=");
+"cur_etheraddr=", AID_SYSTEM, AID_WIFI);
 
 	handlemac("/data/misc/bluetooth/bdaddr", "/persist/.baddr", 0x8000,
-NULL);
+NULL, AID_BLUETOOTH, AID_BLUETOOTH);
 
 	return 0;
 }
