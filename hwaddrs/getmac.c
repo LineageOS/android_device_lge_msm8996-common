@@ -122,8 +122,15 @@ void writeAddr(const char *const filepath, int offset, const char *const prefix)
 macnums?"data from misc":"random data", filepath);
 
 	if (macnums == 0) {
+		uint8_t buf[3];
+		const char rerr[]="read() of /dev/urandom failed: %2$s";
 		char product_name[PROPERTY_VALUE_MAX];
 		property_get("ro.product.name", product_name, "");
+
+		if((miscfd=open("/dev/urandom", O_RDONLY))<0) {
+			errmsg="open() of /dev/urandom failed: %2$s";
+			goto abort;
+		}
 
 		if (strstr(product_name, "elsa")) {
 			macbytes[0] = (uint8_t) 208; // d0
@@ -135,14 +142,26 @@ macnums?"data from misc":"random data", filepath);
 			macbytes[1] = (uint8_t) 184; // b8
 			macbytes[2] = (uint8_t) 110; // 6e
 		} else {
+			if(read(miscfd, buf, sizeof(buf))!=sizeof(buf)) {
+				errmsg=rerr;
+				goto abort;
+			}
 			// Last two bits of the first octet are special
-			macbytes[0] = ((uint8_t) rand() % 256) << 2;
-			macbytes[1] = (uint8_t) rand() % 256;
-			macbytes[2] = (uint8_t) rand() % 256;
+			macbytes[0] = buf[0] << 2;
+			macbytes[1] = buf[1];
+			macbytes[2] = buf[2];
 		}
-		macbytes[3] = (uint8_t) rand() % 256;
-		macbytes[4] = (uint8_t) rand() % 256;
-		macbytes[5] = (uint8_t) rand() % 256;
+
+		if(read(miscfd, buf, sizeof(buf))!=sizeof(buf)) {
+			errmsg=rerr;
+			goto abort;
+		}
+		macbytes[3] = buf[0];
+		macbytes[4] = buf[1];
+		macbytes[5] = buf[2];
+
+		close(miscfd);
+		miscfd=-1;
 	}
 
 	if (prefix) if(write(writefd, prefix, strlen(prefix))!=strlen(prefix)) {
@@ -241,8 +260,6 @@ int offset, const char *const prefix)
 
 int main()
 {
-	srand(time(NULL));
-
 	/* we are apparently invoked with a restrictive umask */
 	umask(S_IWGRP | S_IWOTH);
 
