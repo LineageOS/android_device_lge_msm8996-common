@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3077a9db_57e69f50",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 11
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "this needs core_data_file_type attribute",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ec221e7_f7696161",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 11
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "this and the below one is of proc_type, not fs_type",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "06bba350_2bcab80c",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "fs_type instead of file_type",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6aa7b4f2_5d08b4d0",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 11
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "need core_data_file_type too",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3b466167_ed7e652d",
+        "filename": "sepolicy/hwservice_contexts",
+        "patchSetId": 11
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "duplicate definition, already present in qcom sepolicy",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a2f9eac_0edffb21",
+        "filename": "sepolicy/init.te",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "neverallow",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b1f8874_233b4576",
+        "filename": "sepolicy/vendor_init.te",
+        "patchSetId": 11
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:10:39Z",
+      "side": 1,
+      "message": "neverallow",
+      "parentUuid": "",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
