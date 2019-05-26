@@ -70,6 +70,40 @@
     },
     {
       "key": {
+        "uuid": "c9c77776_42a2582d",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 11
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:29:36Z",
+      "side": 1,
+      "message": "/vendor/mpt doesn\u0027t exist",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e103be10_ecbc37a7",
+        "filename": "sepolicy/file_contexts",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 19082
+      },
+      "writtenOn": "2019-05-26T02:29:36Z",
+      "side": 1,
+      "message": "/vendor/sns exist",
+      "revId": "d1d151cab369a3beca2e05d95e891f8edf5e1e5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3b466167_ed7e652d",
         "filename": "sepolicy/hwservice_contexts",
         "patchSetId": 11
