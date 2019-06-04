@@ -16,6 +16,24 @@
       "revId": "5245669624399a3569f93ab14ba0779a95f6e018",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "18feb255_084a0359",
+        "filename": "sepolicy/file.te",
+        "patchSetId": 3
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-06-04T11:38:24Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "9a2d006c_7adf1ec0",
+      "revId": "5245669624399a3569f93ab14ba0779a95f6e018",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
