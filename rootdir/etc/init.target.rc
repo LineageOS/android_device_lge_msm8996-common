@@ -154,11 +154,6 @@ service vendor.audiod /vendor/bin/audiod
     user system
     group system
 
-service tlocd /system/bin/tloc_daemon
-    class late_start
-    user system
-    group drmrpc gps net_raw
-
 service vendor.mdtp_service /vendor/bin/mdtp_service
    class late_start
    user system
