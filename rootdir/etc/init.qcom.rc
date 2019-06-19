@@ -51,9 +51,6 @@ on early-init
     chmod 0620 /dev/kmsg
 
 on init
-    mkdir /sns/cal/ 0755 system system
-    mkdir /sns/fingerprint 0775 system system
-
     write /proc/sys/kernel/panic_on_oops 1
     write /proc/sys/vm/max_map_count 1000000
 
@@ -190,9 +187,6 @@ on boot
     chown system system /sys/class/leds/red/blink
     chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/blue/blink
-
-    # Remove SUID bit for iproute2 ip tool
-    chmod 0755 /system/bin/ip
 
     chmod 0444 /sys/devices/platform/msm_hsusb/gadget/usb_state
 
@@ -366,7 +360,7 @@ service vendor.conn_init /vendor/bin/hwaddrs
     group system wifi bluetooth
     oneshot
 
-on property:init.svc.conn_init=stopped
+on property:init.svc.vendor.conn_init=stopped
     chmod 0644 /data/misc/wifi/config
     chown system wifi /data/misc/wifi/config
     chmod 0644 /data/misc/bluetooth/bdaddr
@@ -376,10 +370,12 @@ on post-fs
     chmod 0660 /dev/lge_dm_tty0
     chown system system /dev/lge_dm_tty0
 
+    mkdir /sns/cal/ 0755 system system
+    mkdir /sns/fingerprint/ 0775 system system
+
 # MSM specific files that need to be created on /data
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
-    mkdir /data/time 0770 system system
 
     # Create directory used by display clients
     mkdir /data/vendor/display 0770 system graphics
@@ -402,14 +398,10 @@ on post-fs-data
     # create QDMA dropbox
     mkdir /data/vendor/qdmastats 0700 system system
     mkdir /data/vendor/qdma 0770 system system
-
-    # Create directory for TZ Apps
-    mkdir /data/misc/qsee 0770 system system
+    mkdir /dev/socket/qdma 0777 system system
+    chmod 2777 /dev/socket/qdma
 
     # Create folder for mm-qcamera-daemon
-    mkdir /data/misc/camera 0770 camera camera
-    mkdir /etc/camera 0770 camera camera
-
     mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
 
@@ -419,6 +411,10 @@ on post-fs-data
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/misc/bluetooth 0770 bluetooth bluetooth
+    chmod 0644 /data/misc/bluetooth/bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
+    chmod 0644 /persist/.baddr
+    chown system system /persist/.baddr
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0770 wifi wifi
@@ -429,8 +425,10 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp system /data/misc/dhcp
-    mkdir /data/misc/wide-dhcpv6 0770 dhcp dhcp
-    chown dhcp system /data/misc/wide-dhcpv6
+    chmod 0644 /data/misc/wifi/config
+    chown system wifi /data/misc/wifi/config
+    chmod 0644 /persist/.macaddr
+    chown system system /persist/.macaddr
 
     # Create port-bridge log dir
     mkdir /data/vendor/port_bridge 0770 radio radio
@@ -445,15 +443,8 @@ on post-fs-data
     chmod 0770 /data/vendor/ipa
 
     # Create the directories used by CnE subsystem
-    mkdir /data/connectivity 0771 system system
-    chown system system /data/connectivity
-
-    # Create the directories used by DPM subsystem
-    mkdir /data/dpm 0771 system system
-    chown system system /data/dpm
-
-    mkdir /data/dpm/nsrm 0771 system system
-    chown system system /data/dpm/nsrm
+    mkdir /data/vendor/connectivity 0771 radio radio
+    chown radio radio /data/vendor/connectivity
 
     # Create directory used by audio subsystem
     mkdir /data/vendor/misc/audio 0770 audio audio
@@ -461,9 +452,6 @@ on post-fs-data
     # Create directory for audio delta files
     mkdir /data/vendor/misc/audio/acdbdata 0770 media audio
     mkdir /data/vendor/misc/audio/acdbdata/delta 0770 media audio
-
-    # Create directory used by the DASH client
-    mkdir /data/misc/dash 0770 media audio
 
     # Create directory for radio
     mkdir /data/vendor/radio 0770 system radio
@@ -487,7 +475,6 @@ on post-fs-data
     chown system system /sys/devices/platform/msm_sdcc.4/polling
 
     # Create the symlink to qcn wpa_supplicant folder for ar6000 wpa_supplicant
-    mkdir /data/system 0775 system system
     #symlink /data/misc/wifi/wpa_supplicant /data/system/wpa_supplicant
 
     # Create directories for Location services
@@ -497,10 +484,6 @@ on post-fs-data
     mkdir /dev/socket/location 0770 gps gps
     mkdir /dev/socket/location/mq 0770 gps gps
     mkdir /dev/socket/location/xtra 0770 gps gps
-
-    # Create directory from IMS services
-    mkdir /data/shared 0755
-    chown system system /data/shared
 
     # Configure bluetooth
     chmod 0660 /proc/bluetooth/sleep/lpm
@@ -512,16 +495,12 @@ on post-fs-data
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
 
-    # Create directory for FOTA
-    mkdir /data/fota 0771
-    chown system system /data/fota
-
     # Make sure the default firmware is loaded
     write /sys/module/bcmdhd/parameters/firmware_path "/vendor/firmware/fw_bcmdhd.bin"
     write /sys/module/bcmdhd/parameters/nvram_path "/vendor/etc/wifi/bcmdhd.cal"
 
     # Create directory for hostapd
-    mkdir /data/hostapd 0770 system wifi
+    mkdir /data/vendor/wifi/hostapd 0770 wifi wifi
 
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time/ 0700 system system
@@ -534,45 +513,27 @@ on post-fs-data
 
     setprop vold.post_fs_data_done 1
 
-    # Create a folder for SRS to be able to create a usercfg file
-    mkdir /data/data/media 0770 media media
-
     # Create FM dir for patchdownloader
-    mkdir /data/misc/fm 0770 system system
-    chmod 0770 /data/misc/fm
-
-    # RIDL data
-    mkdir /data/misc/SelfHost/ 0710 system shell
-    mkdir /data/misc/SelfHost/QCLogs/ 2750 system shell
-    mkdir /data/misc/SelfHost/QCLogs/temp/ 0700 system shell
-    mkdir /data/misc/SelfHost/storage/ 0700 system shell
-    mkdir /data/misc/SelfHost/Running/ 2750 system shell
-    mkdir /data/misc/SelfHost/socket/ 2770 system system
+    mkdir /data/vendor/fm 0770 system system
+    chmod 0770 /data/vendor/fm
 
     # Create PERFD deamon related dirs
     setprop ro.min_freq_0 384000
     mkdir /data/misc/perfd 0755 root system
     chmod 2755 /data/misc/perfd
-    mkdir /data/system/perfd 0770 root system
-    rm /data/system/perfd/default_values
-    chmod 2770 /data/system/perfd
+    mkdir /data/vendor/perfd 0770 root system
+    rm /data/vendor/perfd/default_values
+    chmod 2770 /data/vendor/perfd
 
     # NFC local data and nfcee xml storage
-    mkdir /data/nfc 0770 nfc nfc
-    mkdir /data/nfc/param 0770 nfc nfc
     mkdir /data/vendor/nfc 0770 nfc nfc
     mkdir /data/vendor/nfc/param 0770 nfc nfc
 
     # Create IOP  deamon related dirs
-    mkdir /data/misc/iop 0770 root system
+    mkdir /data/vendor/iop 0770 root system
 
     # Create vpp directory
     mkdir /data/vendor/vpp 0770 media media
-
-    # Mark the copy complete flag to not completed
-    write /data/misc/radio/copy_complete 0
-    chown radio radio /data/misc/radio/copy_complete
-    chmod 0660 /data/misc/radio/copy_complete
 
     # Mark the copy complete flag to not completed
     write /data/vendor/radio/copy_complete 0
@@ -686,6 +647,7 @@ service vendor.dpmd /vendor/bin/dpmd
     socket dpmd stream 660 root system
     group system readproc
     writepid /dev/cpuset/system-background/tasks
+    disabled
 
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
@@ -698,7 +660,6 @@ service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
     user system
     socket ims_datad stream 0660 system radio
     group system wifi radio inet log diag
-    disabled
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start vendor.imsdatadaemon
@@ -736,8 +697,9 @@ service vendor.rfs_access /vendor/bin/rfs_access
     writepid /dev/cpuset/system-background/tasks
 
 service vendor.tftp_server /vendor/bin/tftp_server
-    class main
+    class core
     user root
+    group root system
     writepid /dev/cpuset/system-background/tasks
 
 service ftmd /system/bin/ftmdaemon
@@ -749,7 +711,7 @@ service ftmd /system/bin/ftmdaemon
 
 service port-bridge /system/bin/port-bridge
     class main
-    user radio system
+    user radio
     group radio system inet
     oneshot
 
@@ -808,7 +770,7 @@ service vendor.qcom-sh /vendor/bin/init.qcom.sh
 
 service vendor.radio-sh /vendor/bin/init.radio.sh
     class late_start
-    user root
+    user radio
     group root radio
     oneshot
 
@@ -939,12 +901,6 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
     class core
     user root
     group root
-    writepid /dev/cpuset/system-background/tasks
-
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
-    class late_start
-    user system
-    group system
     writepid /dev/cpuset/system-background/tasks
 
 # oneshot service that loads fpc tz app in early phase.
