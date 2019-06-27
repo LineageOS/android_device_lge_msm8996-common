@@ -363,15 +363,15 @@ on boot
 
     write /proc/sys/net/core/netdev_max_backlog 5000
 
-service conn_init /vendor/bin/hwaddrs
+service conn_init /vendor/bin/hwaddrs readmisc
     class core
     user root
     group system wifi bluetooth
     oneshot
 
 on property:init.svc.conn_init=stopped
-    chown system wifi /data/misc/wifi/config
-    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
+    exec - system wifi -- /vendor/bin/hwaddrs ieee80211mac
+    exec - bluetooth bluetooth -- /vendor/bin/hwaddrs bluetoothmac
 
 on post-fs
     chmod 0660 /dev/lge_dm_tty0
