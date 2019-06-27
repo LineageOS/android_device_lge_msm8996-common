@@ -248,26 +248,56 @@ dest, strerror(errno), source);
 
 
 void handlemac(const char *const datamisc, const char *const persist,
-int offset, const char *const prefix)
+int offset, const char *const prefix, bool readmisc)
 {
-	if(!checkAddr(datamisc, prefix)) {
+	if(readmisc) {
 		if(!checkAddr(persist, prefix))
 			writeAddr(persist, offset, prefix);
-		copyAddr(persist, datamisc);
+	} else {
+		if(!checkAddr(datamisc, prefix))
+			copyAddr(persist, datamisc);
 	}
 }
 
 
-int main()
+int main(int argc, char **argv)
 {
+	bool do_readmisc=0, do_ieee80211mac=0, do_bluetoothmac=0;
+
 	/* we are apparently invoked with a restrictive umask */
 	umask(S_IWGRP | S_IWOTH);
 
-	handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
-"cur_etheraddr=");
+	if(argc==1) {
+		if(!strcmp(argv[1], "readmisc"))
+			do_readmisc=do_ieee80211mac=do_bluetoothmac=1;
+		else if(!strcmp(argv[1], "ieee80211mac"))
+			do_ieee80211mac=1;
+		else if(!strcmp(argv[1], "bluetoothmac"))
+			do_bluetoothmac=1;
+	}
 
-	handlemac("/data/misc/bluetooth/bdaddr", "/persist/.baddr", 0x8000,
-NULL);
+	if(!do_ieee80211mac&&!do_bluetoothmac) {
+		fprintf(stderr,
+"Usage: %s <readmisc|ieee80211mac|bluetoothmac>\n"
+"readmisc\n"
+"    Attempts to retrieves 802.11 and Bluetooth MAC addresses from \"misc\"\n"
+"    area and stash them as /persist/.macaddr and /persist/.baddr.  If unable\n"
+"    to find data in misc, attempt to generate random addresses.  Needs to be\n"
+"    invoked with root permissions to read misc.\n"
+"ieee80211mac\n"
+"    Copy 802.11 MAC address to /data/misc/wifi/config, MUST be invoked as\n"
+"    system:wifi to ensure correct ownership.\n"
+"bluetoothmac\n"
+"    Copy Bluetooth MAC address to /data/misc/bluetooth/bdaddr, MUST be invoked\n"
+"    as bluetooth:bluetooth to ensure correct ownership.\n", argv[0]);
+		return 1;
+	}
+
+	if(do_ieee80211mac) handlemac("/data/misc/wifi/config",
+"/persist/.macaddr", 0x6000, "cur_etheraddr=", do_readmisc);
+
+	if(do_bluetoothmac) handlemac("/data/misc/bluetooth/bdaddr",
+"/persist/.baddr", 0x8000, NULL, do_readmisc);
 
 	return 0;
 }
