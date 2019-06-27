@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3a9a9bb1_84e27c1f",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-06-27T18:50:59Z",
+      "side": 0,
+      "message": "Just keep the chmod at the end as well, regardless.  In the 15.1 version it needs to stay.",
+      "revId": "4b30b5b9a5c3d4aa87eb1ae1efd57d94ad858760",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7e4403fd_e7915f41",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-06-27T18:50:59Z",
+      "side": 0,
+      "message": "Keep this too.",
+      "revId": "4b30b5b9a5c3d4aa87eb1ae1efd57d94ad858760",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "552fed9e_736f2949",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 4
+      },
+      "lineNbr": 373,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-06-27T18:50:59Z",
+      "side": 0,
+      "message": "This is still needed. (and the one below)",
+      "revId": "4b30b5b9a5c3d4aa87eb1ae1efd57d94ad858760",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
