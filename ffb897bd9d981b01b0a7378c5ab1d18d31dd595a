@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "35bbc8e4_f0edd084",
+        "filename": "rootdir/bin/init.class_main.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-06-28T22:43:31Z",
+      "side": 1,
+      "message": "The important part is here. All the rest is crap.",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "ffb897bd9d981b01b0a7378c5ab1d18d31dd595a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c0323bea_050fcd9d",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2019-06-28T22:43:31Z",
+      "side": 1,
+      "message": "You only need the 2nd ril-deamon service for the dual SIM functionality.",
+      "range": {
+        "startLine": 916,
+        "startChar": 0,
+        "endLine": 923,
+        "endChar": 48
+      },
+      "revId": "ffb897bd9d981b01b0a7378c5ab1d18d31dd595a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
