@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "11f6d36e_4fb07086",
+        "filename": "rootdir/bin/init.class_main.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-06-29T01:07:03Z",
+      "side": 1,
+      "message": "Indeed.  I doubt there are any plans to release more hardware which uses a different baseband, yet is it worthwhile filtering these sections out?  As I\u0027ve seen this exact script in released firmware images I doubt leaving this alone interferes with anything.",
+      "parentUuid": "35bbc8e4_f0edd084",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "ffb897bd9d981b01b0a7378c5ab1d18d31dd595a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0323bea_050fcd9d",
         "filename": "rootdir/etc/init.qcom.rc",
         "patchSetId": 6
@@ -36,6 +60,30 @@
       "writtenOn": "2019-06-28T22:43:31Z",
       "side": 1,
       "message": "You only need the 2nd ril-deamon service for the dual SIM functionality.",
+      "range": {
+        "startLine": 916,
+        "startChar": 0,
+        "endLine": 923,
+        "endChar": 48
+      },
+      "revId": "ffb897bd9d981b01b0a7378c5ab1d18d31dd595a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d2a09da9_573a8dc0",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-06-29T01:07:03Z",
+      "side": 1,
+      "message": "Indeed, ril-daemon3 isn\u0027t required for known dual-SIM hardware.  Yet perhaps there is a triple-SIM variant in the pipeline and some number of months in the future this issue will be open again to re-add ril-daemon3.  You really think it is worthwhile to save 9 lines?",
+      "parentUuid": "c0323bea_050fcd9d",
       "range": {
         "startLine": 916,
         "startChar": 0,
