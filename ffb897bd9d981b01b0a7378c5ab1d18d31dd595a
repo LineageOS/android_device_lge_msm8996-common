@@ -49,6 +49,30 @@
     },
     {
       "key": {
+        "uuid": "71bcb5a1_7ac57070",
+        "filename": "rootdir/bin/init.class_main.sh",
+        "patchSetId": 6
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 17257
+      },
+      "writtenOn": "2019-06-30T17:40:37Z",
+      "side": 1,
+      "message": "Yet it doesn\u0027t handle any cases found on real devices.",
+      "parentUuid": "11f6d36e_4fb07086",
+      "range": {
+        "startLine": 67,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 25
+      },
+      "revId": "ffb897bd9d981b01b0a7378c5ab1d18d31dd595a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c0323bea_050fcd9d",
         "filename": "rootdir/etc/init.qcom.rc",
         "patchSetId": 6
@@ -84,6 +108,30 @@
       "side": 1,
       "message": "Indeed, ril-daemon3 isn\u0027t required for known dual-SIM hardware.  Yet perhaps there is a triple-SIM variant in the pipeline and some number of months in the future this issue will be open again to re-add ril-daemon3.  You really think it is worthwhile to save 9 lines?",
       "parentUuid": "c0323bea_050fcd9d",
+      "range": {
+        "startLine": 916,
+        "startChar": 0,
+        "endLine": 923,
+        "endChar": 48
+      },
+      "revId": "ffb897bd9d981b01b0a7378c5ab1d18d31dd595a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7bb641db_265a0c41",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 6
+      },
+      "lineNbr": 923,
+      "author": {
+        "id": 17257
+      },
+      "writtenOn": "2019-06-30T17:40:37Z",
+      "side": 1,
+      "message": "Sure, there\u0027s a triple sim device in the pipeline for a platform released 3 years ago.",
+      "parentUuid": "d2a09da9_573a8dc0",
       "range": {
         "startLine": 916,
         "startChar": 0,
