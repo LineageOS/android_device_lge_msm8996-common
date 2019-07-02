@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "40100dbd_2283666f",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "more spaces",
+      "range": {
+        "startLine": 32,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 34
+      },
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5b6cb26_eaa3d980",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "the \"\u003d\" needs spaces around",
+      "range": {
+        "startLine": 44,
+        "startChar": 2,
+        "endLine": 44,
+        "endChar": 41
+      },
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f31d02ee_58bfbe76",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "all \"if\" condition need a space between \"if\" and \"(\"\nAlso stuff like \")\u003c0\" needs to be \") \u003c 0\"",
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "abfc56c0_cdfff523",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "notallzeroes \u003d 0;",
+      "range": {
+        "startLine": 60,
+        "startChar": 5,
+        "endLine": 60,
+        "endChar": 20
+      },
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "86c95baf_4a761aa7",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 65,
+        "startChar": 4,
+        "endLine": 65,
+        "endChar": 19
+      },
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f3ab74e_1a4137e2",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 71,
+        "startChar": 1,
+        "endLine": 71,
+        "endChar": 37
+      },
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8e38558a_49fb6cc4",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 7
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 13028
+      },
+      "writtenOn": "2019-07-02T10:50:39Z",
+      "side": 1,
+      "message": "see above",
+      "range": {
+        "startLine": 78,
+        "startChar": 1,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
