@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "fb4a6dd1_2edce8c8",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-07-02T04:28:40Z",
+      "side": 0,
+      "message": "If you go to an engineering school, read(fd, buf, 1) is actually one of the things you\u0027ll learn about in your Operating Systems class.  Do not ever do this.  read()/write() are system calls and you\u0027ll have horrible performance if you don\u0027t buffer.  If you want bytes one at a time, use fdopen(fd, mode) plus fgetc()/fputc() and let libc take care of buffering for you.\n\nAdditionally, \"\u0026macbytes[i]\" is exactly equivalent to \"macbytes+i\".\n\nThis was fine for an initial experiment, but I cringe at this having survived this long.",
+      "revId": "075e4f0d29014a063f6c6704e5eb37ef2e354955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}

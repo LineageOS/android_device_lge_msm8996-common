@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5b5fefb8_f0e490aa",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-07-02T04:28:40Z",
+      "side": 1,
+      "message": "Yes, technically I should check whether unlink() succeeds, but there isn\u0027t a heck of a lot which can be done if it fails.",
+      "revId": "7c7965d3f0248db6626096618a4f0c4ec528a02d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4431c152_01962580",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 156,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-07-02T04:28:40Z",
+      "side": 1,
+      "message": "Yup, close() can legitimately return failure.",
+      "revId": "7c7965d3f0248db6626096618a4f0c4ec528a02d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "77331079_61c3bfb2",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-07-02T04:28:40Z",
+      "side": 1,
+      "message": "Same comment as above.",
+      "revId": "7c7965d3f0248db6626096618a4f0c4ec528a02d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
