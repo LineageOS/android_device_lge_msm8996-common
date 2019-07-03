@@ -39,7 +39,7 @@ int checkAddr(const char *const filepath, const char *const prefix)
 	int checkfd = open(filepath, O_RDONLY);
 
 	do {
-		char charbuf[17];
+		char charbuf[20]; /* needs to be more than 18 characters */
 		int i;
 		struct stat stat;
 
@@ -60,7 +60,9 @@ sizeof(charbuf));
 			if (memcmp(charbuf, prefix, strlen(prefix))) break;
 		}
 
-		if (read(checkfd, charbuf, 17) != 17) break;
+		/* there should be 18 characters, more indicates junk at end */
+		if (read(checkfd, charbuf, sizeof(charbuf)) != 18) break;
+		if (!isspace(charbuf[17])) break;
 		for (i = 0; i < 17; i++) {
 			if (i % 3 != 2) {
 				if (!isxdigit(charbuf[i])) {
@@ -139,14 +141,14 @@ macnums?"data from misc":"random data", filepath);
 		}
 
 		if (strstr(product_name, "elsa")) {
-			macbytes[0] = (uint8_t) 208; // d0
-			macbytes[1] = (uint8_t) 19;  // 13
-			macbytes[2] = (uint8_t) 253; // fd
+			macbytes[0] = 0xD0u;
+			macbytes[1] = 0x13u;
+			macbytes[2] = 0xFDu;
 		} else if (strstr(product_name, "lucye")
 				|| strstr(product_name, "h1")) {
-			macbytes[0] = (uint8_t) 168; // a8
-			macbytes[1] = (uint8_t) 184; // b8
-			macbytes[2] = (uint8_t) 110; // 6e
+			macbytes[0] = 0xA8u;
+			macbytes[1] = 0xB8u;
+			macbytes[2] = 0x6Eu;
 		} else {
 			if (read(miscfd, macbytes, 3) != 3) {
 				errmsg = rerr;
