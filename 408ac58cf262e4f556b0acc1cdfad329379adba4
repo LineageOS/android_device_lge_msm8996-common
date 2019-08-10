@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "787146b9_5fdc1cc7",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T02:31:31Z",
+      "side": 1,
+      "message": "A subtle case which causes no problems in the current state, but could easily cause trouble in the future if someone unfamiliar with the code made modifications.  As such detect and produce an error for this case.",
+      "revId": "408ac58cf262e4f556b0acc1cdfad329379adba4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
