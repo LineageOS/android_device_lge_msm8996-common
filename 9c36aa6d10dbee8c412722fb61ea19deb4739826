@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "22eb00d5_0f4a2097",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 2
+      },
+      "lineNbr": 366,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T03:39:36Z",
+      "side": 1,
+      "message": "Having done some experimentation, I\u0027m pretty sure the initial run of `hwaddrs` needs to be done at the \"on property:vold.decrypt\u003dtrigger_restart_framework\" as otherwise /data is missing and `hwaddrs` will NOT be able to write the hardware MAC addresses to the files there.",
+      "revId": "9c36aa6d10dbee8c412722fb61ea19deb4739826",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
