@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9fe2c20b_d11b46ac",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T03:21:30Z",
+      "side": 1,
+      "message": "I\u0027m a bit unsure which direction to go with this.  Everything created by the current hwaddrs will always have this as a newline, but a future refined version might use some other space character.\n\nThis does accomplish the goal of detecting extraneous garbage on the end of the files though.",
+      "revId": "88bb64c1e2bc46d855b8be521de40c88dcd519ea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c799c98d_aa1b988b",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 3
+      },
+      "lineNbr": 155,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T03:21:30Z",
+      "side": 1,
+      "message": "Someone very new to programming with C?  All I can state is hexadecimal is generally the way this is expressed, so switch to that.",
+      "revId": "88bb64c1e2bc46d855b8be521de40c88dcd519ea",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
