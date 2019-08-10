@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "692a2d69_dfaac2f3",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T02:25:58Z",
+      "side": 1,
+      "message": "I was unsure whether to bother with an error message in this case.  The only likely one is EPERM which will manifest in the open() later.  Yet since one can sometimes need to confirm one\u0027s thinking is correct, this should produce a message.",
+      "revId": "715a4c8034686153b18f3db64350ff5a4a940955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3abb5ffa_f4bda286",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T02:25:58Z",
+      "side": 1,
+      "message": "This was a hellish pain.  The capability name is quite distinct from the system call and you won\u0027t get an audit in case of failure.  Simply get EPERM and no hint that it was SE Linux, not the standard permissions which were failing.",
+      "revId": "715a4c8034686153b18f3db64350ff5a4a940955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
