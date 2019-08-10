@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "9cf0fbe3_1f8e59bb",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T03:34:02Z",
+      "side": 1,
+      "message": "Yes, I did figure out a way that this line being missing could cause a bug.  Such would be resolved after a restart, but line is actually required under just the right circumstances.",
+      "revId": "715a4c8034686153b18f3db64350ff5a4a940955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "692a2d69_dfaac2f3",
         "filename": "hwaddrs/getmac.c",
         "patchSetId": 9
@@ -30,6 +47,23 @@
       "writtenOn": "2019-08-10T02:25:58Z",
       "side": 1,
       "message": "This was a hellish pain.  The capability name is quite distinct from the system call and you won\u0027t get an audit in case of failure.  Simply get EPERM and no hint that it was SE Linux, not the standard permissions which were failing.",
+      "revId": "715a4c8034686153b18f3db64350ff5a4a940955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f75811af_38bbde7d",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-10T03:34:02Z",
+      "side": 1,
+      "message": "This is also where Eric could have been quite helpful, instead of commenting on functioning sections of code.",
       "revId": "715a4c8034686153b18f3db64350ff5a4a940955",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": false
