@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "96d5d340_90318435",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 9
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-08-12T02:04:31Z",
+      "side": 1,
+      "message": "I\u0027m wondering whether I should remove these two lines.  These will only function to detect if /persist/.macaddr and /persist/.baddr still have mode 0600; and I am unsure whether this situation is a problem.  `hwaddrs` is the only program I\u0027m aware of which uses these files, so having a restrictive mode isn\u0027t a problem.\n\nProblems with the mode of /data/misc/wifi/config and /data/misc/bluetooth/bdaddr will be detected above due to open() giving EPERM.",
+      "revId": "715a4c8034686153b18f3db64350ff5a4a940955",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "692a2d69_dfaac2f3",
         "filename": "hwaddrs/getmac.c",
         "patchSetId": 9
