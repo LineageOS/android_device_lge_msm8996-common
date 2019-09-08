@@ -27,7 +27,7 @@ allow perfd sysfs_msm_perf:file write;
 allow perfd sysfs_devices_system_cpu:file write;
 allow perfd sysfs_power_management:file write;
 
-allow perfd mpctl_data_file:dir search;
+allow perfd mpctl_data_file:dir {search write};
 allow perfd mpctl_data_file:sock_file write;
 
 allow perfd proc_kernel_sched:file w_file_perms;
