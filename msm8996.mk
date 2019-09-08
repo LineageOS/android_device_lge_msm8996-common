@@ -98,6 +98,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     libgui_shim \
     libshim_camera \
+    libui_shim \
     libtinyxml \
     vendor.qti.hardware.camera.device@1.0
 
