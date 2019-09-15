@@ -639,12 +639,10 @@ service vendor.cnd /vendor/bin/cnd
     group system wifi inet radio wakelock net_admin
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.dpmd /vendor/bin/dpmd
-    class late_start
-    socket dpmd stream 660 root system
-    group system readproc
-    writepid /dev/cpuset/system-background/tasks
-    disabled
+service vendor.dpmQmiMgr /vendor/bin/dpmQmiMgr
+    class main
+    user system
+    group radio system
 
 service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main

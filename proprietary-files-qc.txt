@@ -111,20 +111,6 @@ vendor/lib64/vendor.qti.latency@2.0.so|8c1d259051a4b53df78e8aaef3e98d93f3f10694
 vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|7aa7f06f7be48ec8ebbc83b4ea115b123364fed1
 
 # DPM - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
-bin/dpmd|b21c674c4e4b1d41d4540721d451c54caf3b0555
-etc/dpm/dpm.conf|fec89edb6cff81424a6c3a730fed92efa3613f72
-etc/init/dpmd.rc|52ca6ad920a1804e4ff608113cece063730f5e0c
-etc/permissions/com.qti.dpmframework.xml|36b94c9338069e434b83359a92cdc7ff62b822df
-etc/permissions/dpmapi.xml|ded29f9befaef20a7ccee0c75427fda1d1d04890
-framework/com.qti.dpmframework.jar|2a6ff555ebff148a508fc7ea2fbeaee4b9a2dff6
-framework/dpmapi.jar|89ddc5bf0c4c88a3f341169edc4d89f9e834337b
-framework/tcmclient.jar|91b415288494fa208b5f5ec9fafa33c47e569c96
-lib64/com.qualcomm.qti.dpm.api@1.0.so|6116551078509865fc0424eaf38d2dbfd001238d
-lib64/libdpmctmgr.so|3144ff45eaef260b7930974acf0e2fde5051c7e6
-lib64/libdpmfdmgr.so|520b37cf33b87f2db2a708e2aba429d233d7fbdf
-lib64/libdpmframework.so|cbcbf2a79ca58aa6b681f8517481adde3ddd9890
-lib64/libdpmtcm.so|b91034e12f1a59b05c6c251acdbf1c7c78ffb0aa
--priv-app/dpmserviceapp/dpmserviceapp.apk|4c3f830d630722f48589d3b5e4404d5ebef96b51
 vendor/bin/dpmQmiMgr|bd6f2154ca3a6cad71db73231a9bb659e18a8207
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|6116551078509865fc0424eaf38d2dbfd001238d
 vendor/lib64/libdpmqmihal.so|38861aa2b5419a92f67c00a69b7f2f4847678e59
