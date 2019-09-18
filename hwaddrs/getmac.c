@@ -33,7 +33,8 @@ static const char TAG[] = "hwaddrs";
 
 
 // Validates the contents of the given file
-int checkAddr(const char *const filepath, const char *const prefix)
+int checkAddr(const char *const filepath, const char *const prefix,
+const mode_t mode)
 {
 	int notallzeroes = 0;
 	int checkfd = open(filepath, O_RDONLY);
@@ -42,7 +43,6 @@ int checkAddr(const char *const filepath, const char *const prefix)
 		char charbuf[20]; /* needs to be more than 18 characters */
 		int i;
 		struct stat stat;
-		const int mode = S_IRUSR|S_IRGRP|S_IROTH;
 
 		if (checkfd < 0) break; // doesn't exist/error
 
@@ -96,13 +96,14 @@ TAG, "unlink() failed: %s", strerror(errno));
 
 // Writes a file using an address from the misc partition
 // Generates a random address if the one read contains only zeroes
-void writeAddr(const char *const filepath, int offset, const char *const prefix)
+void writeAddr(const char *const filepath, int offset, const char *const prefix,
+const mode_t mode)
 {
 	uint8_t macbytes[6];
 	char macbuf[19];
 	unsigned int i, macnums = 0;
 	int miscfd = -1;
-	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, mode);
 	const char *errmsg = NULL;
 
 	if (writefd < 0) {
@@ -203,12 +204,13 @@ TAG, "unlink() failed: %s", strerror(errno));
 }
 
 // Simple file copy
-void copyAddr(const char *const source, const char *const dest)
+void copyAddr(const char *const source, const char *const dest,
+const mode_t mode)
 {
 	char buffer[128];
 	ssize_t bufcnt;
 	int sourcefd = open(source, O_RDONLY);
-	int destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
+	int destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL, mode);
 	const char *errmsg;
 
 	if (sourcefd < 0) {
@@ -259,10 +261,10 @@ TAG, "unlink() failed: %s", strerror(errno));
 void handlemac(const char *const datamisc, const char *const persist,
 int offset, const char *const prefix)
 {
-	if (!checkAddr(datamisc, prefix)) {
-		if (!checkAddr(persist, prefix))
-			writeAddr(persist, offset, prefix);
-		copyAddr(persist, datamisc);
+	if (!checkAddr(datamisc, prefix, S_IRUSR|S_IRGRP|S_IROTH)) {
+		if (!checkAddr(persist, prefix, S_IRUSR))
+			writeAddr(persist, offset, prefix, S_IRUSR);
+		copyAddr(persist, datamisc, S_IRUSR|S_IRGRP|S_IROTH);
 	}
 }
 
@@ -270,7 +272,7 @@ int offset, const char *const prefix)
 int main()
 {
 	/* we are apparently invoked with a restrictive umask */
-	umask(S_IWGRP | S_IWOTH);
+	umask(S_IWUSR | S_IWGRP | S_IWOTH);
 
 	handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
 "cur_etheraddr=");
