@@ -26,6 +26,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.audio.offload.multiple.enabled=false \
     vendor.audio.offload.min.duration.secs=30 \
     vendor.audio.offload.passthrough=false \
+    vendor.audio.feature.a2dp_offload.enable=false \
     ro.vendor.audio.sdk.ssr=false \
     vendor.audio.offload.gapless.enabled=true \
     vendor.audio.safx.pbe.enabled=true \
