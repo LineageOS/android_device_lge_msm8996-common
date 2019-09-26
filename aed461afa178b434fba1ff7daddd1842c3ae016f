@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d8e965e1_2acb8e1d",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 29
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-09-26T22:04:51Z",
+      "side": 1,
+      "message": "If046ba416c86d429c8428a7a29d7399a0e4a50ab completely removes this line for 15.1.  Minor adjustment should have that work for 16.0.  As such I\u0027m forced to disagree with this.",
+      "revId": "aed461afa178b434fba1ff7daddd1842c3ae016f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
