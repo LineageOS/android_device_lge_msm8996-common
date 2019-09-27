@@ -18,6 +18,7 @@
 #include <log/log.h>
 #include <ctype.h>
 #include <cutils/properties.h>
+#include <selinux/selinux.h>
 #include <fcntl.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -25,8 +26,12 @@
 #include <string.h>
 #include <sys/stat.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 #include <time.h>
 #include <unistd.h>
+
+
+typedef uint8_t macaddr_t[6];
 
 
 static const char TAG[] = "hwaddrs";
@@ -91,12 +96,11 @@ TAG, "unlink() failed: %s", strerror(errno));
 
 // Writes a file using an address from the misc partition
 // Generates a random address if the one read contains only zeroes
-void writeAddr(const char *const filepath, int offset, const char *const prefix)
+void writeAddr(const char *const filepath, macaddr_t macbytes,
+const char *const prefix)
 {
-	uint8_t macbytes[6];
 	char macbuf[19];
 	unsigned int i, macnums = 0;
-	int miscfd = -1;
 	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR);
 	const char *errmsg = NULL;
 
@@ -105,31 +109,13 @@ void writeAddr(const char *const filepath, int offset, const char *const prefix)
 		goto abort;
 	}
 
-	do {
-		if ((miscfd = open("/dev/block/bootdevice/by-name/misc", O_RDONLY)) < 0) {
-			errmsg = "open";
-			break;
-		}
-
-		if (pread(miscfd, macbytes, sizeof(macbytes), offset) != sizeof(macbytes)) {
-			errmsg = "pread";
-			break;
-		}
-
-		for (i = 0; i < sizeof(macbytes); ++i) macnums |= macbytes[i];
-	} while(0);
-
-	if (errmsg) __android_log_print(ANDROID_LOG_ERROR, TAG,
-"%s() of misc failed: %s", errmsg, strerror(errno));
-
-	/* close()ing if open() failed is suboptimal, but harmless */
-	close(miscfd);
-	miscfd = -1;
+	for (i = 0; i < sizeof(macaddr_t); ++i) macnums |= macbytes[i];
 
 	__android_log_print(ANDROID_LOG_INFO, TAG, "Using %s for \"%s\"",
 macnums?"data from misc":"random data", filepath);
 
 	if (macnums == 0) {
+		int miscfd;
 		const char rerr[] = "read() of /dev/urandom failed: %2$s";
 		char product_name[PROPERTY_VALUE_MAX];
 		property_get("ro.product.name", product_name, "");
@@ -163,7 +149,6 @@ macnums?"data from misc":"random data", filepath);
 		}
 
 		close(miscfd);
-		miscfd = -1;
 	}
 
 	if (prefix && write(writefd, prefix, strlen(prefix)) != (ssize_t)strlen(prefix)) {
@@ -186,7 +171,6 @@ abort:
 	__android_log_print(ANDROID_LOG_ERROR, TAG, errmsg, filepath,
 strerror(errno));
 
-	if (miscfd >= 0) close(miscfd);
 	if (writefd >= 0) {
 		__android_log_print(ANDROID_LOG_INFO, TAG,
 "Removing failed \"%s\" file", filepath);
@@ -251,27 +235,69 @@ TAG, "unlink() failed: %s", strerror(errno));
 }
 
 
-void handlemac(const char *const datamisc, const char *const persist,
-int offset, const char *const prefix)
+void handlemac(const int miscfd, const char *const datamisc,
+const char *const persist, int offset, const char *const prefix)
 {
+	macaddr_t macaddr;
+	pid_t pid;
+
+	if (miscfd >= 0 && pread(miscfd, macaddr, sizeof(macaddr), offset) != sizeof(macaddr)) {
+		__android_log_print(ANDROID_LOG_ERROR, TAG,
+"pread() of misc failed: %s", strerror(errno));
+		memset(macaddr, 0, sizeof(macaddr));
+	}
+
+	if ((pid=fork()) < 0) {
+		__android_log_print(ANDROID_LOG_ERROR, TAG,
+"fork() failed: %s (for %s)", strerror(errno), datamisc);
+		return;
+	} else if (pid > 0) {
+		int wstatus;
+		if (wait(&wstatus) < 0) /* should NOT happen! */
+			__android_log_print(ANDROID_LOG_ERROR, TAG,
+"wait() failed: %s", strerror(errno));
+
+		return;
+	}
+
+
+	/* Child process *only* */
+	if (setcon("hwaddrs") < 0) {
+		__android_log_print(ANDROID_LOG_ERROR, TAG,
+"setcon() failed: %s", strerror(errno));
+		exit(0);
+	}
+
 	if (!checkAddr(datamisc, prefix)) {
 		if (!checkAddr(persist, prefix))
-			writeAddr(persist, offset, prefix);
+			writeAddr(persist, macaddr, prefix);
 		copyAddr(persist, datamisc);
 	}
+
+	exit(0);
 }
 
 
 int main()
 {
+	/* open() here to avoid repeated open()s */
+	int miscfd = -1;
+
+	if ((miscfd = open("/dev/block/bootdevice/by-name/misc", O_RDONLY)) < 0)
+		__android_log_print(ANDROID_LOG_ERROR, TAG,
+"open() of misc failed: %s", strerror(errno));
+
+
 	/* we are apparently invoked with a restrictive umask */
 	umask(S_IWUSR|S_IWGRP|S_IWOTH);
 
-	handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
+	handlemac(miscfd, "/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
 "cur_etheraddr=");
 
-	handlemac("/data/misc/bluetooth/bdaddr", "/persist/.baddr", 0x8000,
-NULL);
+	handlemac(miscfd, "/data/misc/bluetooth/bdaddr", "/persist/.baddr",
+0x8000, NULL);
+
+	if (miscfd > 0) close(miscfd);
 
 	return 0;
 }
