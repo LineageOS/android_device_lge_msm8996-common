@@ -45,8 +45,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
 
     private TextView mTextView;
 
-    private SharedPreferences mPreferences;
-
     private Switch mSwitch;
 
     private SwitchPreference mPickUpPreference;
@@ -94,7 +92,9 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         final ActionBar actionBar = getActivity().getActionBar();
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        if (savedInstanceState == null && !mPreferences.getBoolean("first_help_shown", false)) {
+        if (savedInstanceState == null && !getActivity()
+                .getSharedPreferences("doze_settings", Activity.MODE_PRIVATE)
+                .getBoolean("first_help_shown", false)) {
             showHelp();
         }
 
@@ -193,7 +193,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         return false;
     }
 
-    private static class HelpDialogFragment extends DialogFragment {
+    public static class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             return new AlertDialog.Builder(getActivity())
