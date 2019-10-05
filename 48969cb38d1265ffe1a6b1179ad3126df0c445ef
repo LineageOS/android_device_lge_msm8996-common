@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "168c43ef_13b98f95",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-10-05T02:47:16Z",
+      "side": 1,
+      "message": "If the open() fails (notably EPERM) do *not* immediately return, but instead head to the error recovery below.",
+      "revId": "48969cb38d1265ffe1a6b1179ad3126df0c445ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7a09d123_21b2f786",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-10-05T02:47:16Z",
+      "side": 1,
+      "message": "This is the most crucial error-recovery line.  We\u0027re not using chmod() to change the permissions, but deleting the file and recreating it with correct permissions.",
+      "revId": "48969cb38d1265ffe1a6b1179ad3126df0c445ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "223df52e_ca3478f0",
+        "filename": "hwaddrs/getmac.c",
+        "patchSetId": 1
+      },
+      "lineNbr": 151,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-10-05T02:47:16Z",
+      "side": 1,
+      "message": "And this was the root cause.  Most likely a umask(077) is done before `hwaddrs` is invoked.",
+      "revId": "48969cb38d1265ffe1a6b1179ad3126df0c445ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
+    }
+  ]
+}
