@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "284edc4e_4730da2c",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-10-05T11:34:15Z",
+      "side": 0,
+      "message": "Fails never allows, not permitted to read misc block",
+      "revId": "6e9df440e04b9d6cade230a987307d5b56fb1c11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf6feb80_6ea5b6cc",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-10-05T11:34:15Z",
+      "side": 0,
+      "message": "changed to mnt_vendor_file",
+      "revId": "6e9df440e04b9d6cade230a987307d5b56fb1c11",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
