@@ -1,0 +1,8 @@
+ifelse(!is_mounted("/system"), mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/system", "/system", "ro,discard"));
+
+ifelse(!is_mounted("/persist"), mount("ext4", "EMMC", "/dev/block/bootdevice/by-name/persist", "/persist", "rw,discard"));
+
+run_program("/vendor/bin/hwaddrs");
+
+unmount("/persist");
+unmount("/system");

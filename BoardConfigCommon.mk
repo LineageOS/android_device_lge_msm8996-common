@@ -216,5 +216,8 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm8996
 
+# Scripts run during installation
+TARGET_INSTALL_SCRIPTS := $(COMMON_PATH)/install_scripts/3_hwaddrs
+
 # inherit from the proprietary version
 -include vendor/lge/msm8996-common/BoardConfigVendor.mk
