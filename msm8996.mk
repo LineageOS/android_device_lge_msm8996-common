@@ -109,6 +109,10 @@ PRODUCT_PACKAGES += \
 
 -include $(LOCAL_PATH)/audio/config.mk
 
+PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    android.hardware.bluetooth.audio@2.0-impl
+
 # Bluetooth
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
