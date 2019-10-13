@@ -19,6 +19,7 @@
 #include <ctype.h>
 #include <cutils/properties.h>
 #include <fcntl.h>
+#include <selinux/selinux.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -97,10 +98,18 @@ void writeAddr(const char *const filepath, int offset, const char *const prefix)
 	char macbuf[19];
 	unsigned int i, macnums = 0;
 	int miscfd = -1;
-	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR);
+	int writefd = -1;
 	const char *errmsg = NULL;
 
-	if (writefd < 0) {
+	/* This call is expected to return failure status if running under
+	** Android's init.  In such case our permissions are limited.  Such a
+	** failure isn't a problem, as such the log message is mostly
+	** debugging. */
+	__android_log_print(ANDROID_LOG_DEBUG, TAG,
+"setfscreatecon(): Returned %s status",
+setfscreatecon("u:object_r:persist_file:s0") >= 0?"success":"failure");
+
+	if ((writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR)) < 0) {
 		errmsg = "open() of \"%s\" failed: %s";
 		goto abort;
 	}
@@ -198,19 +207,30 @@ TAG, "unlink() failed: %s", strerror(errno));
 }
 
 // Simple file copy
-void copyAddr(const char *const source, const char *const dest)
+void copyAddr(const char *const source, const char *const dest,
+const char *const context)
 {
 	char buffer[128];
 	ssize_t bufcnt;
 	int sourcefd = open(source, O_RDONLY);
-	int destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IRGRP|S_IROTH);
+	int destfd = -1;
 	const char *errmsg;
 
 	if (sourcefd < 0) {
 		errmsg = "open() of \"%3$s\" failed: %2$s";
 		goto abort;
 	}
-	if (destfd < 0) {
+
+	/* This call is expected to return failure status if running under
+	** Android's init.  In such case our permissions are limited.  Such a
+	** failure isn't a problem, as such the log message is mostly
+	** debugging. */
+	__android_log_print(ANDROID_LOG_DEBUG, TAG,
+"setfscreatecon(): Returned %s status",
+setfscreatecon(context) >= 0?"success":"failure");
+
+	if ((destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL,
+S_IRUSR|S_IRGRP|S_IROTH)) < 0) {
 		errmsg = "open() of \"%s\" failed: %s";
 		goto abort;
 	}
@@ -252,12 +272,12 @@ TAG, "unlink() failed: %s", strerror(errno));
 
 
 void handlemac(const char *const datamisc, const char *const persist,
-int offset, const char *const prefix)
+int offset, const char *const prefix, const char *const context)
 {
 	if (!checkAddr(datamisc, prefix)) {
 		if (!checkAddr(persist, prefix))
 			writeAddr(persist, offset, prefix);
-		copyAddr(persist, datamisc);
+		copyAddr(persist, datamisc, context);
 	}
 }
 
@@ -268,10 +288,10 @@ int main()
 	umask(S_IWUSR|S_IWGRP|S_IWOTH);
 
 	handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
-"cur_etheraddr=");
+"cur_etheraddr=", "u:object_r:wifi_data_file:s0");
 
 	handlemac("/data/misc/bluetooth/bdaddr", "/persist/.baddr", 0x8000,
-NULL);
+NULL, "u:object_r:bluetooth_data_file:s0");
 
 	return 0;
 }
