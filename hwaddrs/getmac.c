@@ -19,6 +19,7 @@
 #include <ctype.h>
 #include <cutils/properties.h>
 #include <fcntl.h>
+#include <selinux/selinux.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -29,12 +30,21 @@
 #include <unistd.h>
 
 
+/* the C preprocessor can be a **** to work with */
+#define CONTEXT_PERSIST_STR	_EXPAND(CONTEXT_PERSIST)
+#define CONTEXT_WIFI_STR	_EXPAND(CONTEXT_WIFI)
+#define CONTEXT_BLUETOOTH_STR	_EXPAND(CONTEXT_BLUETOOTH)
+
+#define _EXPAND(str) __EXPAND(str)
+#define __EXPAND(str) #str
+
+
 static const char TAG[] = "hwaddrs";
 
 
 // Validates the contents of the given file
 int checkAddr(const char *const filepath, const char *const prefix,
-const int mode)
+const int mode, const char *const context)
 {
 	int notallzeroes = 0;
 	int checkfd = open(filepath, O_RDONLY);
@@ -50,6 +60,20 @@ const int mode)
 
 		if (fstat(checkfd, &stat) < 0 || !S_ISREG(stat.st_mode)) break;
 		if (mode != (stat.st_mode&mode)) break;
+
+		if (context) {
+			char *tmp;
+			int rc;
+
+			if (fgetfilecon(checkfd, &tmp) < 0) break;
+			/* the following is correct, but symbol is missing */
+			/* rc = selinux_file_context_cmp(tmp, context); */
+			/* we only care about true or false */
+			rc = strcmp(tmp, context);
+			freecon(tmp);
+
+			if (rc) break;
+		}
 
 		if (prefix) {
 			if (strlen(prefix) > sizeof(charbuf)) {
@@ -102,10 +126,18 @@ void writeAddr(const char *const filepath, int offset, const char *const prefix)
 	char macbuf[19];
 	unsigned int i, macnums = 0;
 	int miscfd = -1;
-	int writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR);
+	int writefd = -1;
 	const char *errmsg = NULL;
 
-	if (writefd < 0) {
+	/* This call is expected to return failure status if running under
+	** Android's init.  In such case our permissions are limited.  Such a
+	** failure isn't a problem, as such the log message is mostly
+	** debugging. */
+	__android_log_print(ANDROID_LOG_DEBUG, TAG,
+"setfscreatecon(): Returned %s status",
+setfscreatecon(CONTEXT_PERSIST_STR) >= 0?"success":"failure");
+
+	if ((writefd = open(filepath, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR)) < 0) {
 		errmsg = "open() of \"%s\" failed: %s";
 		goto abort;
 	}
@@ -203,19 +235,30 @@ TAG, "unlink() failed: %s", strerror(errno));
 }
 
 // Simple file copy
-void copyAddr(const char *const source, const char *const dest)
+void copyAddr(const char *const source, const char *const dest,
+const char *const context)
 {
 	char buffer[128];
 	ssize_t bufcnt;
 	int sourcefd = open(source, O_RDONLY);
-	int destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL, S_IRUSR|S_IRGRP|S_IROTH);
+	int destfd = -1;
 	const char *errmsg;
 
 	if (sourcefd < 0) {
 		errmsg = "open() of \"%3$s\" failed: %2$s";
 		goto abort;
 	}
-	if (destfd < 0) {
+
+	/* This call is expected to return failure status if running under
+	** Android's init.  In such case our permissions are limited.  Such a
+	** failure isn't a problem, as such the log message is mostly
+	** debugging. */
+	__android_log_print(ANDROID_LOG_DEBUG, TAG,
+"setfscreatecon(): Returned %s status",
+setfscreatecon(context) >= 0?"success":"failure");
+
+	if ((destfd = open(dest, O_WRONLY|O_CREAT|O_EXCL,
+S_IRUSR|S_IRGRP|S_IROTH)) < 0) {
 		errmsg = "open() of \"%s\" failed: %s";
 		goto abort;
 	}
@@ -257,12 +300,12 @@ TAG, "unlink() failed: %s", strerror(errno));
 
 
 void handlemac(const char *const datamisc, const char *const persist,
-int offset, const char *const prefix)
+int offset, const char *const prefix, const char *const context)
 {
-	if (!checkAddr(datamisc, prefix, S_IRUSR|S_IRGRP|S_IROTH)) {
-		if (!checkAddr(persist, prefix, 0))
+	if (!checkAddr(datamisc, prefix, S_IRUSR|S_IRGRP|S_IROTH, context)) {
+		if (!checkAddr(persist, prefix, S_IRUSR, CONTEXT_PERSIST_STR))
 			writeAddr(persist, offset, prefix);
-		copyAddr(persist, datamisc);
+		copyAddr(persist, datamisc, context);
 	}
 }
 
@@ -273,10 +316,10 @@ int main()
 	umask(S_IWUSR|S_IWGRP|S_IWOTH);
 
 	handlemac("/data/misc/wifi/config", "/persist/.macaddr", 0x6000,
-"cur_etheraddr=");
+"cur_etheraddr=", CONTEXT_WIFI_STR);
 
 	handlemac("/data/misc/bluetooth/bdaddr", "/persist/.baddr", 0x8000,
-NULL);
+NULL, CONTEXT_BLUETOOTH_STR);
 
 	return 0;
 }
