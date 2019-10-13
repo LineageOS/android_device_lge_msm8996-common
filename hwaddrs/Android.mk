@@ -20,7 +20,12 @@ LOCAL_MODULE_TAGS := optional
 
 LOCAL_SRC_FILES := getmac.c
 
-LOCAL_SHARED_LIBRARIES := libcutils liblog
+# SE Linux contexts touched by `hwaddrs`
+LOCAL_CFLAGS += -DCONTEXT_PERSIST="u:object_r:persist_file:s0"
+LOCAL_CFLAGS += -DCONTEXT_WIFI="u:object_r:wifi_data_file:s0"
+LOCAL_CFLAGS += -DCONTEXT_BLUETOOTH="u:object_r:bluetooth_data_file:s0"
+
+LOCAL_SHARED_LIBRARIES := libcutils liblog libselinux
 
 LOCAL_PRELINK_MODULE := false
 
