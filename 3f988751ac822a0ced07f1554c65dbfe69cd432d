@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "504646eb_712a8bf4",
+        "filename": "releasetools.py",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-10-18T19:55:09Z",
+      "side": 1,
+      "message": "This is actually incorrect and has the potential of causing breakage in the future (not your fault, you simply copied something with a problem).  There needs to be a\n\n  info.script.Unmount(\"/system\")\n\nAt the top.  The functionality hasn\u0027t been used much, but edify_generator is designed with the assumption of code being lazy about unmounts.  I\u0027ll concede it isn\u0027t yet used much, but the code should protect against this.",
+      "revId": "3f988751ac822a0ced07f1554c65dbfe69cd432d",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
