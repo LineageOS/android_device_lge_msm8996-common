@@ -19,6 +19,9 @@
 /sys/devices/soc/75b7000\.spi/spi_master/spi8/spi8\.1(/.*)?         u:object_r:sysfs_devices_fingerprint:s0
 /sys/devices/soc/75ba000\.spi/spi_master/spi12/spi12\.[0-1](/.*)?   u:object_r:sysfs_devices_fingerprint:s0
 
+# Firmware
+/firmware(/.*)?                                                     u:object_r:firmware_file:s0
+
 # FRP partition
 /dev/block/platform/soc/624000\.ufshc/by-name/persistent            u:object_r:frp_block_device:s0
 
