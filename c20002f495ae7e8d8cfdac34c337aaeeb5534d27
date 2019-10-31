@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2299c34e_a499417f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-10-31T22:46:05Z",
+      "side": 1,
+      "message": "Not necessary with this snide comment.",
+      "revId": "c20002f495ae7e8d8cfdac34c337aaeeb5534d27",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
