@@ -42,6 +42,9 @@
 /dev/ttyHSL1                                                        u:object_r:cir_device:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service.lge       u:object_r:hal_ir_default_exec:s0
 
+# DRM
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.widevine                u:object_r:hal_drm_widevine_exec:s0
+
 # Lights
 /sys/devices/virtual/lg_rgb_led/use_patterns/onoff_patterns         u:object_r:sysfs_leds:s0
 /sys/devices/virtual/lg_rgb_led/use_patterns/blink_patterns         u:object_r:sysfs_leds:s0
