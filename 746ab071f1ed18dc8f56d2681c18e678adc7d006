@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2e2a6c2b_3e4f217a",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 417,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-10-31T22:39:48Z",
+      "side": 0,
+      "message": "These were in for a reason, they are not to be taken out.",
+      "revId": "746ab071f1ed18dc8f56d2681c18e678adc7d006",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bab0b24f_7f8a0390",
+        "filename": "rootdir/etc/init.qcom.rc",
+        "patchSetId": 1
+      },
+      "lineNbr": 431,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2019-10-31T22:39:48Z",
+      "side": 0,
+      "message": "Same with these.",
+      "revId": "746ab071f1ed18dc8f56d2681c18e678adc7d006",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
