@@ -16,6 +16,24 @@
       "revId": "c20002f495ae7e8d8cfdac34c337aaeeb5534d27",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79f3c875_37c710f1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 18177
+      },
+      "writtenOn": "2019-10-31T23:05:37Z",
+      "side": 1,
+      "message": "Yes that can be taken as snide though it wasn\u0027t written that way.  I was looking for some reason why it had been done that way since it otherwise looks very bizarre.  I was worrying I was going to break some mysterious reasoning why it was done that way, so I needed some explanation.  This seems a reasonable explanation so I opted not to assume someone was doing something for no reason.",
+      "parentUuid": "2299c34e_a499417f",
+      "revId": "c20002f495ae7e8d8cfdac34c337aaeeb5534d27",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": false
     }
   ]
 }
