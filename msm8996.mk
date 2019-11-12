@@ -27,6 +27,8 @@ include $(LOCAL_PATH)/vendor_prop.mk
 
 # Overlays
 PRODUCT_ENFORCE_RRO_TARGETS := *
+PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(LOCAL_PATH)/overlay/packages/apps/Snap
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
