@@ -24,7 +24,7 @@ VNDK_SP_LIBRARIES := \
     libhidlbase \
     libhidlmemory \
     libhidltransport \
-    libhwbinder_noltopgo 
+    libhwbinder_noltopgo \
     libhwbinder \
     libion \
     libjsoncpp \
