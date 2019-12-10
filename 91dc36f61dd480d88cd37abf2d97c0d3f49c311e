@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "09a808b1_ee9d8464",
+        "filename": "msm8996.mk",
+        "patchSetId": 14
+      },
+      "lineNbr": 398,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2019-12-10T00:43:25Z",
+      "side": 1,
+      "message": "this is pretty much useless as is, as (at least on PL2) things work fine without it, so this may need to be moved to it\u0027s own mergable commit (removing this bootjar)",
+      "range": {
+        "startLine": 397,
+        "startChar": 0,
+        "endLine": 398,
+        "endChar": 14
+      },
+      "revId": "91dc36f61dd480d88cd37abf2d97c0d3f49c311e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
