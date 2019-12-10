@@ -360,6 +360,12 @@ service vendor.conn_init /vendor/bin/hwaddrs
     group system wifi bluetooth
     oneshot
 
+on property:init.svc.vendor.conn_init=stopped
+    chmod 0644 /data/misc/wifi/config
+    chown system wifi /data/misc/wifi/config
+    chmod 0644 /data/misc/bluetooth/bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
+
 on post-fs
     chmod 0660 /dev/lge_dm_tty0
     chown system system /dev/lge_dm_tty0
@@ -405,6 +411,10 @@ on post-fs-data
 
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
     mkdir /data/vendor/misc/bluetooth 0770 bluetooth bluetooth
+    chmod 0644 /data/misc/bluetooth/bdaddr
+    chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
+    chmod 0644 /persist/.baddr
+    chown system system /persist/.baddr
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/vendor/wifi 0770 wifi wifi
@@ -415,6 +425,10 @@ on post-fs-data
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp system /data/misc/dhcp
+    chmod 0644 /data/misc/wifi/config
+    chown system wifi /data/misc/wifi/config
+    chmod 0644 /persist/.macaddr
+    chown system system /persist/.macaddr
 
     # Create port-bridge log dir
     mkdir /data/vendor/port_bridge 0770 radio radio
