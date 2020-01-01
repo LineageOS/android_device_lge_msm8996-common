@@ -1,4 +1,4 @@
-typeattribute mm-qcamerad binder_in_vendor_violators;
+#typeattribute mm-qcamerad binder_in_vendor_violators;
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket1";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket2";
 type_transition mm-qcamerad camera_data_file:sock_file camera_socket "cam_socket3";
@@ -9,6 +9,6 @@ allow mm-qcamerad camera_socket:dir w_dir_perms;
 allow mm-qcamerad camera_data_file:file create_file_perms;
 allow mm-qcamerad camera_data_file:dir w_dir_perms;
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
-allow mm-qcamerad sysfs_graphics:dir r_dir_perms;
+allow mm-qcamerad sysfs_graphics:dir { r_dir_perms search };
 allow mm-qcamerad vendor_default_prop:property_service set;
 binder_use(mm-qcamerad);

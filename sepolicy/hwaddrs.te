@@ -5,7 +5,8 @@ init_daemon_domain(hwaddrs)
 
 allow hwaddrs self:capability { fowner };
 allow hwaddrs block_device:dir { search };
-allow hwaddrs misc_block_device:blk_file { read open };
+# this might be needed
+#allow hwaddrs misc_block_device:blk_file { read open };
 
 allow hwaddrs wifi_data_file:file create_file_perms;
 allow hwaddrs bluetooth_data_file:file create_file_perms;
