@@ -3,10 +3,10 @@ allow init mpt_file:dir mounton;
 allow init sensors_data_file:dir mounton;
 allow init persist_drm_file:dir mounton;
 allow init mediadrm_vendor_data_file:dir mounton;
-allow init proc_kernel_sched:file rw_file_perms;
+allow init proc_kernel_sched:file {open append write lock map read};
 allow init sysfs_mmc_host:file { setattr w_file_perms };
 allow init sysfs_graphics:file { setattr w_file_perms };
-allow init sysfs:file { setattr w_file_perms };
+allow init sysfs:file { setattr };
 
 allow init sysfs_mmc_host:dir { relabelfrom };
 allow init sysfs_mmc_host:file { relabelfrom };
