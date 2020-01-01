@@ -2,6 +2,7 @@ type cir_device, dev_type;
 type perfd_data_file, file_type, core_data_file_type, data_file_type;
 type debugfs_wlan, debugfs_type, fs_type;
 type debugfs_rmts, debugfs_type, fs_type;
+type debugfs_rpm, debugfs_type, fs_type;
 type mpt_file, file_type, data_file_type;
 type proc_irq, proc_type;
 type proc_kernel_sched, proc_type;
