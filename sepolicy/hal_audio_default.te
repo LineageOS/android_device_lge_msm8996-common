@@ -1,5 +1,6 @@
 # This is horrible but for some reason the audio HAL wants to read all devices
-r_dir_file(hal_audio_default, sysfs)
+allow hal_audio_default default_prop:file {read open map };
+allow hal_audio_default sysfs:dir r_dir_perms;
 
 # communicate with perfd
 allow hal_audio perfd:unix_stream_socket connectto;
