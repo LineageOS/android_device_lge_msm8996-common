@@ -1,16 +1,18 @@
-type hwaddrs, domain;
-type hwaddrs_exec, exec_type, vendor_file_type, file_type;
+# hwaddrs cannot run under its own selinux domain because there are 
+# neverallow rules which do not permit access to the misc partition
+# except for few predefined domains. One of them is vendor_misc_writer.
+# hwaddrs does not write to the misc partition.
 
-init_daemon_domain(hwaddrs)
+init_daemon_domain(vendor_misc_writer)
+allow vendor_misc_writer self:capability { fowner };
+allow vendor_misc_writer block_device:dir { search };
+allow vendor_misc_writer misc_block_device:blk_file { open read };
+allow vendor_misc_writer block_device:lnk_file { open };
 
-allow hwaddrs self:capability { fowner };
-allow hwaddrs block_device:dir { search };
-allow hwaddrs misc_block_device:blk_file { read open };
+allow vendor_misc_writer wifi_data_file:file create_file_perms;
+allow vendor_misc_writer bluetooth_data_file:file create_file_perms;
+allow vendor_misc_writer mnt_vendor_file:file create_file_perms;
 
-allow hwaddrs wifi_data_file:file create_file_perms;
-allow hwaddrs bluetooth_data_file:file create_file_perms;
-allow hwaddrs mnt_vendor_file:file create_file_perms;
-
-allow hwaddrs wifi_data_file:dir { search write add_name };
-allow hwaddrs bluetooth_data_file:dir { search write add_name };
-allow hwaddrs mnt_vendor_file:dir { search write add_name };
+allow vendor_misc_writer wifi_data_file:dir { search write add_name };
+allow vendor_misc_writer bluetooth_data_file:dir { search write add_name };
+allow vendor_misc_writer mnt_vendor_file:dir { search write add_name };
