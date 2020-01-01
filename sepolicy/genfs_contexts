@@ -22,3 +22,6 @@ genfscon sysfs /devices/soc/74a4900.sdhci/mmc_host/mmc1 u:object_r:sysfs_mmc_hos
 
 genfscon sysfs /devices/soc/1c00000.qcom,ssc/subsys3/name u:object_r:sysfs_ssr:s0
 
+genfscon debugfs /rpm_stats                           u:object_r:debugfs_rpm:s0
+genfscon debugfs /rpm_master_stats                    u:object_r:debugfs_rpm:s0
+genfscon debugfs /system_stats                        u:object_r:debugfs_rpm:s0
