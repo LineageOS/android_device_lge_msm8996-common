@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3d26d077_d6ce1fec",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 14737
+      },
+      "writtenOn": "2020-01-12T19:44:32Z",
+      "side": 1,
+      "message": "This is needed, or no wifi/bt mac addresses.",
+      "revId": "4774d22edc52e0944a00ebb4645f428411a28fde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
