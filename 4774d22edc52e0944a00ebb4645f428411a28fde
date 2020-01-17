@@ -16,6 +16,24 @@
       "revId": "4774d22edc52e0944a00ebb4645f428411a28fde",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56294bbd_77a3022c",
+        "filename": "sepolicy/hwaddrs.te",
+        "patchSetId": 9
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 25069
+      },
+      "writtenOn": "2020-01-17T18:34:41Z",
+      "side": 1,
+      "message": "ok. What would be the best solution? I suggest to run hwaddr under vendor_init domain and attach vendor_init_exec domain to /(vendor|system/vendor)/bin/hwaddrs. The neverallow rule that is broken by allowing hwaddr domain access to misc_partition is\n\n# as of system/sepolicy/public/domain.te:603\nneverallow {\n  domain\n  userdebug_or_eng(`-domain\u0027) # exclude debuggable builds\n  -fastbootd\n  -hal_bootctl_server\n  -init\n  -uncrypt\n  -update_engine\n  -vendor_init\n  -vendor_misc_writer\n  -vold\n  -recovery\n  -ueventd\n} misc_block_device:blk_file { append link relabelfrom rename write open read ioctl lock };\n\nIf you agree with my suggestion or give me a hint to a better solution, I\u0027d be happy to adjust my patch",
+      "parentUuid": "3d26d077_d6ce1fec",
+      "revId": "4774d22edc52e0944a00ebb4645f428411a28fde",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
     }
   ]
 }
