@@ -63,6 +63,7 @@ void writeAddr(char* filepath, int offset, int key) {
 	char macbuf[19];
 	int i, macnums = 0;
 	int miscfd = open("/dev/block/bootdevice/by-name/misc", O_RDONLY);
+	chmod(filepath,S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH);
 	int writefd = open(filepath, O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 
 	lseek(miscfd, offset, SEEK_SET);
@@ -110,6 +111,7 @@ void writeAddr(char* filepath, int offset, int key) {
 void copyAddr(char* source, char* dest) {
 	char buffer;
 	int sourcefd = open(source, O_RDONLY);
+	chmod(dest, S_IRUSR|S_IWUSR|S_IRGRP|S_IWGRP|S_IROTH);
 	int destfd = open(dest, O_WRONLY|O_CREAT|O_TRUNC, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
 
 	if (sourcefd < 0 || destfd < 0) return; // doesn't exist/error
