@@ -8,8 +8,8 @@ vendor/lib64/libadsprpc.so
 vendor/lib64/libfastcvopt.so
 
 # ADSP modules
-lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
-lib/rfsa/adsp/libmorpho_video_denoiser_hvx_skel.so
+system/lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
+system/lib/rfsa/adsp/libmorpho_video_denoiser_hvx_skel.so
 vendor/lib/libsymphony-1.1.1.so
 vendor/lib/libsymphonypower-1.1.1.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
@@ -85,50 +85,50 @@ vendor/lib64/libts_detected_face_hal.so
 vendor/lib64/libts_face_beautify_hal.so
 
 # Camera - Firmware
-etc/camera/film/0_film.dat:vendor/etc/camera/film/0_film.dat
-etc/camera/film/10_film.dat:vendor/etc/camera/film/10_film.dat
-etc/camera/film/1_film.dat:vendor/etc/camera/film/1_film.dat
-etc/camera/film/2_film.dat:vendor/etc/camera/film/2_film.dat
-etc/camera/film/3_film.dat:vendor/etc/camera/film/3_film.dat
-etc/camera/film/4_film.dat:vendor/etc/camera/film/4_film.dat
-etc/camera/film/5_film.dat:vendor/etc/camera/film/5_film.dat
-etc/camera/film/6_film.dat:vendor/etc/camera/film/6_film.dat
-etc/camera/film/7_film.dat:vendor/etc/camera/film/7_film.dat
-etc/camera/film/8_film.dat:vendor/etc/camera/film/8_film.dat
-etc/camera/film/9_film.dat:vendor/etc/camera/film/9_film.dat
-etc/camera/selfie/1_selfie.dat:vendor/etc/camera/selfie/1_selfie.dat
-etc/camera/selfie/2_selfie.dat:vendor/etc/camera/selfie/2_selfie.dat
-etc/camera/selfie/3_selfie.dat:vendor/etc/camera/selfie/3_selfie.dat
-etc/camera/selfie/4_selfie.dat:vendor/etc/camera/selfie/4_selfie.dat
-etc/camera/selfie/5_selfie.dat:vendor/etc/camera/selfie/5_selfie.dat
-etc/camera/selfie/6_selfie.dat:vendor/etc/camera/selfie/6_selfie.dat
-etc/camera/selfie/7_selfie.dat:vendor/etc/camera/selfie/7_selfie.dat
-etc/camera/selfie/8_selfie.dat:vendor/etc/camera/selfie/8_selfie.dat
-etc/camera/selfie/9_selfie.dat:vendor/etc/camera/selfie/9_selfie.dat
-etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
-etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
-etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
-etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
-etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
-etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
-etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
-etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
-etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
-etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
+system/etc/camera/film/0_film.dat:vendor/etc/camera/film/0_film.dat
+system/etc/camera/film/10_film.dat:vendor/etc/camera/film/10_film.dat
+system/etc/camera/film/1_film.dat:vendor/etc/camera/film/1_film.dat
+system/etc/camera/film/2_film.dat:vendor/etc/camera/film/2_film.dat
+system/etc/camera/film/3_film.dat:vendor/etc/camera/film/3_film.dat
+system/etc/camera/film/4_film.dat:vendor/etc/camera/film/4_film.dat
+system/etc/camera/film/5_film.dat:vendor/etc/camera/film/5_film.dat
+system/etc/camera/film/6_film.dat:vendor/etc/camera/film/6_film.dat
+system/etc/camera/film/7_film.dat:vendor/etc/camera/film/7_film.dat
+system/etc/camera/film/8_film.dat:vendor/etc/camera/film/8_film.dat
+system/etc/camera/film/9_film.dat:vendor/etc/camera/film/9_film.dat
+system/etc/camera/selfie/1_selfie.dat:vendor/etc/camera/selfie/1_selfie.dat
+system/etc/camera/selfie/2_selfie.dat:vendor/etc/camera/selfie/2_selfie.dat
+system/etc/camera/selfie/3_selfie.dat:vendor/etc/camera/selfie/3_selfie.dat
+system/etc/camera/selfie/4_selfie.dat:vendor/etc/camera/selfie/4_selfie.dat
+system/etc/camera/selfie/5_selfie.dat:vendor/etc/camera/selfie/5_selfie.dat
+system/etc/camera/selfie/6_selfie.dat:vendor/etc/camera/selfie/6_selfie.dat
+system/etc/camera/selfie/7_selfie.dat:vendor/etc/camera/selfie/7_selfie.dat
+system/etc/camera/selfie/8_selfie.dat:vendor/etc/camera/selfie/8_selfie.dat
+system/etc/camera/selfie/9_selfie.dat:vendor/etc/camera/selfie/9_selfie.dat
+system/etc/firmware/cpp_firmware_v1_10_0.fw:vendor/firmware/cpp_firmware_v1_10_0.fw
+system/etc/firmware/cpp_firmware_v1_12_0.fw:vendor/firmware/cpp_firmware_v1_12_0.fw
+system/etc/firmware/cpp_firmware_v1_1_1.fw:vendor/firmware/cpp_firmware_v1_1_1.fw
+system/etc/firmware/cpp_firmware_v1_1_6.fw:vendor/firmware/cpp_firmware_v1_1_6.fw
+system/etc/firmware/cpp_firmware_v1_2_0.fw:vendor/firmware/cpp_firmware_v1_2_0.fw
+system/etc/firmware/cpp_firmware_v1_4_0.fw:vendor/firmware/cpp_firmware_v1_4_0.fw
+system/etc/firmware/cpp_firmware_v1_5_0.fw:vendor/firmware/cpp_firmware_v1_5_0.fw
+system/etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.fw
+system/etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
+system/etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 
 # CNE - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
-etc/cne/wqeclient/profile1.xml|e7ca213d0998cb3a6a603ad3eca7bda69830ff55
-etc/cne/wqeclient/profile2.xml|169a5209000e357a1a3183e8e5bfdf6fd07c2787
-etc/cne/wqeclient/profile3.xml|4be4060e8ac2d9fcea490feec7938cadcff46e1f
-etc/cne/wqeclient/profile4.xml|f88e13f1dd7b82388c90358f71813026370c9ed8
-etc/cne/wqeclient/profile5.xml|96101f6b01436a02572c67a469ff67ccfb738874
-etc/cne/wqeclient/profile6.xml|cef14ff8a160c7ad719b85d024a4b3301c3638d0
-etc/cne/wqeclient/profile7.xml|8d6773a4c418d0dcc4dc9096017d2681c7a1defe
-etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
-etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
-framework/cneapiclient.jar|af7db889362e562a4c5073bb6aae32947218abf0
-framework/com.quicinc.cne.jar|caad1cfa7aa3a36e8d6b1e6ab232c243bdea7ab8
--priv-app/CNEService/CNEService.apk|a59621ae53f36754c5af7429176e15423be5d588
+system/etc/cne/wqeclient/profile1.xml|e7ca213d0998cb3a6a603ad3eca7bda69830ff55
+system/etc/cne/wqeclient/profile2.xml|169a5209000e357a1a3183e8e5bfdf6fd07c2787
+system/etc/cne/wqeclient/profile3.xml|4be4060e8ac2d9fcea490feec7938cadcff46e1f
+system/etc/cne/wqeclient/profile4.xml|f88e13f1dd7b82388c90358f71813026370c9ed8
+system/etc/cne/wqeclient/profile5.xml|96101f6b01436a02572c67a469ff67ccfb738874
+system/etc/cne/wqeclient/profile6.xml|cef14ff8a160c7ad719b85d024a4b3301c3638d0
+system/etc/cne/wqeclient/profile7.xml|8d6773a4c418d0dcc4dc9096017d2681c7a1defe
+system/etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
+system/etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
+system/framework/cneapiclient.jar|af7db889362e562a4c5073bb6aae32947218abf0
+system/framework/com.quicinc.cne.jar|caad1cfa7aa3a36e8d6b1e6ab232c243bdea7ab8
+-system/priv-app/CNEService/CNEService.apk|a59621ae53f36754c5af7429176e15423be5d588
 vendor/bin/cnd|82f0014d2724cb23fd661447966a1a896aae4c4a
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml|578f3f8f56059bfdbef926bcc68d01c15e06951f
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml|1fb42c672a12b6660bdce3ea94e0c43719dd9de8
@@ -324,16 +324,16 @@ vendor/lib/hw/vulkan.msm8953.so:vendor/lib/vulkan.msm8996.so|c24dee59782e94c119e
 vendor/lib64/hw/vulkan.msm8953.so:vendor/lib64/vulkan.msm8996.so|8c01e237bdc542ca682cb97ce28f264135033fab|b09121b664897181c29ec5a529117772a971229b
 
 # IR
--lib/libcir_driver.so:vendor/lib/libcir_driver.so
--lib64/libcir_driver.so:vendor/lib64/libcir_driver.so
+-system/lib/libcir_driver.so:vendor/lib/libcir_driver.so
+-system/lib64/libcir_driver.so:vendor/lib64/libcir_driver.so
 
 # Keymaster - LG
-lib/hw/lgkm.default.so
-lib/hw/lgkm.msm8996.so
-lib/liblgkm.so
-lib64/hw/lgkm.default.so
-lib64/hw/lgkm.msm8996.so
-lib64/liblgkm.so
+system/lib/hw/lgkm.default.so
+system/lib/hw/lgkm.msm8996.so
+system/lib/liblgkm.so
+system/lib64/hw/lgkm.default.so
+system/lib64/hw/lgkm.msm8996.so
+system/lib64/liblgkm.so
 
 # Keystore
 -vendor/lib/hw/keystore.msm8996.so
@@ -348,12 +348,12 @@ vendor/lib64/hw/sound_trigger.primary.msm8996.so
 vendor/lib64/vendor.qti.voiceprint@1.0.so
 
 # Media -- From daisy_global_images_V11.0.17.0.QDLMIXM_20210115.0000.00_10.0_924a02b328
-lib/extractors/libmmparserextractor.so|4178c228bdb7120cfdd6fd8ea4325cad9942f702
-lib/libFileMux.so|1c713da8d18f03deb33c3211761fc07dd57d6946
-lib/libOmxMux.so|6f1a1f5fc8f9a8683e6fb719b6fe51a68c6b0e84
-lib/libmmosal.so|9464733295e192301b2577f52fab720e72c0d152
-lib/libmmparser_lite.so|e4acf01efc035cc2b689453996a4552092d28db2
-lib64/libmmosal.so|9ceff2581e86d32bc2795dffb96ebe4bdc88f2f7
+system/lib/extractors/libmmparserextractor.so|4178c228bdb7120cfdd6fd8ea4325cad9942f702
+system/system/lib/libFileMux.so|1c713da8d18f03deb33c3211761fc07dd57d6946
+system/lib/libOmxMux.so|6f1a1f5fc8f9a8683e6fb719b6fe51a68c6b0e84
+system/lib/libmmosal.so|9464733295e192301b2577f52fab720e72c0d152
+system/lib/libmmparser_lite.so|e4acf01efc035cc2b689453996a4552092d28db2
+system/lib64/libmmosal.so|9ceff2581e86d32bc2795dffb96ebe4bdc88f2f7
 vendor/lib/libI420colorconvert.so|0dfd4d0e49f4250e98e781483048a296a679e05e
 vendor/lib/libOmxAacDec.so|55772a6d0cf3e6a5a2c32348fd7096b8737d490b
 vendor/lib/libOmxAlacDec.so|adca064b15a7d545075af6f5222db45dec8202b5
@@ -387,8 +387,8 @@ vendor/lib64/libOmxWmaDec.so|32e1b9c72d0b0a8b74978e1687b701e18030d68a
 vendor/lib64/libvpplibrary.so|80c28c83ce7f9059e6ff0a521305f87ca4719985
 
 # Misc - Firmware
-etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
-etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
+system/etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
+system/etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
 
 # NFC - Firmware
 vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
@@ -420,8 +420,8 @@ vendor/lib/libdisp-aba.so
 vendor/lib64/libdisp-aba.so
 
 # QMI
-etc/permissions/qti_libpermissions.xml
-etc/permissions/qti_permissions.xml
+system/etc/permissions/qti_libpermissions.xml
+system/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 -vendor/lib/libdsi_netctrl.so
@@ -459,13 +459,13 @@ vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
 
 # Radio
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
--framework/QtiTelephonyServicelibrary.jar
--framework/qcrilhook.jar
--framework/qti-telephony-common.jar
--priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
+-system/app/QtiTelephonyService/QtiTelephonyService.apk
+system/etc/permissions/qcrilhook.xml
+system/etc/permissions/telephonyservice.xml
+-system/framework/QtiTelephonyServicelibrary.jar
+-system/framework/qcrilhook.jar
+-system/framework/qti-telephony-common.jar
+-system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/netmgrd
 vendor/bin/qti
 vendor/bin/rmt_storage
@@ -523,28 +523,28 @@ vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/cdmaless/
 vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn|9253d2970e4dc6456b538a0be729b4487da2c6f6
 
 # Radio - IMS
-etc/permissions/qti-vzw-ims-internal.xml
-lib/com.qualcomm.qti.imscmservice@1.0.so
-lib/lib-imscamera.so
-lib/lib-imsvideocodec.so
-lib/lib-imsvtextutils.so
-lib/lib-imsvtutils.so
-lib/libdiag_system.so
-lib/libimscamera_jni.so:vendor/lib/libimscamera_jni.so
-lib/libimsmedia_jni.so:vendor/lib/libimsmedia_jni.so
-lib/librcc.so
-lib/vendor.qti.imsrtpservice@1.0.so
-lib64/com.qualcomm.qti.imscmservice@1.0.so
-lib64/lib-imscamera.so
-lib64/lib-imsvideocodec.so
-lib64/lib-imsvt.so
-lib64/lib-imsvtextutils.so
-lib64/lib-imsvtutils.so
-lib64/libdiag_system.so
-lib64/libimscamera_jni.so:vendor/lib64/libimscamera_jni.so
-lib64/libimsmedia_jni.so:vendor/lib64/libimsmedia_jni.so
-lib64/librcc.so
-lib64/vendor.qti.imsrtpservice@1.0.so
+system/etc/permissions/qti-vzw-ims-internal.xml
+system/system/lib/com.qualcomm.qti.imscmservice@1.0.so
+system/lib/lib-imscamera.so
+system/lib/lib-imsvideocodec.so
+system/lib/lib-imsvtextutils.so
+system/lib/lib-imsvtutils.so
+system/lib/libdiag_system.so
+system/lib/libimscamera_jni.so:vendor/system/lib/libimscamera_jni.so
+system/lib/libimsmedia_jni.so:vendor/system/lib/libimsmedia_jni.so
+system/lib/librcc.so
+system/lib/vendor.qti.imsrtpservice@1.0.so
+system/lib64/com.qualcomm.qti.imscmservice@1.0.so
+system/lib64/lib-imscamera.so
+system/lib64/lib-imsvideocodec.so
+system/lib64/lib-imsvt.so
+system/lib64/lib-imsvtextutils.so
+system/lib64/lib-imsvtutils.so
+system/lib64/libdiag_system.so
+system/lib64/libimscamera_jni.so:vendor/lib64/libimscamera_jni.so
+system/lib64/libimsmedia_jni.so:vendor/lib64/libimsmedia_jni.so
+system/lib64/librcc.so
+system/lib64/vendor.qti.imsrtpservice@1.0.so
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -591,8 +591,8 @@ vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
 # Sprint
--priv-app/SprintDM/SprintDM.apk
--priv-app/SprintHM/SprintHM.apk
+-system/priv-app/SprintDM/SprintDM.apk
+-system/priv-app/SprintHM/SprintHM.apk
 
 # Thermal
 vendor/bin/thermal-engine
@@ -605,18 +605,18 @@ vendor/lib/libtime_genoff.so|24f6064818bc53c5ea17a3608766e3cc1e889f64
 vendor/lib64/libtime_genoff.so|e2cef32a79f754b5a17012137cf39f53cd6e3f69
 
 # Verizon
--app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
--app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
-etc/permissions/com.verizon.apn.xml
-etc/permissions/com.verizon.embms.xml
-etc/permissions/com.verizon.provider.xml
-etc/permissions/qti-vzw-ims-internal.xml
-etc/permissions/vzw_sso_permissions.xml
--framework/VerizonUnifiedSettings.jar;PRESIGNED
--priv-app/VZWAPNService/VZWAPNService.apk;PRESIGNED
--priv-app/VZWAVS/VZWAVS.apk;PRESIGNED
--priv-app/VzwLcSilent/VzwLcSilent.apk;PRESIGNED
--priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
+-system/app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
+-system/app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
+system/etc/permissions/com.verizon.apn.xml
+system/etc/permissions/com.verizon.embms.xml
+system/etc/permissions/com.verizon.provider.xml
+system/etc/permissions/qti-vzw-ims-internal.xml
+system/etc/permissions/vzw_sso_permissions.xml
+-system/framework/VerizonUnifiedSettings.jar;PRESIGNED
+-system/priv-app/VZWAPNService/VZWAPNService.apk;PRESIGNED
+-system/priv-app/VZWAVS/VZWAVS.apk;PRESIGNED
+-system/priv-app/VzwLcSilent/VzwLcSilent.apk;PRESIGNED
+-system/priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
 
 # Widevine (DRM) - from daisy - daisy_sprout:10/QKQ1.191002.002/V11.0.7.0.QDLMIXM
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|e130b8f1c8d46d8a185b00cba5ff8a2a871ee94c
