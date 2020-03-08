@@ -46,9 +46,17 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     swapon_all /vendor/etc/fstab.qcom
-    restorecon_recursive /sns
-    restorecon_recursive /persist-lg
-    restorecon_recursive /mpt
+    # These directories have different labeling in stock rom.
+    # Jumping between stock and LineageOS needs restorecon -F
+    # to apply our labeling.
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF /persist
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF  /persist-lg
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF  /sns
+    exec u:r:vendor_init:s0 root root -- /vendor/bin/toybox_vendor \
+      restorecon -RF  /mpt
 
     mkdir /persist/rfs 0775 root system
     mkdir /persist/hlos_rfs 0775 root system
@@ -78,7 +86,6 @@ on fs
     chmod 0775 /persist/rfs/apq/gnss
     chmod 0775 /persist/hlos_rfs
 
-    restorecon_recursive /persist
     chown system system /persist/rfs/shared
     chown system system /persist/rfs/msm
     chown system system /persist/rfs/msm/adsp
@@ -105,7 +112,6 @@ on post-fs-data
     mkdir /persist/data/tz 0700 system system
     mkdir /persist/data/qc_senseid 0700 system system
     mkdir /persist/bms 0700 root system
-    restorecon_recursive /persist
 
 # Start camera server as daemon
 service vendor.qcamerasvr /vendor/bin/mm-qcamera-daemon
