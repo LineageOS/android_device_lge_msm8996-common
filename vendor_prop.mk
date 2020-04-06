@@ -38,10 +38,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.speaker.prot.enable=true \
     persist.vendor.audio.spkr.cal.duration=5
 
-# Bluetooth
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
-
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1 \

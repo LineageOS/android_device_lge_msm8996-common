@@ -17,9 +17,6 @@
 
 COMMON_PATH := device/lge/msm8996-common
 
-# inherit from common lge
--include device/lge/common/BoardConfigCommon.mk
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
@@ -215,6 +212,9 @@ WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm8996
+
+# inherit from common lge
+-include device/lge/common/BoardConfigCommon.mk
 
 # inherit from the proprietary version
 -include vendor/lge/msm8996-common/BoardConfigVendor.mk

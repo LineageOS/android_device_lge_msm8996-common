@@ -363,7 +363,7 @@ on boot
 
     write /proc/sys/net/core/netdev_max_backlog 5000
 
-service conn_init /vendor/bin/hwaddrs
+service conn_init /vendor/bin/hwaddrs2
     class core
     user root
     group system wifi bluetooth
