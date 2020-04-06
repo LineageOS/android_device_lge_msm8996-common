@@ -29,6 +29,10 @@ DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
 
+# Location of MAC addresses in misc
+HWADDRS_OFFSET_WIFI		:= 0x6000
+HWADDRS_OFFSET_BLUETOOTH	:= 0x8000
+
 # Add WiFi Config files
 # TEMP: These are broken right now
 #$(call inherit-product, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
@@ -108,7 +112,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
-    hwaddrs \
     libbt-vendor
 
 # Camera
@@ -393,3 +396,5 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_BOOT_JARS += \
     WfdCommon
+
+$(call inherit-product, device/lge/common/common.mk)
