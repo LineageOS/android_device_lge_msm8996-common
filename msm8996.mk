@@ -19,8 +19,8 @@
 $(call inherit-product-if-exists, vendor/lge/msm8996-common/msm8996-common-vendor.mk)
 
 # Overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
+DEVICE_PACKAGE_OVERLAYS		+= $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS		+= $(LOCAL_PATH)/overlay-lineage
 
 # Properties
 -include $(LOCAL_PATH)/vendor_prop.mk
@@ -29,8 +29,12 @@ PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
 # Screen density
-PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := 560dpi
+PRODUCT_AAPT_CONFIG		:= normal
+PRODUCT_AAPT_PREF_CONFIG	:= 560dpi
+
+# Location of MAC addresses in misc
+HWADDRS_OFFSET_WIFI		:= 0x6000
+HWADDRS_OFFSET_BLUETOOTH	:= 0x8000
 
 # Add WiFi Config files
 # TEMP: These are broken right now
@@ -111,7 +115,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
     android.hardware.bluetooth@1.0-service \
-    hwaddrs \
     libbt-vendor
 
 # Camera
@@ -404,3 +407,5 @@ PRODUCT_BOOT_JARS += \
 # CryptfsHW
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.cryptfshw@1.0-service-qti.qsee
+
+$(call inherit-product, device/lge/common/common.mk)

@@ -21,8 +21,6 @@ allow vendor_init {
   proc_max_map_count
   proc_panic
   sensors_data_file
-  wifi_data_file
-  bluetooth_data_file
 }:file { create getattr open read write setattr relabelfrom unlink };
 
 allow vendor_init sensors_data_file:dir relabelto;
