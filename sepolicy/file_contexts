@@ -1,8 +1,6 @@
 # Bluetooth
-/(vendor|system/vendor)/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
 /sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0
-/persist/\.baddr                                                    u:object_r:mnt_vendor_file:s0
 
 # Camera
 /data/misc/camera/cam_socket[0-9]                                   u:object_r:camera_socket:s0
@@ -93,7 +91,6 @@
 
 # WLAN
 /sys/module/bcmdhd/parameters/firmware_path                         u:object_r:sysfs_wlan_fwpath:s0
-/persist/\.macaddr                                                  u:object_r:mnt_vendor_file:s0
 
 # perfd
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.1-service.lge.msm8996         u:object_r:hal_power_default_exec:s0
