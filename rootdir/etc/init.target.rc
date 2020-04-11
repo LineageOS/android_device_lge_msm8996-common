@@ -46,9 +46,13 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     mount_all /vendor/etc/fstab.qcom
     swapon_all /vendor/etc/fstab.qcom
-    restorecon_recursive /sns
     restorecon_recursive /persist-lg
     restorecon_recursive /mpt
+
+    restorecon_recursive /sns
+    chmod 0775 /sns/cal                                       
+    chmod 0664 /sns/cal/sns.reg                                       
+    chown root system /sns/cal/sns.reg                                  
 
     mkdir /persist/rfs 0775 root system
     mkdir /persist/hlos_rfs 0775 root system
