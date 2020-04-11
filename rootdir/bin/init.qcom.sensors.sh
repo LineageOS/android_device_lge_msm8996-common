@@ -36,6 +36,10 @@ start_sensors()
         chmod -h 664 /persist/sensors/sensors_settings
         chown -h system.root /persist/sensors/sensors_settings
 
+        chmod -h 775 /sns/cal
+        chmod -h 664 /sns/cal/sns.reg
+        chown -h root.system /sns/cal/sns.reg
+
         mkdir -p /data/misc/sensors
         chmod -h 775 /data/misc/sensors
 
