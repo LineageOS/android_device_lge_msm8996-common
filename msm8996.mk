@@ -138,6 +138,7 @@ PRODUCT_PACKAGES += \
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.msm8996-system.rc \
     init.qcom.rc \
     init.qcom.sh \
     init.qcom.sensors.sh \

@@ -48,9 +48,6 @@ on early-init
     chmod 0620 /dev/kmsg
 
 on init
-    write /proc/sys/kernel/panic_on_oops 1
-    write /proc/sys/vm/max_map_count 1000000
-
     # Create cgroup mount point for memory
     mkdir /sys/fs/cgroup/memory/bg 0750 root system
     write /sys/fs/cgroup/memory/bg/memory.swappiness 140
