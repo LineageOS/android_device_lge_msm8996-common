@@ -395,6 +395,7 @@ PRODUCT_PACKAGES += \
     wlutil \
     wificond \
     wifilogd \
+    WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
 
