@@ -104,9 +104,6 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib/libmmcamera_ppeiscore.so|/system/vendor/lib/libshim_camera.so
 USE_CAMERA_STUB := true
 
-# CMHW
-BOARD_HARDWARE_CLASS += $(COMMON_PATH)/lineagehw
-
 # CNE and DPM
 BOARD_USES_QCNE := true
 
