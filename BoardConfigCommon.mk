@@ -103,9 +103,6 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
 
-# Encryption
-TARGET_HW_DISK_ENCRYPTION := true
-
 # FM
 BOARD_CUSTOM_FM_CONFIG := $(COMMON_PATH)/bluetooth/fm_vndcfg.txt
 BOARD_HAVE_BCM_FM := true
