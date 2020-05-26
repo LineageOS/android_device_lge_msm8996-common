@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "970f20ed_92dcedf7",
+        "filename": "msm8996.mk",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2020-05-26T00:34:18Z",
+      "side": 1,
+      "message": "tabs? why? nowhere else in this file are tabs used...",
+      "range": {
+        "startLine": 33,
+        "startChar": 19,
+        "endLine": 33,
+        "endChar": 21
+      },
+      "revId": "30d6b7797a545465878973facfb5c6ede3e6e605",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
