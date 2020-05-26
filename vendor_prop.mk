@@ -205,11 +205,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
-# Time services
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.timed.enable=true \
-    persist.delta_time.enable=true
-
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0 \

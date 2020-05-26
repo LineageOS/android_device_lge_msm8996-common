@@ -531,8 +531,6 @@ vendor/bin/thermal-engine
 vendor/lib64/libthermalioctl.so
 
 # Time services - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
--vendor/app/TimeService/TimeService.apk|18befa131d892d8dc878577b7da1b32e8cb48c67
-vendor/bin/time_daemon|b5523b7e074a4b8ced8387d90198f537e2ba13e3
 vendor/lib64/libtime_genoff.so|e2cef32a79f754b5a17012137cf39f53cd6e3f69
 vendor/lib/libtime_genoff.so|24f6064818bc53c5ea17a3608766e3cc1e889f64
 

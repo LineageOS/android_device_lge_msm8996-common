@@ -180,11 +180,6 @@ service vendor.thermal-engine /vendor/bin/thermal-engine -c /vendor/etc/thermal-
     socket thermal-recv-passive-client stream 0666 system system
     group system root diag
 
-service vendor.time_daemon /vendor/bin/time_daemon
-    class late_start
-    user root
-    group root
-
 service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
     user media
