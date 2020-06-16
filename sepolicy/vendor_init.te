@@ -24,3 +24,6 @@ allow vendor_init {
   wifi_data_file
   bluetooth_data_file
 }:file { create getattr open read write setattr relabelfrom unlink };
+
+allow vendor_init sensors_data_file:dir relabelto;
+allow vendor_init sensors_data_file:file relabelto;
