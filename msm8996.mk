@@ -174,6 +174,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     fastbootd
 
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += persist.sys.recovery_update=true
+
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
