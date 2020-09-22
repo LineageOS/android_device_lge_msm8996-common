@@ -208,6 +208,8 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-service
 
 # HIDL
+PRODUCT_ENFORCE_VINTF_MANIFEST_OVERRIDE := true
+
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0_system \
