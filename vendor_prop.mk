@@ -162,6 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.radio.rat_on=combine \
     persist.radio.redir_party_num=1 \
     persist.radio.sib16_support=1 \
+    persist.vendor.radio.mt_sms_ack=30 \
     ro.telephony.call_ring.multiple=false
 
 # Radio - Data/RMNet
