@@ -43,6 +43,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr \
     ro.rfkilldisabled=1
 
+# Bpf
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.ebpf.supported=1
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.notify_nfc=1 \
