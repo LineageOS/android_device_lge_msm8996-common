@@ -40,6 +40,9 @@ persist.vendor.audio.spkr.cal.duration=5
 ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
 ro.rfkilldisabled=1
 
+# BPF
+ro.kernel.ebpf.supported=1
+
 # Camera
 ro.camera.notify_nfc=1
 vidc.debug.perf.mode=2
