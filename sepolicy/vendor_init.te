@@ -13,6 +13,7 @@ allow vendor_init {
   nfc_data_file
   cnd_core_data_file
   sensors_data_file
+  system_data_file
   perfd_data_file
 }:dir { create search setattr getattr open read ioctl write add_name remove_name rmdir relabelfrom };
 
