@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e522f62_4cb1d806",
+        "filename": "sepolicy/vendor_init.te",
+        "patchSetId": 2
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 18205
+      },
+      "writtenOn": "2020-10-19T23:32:14Z",
+      "side": 1,
+      "message": "Note that google already does this on marlin, and we do the same on qcom/sepolicy-legacy",
+      "revId": "8dd0a29556883b09b4306f776f02c8c1e56b53bd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
