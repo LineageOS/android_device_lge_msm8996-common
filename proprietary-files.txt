@@ -75,6 +75,23 @@ etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
 # NFC firmware
 vendor/firmware/libpn548ad_fw.so:vendor/lib/libpn548ad_fw.so
 
+# Radio firmware
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/default/default/mcfg_hw.mbn|58df6d1657b77154cc3504220727d936df4a35dc
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45/ss/mcfg_hw.mbn|75ee9f6b2f499f1b868df1f0051377f12b3ff8ad
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/mdm9x45_/ss/mcfg_hw.mbn|4d1f168eb68d9fbad42a1b6d812142c3c1733e2a
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8996/la/ss/mcfg_hw.mbn|95c1e2c52f9d0246a39b48bc6c04d766672bc8db
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_hw/generic/common/msm8996/wp8/ss/mcfg_hw.mbn|a200ac73b2dcc60e9f6ae9155b6109d006823634
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/default/default/mcfg_sw.mbn|885ff1f916f12fa18dfb10661ca8ad920e2f20b0
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/row/gen_3gpp/mcfg_sw.mbn|136f132599e3308bcf9f761ca0cd2ed760ccaa6c
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/common/us_cellu/commerci/mcfg_sw.mbn|b05bd8ea0f25faa1905462262f7eac6b3f1c2063
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/non_volt/mcfg_sw.mbn|a49cdd970c546e8de668106e70348bc855a45bf7
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/att/volte/mcfg_sw.mbn|ab327392c808d1029a280c729eb95d866894de86
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/claro/commerci/mcfg_sw.mbn|4db9fe0e3a91672ed5de64478469b3ae746b97ff
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/sprint/commerci/mcfg_sw.mbn|83918ca8336f528d1d2fb3a1401fe48c142a6532
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/tmo/commerci/mcfg_sw.mbn|286f0878287717c1eaf7550139810c289fcc1a51
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/cdmaless/mcfg_sw.mbn|2b5341e1444991267317218e02b81fe5580bdea6
+vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn|9253d2970e4dc6456b538a0be729b4487da2c6f6
+
 # Sensors
 vendor/lib/libsensor_lge_cal.so
 vendor/lib64/libsensor_lge_cal.so
