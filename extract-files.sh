@@ -31,6 +31,14 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib/hw/camera.msm8996.so)
+        sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
+        ;;
+    esac
+}
+
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
