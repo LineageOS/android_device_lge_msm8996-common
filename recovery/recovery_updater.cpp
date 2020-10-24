@@ -184,9 +184,6 @@ Value * VerifyTrustZoneFn(const char *name, State *state, const std::vector<std:
     ret = 0;
     for (i = 0; i < argv.size(); i++) {
        LOG(INFO) << "\nComparing TZ version " << tz_version[i].c_str() << " == " << current_tz_version;
-       uiPrintf(state,"Comparing TZ versions:\n");
-       uiPrintf(state,"  Must be TZ version: %s\n", tz_version[i].c_str());
-       uiPrintf(state,"  Current TZ version: %s\n", current_tz_version);
         if (strncmp(tz_version[i].c_str(), current_tz_version, tz_version[i].length()) == 0) {
             ret = 1;
             break;
@@ -248,10 +245,7 @@ Value * VerifyMinTrustZoneFn(const char *name, State *state, const std::vector<s
 
     ret = 0;
     for (i = 0; i < argv.size(); i++) {
-       LOG(INFO) << "\nComparing TZ version " << tz_version[i].c_str() << " <= " << current_tz_version;
-       uiPrintf(state,"Comparing TZ versions:\n");
-       uiPrintf(state,"      Min TZ version: %s\n", tz_version[i].c_str());
-       uiPrintf(state,"  Current TZ version: %s\n", current_tz_version);
+       LOG(INFO) << "\nComparing Min TZ version " << tz_version[i].c_str() << " <= " << current_tz_version;
         if ( versionCompare(tz_version[i].c_str(), current_tz_version) <= 0 ) {
             ret = 1;
             break;
@@ -280,10 +274,7 @@ Value * VerifyMaxTrustZoneFn(const char *name, State *state, const std::vector<s
 
     ret = 0;
     for (i = 0; i < argv.size(); i++) {
-       LOG(INFO) << "\nComparing TZ version " << tz_version[i].c_str() << " >= " << current_tz_version;
-       uiPrintf(state,"Comparing TZ versions:\n");
-       uiPrintf(state,"      Max TZ version: %s\n", tz_version[i].c_str());
-       uiPrintf(state,"  Current TZ version: %s\n", current_tz_version);
+       LOG(INFO) << "\nComparing Max TZ version " << tz_version[i].c_str() << " >= " << current_tz_version;
         if ( versionCompare(tz_version[i].c_str(), current_tz_version) >= 0 ) {
             ret = 1;
             break;
