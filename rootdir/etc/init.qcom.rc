@@ -564,17 +564,17 @@ on post-fs-data
     mkdir /persist-lg/callfw 0770 radio radio
     mkdir /persist-lg/kmstore 0770 system system
     mkdir /persist-lg/lgdata 0771 radio radio
-    mkdir /persist-lg/lgdrm 0770 lgdrm lgdrm_acc
+    mkdir /persist-lg/lgdrm 0770 4001 4002
     mkdir /persist-lg/widevine 0770 drm system
     mkdir /persist-lg/firmware 0771 system system
     mkdir /persist-lg/secclk 0700 system system
     mkdir /persist-lg/chargerlogo 0770 system system
-    mkdir /persist-lg/multimedia 0770 media divxdrm
-    mkdir /persist-lg/multimedia/nx 0770 media divxdrm
-    mkdir /persist-lg/multimedia/uma 0770 media divxdrm
-    mkdir /persist-lg/multimedia/scnt 0770 media divxdrm
-    mkdir /persist-lg/multimedia/scnt/sdadf 0770 media divxdrm
-    mkdir /persist-lg/mms 0770 system lgmms
+    mkdir /persist-lg/multimedia 0770 media 4003
+    mkdir /persist-lg/multimedia/nx 0770 media 4003
+    mkdir /persist-lg/multimedia/uma 0770 media 4003
+    mkdir /persist-lg/multimedia/scnt 0770 media 4003
+    mkdir /persist-lg/multimedia/scnt/sdadf 0770 media 4003
+    mkdir /persist-lg/mms 0770 system 7001
     mkdir /persist-lg/mmoprt 0771 system system
     mkdir /persist-lg/encryption 0771 system system
     mkdir /persist-lg/secureks 0770 system system
