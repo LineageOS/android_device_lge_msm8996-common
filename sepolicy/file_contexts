@@ -12,9 +12,6 @@
 # CPU tunable for EAS
 /sys/devices/system/cpu/cpu[0-3]/cpufreq/schedutil(/.*)?            u:object_r:sysfs_devices_system_cpu:s0
 
-# DPMD
-/system/bin/dpmd                                                    u:object_r:dpmd_exec:s0
-
 # Encryption metadata partition
 /dev/block/platform/soc/624000\.ufshc/by-name/encrypt               u:object_r:metadata_block_device:s0
 

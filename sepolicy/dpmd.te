@@ -1,2 +1,0 @@
-get_prop(dpmd, diag_prop);
-allow dpmd system_file:dir r_dir_perms;
