@@ -1,3 +1,0 @@
-allow msm_irqbalanced proc_irq:dir search;
-allow msm_irqbalanced proc_irq:file rw_file_perms;
-allow msm_irqbalanced self:capability { setuid setgid };
