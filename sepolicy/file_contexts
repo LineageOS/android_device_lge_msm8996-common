@@ -58,11 +58,30 @@
 /dev/pn54[478]                                                      u:object_r:nfc_device:s0
 
 # Persist
+/persist(/.*)?                                                      u:object_r:mnt_vendor_file:s0
 /persist-lg(/.*)?                                                   u:object_r:mediadrm_vendor_data_file:s0
 /persist/rct(.*)                                                    u:object_r:mnt_vendor_file:s0
 /persist/encryption_log                                             u:object_r:mnt_vendor_file:s0
 /persist/properties                                                 u:object_r:mnt_vendor_file:s0
 /persist/usf                                                        u:object_r:mnt_vendor_file:s0
+/persist/bluetooth(/.*)?                                            u:object_r:persist_bluetooth_file:s0
+/persist/drm(/.*)?                                                  u:object_r:persist_drm_file:s0
+/persist/sensors(/.*)?                                              u:object_r:sensors_persist_file:s0
+/persist/alarm(/.*)?                                                u:object_r:persist_alarm_file:s0
+/persist/time(/.*)?                                                 u:object_r:persist_time_file:s0
+/persist/data(/.*)?                                                 u:object_r:persist_drm_file:s0
+/persist/data/tz(/.*)?                                              u:object_r:persist_drm_file:s0
+/persist/data/sfs(/.*)?                                             u:object_r:persist_drm_file:s0
+/persist/qti_fp(/.*)?                                               u:object_r:persist_qti_fp_file:s0
+/persist/hlos_rfs(/.*)?                                             u:object_r:persist_rfs_shared_hlos_file:s0
+/persist/display(/.*)?                                              u:object_r:persist_display_file:s0
+/persist/rfs(/.*)?                                                  u:object_r:persist_rfs_file:s0
+/persist/speccfg(/.*)?                                              u:object_r:regionalization_file:s0
+/persist/misc(/.*)?                                                 u:object_r:persist_misc_file:s0
+/persist/bms(/.*)?                                                  u:object_r:persist_bms_file:s0
+/persist/vpp(/.*)?                                                  u:object_r:persist_vpp_file:s0
+/persist/secnvm(/.*)?                                               u:object_r:persist_secnvm_file:s0
+/persist/FTM_AP(/.*)?                                               u:object_r:vendor_persist_mmi_file:s0
 
 # Power management
 /sys/devices/soc/qpnp-smbcharger-16/power_supply/battery(/.*)?              u:object_r:sysfs_battery_supply:s0
