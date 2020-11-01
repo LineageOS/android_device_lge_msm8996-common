@@ -109,7 +109,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(COMMON_PATH)/bluetooth
 
 # Offmode Charging
 WITH_CM_CHARGER := true
-BOARD_CHARGER_DISABLE_INIT_BLANK := true
 BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Camera
