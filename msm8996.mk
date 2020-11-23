@@ -82,21 +82,17 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
     android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
-    android.hardware.audio.effect@2.0-service \
     android.hardware.soundtrigger@2.0-impl \
-    android.hardware.soundtrigger@2.0-service \
     android.hardware.audio@6.0 \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.common@6.0 \
     android.hardware.audio.common@6.0-util \
     android.hardware.audio.effect@6.0 \
     android.hardware.audio.effect@6.0-impl \
-    audiod \
     audio.a2dp.default \
     audio.primary.msm8996 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_amplifier.msm8996 \
     libaacwrapper \
     libaudio-resampler \
     libqcompostprocbundle \
@@ -125,12 +121,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_res_images
 
-# Connectivity Engine support (CNE)
-PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
-
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -150,14 +140,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
-    copybit.msm8996 \
     gralloc.msm8996 \
     hdmi_cec.msm8996 \
     hwcomposer.msm8996 \
     memtrack.msm8996 \
     libdisplayconfig \
-    libgenlock \
-    liboverlay \
     libqdMetaData.system
 
 # Doze mode
@@ -214,11 +201,8 @@ PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.base@1.0_system \
     android.hidl.manager@1.0 \
-    android.hidl.manager@1.0-java \
     libhidltransport \
-    libhidltransport.vendor \
-    libhwbinder \
-    libhwbinder.vendor
+    libhwbinder
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
@@ -232,11 +216,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IPACM_cfg.xml \
     ipacm
-
-# IPv6
-PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
 
 # IMS
 PRODUCT_PACKAGES += \
@@ -289,18 +268,13 @@ PRODUCT_COPY_FILES += \
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
-    libdashplayer \
-    libdivxdrmdecrypt \
     libhypv_intercept \
     libmm-omxcore \
-    libextmedia_jni \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
     libOmxEvrcEnc \
     libOmxQcelp13Enc \
-    libOmxSwVencMpeg4 \
-    libOmxSwVencHevc \
     libOmxVdec \
     libOmxVdecHevc \
     libOmxVenc \
@@ -323,13 +297,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml
 
-# RCS
-PRODUCT_PACKAGES += \
-    rcs_service_aidl \
-    rcs_service_aidl.xml \
-    rcs_service_api \
-    rcs_service_api.xml
-
 # Recovery
 PRODUCT_PACKAGES += \
     librecovery_updater_msm8996
@@ -340,7 +307,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    liblge \
     libprotobuf-cpp-full \
     librmnetctl
 
@@ -406,9 +372,7 @@ PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libwpa_client \
     hostapd \
-    wlutil \
     wificond \
-    wifilogd \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
