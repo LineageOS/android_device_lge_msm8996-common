@@ -31,6 +31,9 @@ function blob_fixup() {
     system/lib/libdovi.so|system/lib64/libdovi.so)
         "${PATCHELF_0_18}" --add-needed "libgui_shim.so" "${2}"
         ;;
+    system/lib/libkeystore_binder.so|system/lib64/libkeystore_binder.so)
+        "${PATCHELF_0_18}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+        ;;
     system/lib/liblgkm.so|system/lib64/liblgkm.so)
         grep -q libbase_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libbase_shim.so" "${2}"
         ;;
