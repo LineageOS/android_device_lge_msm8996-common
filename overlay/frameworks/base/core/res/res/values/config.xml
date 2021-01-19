@@ -338,4 +338,10 @@
         <item>0:2:15</item>
     </string-array>
 
+    <!-- The list of components which should be automatically disabled for a specific device. -->
+    <string-array name="config_deviceDisabledComponents" translatable="false">
+        <item>org.lineageos.snap/com.android.camera.SetActivitiesCameraReceiver</item>
+        <item>com.android.camera2/com.android.camera.SetActivitiesCameraReceiver</item>
+    </string-array>
+
 </resources>
