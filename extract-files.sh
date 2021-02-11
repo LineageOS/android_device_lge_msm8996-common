@@ -29,7 +29,7 @@ function blob_fixup() {
         sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
         ;;
     system/lib/libdovi.so|system/lib64/libdovi.so)
-        "${PATCHELF_0_18}" --add-needed "libgui_shim.so" "${2}"
+        grep -q libgui_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libgui_shim.so" "${2}"
         ;;
     system/lib/libkeystore_binder.so|system/lib64/libkeystore_binder.so)
         "${PATCHELF_0_18}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
@@ -62,17 +62,17 @@ function blob_fixup() {
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         ;;
     vendor/lib/libdovi.so|vendor/lib64/libdovi.so)
-        "${PATCHELF_0_18}" --add-needed "libgui_shim_vendor.so" "${2}"
+        grep -q libgui_shim_vendor.so "${2}" || "${PATCHELF_0_18}" --add-needed "libgui_shim_vendor.so" "${2}"
         ;;
     vendor/lib/libmmcamera_faceproc2.so)
         "${PATCHELF_0_18}" --set-soname "libmmcamera_faceproc2.so" "${2}"
         ;;
     vendor/lib/libmmcamera_hdr_gb_lib.so)
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
-        "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
+        grep -q liblog.so "${2}" || "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
     vendor/lib/libfpfactory_jni.so|vendor/lib/liblgae_main.so|vendor/lib/liblgawb_main.so|vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so|vendor/lib64/libfpfactory_jni.so)
-        "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
+        grep -q liblog.so "${2}" || "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
     vendor/lib/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
