@@ -15,6 +15,9 @@
 # limitations under the License.
 #
 
+# Inherit from common lge product
+$(call inherit-product-if-exists, device/lge/common/common.mk)
+
 # Inherit proprietary blobs
 $(call inherit-product-if-exists, vendor/lge/msm8996-common/msm8996-common-vendor.mk)
 
