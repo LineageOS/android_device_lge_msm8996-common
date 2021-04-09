@@ -207,4 +207,4 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm8996
 
 # inherit from the proprietary version
--include vendor/lge/msm8996-common/BoardConfigVendor.mk
+include vendor/lge/msm8996-common/BoardConfigVendor.mk
