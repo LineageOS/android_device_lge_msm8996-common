@@ -132,10 +132,6 @@ PRODUCT_PACKAGES += \
     libshim_camera \
     Snap
 
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images
-
 # Device init scripts
 PRODUCT_PACKAGES += \
     fstab.qcom \
