@@ -133,3 +133,6 @@
 
 # Thermal
 /sys/devices(/platform)?/soc/[a-f0-9]+.qcom,msm-thermal/uio/uio[0-9]+(/.*)?        u:object_r:sysfs_uio_file:s0
+
+# Vulkan
+/(vendor|system/vendor)/lib(64)?/vulkan\.[a-z0-9]*\.so             u:object_r:same_process_hal_file:s0
