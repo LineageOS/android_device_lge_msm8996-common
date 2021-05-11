@@ -68,6 +68,10 @@ lib64/hw/lgkm.default.so
 lib64/hw/lgkm.msm8996.so
 lib64/liblgkm.so
 
+# Vulkan
+vendor/lib/hw/vulkan.msm8996.so
+vendor/lib64/hw/vulkan.msm8996.so
+
 # Misc firmware
 etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw:vendor/firmware/leia_pm4_470.fw
