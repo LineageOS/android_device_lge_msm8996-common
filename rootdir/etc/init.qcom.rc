@@ -653,19 +653,19 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.rfs_access /vendor/bin/rfs_access
     class core
     user root
     group system net_raw
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.tftp_server /vendor/bin/tftp_server
     class core
     user root
     group root system
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service ftmd /system/bin/ftmdaemon
     class late_start
@@ -691,11 +691,11 @@ service qmuxd /system/bin/qmuxd
     class main
     user radio
     group radio audio bluetooth gps nfc oem_2901
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.netmgrd /vendor/bin/netmgrd
     class main
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.ipacm-diag /vendor/bin/ipacm-diag
     class main
@@ -707,13 +707,13 @@ service vendor.ipacm /vendor/bin/ipacm
     class main
     user radio
     group radio inet
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.qti /vendor/bin/qti
     class main
     user radio
     group radio net_raw oem_2901 usb net_admin
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 service vendor.graphics-sh /vendor/bin/init.qcom.graphics.sh
     class core
@@ -752,7 +752,7 @@ service vendor.sensors /vendor/bin/sensors.qti
     user root
     group root system
     disabled
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 # FST Manager can be started by property_set("ctl.start", "fstman:<hostap ctrl iface>");
 service fstman /system/bin/fstman -B -ddd -c /data/misc/wifi/fstman.ini
@@ -771,7 +771,7 @@ on property:netd.fstman.start=false
 service loc_launcher /vendor/bin/loc_launcher
     class late_start
     group gps
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 on property:crypto.driver.load=1
      insmod /system/lib/modules/qce.ko
@@ -833,7 +833,7 @@ service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqb
     class core
     user root
     group root
-    writepid /dev/cpuset/system-background/tasks
+    task_profiles ServiceCapacityLow
 
 # oneshot service that loads fpc tz app in early phase.
 service fpc_early_loader /vendor/bin/fpc_early_loader
