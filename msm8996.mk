@@ -161,6 +161,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.3-service.clearkey
 
+# FlipFlap
+PRODUCT_PACKAGES += \
+    FlipFlap
+
 # Recovery
 PRODUCT_PACKAGES += \
     fastbootd
