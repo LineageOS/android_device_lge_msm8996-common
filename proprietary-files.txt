@@ -393,14 +393,6 @@ system/lib64/liblgkm.so
 -vendor/lib/hw/keystore.msm8996.so
 -vendor/lib64/hw/keystore.msm8996.so
 
-# Listen
-vendor/lib/hw/sound_trigger.primary.msm8996.so
-vendor/lib/libadpcmdec.so
-vendor/lib/libsmwrapper.so
-vendor/lib/vendor.qti.voiceprint@1.0.so
-vendor/lib64/hw/sound_trigger.primary.msm8996.so
-vendor/lib64/vendor.qti.voiceprint@1.0.so
-
 # Media - from daisy - QKQ1.191002.002
 system/lib/libFileMux.so|1c713da8d18f03deb33c3211761fc07dd57d6946
 system/lib/libOmxMux.so|6f1a1f5fc8f9a8683e6fb719b6fe51a68c6b0e84
