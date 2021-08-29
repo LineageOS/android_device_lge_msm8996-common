@@ -344,4 +344,6 @@
         <item>com.android.camera2/com.android.camera.SetActivitiesCameraReceiver</item>
     </string-array>
 
+    <bool name="config_enableWifiDisplay">true</bool>
+
 </resources>
