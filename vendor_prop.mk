@@ -206,6 +206,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sensors.wul_delay=3000 \
     persist.sensors.onhand.en=0
 
+# Skia
+# (b/183612348): Enable skia reduceOpsTaskSplitting
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    renderthread.skia.reduceopstasksplitting=true
+
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
