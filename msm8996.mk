@@ -103,6 +103,7 @@ PRODUCT_PACKAGES += \
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
+PRODUCT_SYSTEM_SERVER_COMPILER_FILTER := speed-profile
 
 # Device-specific Init-files
 PRODUCT_PACKAGES += \
