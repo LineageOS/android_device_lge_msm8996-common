@@ -19,8 +19,6 @@
   <string name="always_enabled_summary">Estigues atent als esdeveniments del sensor tan aviat com s\'apagui la pantalla</string>
   <!-- Tilt sensor -->
   <string name="tilt_sensor_title">Sensor d\'inclinació</string>
-  <string name="pick_up_title">Contesta</string>
-  <string name="pick_up_summary">Mostra les notificacions quan es reculli el dispositiu</string>
   <!-- Proximity sensor -->
   <string name="priximity_sensor_title">Sensor de proximitat</string>
   <string name="hand_wave_gesture_title">Passa la mà</string>

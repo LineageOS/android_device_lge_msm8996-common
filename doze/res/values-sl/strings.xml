@@ -19,8 +19,6 @@
   <string name="always_enabled_summary">Poslušaj za dogodke tipal, takoj ko se zaslon izklopi</string>
   <!-- Tilt sensor -->
   <string name="tilt_sensor_title">Tipalo nagiba</string>
-  <string name="pick_up_title">Dvig</string>
-  <string name="pick_up_summary">Utripaj obvestila ob dvigu naprave</string>
   <!-- Proximity sensor -->
   <string name="priximity_sensor_title">Tipalo bližine</string>
   <string name="hand_wave_gesture_title">Mahanje z roko</string>

@@ -19,8 +19,6 @@
   <string name="always_enabled_summary">Lyt efter sensoraktiviteter så snart skærmen slukkes</string>
   <!-- Tilt sensor -->
   <string name="tilt_sensor_title">Tilt-sensor</string>
-  <string name="pick_up_title">Samle op</string>
-  <string name="pick_up_summary">Blink med notifikationerne når enheden tages op</string>
   <!-- Proximity sensor -->
   <string name="priximity_sensor_title">Berøringssensor</string>
   <string name="hand_wave_gesture_title">Vink med hånden</string>

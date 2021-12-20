@@ -17,8 +17,6 @@
   <string name="ambient_display_summary">Scherm aan bij het ontvangen van meldingen</string>
   <string name="always_enabled_title">Altijd inschakelen</string>
   <!-- Tilt sensor -->
-  <string name="pick_up_title">Oppakken</string>
-  <string name="pick_up_summary">Meldingen laten knipperen bij oppakken</string>
   <!-- Proximity sensor -->
   <string name="priximity_sensor_title">Nabijheidssensor</string>
   <string name="hand_wave_gesture_title">Handgebaar</string>

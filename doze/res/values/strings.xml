@@ -29,8 +29,6 @@
 
     <!-- Tilt sensor -->
     <string name="tilt_sensor_title">Tilt sensor</string>
-    <string name="pick_up_title">Pick up</string>
-    <string name="pick_up_summary">Pulse notifications when device is picked up</string>
 
     <!-- Proximity sensor -->
     <string name="priximity_sensor_title">Proximity sensor</string>

@@ -18,8 +18,6 @@
   <string name="always_enabled_title">Permitir sempre</string>
   <!-- Tilt sensor -->
   <string name="tilt_sensor_title">Sensor de inclinação</string>
-  <string name="pick_up_title">Pegar</string>
-  <string name="pick_up_summary">Mostrar as notificações ao pegar no dispositivo</string>
   <!-- Proximity sensor -->
   <string name="priximity_sensor_title">Sensor de proximidade</string>
   <string name="hand_wave_gesture_title">Passar a mão</string>
