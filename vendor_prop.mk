@@ -63,7 +63,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.soc.model=MSM8996
 
 # CNE and DPM
-PRODUCT_PROPERTY_OVERRIDES += \
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     persist.cne.feature=1 \
     persist.dpm.feature=0
 
