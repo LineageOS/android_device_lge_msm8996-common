@@ -131,6 +131,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # OpenGLES
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.renderengine.backend=threaded \
     ro.opengles.version=196610
 
 # Perf
