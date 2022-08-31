@@ -1,3 +1,6 @@
+# Audio
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.lge_msm8996           u:object_r:hal_audio_default_exec:s0
+
 # Bluetooth
 /dev/brcm_bt_drv                                                    u:object_r:hci_attach_dev:s0
 /persist/\.baddr                                                    u:object_r:mnt_vendor_file:s0
