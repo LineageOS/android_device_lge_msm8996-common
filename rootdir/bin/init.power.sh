@@ -4,7 +4,6 @@
 # local definitions
 
 soc_revision=`cat /sys/devices/soc0/revision`
-soc_id=`cat /sys/devices/soc0/soc_id`
 
 ################################################################################
 
@@ -28,6 +27,7 @@ write /sys/module/msm_thermal/core_control/enabled 0
 write /sys/devices/system/cpu/cpu0/online 1
 write /sys/devices/system/cpu/cpu2/online 1
 
+# Tweak interactive governor before trying to switch to schedutil if EAS is available
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor interactive
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_migration_notif 1
@@ -41,13 +41,6 @@ write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 19000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/max_freq_hysteresis 79000
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 300000
 write /sys/devices/system/cpu/cpu0/cpufreq/interactive/ignore_hispeed_on_notif 0
-
-# EAS: Capping the max frequency of silver core to 1.6GHz
-if [ "$soc_id" == "246" ]; then
-  write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1593600
-else
-  write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 2188800
-fi
 
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor interactive
 write /sys/devices/system/cpu/cpu2/cpufreq/interactive/use_sched_load 1
@@ -69,11 +62,14 @@ write /sys/devices/system/cpu/cpu2/cpufreq/interactive/ignore_hispeed_on_notif 0
 write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor "schedutil"
 write /sys/devices/system/cpu/cpu2/cpufreq/scaling_governor "schedutil"
 
-# set schedutil adjustments
-write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 10000
-write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 250
-write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 10000
-write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 250
+# set schedutil adjustments, based on the "Balanced" Spectrum profile for LGE_8996
+# CPU0 (little core cluster) will boost slightly more than CPU2 (big core cluster)
+# since the LITTLE 1.2GHz cap from the Balanced profile is where they start
+# losing efficiency.
+write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/down_rate_limit_us 1000
+write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/up_rate_limit_us 1750
+write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/down_rate_limit_us 1000
+write /sys/devices/system/cpu/cpu2/cpufreq/schedutil/up_rate_limit_us 2250
 
 # re-enable thermal hotplug
 write /sys/module/msm_thermal/core_control/enabled 1
@@ -144,13 +140,6 @@ fi
 # Enable all LPMs by default
 # This will enable C4, D4, D3, E4 and M3 LPMs
 write /sys/module/lpm_levels/parameters/sleep_disabled N
-
-# On debuggable builds, enable console_suspend if uart is enabled to save power
-# Otherwise, disable console_suspend to get better logging for kernel crashes
-if [[ $(getprop ro.debuggable) == "1" && ! -e /sys/class/tty/ttyHSL0 ]]
-then
-    write /sys/module/printk/parameters/console_suspend N
-fi
 
 # Signal perfd that boot has completed
 setprop sys.post_boot.parsed 1
