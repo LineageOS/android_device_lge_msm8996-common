@@ -18,29 +18,6 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
-#pragma push_macro("PROPERTY_VALUE_MAX")
-
-#include <cutils/properties.h>
-#include <string.h>
-
-inline const char* BtmGetDefaultName()
-{
-	char product_name[PROPERTY_VALUE_MAX];
-	property_get("ro.product.name", product_name, "");
-
-	if (strstr(product_name, "h1"))
-		return "LG G5";
-	if (strstr(product_name, "elsa"))
-		return "LG V20";
-	if (strstr(product_name, "lucye"))
-		return "LG G6";
-
-	return "";
-}
-
-#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
-
-#pragma pop_macro("PROPERTY_VALUE_MAX")
 
 #endif
