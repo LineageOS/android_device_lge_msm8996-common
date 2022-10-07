@@ -38,5 +38,9 @@ genfscon sysfs /devices/soc/7411000.qusb/power_supply               u:object_r:s
 genfscon sysfs /devices/soc/757a000.i2c/i2c-6/6-0028/power_supply   u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/75b5000.i2c/i2c-7/7-001d/power_supply   u:object_r:sysfs_batteryinfo:s0
 
+# LEDs
+genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-03/400f000.qcom,spmi:qcom,pmi8994@3:qcom,haptics@c000/leds/vibrator   u:object_r:sysfs_leds:s0
+genfscon sysfs /devices/soc/74a4900.sdhci/leds                                                                                    u:object_r:sysfs_leds:s0
+
 # ProcFS
 genfscon proc /sys/vm/dirty_writeback_centisecs                     u:object_r:proc_dirty:s0
