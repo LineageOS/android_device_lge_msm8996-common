@@ -24,19 +24,19 @@ fi
 function blob_fixup() {
     case "${1}" in
     system/lib/lib-imscamera.so)
-        "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+        grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
         ;;
     system/lib/lib-imsvideocodec.so)
-        "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+        grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
         ;;
     system/lib64/lib-imscamera.so)
-        "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+        grep -q "libgui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
         ;;
     system/lib64/lib-imsvideocodec.so)
-        "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
+        grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libui_shim.so" "${2}"
         ;;
     system/lib64/lib-imsvt.so)
-        "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
+        grep -q "libui_shim.so" "${2}" || "${PATCHELF}" --add-needed "libgui_shim.so" "${2}"
         ;;
     system_ext/etc/init/dpmd.rc)
         sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
