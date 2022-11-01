@@ -147,6 +147,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.text_large_cache_width=3072 \
     ro.hwui.text_large_cache_height=2048
 
+# IMS
+PRODUCT_PRODUCT_OVERRIDES += \
+    ro.telephony.block_binder_thread_on_incoming_calls=false
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
