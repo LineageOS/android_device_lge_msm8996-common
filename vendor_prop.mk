@@ -39,7 +39,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.spkr.cal.duration=5
 
 # Bluetooth
-PRODUCT_PRODUCT_OVERRIDES += \
+PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.profile.asha.central.enabled=true \
     bluetooth.profile.a2dp.source.enabled=true \
     bluetooth.profile.avrcp.target.enabled=true \
@@ -60,9 +60,7 @@ PRODUCT_PRODUCT_OVERRIDES += \
     bluetooth.profile.pbap.server.enabled=true \
     bluetooth.profile.sap.server.enabled=true \
     bluetooth.profile.tbs.server.enabled=true \
-    bluetooth.profile.vc.server.enabled=true
-
-PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.profile.vc.server.enabled=true \
     ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr \
     ro.rfkilldisabled=1
 
