@@ -156,6 +156,10 @@ include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
+# Verity
+# Only needed for signing
+BOARD_AVB_ENABLE := false
+
 # Wi-Fi
 BOARD_WLAN_DEVICE := bcmdhd
 BOARD_HOSTAPD_DRIVER := NL80211
