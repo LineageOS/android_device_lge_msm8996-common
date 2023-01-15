@@ -1,0 +1,7 @@
+define(`uim_sock_ipc_ioctls', `{
+TCGETS
+TCSETS
+TCFLSH
+TIOCSETD
+IOCTLUNKNOWN
+}')
