@@ -510,10 +510,12 @@ on post-fs-data
     # Configure bluetooth
     chmod 0660 /proc/bluetooth/sleep/lpm
     chmod 0660 /proc/bluetooth/sleep/btwrite
+    chmod 0660 /proc/bluetooth/sleep/preproto
     chmod 0660 /sys/class/rfkill/rfkill0/state
     chmod 0660 /sys/class/rfkill/rfkill0/type
     chown bluetooth bluetooth /proc/bluetooth/sleep/lpm
     chown bluetooth bluetooth /proc/bluetooth/sleep/btwrite
+    chown bluetooth bluetooth /proc/bluetooth/sleep/preproto
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/state
     chown bluetooth net_bt /sys/class/rfkill/rfkill0/type
 
@@ -608,6 +610,14 @@ on post-fs-data
     # Thermal Daemon
     chown system system /sys/class/leds/lcd-backlight/thermald_status
     chmod 0644 /sys/class/leds/lcd-backlight/thermald_status
+
+# brcm-uim-sysfs (BT/FM/ANT+)
+service uim /system/vendor/bin/brcm-uim-sysfs
+    class late_start
+    user root
+    group bluetooth net_bt
+    seclabel u:r:uim:s0
+    writepid /dev/cpuset/system-background/tasks
 
 service ssr_setup /system/bin/ssr_setup
     oneshot

@@ -1,0 +1,15 @@
+type uim, domain;
+
+rw_dir_file(uim, sysfs)
+rw_dir_file(uim, brcm_ldisc_sysfs)
+get_prop(uim, bluetooth_prop)
+allow uim brcm_uim_exec:file { entrypoint read execute };
+allow uim bluetooth_data_file:file { read open };
+allow uim hci_attach_dev:chr_file { read write ioctl open };
+allow uim self:capability { net_admin dac_override };
+allow uim sysfs_bluetooth_writable:dir search;
+allow uim sysfs_bluetooth_writable:file { read write open };
+allowxperm uim hci_attach_dev:chr_file ioctl uim_sock_ipc_ioctls;
+
+# Access to qseecomd
+allow uim tee_device:chr_file rw_file_perms;
