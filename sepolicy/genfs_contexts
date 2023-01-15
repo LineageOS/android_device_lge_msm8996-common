@@ -1,6 +1,12 @@
 # Bluetooth
 genfscon proc /bluetooth/sleep/lpm                   u:object_r:proc_bluetooth_writable:s0
 genfscon proc /bluetooth/sleep/btwrite               u:object_r:proc_bluetooth_writable:s0
+genfscon proc /bluetooth/sleep/preproto              u:object_r:proc_bluetooth_writable:s0
+
+genfscon sysfs /devices/platform/bcm_ldisc/bt_err        u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/bcm_ldisc/fm_err        u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/bcm_ldisc/install       u:object_r:sysfs_bluetooth_writable:s0
+genfscon sysfs /devices/platform/bcm_ldisc/snoop_enable  u:object_r:sysfs_bluetooth_writable:s0
 #genfscon sysfs /class/rfkill/rfkill0/state           u:object_r:sysfs_bluetooth_writable:s0
 
 # CPU
