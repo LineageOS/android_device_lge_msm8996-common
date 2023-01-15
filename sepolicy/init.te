@@ -15,3 +15,9 @@ allow init property_socket:property_service set;
 
 #allow init firmware_file:dir { create_dir_perms setattr };
 #allow firmware_file rootfs:filesystem associate;
+
+# BCRM Bluetooth
+allow init hci_attach_dev:chr_file rw_file_perms;
+allow init brcm_uim_exec:file { execute getattr read open };
+allow init brcm_ldisc_sysfs:lnk_file { read };
+allow init uim:process { siginh noatsecure transition rlimitinh };
