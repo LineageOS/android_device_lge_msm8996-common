@@ -1,0 +1,5 @@
+define(`TCGETS', `0x00005401')
+define(`TCSETS', `0x00005402')
+define(`TCFLSH', `0x0000540b')
+define(`TIOCSETD', `0x00005423')
+define(`IOCTLUNKNOWN', `0x000055c8')
