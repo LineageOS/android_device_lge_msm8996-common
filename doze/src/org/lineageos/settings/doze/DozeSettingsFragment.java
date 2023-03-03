@@ -1,6 +1,6 @@
 /*
- * Copyright (c) 2015 The CyanogenMod Project
- *               2017-2018 The LineageOS Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ *               2017-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,7 +25,6 @@ import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -45,38 +44,64 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         CompoundButton.OnCheckedChangeListener {
 
     private TextView mTextView;
+    private View mSwitchBar;
 
-    private Switch mSwitch;
+    private SwitchPreference mAlwaysOnDisplayPreference;
 
     private SwitchPreference mPickUpPreference;
-    private SwitchPreference mTiltAlwaysPreference;
     private SwitchPreference mHandwavePreference;
     private SwitchPreference mPocketPreference;
-    private SwitchPreference mProximityAlwaysPreference;
 
-    private ContentObserver mDozeObserver = new ContentObserver(new Handler()) {
-        @Override
-        public void onChange(boolean selfChange) {
-            super.onChange(selfChange);
-
-            boolean enabled = Utils.isDozeEnabled(getActivity());
-
-            updateSwitches(Utils.isDozeEnabled(getActivity()));
-            DozeReceiver.notifyChanged(getActivity());
-        }
-    };
-
-    static String getDozeSummary(Context context) {
-        if (Utils.isDozeEnabled(context)) {
-            return context.getString(R.string.ambient_display_summary_on);
-        }
-        return context.getString(R.string.ambient_display_summary_off);
-    }
+    private Handler mHandler = new Handler();
 
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        getActivity().getActionBar().setDisplayHomeAsUpEnabled(true);
+    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
+        addPreferencesFromResource(R.xml.doze_settings);
+        final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        SharedPreferences prefs = getActivity().getSharedPreferences("doze_settings",
+                Activity.MODE_PRIVATE);
+        if (savedInstanceState == null && !prefs.getBoolean("first_help_shown", false)) {
+            showHelp();
+        }
+
+        boolean dozeEnabled = Utils.isDozeEnabled(getActivity());
+
+        mAlwaysOnDisplayPreference = (SwitchPreference) findPreference(Utils.ALWAYS_ON_DISPLAY);
+        mAlwaysOnDisplayPreference.setEnabled(dozeEnabled);
+        mAlwaysOnDisplayPreference.setChecked(Utils.isAlwaysOnEnabled(getActivity()));
+        mAlwaysOnDisplayPreference.setOnPreferenceChangeListener(this);
+
+        PreferenceCategory tiltSensorCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_TILT_SENSOR);
+        PreferenceCategory proximitySensorCategory =
+                (PreferenceCategory) getPreferenceScreen().findPreference(Utils.CATEG_PROX_SENSOR);
+
+        mPickUpPreference = (SwitchPreference) findPreference(Utils.GESTURE_PICK_UP_KEY);
+        mPickUpPreference.setEnabled(dozeEnabled);
+        mPickUpPreference.setOnPreferenceChangeListener(this);
+
+        mHandwavePreference = (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
+        mHandwavePreference.setEnabled(dozeEnabled);
+        mHandwavePreference.setOnPreferenceChangeListener(this);
+
+        mPocketPreference = (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
+        mPocketPreference.setEnabled(dozeEnabled);
+        mPocketPreference.setOnPreferenceChangeListener(this);
+
+        // Hide proximity sensor related features if the device doesn't support them
+        if (!Utils.getProxCheckBeforePulse(getActivity())) {
+            getPreferenceScreen().removePreference(proximitySensorCategory);
+        }
+
+        // Hide AOD if not supported and set all its dependents otherwise
+        if (!Utils.alwaysOnDisplayAvailable(getActivity())) {
+            getPreferenceScreen().removePreference(mAlwaysOnDisplayPreference);
+        } else {
+            tiltSensorCategory.setDependency(Utils.ALWAYS_ON_DISPLAY);
+            proximitySensorCategory.setDependency(Utils.ALWAYS_ON_DISPLAY);
+        }
     }
 
     @Override
@@ -85,59 +110,6 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         final View view = LayoutInflater.from(getContext()).inflate(R.layout.doze, container, false);
         ((ViewGroup) view).addView(super.onCreateView(inflater, container, savedInstanceState));
         return view;
-    }
-
-    @Override
-    public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
-        addPreferencesFromResource(R.xml.doze_settings);
-        final ActionBar actionBar = getActivity().getActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-
-        if (savedInstanceState == null && !getActivity()
-                .getSharedPreferences("doze_settings", Activity.MODE_PRIVATE)
-                .getBoolean("first_help_shown", false)) {
-            showHelp();
-        }
-
-        mPickUpPreference =
-                (SwitchPreference) findPreference(Utils.PICK_UP_KEY);
-        mPickUpPreference.setOnPreferenceChangeListener(this);
-
-        mTiltAlwaysPreference =
-                (SwitchPreference) findPreference(Utils.TILT_ALWAYS_KEY);
-        mTiltAlwaysPreference.setOnPreferenceChangeListener(this);
-
-        mHandwavePreference =
-                (SwitchPreference) findPreference(Utils.GESTURE_HAND_WAVE_KEY);
-        mHandwavePreference.setOnPreferenceChangeListener(this);
-
-        mPocketPreference =
-                (SwitchPreference) findPreference(Utils.GESTURE_POCKET_KEY);
-        mPocketPreference.setOnPreferenceChangeListener(this);
-
-        mProximityAlwaysPreference =
-                (SwitchPreference) findPreference(Utils.PROXIMITY_ALWAYS_KEY);
-        mProximityAlwaysPreference.setOnPreferenceChangeListener(this);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        getActivity().getContentResolver().registerContentObserver(
-                Utils.DOZE_ENABLED_URI, false, mDozeObserver);
-        updateSwitches(Utils.isDozeEnabled(getActivity()));
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        getActivity().getContentResolver().unregisterContentObserver(mDozeObserver);
-    }
-
-    private void updateSwitches(boolean enabled) {
-        mPickUpPreference.setEnabled(enabled);
-        mHandwavePreference.setEnabled(enabled);
-        mPocketPreference.setEnabled(enabled);
     }
 
     @Override
@@ -150,39 +122,45 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         mTextView.setText(getString(dozeEnabled ?
                 R.string.switch_bar_on : R.string.switch_bar_off));
 
-        View switchBar = view.findViewById(R.id.switch_bar);
-        Switch switchWidget = switchBar.findViewById(android.R.id.switch_widget);
+        mSwitchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = mSwitchBar.findViewById(android.R.id.switch_widget);
         switchWidget.setChecked(dozeEnabled);
         switchWidget.setOnCheckedChangeListener(this);
-        switchBar.setOnClickListener(v -> switchWidget.setChecked(!switchWidget.isChecked()));
+        mSwitchBar.setActivated(dozeEnabled);
+        mSwitchBar.setOnClickListener(v -> {
+            switchWidget.setChecked(!switchWidget.isChecked());
+            mSwitchBar.setActivated(switchWidget.isChecked());
+        });
     }
-
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        final String key = preference.getKey();
-        final boolean value = (Boolean) newValue;
-        if (Utils.PICK_UP_KEY.equals(key)) {
-            mPickUpPreference.setChecked(value);
-        } else if (Utils.TILT_ALWAYS_KEY.equals(key)) {
-            mTiltAlwaysPreference.setChecked(value);
-        } else if (Utils.GESTURE_HAND_WAVE_KEY.equals(key)) {
-            mHandwavePreference.setChecked(value);
-        } else if (Utils.GESTURE_POCKET_KEY.equals(key)) {
-            mPocketPreference.setChecked(value);
-        } else if (Utils.PROXIMITY_ALWAYS_KEY.equals(key)) {
-            mProximityAlwaysPreference.setChecked(value);
-        } else {
-            return false;
+        if (Utils.ALWAYS_ON_DISPLAY.equals(preference.getKey())) {
+            Utils.enableAlwaysOn(getActivity(), (Boolean) newValue);
         }
 
-        Utils.startService(getActivity());
+        mHandler.post(() -> Utils.checkDozeService(getActivity()));
+
         return true;
     }
 
     @Override
-    public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-        Utils.enableDoze(b, getActivity());
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        Utils.enableDoze(getActivity(), isChecked);
+        Utils.checkDozeService(getActivity());
+
+        mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
+        mSwitchBar.setActivated(isChecked);
+
+        if (!isChecked) {
+            Utils.enableAlwaysOn(getActivity(), false);
+            mAlwaysOnDisplayPreference.setChecked(false);
+        }
+        mAlwaysOnDisplayPreference.setEnabled(isChecked);
+
+        mPickUpPreference.setEnabled(isChecked);
+        mHandwavePreference.setEnabled(isChecked);
+        mPocketPreference.setEnabled(isChecked);
     }
 
     @Override
@@ -194,7 +172,7 @@ public class DozeSettingsFragment extends PreferenceFragment implements OnPrefer
         return false;
     }
 
-    public static class HelpDialogFragment extends DialogFragment {
+    private static class HelpDialogFragment extends DialogFragment {
         @Override
         public Dialog onCreateDialog(Bundle savedInstanceState) {
             return new AlertDialog.Builder(getActivity())
