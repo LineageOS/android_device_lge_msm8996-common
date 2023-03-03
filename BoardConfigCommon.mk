@@ -17,8 +17,6 @@
 
 COMMON_PATH := device/lge/msm8996-common
 
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
