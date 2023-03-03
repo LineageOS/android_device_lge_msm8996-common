@@ -15,9 +15,6 @@
 # limitations under the License.
 #
 
-# Inherit from common lge product
-$(call inherit-product-if-exists, device/lge/common/common.mk)
-
 # Inherit proprietary blobs
 $(call inherit-product, vendor/lge/msm8996-common/msm8996-common-vendor.mk)
 
@@ -335,7 +332,8 @@ PRODUCT_COPY_FILES += \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(LOCAL_PATH)
+    $(LOCAL_PATH) \
+    hardware/lge
 
 # TimeKeep
 PRODUCT_PACKAGES += \
