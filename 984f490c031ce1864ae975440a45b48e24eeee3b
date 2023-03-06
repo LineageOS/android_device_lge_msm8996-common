@@ -34,6 +34,23 @@
       "parentUuid": "4094077d_31404f31",
       "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "29f94372_56c6bb08",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-03-06T18:29:43Z",
+      "side": 1,
+      "message": "You grepped it wrong. https://github.com/LineageOS/android_vendor_qcom_opensource_audio/blob/lineage-18.1/policy_hal/Android.mk vs https://github.com/LineageOS/android_vendor_qcom_opensource_audio/blob/lineage-20.0/policy_hal/Android.mk",
+      "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
