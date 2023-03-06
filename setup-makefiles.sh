@@ -36,7 +36,6 @@ DEVICE_COMMON="$BKP_DEVICE_COMMON"
 
 # The standard blobs
 write_makefiles "$MY_DIR"/proprietary-files.txt true
-write_makefiles "$MY_DIR"/proprietary-files-qc.txt true
 
 # We are done with platform
 write_footers
@@ -74,7 +73,6 @@ write_headers
 
 # Device specific blobs
 write_makefiles "$MY_DIR/../$DEVICE/proprietary-files.txt" true
-write_makefiles "$MY_DIR/../$DEVICE/proprietary-files-qc.txt" true
 
 # We are done with device
 write_footers

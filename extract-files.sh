@@ -59,7 +59,6 @@ fi
 # Initialize the helper for common platform
 setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$ANDROID_ROOT" true $CLEAN_VENDOR
 
-extract "$MY_DIR"/proprietary-files-qc.txt "$SRC" "$SECTION"
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 
 # Initialize the helper for common device
@@ -70,7 +69,6 @@ extract "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt" "$SRC" "$SECTION"
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false $CLEAN_VENDOR
 
-extract "$MY_DIR/../$DEVICE/proprietary-files-qc.txt" "$SRC" "$SECTION"
 extract "$MY_DIR/../$DEVICE/proprietary-files.txt" "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
