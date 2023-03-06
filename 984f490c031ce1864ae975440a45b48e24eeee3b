@@ -87,6 +87,24 @@
       "parentUuid": "2bb41f36_ef40ddf0",
       "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "24995a78_1bcbf6a8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-03-06T18:34:04Z",
+      "side": 1,
+      "message": "Yes, I did apply it to 19.1 since it only applies to 19.1+. Abandon it for 18.1.",
+      "parentUuid": "2bb41f36_ef40ddf0",
+      "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
