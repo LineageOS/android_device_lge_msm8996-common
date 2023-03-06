@@ -123,6 +123,24 @@
       "parentUuid": "24995a78_1bcbf6a8",
       "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abd741c7_e25c3bf6",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2023-03-06T18:58:00Z",
+      "side": 1,
+      "message": "Not sure how you are looking at it, but the guard is exactly the same starting with 19.0. Relevant change: https://github.com/LineageOS/android_vendor_qcom_opensource_audio/commit/af11e2e78e7e250f9a30ea7c47cfea3c1568c9bd, which exists since 19.0 branch.",
+      "parentUuid": "fbf15e5a_c237ef69",
+      "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
