@@ -141,6 +141,24 @@
       "parentUuid": "fbf15e5a_c237ef69",
       "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "27afd24d_eda8bc29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-03-06T19:58:42Z",
+      "side": 1,
+      "message": "You\u0027re right - I was incorrect.\n\nSorry about that.",
+      "parentUuid": "abd741c7_e25c3bf6",
+      "revId": "984f490c031ce1864ae975440a45b48e24eeee3b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
