@@ -136,9 +136,6 @@ BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_ROOT_EXTRA_FOLDERS := firmware persist persist-lg sns mpt
 
-# pdfium
-TARGET_NEEDS_PDFIUM_BIGINT := true
-
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
 
