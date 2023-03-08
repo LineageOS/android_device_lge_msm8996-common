@@ -20,6 +20,9 @@ COMMON_PATH := device/lge/msm8996-common
 # Inherit from the proprietary version
 include vendor/lge/msm8996-common/BoardConfigVendor.mk
 
+# Inherit from common lge
+include device/lge/common/BoardConfigCommon.mk
+
 # Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
