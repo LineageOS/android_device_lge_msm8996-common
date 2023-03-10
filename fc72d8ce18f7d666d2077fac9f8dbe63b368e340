@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "630bcdb2_5471362d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-03-10T15:54:43Z",
+      "side": 1,
+      "message": "Ready, but pending 4.4 kernel",
+      "revId": "fc72d8ce18f7d666d2077fac9f8dbe63b368e340",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
