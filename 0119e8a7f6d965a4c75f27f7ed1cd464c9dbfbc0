@@ -16,6 +16,24 @@
       "message": "Ready, but pending 4.4 kernel",
       "revId": "0119e8a7f6d965a4c75f27f7ed1cd464c9dbfbc0",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "152f2410_14638186",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 25485
+      },
+      "writtenOn": "2023-03-10T15:56:03Z",
+      "side": 1,
+      "message": "Great, 4.4 ported to another msm8996",
+      "parentUuid": "55d5b06b_bbdf2959",
+      "revId": "0119e8a7f6d965a4c75f27f7ed1cd464c9dbfbc0",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
