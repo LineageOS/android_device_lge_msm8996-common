@@ -5,6 +5,9 @@ sys.ois.                   u:object_r:camera_prop:s0
 sys.camera.                u:object_r:camera_prop:s0
 persist.camera.            u:object_r:camera_prop:s0
 
+# Keymaster/Gatekeeper
+sys.listeners.registered   u:object_r:vendor_tee_listener_prop:s0
+
 # Perfd
 sys.post_boot.             u:object_r:post_boot_prop:s0
 
