@@ -14,3 +14,5 @@ type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-s
 type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-recv-client";
 type_transition thermal-engine socket_device:sock_file thermal_socket "thermal-recv-passive-client";
 set_prop(thermal-engine,system_prop);
+
+get_prop(thermal-engine, vendor_thermal_prop)
