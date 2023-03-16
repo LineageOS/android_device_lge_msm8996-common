@@ -40,9 +40,6 @@ persist.vendor.audio.spkr.cal.duration=5
 ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
 ro.rfkilldisabled=1
 
-# Bpf
-ro.kernel.ebpf.supported=1
-
 # Camera
 ro.camera.notify_nfc=1
 vidc.debug.perf.mode=2
@@ -51,9 +48,8 @@ persist.audio.camcorder.stereo=true
 persist.camera.preview.ubwc=0
 persist.camera.video.ubwc=0
 
-# CNE and DPM
-persist.cne.feature=1
-persist.dpm.feature=0
+# CNE
+persist.vendor.cne.feature=1
 
 # Data modules
 ro.use_data_netmgrd=true
