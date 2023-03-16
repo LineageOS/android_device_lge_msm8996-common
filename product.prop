@@ -1,0 +1,7 @@
+#
+# System Properties for LG MSM8996
+#
+
+# Charger
+ro.charger.disable_init_blank=true
+ro.charger.enable_suspend=false

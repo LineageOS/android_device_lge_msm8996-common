@@ -135,6 +135,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Power
 TARGET_HAS_NO_WLAN_STATS := true
 
+# Properties
+TARGET_PRODUCT_PROP += $(COMMON_PATH)/product.prop
+TARGET_VENDOR_PROP += $(COMMON_PATH)/vendor.prop
+
 # Qualcomm
 BOARD_USES_QCOM_HARDWARE := true
 
