@@ -587,11 +587,11 @@ vendor/lib64/sensors.ssc.so
 -system/priv-app/SprintDM/SprintDM.apk
 -system/priv-app/SprintHM/SprintHM.apk
 
-# Thermal
-vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
+# Thermal - from op3 - PKQ1.181203.001
+vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e
+-vendor/lib/libthermalclient.so|270ea373c617584af092dc4ea2aa1c7bf27be7f4
+-vendor/lib64/libthermalclient.so|94424d7c8f8daff8bbfd7454fe4d5f1fbf411260
+vendor/lib64/libthermalioctl.so|aa2a0abd8fb9792024efd93f648c129b6a22619e
 
 # Time services - from daisy - QKQ1.191002.002
 vendor/lib64/libtime_genoff.so|06df52867790cdbbcc674a3a28d7ad7c8cc161ac
