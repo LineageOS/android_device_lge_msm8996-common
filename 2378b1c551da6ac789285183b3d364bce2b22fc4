@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d868056_22af8bc7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 19282
+      },
+      "writtenOn": "2023-03-17T07:29:37Z",
+      "side": 1,
+      "message": "You need to do some additional work for common device trees.\nIt only tries to find the prop for the target device you are building for, ignoring common trees unless you explicitly set `TARGET_${PARTITION}_PROP` in the device tree, where you need to add the device prop as well as the common prop file.\n\nhttps://android.googlesource.com/platform/build/+/499333616c8d51b454ca5439ce83546f9ab977b4/core/sysprop.mk#341",
+      "revId": "2378b1c551da6ac789285183b3d364bce2b22fc4",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
