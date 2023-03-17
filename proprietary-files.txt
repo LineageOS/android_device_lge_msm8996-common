@@ -116,20 +116,18 @@ system/etc/firmware/cpp_firmware_v1_5_2.fw:vendor/firmware/cpp_firmware_v1_5_2.f
 system/etc/firmware/cpp_firmware_v1_6_0.fw:vendor/firmware/cpp_firmware_v1_6_0.fw
 system/etc/firmware/cpp_firmware_v1_8_0.fw:vendor/firmware/cpp_firmware_v1_8_0.fw
 
-# CNE - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
-system/etc/cne/wqeclient/profile1.xml|e7ca213d0998cb3a6a603ad3eca7bda69830ff55
-system/etc/cne/wqeclient/profile2.xml|169a5209000e357a1a3183e8e5bfdf6fd07c2787
-system/etc/cne/wqeclient/profile3.xml|4be4060e8ac2d9fcea490feec7938cadcff46e1f
-system/etc/cne/wqeclient/profile4.xml|f88e13f1dd7b82388c90358f71813026370c9ed8
-system/etc/cne/wqeclient/profile5.xml|96101f6b01436a02572c67a469ff67ccfb738874
-system/etc/cne/wqeclient/profile6.xml|cef14ff8a160c7ad719b85d024a4b3301c3638d0
-system/etc/cne/wqeclient/profile7.xml|8d6773a4c418d0dcc4dc9096017d2681c7a1defe
-system/etc/permissions/cneapiclient.xml|15831adf0e80243042b90c734eea0a68eb8ae9c9
-system/etc/permissions/com.quicinc.cne.xml|e99e631d8b06ba4680529e9e4004d8d05baf6904
-system/framework/cneapiclient.jar|af7db889362e562a4c5073bb6aae32947218abf0
-system/framework/com.quicinc.cne.jar|caad1cfa7aa3a36e8d6b1e6ab232c243bdea7ab8
--system/priv-app/CNEService/CNEService.apk|a59621ae53f36754c5af7429176e15423be5d588
-vendor/bin/cnd|82f0014d2724cb23fd661447966a1a896aae4c4a
+# CNE - from daisy - QKQ1.191002.002
+product/lib64/com.quicinc.cne.api@1.0.so:system_ext/lib64/com.quicinc.cne.api@1.0.so|06764410022518f75a8e7fa1de35b7577cdbe8f9
+product/lib64/com.quicinc.cne.api@1.1.so:system_ext/lib64/com.quicinc.cne.api@1.1.so|8940ad6defe4ffba387a259a698c2def51f1d5fa
+product/lib64/com.quicinc.cne.constants@1.0.so:system_ext/lib64/com.quicinc.cne.constants@1.0.so|e2f9123a013c2c116b02a1e057870f885808f654
+product/lib64/com.quicinc.cne.constants@2.0.so:system_ext/lib64/com.quicinc.cne.constants@2.0.so|b58e07086d9992d0911391ad185f277e1cfd4fe5
+product/lib64/com.quicinc.cne.constants@2.1.so:system_ext/lib64/com.quicinc.cne.constants@2.1.so|92fc6a953b061fea1895e58fa298ce8de8a6d03c
+system/etc/cne/Nexus/ATT/ATT_profiles.xml|a0039cb3a4c5a4ca1adf897904b61c91e32d06f7|33e568627fd3f94dc45bca1c01ad10e6d8fb5b52
+system/etc/cne/Nexus/ROW/ROW_profiles.xml|e3907ff71cbbe0f1073ec1bf0223d26c8282aa35|238e785e9674b27c4b2365958d127533d7293132
+system/etc/cne/Nexus/VZW/VZW_profiles.xml|0d35b3266ea656d8868ae8f5d7e938f4859e9b0a|0f63b632e3a3f114def7aeadaabd13851c8ceec5
+-vendor/app/CneApp/CneApp.apk|2356a0335ab8e0106832a9325f972467654fd1f0
+-vendor/app/IWlanService/IWlanService.apk|12da3d82b6cc062d2af29a0b5f43fc8acf9adbb2
+vendor/bin/cnd|edba24c950546f80478916bb1ffe02ed58f4c96d
 vendor/etc/cne/wqeclient/ATT/ATT_profile1.xml|578f3f8f56059bfdbef926bcc68d01c15e06951f
 vendor/etc/cne/wqeclient/ATT/ATT_profile2.xml|1fb42c672a12b6660bdce3ea94e0c43719dd9de8
 vendor/etc/cne/wqeclient/ATT/ATT_profile3.xml|f88e13f1dd7b82388c90358f71813026370c9ed8
@@ -157,42 +155,48 @@ vendor/etc/cne/wqeclient/VZW/VZW_profile3.xml|9b123d81c9b8991499cda33b0706810e0c
 vendor/etc/cne/wqeclient/VZW/VZW_profile4.xml|ff91feb5060a6df07e3e4d9bc99ae58bccad7649
 vendor/etc/cne/wqeclient/VZW/VZW_profile5.xml|f76c894f3c6d5b6ed35113a088dc3174c900501b
 vendor/etc/cne/wqeclient/VZW/VZW_profile6.xml|14d136e7fcc682311757d3edc0b9d3eaeba11815
-vendor/lib/com.quicinc.cne.api@1.0.so|1aa96b04e2fdcdf1489d9113a6439b4f9878cac5
-vendor/lib/com.quicinc.cne.api@1.1.so|2262fb6dcf07c1f0ea2e75625b102f48f39cbc86
-vendor/lib/com.quicinc.cne.constants@1.0.so|83606f6e26eb25394a1fb2b0c662ee257fc820d7
-vendor/lib/com.quicinc.cne.constants@2.0.so|2ca6496b42367fe8e8e85d3b7cedf5440fb6c92d
-vendor/lib/com.quicinc.cne.constants@2.1.so|e3f276365979bb980a79364cf5da12449c0f565d
-vendor/lib/com.quicinc.cne.server@1.0.so|3edd4fa488367a96e5952083095f2b104f149170
-vendor/lib/com.quicinc.cne.server@2.0.so|9c9df36a1aa20e6564f4221caccca023ccadd89f
-vendor/lib/com.quicinc.cne.server@2.1.so|bf864fa6a01ca0f621574ad8bdc0cc9bc6f80e29
-vendor/lib/com.quicinc.cne.server@2.2.so|83ef52397be1b0242462a76afa088e0efc75d68b
-vendor/lib64/com.quicinc.cne.api@1.0.so|184499ab67844a7d1766e1b363a37c742fcfd9cf
-vendor/lib64/com.quicinc.cne.api@1.1.so|08247c2ddf2b9777839cada843676a52aea73ab3
-vendor/lib64/com.quicinc.cne.constants@1.0.so|ab5a63b57145ddd9e0f28426d5a36216507b6102
-vendor/lib64/com.quicinc.cne.constants@2.0.so|84ab9c8b4ace589241778d33a1a10c1e10680e72
-vendor/lib64/com.quicinc.cne.constants@2.1.so|c35e3ec7868d132ccb280a52cd4b7563e2352d4c
-vendor/lib64/com.quicinc.cne.server@1.0.so|e5201500cabadaa91c3a00f40d59539803028d25
-vendor/lib64/com.quicinc.cne.server@2.0.so|b1591c3bee3efaf6d8a09a9f7c8723c0b95c7725
-vendor/lib64/com.quicinc.cne.server@2.1.so|84e5c79002738f8332858cdd302d3e88489cd29f
-vendor/lib64/com.quicinc.cne.server@2.2.so|01444476d0c4c3a7f452b5fa098ae90c560b29a7
-vendor/lib64/libcne.so|11385dd9cb404e298321ccc606a51d199bc407c8
-vendor/lib64/libcneapiclient.so|501ae579a8ce146f8d074c4bfed7fa423bc34694
-vendor/lib64/libcneoplookup.so|6fb3d3bf0206d25767837391733e70e765721437
-vendor/lib64/libcneqmiutils.so|16cc18075de4e094ab516e3325d42cf40c1b4f9c
-vendor/lib64/libwms.so|e3ab1c15c6b70e095411cb9d946eec1105eb1dad
-vendor/lib64/libwqe.so|036ecadb98f4a73d04e989e6e389363320fae8ff
-vendor/lib64/libxml.so|134df83cce4b26f4889b2ef54b47c1bee5c13414
-vendor/lib64/vendor.qti.data.factory@1.0.so|25a085b8f38a495d83c8ae1724434874379d813d
-vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so|0472d635ccc71003db65cd743c755b560f34d13d
-vendor/lib64/vendor.qti.hardware.data.latency@1.0.so|c0aaf052edbb90b2653797e1e47072d521ecb50e
-vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|300b3a95de6c38e1eb19886fd15ed460166e5ce6
-vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|7aa7f06f7be48ec8ebbc83b4ea115b123364fed1
-vendor/lib64/vendor.qti.latency@2.0.so|8c1d259051a4b53df78e8aaef3e98d93f3f10694
+vendor/etc/init/cnd.rc|ff205cff8e00ec6805fd1e19f3ca6ff86700cbb6
+vendor/lib64/libcacertclient.so|daa1332db3b07eb75350dee833628bd248d9f03e
+vendor/lib64/libcne.so|4bd3419bb0398d1b2604ce5a8a5b5786d8d00578
+vendor/lib64/libcneapiclient.so|6f99dd4e82143a4ccccd3fb3ff4348140ddc1749
+vendor/lib64/libcneoplookup.so|f0bd13e3db5893ca61c0701e7c43dd355a4dfae5
+vendor/lib64/libcneqmiutils.so|d705a8301593007703fd537c17db281967fd8212
+vendor/lib64/libwms.so|ed3cc676c0951a462e81135159c53e4c79ed2bbd
+vendor/lib64/libwqe.so|5f9a4b5920fd22051355c9ab6b8dc32e27022048
+vendor/lib64/libxml.so|2c1a0141487fe37f906a6e7efb7a6f7e1b6c02dd
+vendor/lib64/vendor.qti.data.factory@1.0.so|048b26a8e72c92635d65b7c491d84ccf9f7fa075
+vendor/lib64/vendor.qti.data.factory@2.0.so|3d394f6124db5ad1987c67737bbc30d4d761cecb
+vendor/lib64/vendor.qti.hardware.cacert@1.0.so|bb56f65d5251057a306a8175daef9571cfd3457b
+vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so|ed05ca4c09b5913cf5c9d87267a59c25001ddd49
+vendor/lib64/vendor.qti.hardware.data.cne.internal.constants@1.0.so|981a7de823c8fe9e19516dce6dcc8414350109aa
+vendor/lib64/vendor.qti.hardware.data.cne.internal.server@1.0.so|9ed3d514093cd106590008e87f6170cf001a8519
+vendor/lib64/vendor.qti.hardware.data.connection@1.0.so|e93ac376853fa497ba67eeb43157cbb27d61bcf9
+vendor/lib64/vendor.qti.hardware.data.connection@1.1.so|5eba375977dc8981e8a4308e3237601cdc01cbe7
+vendor/lib64/vendor.qti.hardware.data.dynamicdds@1.0.so|b412051aa59f06d3c5a965c7286ef93ddf420569
+vendor/lib64/vendor.qti.hardware.data.iwlan@1.0.so|f338ec0fe9c5f49ecd94e1835b6a16b020afb66c
+vendor/lib64/vendor.qti.hardware.data.latency@1.0.so|53794a8d4dfeb0fbd233a4b128749a06d515c3f7
+vendor/lib64/vendor.qti.hardware.data.qmi@1.0.so|35ad6e08d00e8b1695964fa7d6ddbc521eda8628
+vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|ba5ffc588422c1b0f3ac8135314db2c88d62671e
+vendor/lib64/vendor.qti.latency@2.0.so|0144eec541989f450695ec8cbdd595df4009fe1a
 
-# DPM - from OnePlus/OnePlus3/OnePlus3:9/PKQ1.181203.001/1903190014:user/release-keys
-vendor/bin/dpmQmiMgr|bd6f2154ca3a6cad71db73231a9bb659e18a8207
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|6116551078509865fc0424eaf38d2dbfd001238d
-vendor/lib64/libdpmqmihal.so|38861aa2b5419a92f67c00a69b7f2f4847678e59
+# DPM - from daisy - QKQ1.191002.002
+product/bin/dpmd:system_ext/bin/dpmd|cac8f3eadeeec202f56d5b5f7a8c75e82e376d9f
+product/etc/dpm/dpm.conf:system_ext/etc/dpm/dpm.conf|95e27da8c989e96c6faea6f0697bce11955b62a5
+product/etc/init/dpmd.rc:system_ext/etc/init/dpmd.rc|7f95195a89fddce06b93006a737701270e91f669|f061bb76ae844f6df04c1d78caf00cf29a41b112
+product/etc/permissions/com.qti.dpmframework.xml:system_ext/etc/permissions/com.qti.dpmframework.xml|4613f8b8629d0b823e6aaab45d399ac30da06c09|ab94e634782b7a2e833c>
+product/etc/permissions/dpmapi.xml:system_ext/etc/permissions/dpmapi.xml|0991b3069308620cfcad53873e9f09af181b981d|697c88d7ebef6232ef214b17b4023bbb3ff4e625
+-product/framework/com.qti.dpmframework.jar:system_ext/framework/com.qti.dpmframework.jar|e39a7e06af2d1e95a3724c19c36b8716277f53a1
+-product/framework/dpmapi.jar:system_ext/framework/dpmapi.jar|4696df9793ad676b305d53b5d7ce65ecf74771ad
+product/lib64/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
+product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so|7ee0d1d40a8fc7fea924602db13717235ed2c2aa
+product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so|cb0157da0ffe6827471662a5b7881e85165cb5aa
+product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so|8b2183e4b50a033b10c640cbc0b14a39ed5dca16|c335716a1b71f538beb8b51719c1b099ae686328
+product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so|a98ab3c419ebe49c6f3351ef4fa64ebda65d0e7d
+-product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
+vendor/bin/dpmQmiMgr|a43829d478ebc243b5f7307b44aa501a7a3c8211
+vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
+vendor/lib64/libdpmqmihal.so|25d74c0e867f023b71a7c599ab6d213c7de2725d
 
 # DRM
 vendor/bin/qseecomd
@@ -432,7 +436,6 @@ vendor/lib/libqcmaputils.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
 vendor/lib/libqmi.so
--vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 -vendor/lib/libqmi_common_so.so
@@ -449,7 +452,6 @@ vendor/lib64/libqcmaputils.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
 vendor/lib64/libqmi.so
--vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
 -vendor/lib64/libqmi_common_so.so
@@ -457,6 +459,10 @@ vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
 vendor/lib64/libquipc_os_api.so
 vendor/lib64/libsmemlog.so
+
+# QMI (shared dependencies) - from daisy - QKQ1.191002.002
+-vendor/lib/libqmi_cci.so|a921e84ec500f7cfb7fe88a4ffba149581410a44
+-vendor/lib64/libqmi_cci.so|411a074dc765fb263bec50531ce5c408dd72388f
 
 # Radio
 -system/app/QtiTelephonyService/QtiTelephonyService.apk
