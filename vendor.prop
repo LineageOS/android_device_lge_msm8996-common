@@ -38,7 +38,6 @@ persist.vendor.audio.spkr.cal.duration=5
 
 # Bluetooth
 ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
-ro.rfkilldisabled=1
 
 # Camera
 ro.camera.notify_nfc=1
