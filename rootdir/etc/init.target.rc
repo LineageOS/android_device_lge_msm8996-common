@@ -166,19 +166,15 @@ service vendor.energy-awareness /vendor/bin/energy-awareness
     group system
     oneshot
 
-service vendor.perfd /vendor/bin/perfd
-    class main
-    user root
-    group root system
-    writepid /dev/cpuset/system-background/tasks
-
 service vendor.thermal-engine /vendor/bin/thermal-engine -c /vendor/etc/thermal-engine-8996.conf
-    class hal
+    class main
     user root
     socket thermal-send-client stream 0666 system system
     socket thermal-recv-client stream 0660 system system
     socket thermal-recv-passive-client stream 0666 system system
+    socket thermal-send-rule stream 0660 system system
     group system root diag
+    writepid /dev/cpuset/system-background/tasks
 
 service vendor.adsprpcd /vendor/bin/adsprpcd
     class main
