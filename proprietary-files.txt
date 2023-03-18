@@ -235,7 +235,7 @@ vendor/bin/xtwifi-inet-agent|58749dc8fc9fdce0c184f3689d50299734b0f988
 -vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml|9b2f6691d6c224bcb9ab9a0d57adfb9e52f1b53e
 vendor/etc/cacert_location.pem|6a05f324e7d9ff584811e62aabeb6d89a5239bbe
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
--vendor/lib/libwifi-hal-ctrl.so|ae4d2c4d5c3e5401b4d9b14d998583fc5553ad6b
+vendor/lib/libwifi-hal-ctrl.so|ae4d2c4d5c3e5401b4d9b14d998583fc5553ad6b
 vendor/lib/vendor.qti.gnss@1.0.so|2fbfffb280becb4c890787958d5471c887e0e29e
 vendor/lib/vendor.qti.gnss@1.1.so|3f185bf7c146a8f77fe6c35d57358e7c64b15ac2
 vendor/lib/vendor.qti.gnss@1.2.so|020509617283c8323c71c1eec955b7a09d62aa89
@@ -256,7 +256,7 @@ vendor/lib64/liblowi_wifihal.so|1a5b086558927837302965e68731000f5ddc37db
 vendor/lib64/libpdmapper.so|cdc5b101e8f6a4e0cc18be02e1a4d95527ba9d9c
 vendor/lib64/libqdma_file_agent.so|8bb728b595a3bac39cdbd3c456d523f35a10ef1d
 vendor/lib64/libslimclient.so|d2c67e48e0f9d975a817771f5589f9e23e1ac495
--vendor/lib/libwifi-hal-ctrl.so|82ad45f866583980361a71da07e2863386a240de
+vendor/lib64/libwifi-hal-ctrl.so|82ad45f866583980361a71da07e2863386a240de
 vendor/lib64/libxtadapter.so|5085a7d7986abc5f64b67ad42065d326662d0c2c
 vendor/lib64/vendor.qti.gnss@1.0.so|bf11e2b7a104ed1689623f5a772269d24e00bd14
 vendor/lib64/vendor.qti.gnss@1.1.so|4b88888fcba1bc3f709889cbf086d9ba2b997b91
