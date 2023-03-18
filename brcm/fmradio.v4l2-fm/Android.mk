@@ -1,0 +1,14 @@
+LOCAL_PATH := $(call my-dir)
+
+include $(CLEAR_VARS)
+
+LOCAL_MODULE := libfmradio.v4l2-fm
+LOCAL_MODULE_SUFFIX := .so
+LOCAL_MODULE_CLASS := SHARED_LIBRARIES
+LOCAL_MODULE_TAG := optional
+LOCAL_SHARED_LIBRARIES := liblog
+LOCAL_SRC_FILES := v4l2_fm.c v4l2_ioctl.c
+LOCAL_MODULE_OWNER := sony
+LOCAL_PROPRIETARY_MODULE := true
+
+include $(BUILD_SHARED_LIBRARY)
