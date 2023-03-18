@@ -804,10 +804,9 @@ on property:netd.fstman.start=true
 on property:netd.fstman.start=false
     stop fstman
 
-service vendor.loc_launcher /vendor/bin/loc_launcher
-    #loc_launcher will start as root and set its uid to gps
+service loc_launcher /vendor/bin/loc_launcher
     class late_start
-    group gps inet diag wifi
+    group gps
     writepid /dev/cpuset/system-background/tasks
 
 on property:crypto.driver.load=1
