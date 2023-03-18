@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ef94b927_b4fb8ea1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-03-18T20:33:30Z",
+      "side": 1,
+      "message": "Leaving this in, as APEX will be supported soon enough",
+      "revId": "b4eb9be6ce869408a1a9101e4586b39388c57f5a",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
