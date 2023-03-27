@@ -6,3 +6,4 @@ r_dir_file(hal_camera_default, camera_data_file);
 allow hal_camera_default camera_socket:sock_file { create unlink write };
 
 get_prop(hal_camera_default, default_prop)
+get_prop(hal_camera_default, system_prop)
