@@ -60,5 +60,10 @@
         <device name="SND_DEVICE_OUT_VOICE_LINE" backend="headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_FULL_HEADPHONES" backend="headphones"/>
         <device name="SND_DEVICE_OUT_VOICE_TTY_VCO_HEADPHONES" backend="headphones"/>
+        <!-- ESS -->
+        <device name="SND_DEVICE_OUT_HEADPHONES_HIFI_24BIT" backend="headphones tert-mi2s-headphones" interface="SEC_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_HEADPHONES_HIFI_DAC" backend="headphones tert-mi2s-headphones" interface="SEC_MI2S_RX"/>
+        <device name="SND_DEVICE_OUT_HEADPHONES_HIFI_DAC_ADVANCED" backend="headphones tert-mi2s-headphones" interface="SEC_MI2S_RX" />
+        <device name="SND_DEVICE_OUT_HEADPHONES_HIFI_DAC_AUX" backend="headphones tert-mi2s-headphones" interface="SEC_MI2S_RX" />
     </backend_names>
 </audio_platform_info>
