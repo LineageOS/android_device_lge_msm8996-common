@@ -172,7 +172,9 @@ PRODUCT_PACKAGES += \
 
 # FM
 PRODUCT_PACKAGES += \
-    brcm-uim-sysfs
+    FMRadio \
+    brcm-uim-sysfs \
+    libfmjni
 
 # Gatekeeper
 PRODUCT_PACKAGES += \
