@@ -35,6 +35,7 @@ genfscon sysfs /devices/soc/400f000.qcom,spmi/spmi-0/spmi0-02/400f000.qcom,spmi:
 
 genfscon sysfs /devices/soc/soc:qcom,bcl/power_supply               u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/7411000.qusb/power_supply               u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/soc/757a000.i2c/i2c-6/6-0020/power_supply   u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/757a000.i2c/i2c-6/6-0028/power_supply   u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/soc/75b5000.i2c/i2c-7/7-001d/power_supply   u:object_r:sysfs_batteryinfo:s0
 
