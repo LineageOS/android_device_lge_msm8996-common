@@ -124,7 +124,6 @@ on init
     chmod 0660 /dev/cpuset/application/background/tasks
 
     # set default schedTune value for foreground/top-app (only affects EAS)
-    write /dev/stune/foreground/schedtune.prefer_idle 1
     write /dev/stune/top-app/schedtune.boost 10
     write /dev/stune/top-app/schedtune.prefer_idle 1
     write /dev/stune/rt/schedtune.boost 30
