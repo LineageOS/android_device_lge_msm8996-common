@@ -1,1 +1,3 @@
-set_prop(qti, diag_prop)
+get_prop(qti, default_prop)
+get_prop(qti, diag_prop)
+get_prop(qti, system_prop)

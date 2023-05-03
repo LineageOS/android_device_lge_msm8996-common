@@ -19,4 +19,5 @@ allow uim brcm_uim_exec:file getattr;
 # Access to qseecomd
 allow uim tee_device:chr_file rw_file_perms;
 
+get_prop(uim, default_prop)
 get_prop(uim, exported_bluetooth_prop)

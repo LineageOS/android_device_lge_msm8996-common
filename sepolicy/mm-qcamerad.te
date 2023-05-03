@@ -13,4 +13,5 @@ allow mm-qcamerad vendor_default_prop:property_service set;
 binder_use(mm-qcamerad);
 
 get_prop(mm-qcamerad, default_prop)
+get_prop(mm-qcamerad, system_prop)
 get_prop(mm-qcamerad, persist_debug_prop)

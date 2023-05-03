@@ -2,3 +2,5 @@ allow rmt_storage debugfs_rmts:dir r_dir_perms;
 allow rmt_storage debugfs_rmts:file rw_file_perms;
 
 allow rmt_storage self:capability {net_raw};
+
+get_prop(rmt_storage, system_prop)

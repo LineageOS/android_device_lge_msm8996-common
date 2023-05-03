@@ -1,3 +1,5 @@
 allow adsprpcd_file self:filesystem associate;
 allow adsprpcd_file vendor_file:dir r_dir_perms;
 allow adsprpcd vendor_file:dir r_dir_perms;
+
+get_prop(adsprpcd, default_prop)

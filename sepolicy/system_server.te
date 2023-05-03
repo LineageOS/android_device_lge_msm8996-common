@@ -8,6 +8,7 @@ allow system_server mpctl_socket:sock_file write;
 
 allow system_server sysfs:dir search;
 allow system_server sysfs_vibrator:file { read write append };
+get_prop(system_server, build_bootimage_prop)
 get_prop(system_server, exported_camera_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
