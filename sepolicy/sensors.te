@@ -3,4 +3,4 @@ allow sensors sensors_data_file:dir create_dir_perms;
 
 allow sensors self:capability dac_override;
 
-get_prop(netmgrd, system_prop)
+set_prop(netmgrd, system_prop)
