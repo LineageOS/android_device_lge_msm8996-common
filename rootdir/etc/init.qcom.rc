@@ -746,6 +746,9 @@ service vendor.power-sh /vendor/bin/init.power.sh
     disabled
     oneshot
 
+on property:persist.sys.xtra-daemon.enabled=*
+    restart vendor.loc_launcher
+
 service vendor.qcom-sh /vendor/bin/init.qcom.sh
     class late_start
     user root
