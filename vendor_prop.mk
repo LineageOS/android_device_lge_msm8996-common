@@ -40,8 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr \
-    ro.rfkilldisabled=1
+    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
