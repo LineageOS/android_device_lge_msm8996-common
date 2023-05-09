@@ -1,5 +1,0 @@
-SYSFS_PREFIX = "/sys/bus/platform/drivers/bcm_ldisc/bcm_ldisc/"
-LPM_HC_IDLE_THRESHOLD = 24
-LPM_IDLE_THRESHOLD = 48
-N_BRCM_HCI = 26
-NETLINK_USER = 28
