@@ -2,14 +2,10 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.audio\.service\.lge_msm8996           u:object_r:hal_audio_default_exec:s0
 
 # Bluetooth
-/dev/brcm_bt_drv                                                    u:object_r:hci_attach_dev:s0
-/persist/\.baddr                                                    u:object_r:mnt_vendor_file:s0
-/(vendor|system/vendor)/bin/brcm-uim-sysfs                          u:object_r:brcm_uim_exec:s0
 /(vendor|system/vendor)/bin/hwaddrs                                 u:object_r:hwaddrs_exec:s0
-/sys/bus/platform/drivers/bcm_ldisc/bcmbt_ldisc(/.*)?               u:object_r:brcm_ldisc_sysfs:s0
-/sys/devices/platform/bcm_ldisc/(/.*)?                              u:object_r:brcm_ldisc_sysfs:s0
 /sys/devices/bluesleep/rfkill/rfkill0/state                         u:object_r:sysfs_bluetooth_writable:s0
 /sys/devices/bcm43xx/rfkill/rfkill[0-9](/.*)?                       u:object_r:sysfs_bluetooth_writable:s0
+/persist/\.baddr                                                    u:object_r:mnt_vendor_file:s0
 
 # Camera
 /data/misc/camera/cam_socket[0-9]                                   u:object_r:camera_socket:s0
