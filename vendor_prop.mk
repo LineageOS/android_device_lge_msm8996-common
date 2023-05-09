@@ -57,8 +57,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.profile.pan.panu.enabled?=true \
     bluetooth.profile.pbap.server.enabled?=true \
     bluetooth.profile.sap.server.enabled?=true \
-    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr \
-    ro.rfkilldisabled=1
+    ro.bt.bdaddr_path=/data/misc/bluetooth/bdaddr
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
