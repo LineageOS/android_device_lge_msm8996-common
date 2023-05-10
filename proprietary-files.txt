@@ -1,3 +1,6 @@
+### All blobs from this list, unless pinned and noted as otherwise,
+### are from from elsa_nao_us-user 8.0.0 OPR1.170623.032 183241436cd40 release-keys
+
 # ADSP
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
@@ -6,8 +9,6 @@ vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
 
 # ADSP modules
-system/lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
-system/lib/rfsa/adsp/libmorpho_video_denoiser_hvx_skel.so
 vendor/lib/rfsa/adsp/libadsp_fd_skel.so
 vendor/lib/rfsa/adsp/libadsp_hvx_add_constant.so
 vendor/lib/rfsa/adsp/libadsp_hvx_skel.so
@@ -23,10 +24,13 @@ vendor/lib/rfsa/adsp/libscveT2T_skel.so
 vendor/lib/rfsa/adsp/libvpp_frc.so
 vendor/lib/rfsa/adsp/libvpp_svc_skel.so
 vendor/lib/rfsa/adsp/us-syncproximity.so
-vendor/lib/libsymphony-1.1.1.so
-vendor/lib/libsymphonypower-1.1.1.so
+vendor/lib/libsymphony-1.1.2.so
+vendor/lib/libsymphony-1.1.3.so
+vendor/lib/libsymphonypower-1.1.2.so
+vendor/lib/libsymphonypower-1.1.3.so
 
 # Audio
+-system/lib/libqct_resampler.so:vendor/lib/libqct_resampler.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
@@ -37,10 +41,8 @@ vendor/lib/libacdbrtac.so
 vendor/lib/libadiertac.so
 vendor/lib/libadm.so
 vendor/lib/libaudcal.so
--vendor/lib/libaudio_log_utils.so
 vendor/lib/libaudioalsa.so
 vendor/lib/libmdsprpc.so
--vendor/lib/libqct_resampler.so
 vendor/lib/libqtigef.so
 vendor/lib64/soundfx/libqcbassboost.so
 vendor/lib64/soundfx/libqcreverb.so
@@ -51,7 +53,6 @@ vendor/lib64/libacdbmapper.so
 vendor/lib64/libacdbrtac.so
 vendor/lib64/libadiertac.so
 vendor/lib64/libaudcal.so
--vendor/lib64/libaudio_log_utils.so
 vendor/lib64/libaudioalsa.so
 vendor/lib64/libmdsprpc.so
 vendor/lib64/libqtigef.so
@@ -61,10 +62,10 @@ product/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 product/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
 # Camera - postprocessing
+system/lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
 vendor/lib/libchromaflash.so
 vendor/lib/liboptizoom.so
 vendor/lib/libseemore.so
-vendor/lib/libtrueportrait.so
 vendor/lib/libubifocus.so
 vendor/lib64/libseemore.so
 
@@ -205,7 +206,7 @@ vendor/lib/liboemcrypto.so
 vendor/lib/libqisl.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
-vendor/lib64/lib-sec-disp.so
+vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib64/libGPreqcancel.so
 vendor/lib64/libGPreqcancel_svc.so
 vendor/lib64/libQSEEComAPI.so
@@ -218,10 +219,11 @@ vendor/lib64/librpmb.so
 vendor/lib64/libsecureui.so
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 
 # Gatekeeper
--vendor/lib/hw/gatekeeper.msm8996.so
--vendor/lib64/hw/gatekeeper.msm8996.so
+vendor/lib/hw/gatekeeper.msm8996.so
+vendor/lib64/hw/gatekeeper.msm8996.so
 
 # GPS - from daisy - QKQ1.191002.002
 vendor/bin/loc_launcher|06793983f836a9b42b5ff3848f8fe177134c1379
@@ -340,8 +342,8 @@ system/lib64/hw/lgkm.msm8996.so
 system/lib64/liblgkm.so
 
 # Keystore
--vendor/lib/hw/keystore.msm8996.so
--vendor/lib64/hw/keystore.msm8996.so
+vendor/lib/hw/keystore.msm8996.so
+vendor/lib64/hw/keystore.msm8996.so
 
 # Media - from daisy - QKQ1.191002.002
 system/lib/libFileMux.so|1c713da8d18f03deb33c3211761fc07dd57d6946
@@ -363,11 +365,11 @@ vendor/lib/libOmxQcelp13Dec.so|27a75185e62e88ea84ac2448a3842c998899ae90
 vendor/lib/libOmxVideoDSMode.so|84a6b99f5ad0c7dbe827eb01258cca4c790c0fe7
 vendor/lib/libOmxVpp.so|46e4928c392716943986a3b490680d3e08fdf3e4
 vendor/lib/libOmxWmaDec.so|c3da756ae14234ae8e56cbc0b32249fbd4c8746a
--vendor/lib/libgpustats.so|75fc8f58b071f3c27d708010e1b40eafba091a14
+vendor/lib/libgpustats.so|75fc8f58b071f3c27d708010e1b40eafba091a14
 vendor/lib/libmmosal_proprietary.so|4b0788590e1ecfccd3b20b3181a4add528acb2b6
 vendor/lib/libvpplibrary.so|816a79fe9a6d30e9402acb767119b9ee1c2c8aea
 vendor/lib/libvqzip.so|24e5eb30e5a2cdb544c8688d81d7cc75a1d85eaf
--vendor/lib64/libgpustats.so|a899ae72983277442cdacf8f43271986c91ce710
+vendor/lib64/libgpustats.so|a899ae72983277442cdacf8f43271986c91ce710
 
 # Misc - Firmware
 system/etc/firmware/leia_pfp_470.fw:vendor/firmware/leia_pfp_470.fw
@@ -418,10 +420,9 @@ vendor/lib64/vendor.display.postproc@1.0.so|f6dae960f3f4eea0d5d36aea4ac0a2e00396
 
 # QMI
 system/etc/permissions/qti_libpermissions.xml
-system/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
--vendor/lib/libdsi_netctrl.so
+vendor/lib/libdsi_netctrl.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
@@ -437,7 +438,7 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libquipc_os_api.so
 vendor/lib/libsmemlog.so
 vendor/lib64/libdiag.so
--vendor/lib64/libdsi_netctrl.so
+vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
 vendor/lib64/libqcci_legacy.so
@@ -474,7 +475,22 @@ vendor/bin/tftp_server
 vendor/etc/data/dsi_config.xml
 vendor/etc/data/netmgr_config.xml
 vendor/lib/libmdmdetect.so
+vendor/lib/libpcas_vendor.so
 -vendor/lib/libqmiservices.so
+vendor/lib/libuicc_vendor.so
+vendor/lib/libvss_common_core.so
+vendor/lib/libvss_common_idl.so
+vendor/lib/libvss_common_iface.so
+vendor/lib/libvss_dmi_qcci.so
+vendor/lib/libvss_gnss_qcci.so
+vendor/lib/libvss_ims_qcci.so
+vendor/lib/libvss_nv_core.so
+vendor/lib/libvss_nv_idl.so
+vendor/lib/libvss_nv_iface.so
+vendor/lib/libvss_resim_core.so
+vendor/lib/libvss_resim_idl.so
+vendor/lib/libvss_resim_iface.so
+vendor/lib/libvssims-impl.so
 vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so
@@ -487,14 +503,30 @@ vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
 vendor/lib64/libnetmgr.so
+vendor/lib64/libpcas_vendor.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so
+vendor/lib64/libril-qc-qmi-1.so|bd5ebb5a8407cf5643c133f009516812c30d59d5
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
 vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
+vendor/lib64/libuicc_vendor.so
+vendor/lib64/libvss_bsp_qcci.so
+vendor/lib64/libvss_common_core.so
+vendor/lib64/libvss_common_idl.so
+vendor/lib64/libvss_common_iface.so
+vendor/lib64/libvss_dmi_qcci.so
+vendor/lib64/libvss_gnss_qcci.so
+vendor/lib64/libvss_ims_qcci.so
+vendor/lib64/libvss_nv_core.so
+vendor/lib64/libvss_nv_idl.so
+vendor/lib64/libvss_nv_iface.so
+vendor/lib64/libvss_resim_core.so
+vendor/lib64/libvss_resim_idl.so
+vendor/lib64/libvss_resim_iface.so
+vendor/lib64/libvssims-impl.so
 vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so
 vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so
@@ -524,21 +556,15 @@ vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/cdmaless/
 vendor/firmware/image/modem_pr/mcfg/configs/mcfg_sw/generic/na/verizon/hvolte/mcfg_sw.mbn|9253d2970e4dc6456b538a0be729b4487da2c6f6
 
 # Sensors
+system/lib64/hw/sensors.vr.so:vendor/lib64/hw/sensors.vr.so
 vendor/bin/sensors.qcom:vendor/bin/sensors.qti
 vendor/lib/libsensor1.so
 vendor/lib/libsensor_lge_cal.so
 vendor/lib/libsensor_reg.so
-vendor/lib/libsensor_test.so
-vendor/lib/libsensor_thresh.so
-vendor/lib/libsensor_user_cal.so
 vendor/lib/sensors.ssc.so
-vendor/lib64/hw/sensors.vr.so
 vendor/lib64/libsensor1.so
 vendor/lib64/libsensor_lge_cal.so
 vendor/lib64/libsensor_reg.so
-vendor/lib64/libsensor_test.so
-vendor/lib64/libsensor_thresh.so
-vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
 # Sprint - from elsa_spr_us-user 8.0.0 OPR1.170623.032 1819814314eb7 release-keys
