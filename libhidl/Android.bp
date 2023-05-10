@@ -11,3 +11,10 @@ cc_library {
     system_ext_specific: true,
     vendor_available: true,
 }
+
+cc_library_shared {
+    name: "android.system.net.netd@1.0_vendor",
+    shared_libs: ["android.system.net.netd@1.0"],
+    system_ext_specific: true,
+    vendor_available: true,
+}
