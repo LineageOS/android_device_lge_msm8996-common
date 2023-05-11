@@ -92,7 +92,6 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
-    libgui_shim \
     libshim_camera \
     libui_shim \
     libtinyxml \
@@ -217,10 +216,6 @@ PRODUCT_PACKAGES += \
     android.hidl.manager@1.0 \
     libhidltransport \
     libhwbinder
-
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
 
 # IPACM
 PRODUCT_PACKAGES += \
