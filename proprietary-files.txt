@@ -589,9 +589,9 @@ vendor/lib64/libsensor_thresh.so
 vendor/lib64/libsensor_user_cal.so
 vendor/lib64/sensors.ssc.so
 
-# Sprint
-system/priv-app/SprintDM/SprintDM.apk
-system/priv-app/SprintHM/SprintHM.apk
+# Sprint - from elsa_spr_us-user 8.0.0 OPR1.170623.032 1819814314eb7 release-keys
+system/priv-app/SprintDM/SprintDM.apk|ba1455b26ccedc5978d74dda6214502c0c779451
+system/priv-app/SprintHM/SprintHM.apk|66acc270b995d386c59432f5ae00e222f2017406
 
 # Thermal - from op3 - PKQ1.181203.001
 vendor/bin/thermal-engine|b15c9e8fa54ebb15dfeb36c7fbc834a28b4c836e
