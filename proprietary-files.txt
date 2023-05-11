@@ -601,20 +601,22 @@ vendor/lib64/libthermalioctl.so|aa2a0abd8fb9792024efd93f648c129b6a22619e
 
 # Time services - from daisy - QKQ1.191002.002
 vendor/lib64/libtime_genoff.so|06df52867790cdbbcc674a3a28d7ad7c8cc161ac
-
-# Verizon
-system/app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED
-system/app/vzw_msdc_api/vzw_msdc_api.apk;PRESIGNED
-system/etc/permissions/com.verizon.apn.xml
-system/etc/permissions/com.verizon.embms.xml
-system/etc/permissions/com.verizon.provider.xml
-system/etc/permissions/qti-vzw-ims-internal.xml
-system/etc/permissions/vzw_sso_permissions.xml
-system/framework/VerizonUnifiedSettings.jar;PRESIGNED
-system/priv-app/VZWAPNService/VZWAPNService.apk;PRESIGNED
-system/priv-app/VZWAVS/VZWAVS.apk;PRESIGNED
-system/priv-app/VzwLcSilent/VzwLcSilent.apk;PRESIGNED
-system/priv-app/VzwOmaTrigger/VzwOmaTrigger.apk;PRESIGNED
+	
+# Verizon - from elsa_vzw-user 8.0.0 OPR1.170623.032 183141449275f release-keys
+system/app/VZWAPNLib/VZWAPNLib.apk;PRESIGNED|a4e15285d900e15c008d850eda51ab1e09416d89
+system/etc/permissions/com.verizon.apn.xml|5b5a314891552e58280b030ce696d3c686a2380a
+system/etc/permissions/com.verizon.embms.xml|6cc13687615c297bc3c77c43a54dac1062714f26
+system/etc/permissions/com.verizon.epdg.xml|15e48b3cf5550b911093b94577c03dd7320dec8b
+system/etc/permissions/com.verizon.hardware.telephony.xml|b0c86f3e3f71884380e26c54a52a4518501540fe
+system/etc/permissions/com.verizon.ims.xml|84ba5646f35233de2b7e3415d1d0df155f0a12cf
+system/etc/permissions/com.verizon.net.xml|a4aa2380f7a4bd7b158ea2501d667e1de71e31c3
+system/etc/permissions/com.verizon.os.xml|8e5bc2478e749e3ebb4a23088993a9d73c959bc3
+system/etc/permissions/com.verizon.phone.xml|8bf3e689cd795b8ab47d66c55712986888d95b5c
+system/etc/permissions/com.verizon.provider.xml|860965e8986074d0b9f67616b7f424d8e3da03b2
+system/etc/permissions/com.verizon.sdm.xml|3bae8525ec14b45c06f9a7fe8dd57fde501c8a7d
+system/etc/permissions/com.verizon.sdmservice.xml|8b72dda6a980f3dfab5c549e8fb805b40effd554
+system/framework/VZWAVSLibrary.jar;PRESIGNED|7533f87a5d1406cda2a3981181a18e11f01c51b2
+system/priv-app/UnifiedSettingsApp/UnifiedSettingsApp.apk;PRESIGNED|74a62f02f665b4a0b20103e6ceee09363e20fdff
 
 # Widevine - from daisy - QKQ1.191002.002
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|e130b8f1c8d46d8a185b00cba5ff8a2a871ee94c
