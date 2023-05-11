@@ -255,6 +255,9 @@
 # IR device
 /dev/lirc0                0660   system     system
 
+# socinfo
+/sys/devices/soc0           serial_number            0000    root    root
+
 # Device block for FRP
 /dev/block/platform/soc/624000.ufshc/by-name/persistent            0660   system     system
 /dev/block/bootdevice/by-name/persistent                           0660   system     system
