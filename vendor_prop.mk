@@ -179,13 +179,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.wda.enable=true \
     persist.rmnet.data.enable=true
 
-# Radio - IMS
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.dbg.volte_avail_ovr=1 \
-    persist.dbg.vt_avail_ovr=1 \
-    persist.radio.NO_STAPA=1 \
-    persist.radio.VT_HYBRID_ENABLE=1
-
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.debug.sensors.hal=e \
