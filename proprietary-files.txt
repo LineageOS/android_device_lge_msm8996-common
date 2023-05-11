@@ -329,10 +329,6 @@ vendor/lib64/libtinyxml2_1.so|56d4d5d0ea010f951de219c7b9fd2c9695a5b9d2
 vendor/lib/hw/vulkan.msm8953.so:system/lib/vulkan.msm8996.so|c24dee59782e94c119e1e6ae00ac05c2d67c3f93|6142249d50da115d9fe3b20581dbeedd961727c3
 vendor/lib64/hw/vulkan.msm8953.so:system/lib64/vulkan.msm8996.so|8c01e237bdc542ca682cb97ce28f264135033fab|b09121b664897181c29ec5a529117772a971229b
 
-# IMS - from daisy - QKQ1.191002.002
-product/lib64/libimscamera_jni.so:system_ext/lib64/libimscamera_jni.so|7cb89110cca94d37d68c705f12a7a5a4ee106139
-product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc3658261ea3c909f03018eea4398f84e
-
 # IR
 -system/lib/libcir_driver.so:vendor/lib/libcir_driver.so
 -system/lib64/libcir_driver.so:vendor/lib64/libcir_driver.so
