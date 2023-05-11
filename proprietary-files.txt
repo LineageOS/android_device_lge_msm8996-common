@@ -2,10 +2,8 @@
 vendor/bin/adsprpcd
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libadsprpc.so
-vendor/lib/libfastcvopt.so
 vendor/lib64/libadsp_default_listener.so
 vendor/lib64/libadsprpc.so
-vendor/lib64/libfastcvopt.so
 
 # ADSP modules
 system/lib/rfsa/adsp/libmorpho_image_stabilizer4_hvx_skel.so
