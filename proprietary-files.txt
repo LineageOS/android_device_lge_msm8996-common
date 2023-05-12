@@ -420,7 +420,6 @@ vendor/lib64/vendor.display.postproc@1.0.so|f6dae960f3f4eea0d5d36aea4ac0a2e00396
 
 # QMI
 system/etc/permissions/qti_libpermissions.xml
-system/etc/permissions/qti_libpermissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
