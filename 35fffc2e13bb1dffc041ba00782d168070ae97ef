@@ -16,6 +16,23 @@
       "message": "QCRIL pains, ugh",
       "revId": "35fffc2e13bb1dffc041ba00782d168070ae97ef",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f1605db_b336e5ef",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 16
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-05-12T14:38:07Z",
+      "side": 1,
+      "message": "it\u0027s just \t\nvendor/lib64/libril-qc-qmi-1.so",
+      "revId": "35fffc2e13bb1dffc041ba00782d168070ae97ef",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
