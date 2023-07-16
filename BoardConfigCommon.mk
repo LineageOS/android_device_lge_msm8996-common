@@ -21,6 +21,7 @@ COMMON_PATH := device/lge/msm8996-common
 include vendor/lge/msm8996-common/BoardConfigVendor.mk
 
 # BUILD_BROKEN_*
+BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # Architecture

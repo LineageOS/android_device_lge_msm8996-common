@@ -52,6 +52,9 @@ function blob_fixup() {
     vendor/lib64/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
+    vendor/lib64/libril-qc-qmi-1.so)
+        "${PATCHELF}" --replace-needed "libhardware_legacy.so" "libhardware_legacy_vendor.so" "${2}"
+        ;;
     esac
 }
 
