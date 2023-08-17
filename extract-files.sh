@@ -52,6 +52,7 @@ function blob_fixup() {
         ;;
     vendor/bin/pm-service)
         grep -q libutils-v33.so "${2}" || "${PATCHELF_0_18}" --add-needed "libutils-v33.so" "${2}"
+        sed -i "s/vndbinder/binder\x00\x00\x00/" "${2}"
         ;;
     vendor/lib/hw/camera.msm8996.so)
         sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
@@ -75,8 +76,14 @@ function blob_fixup() {
     vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so)
         grep -q liblog.so "${2}" || "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
+    vendor/lib/libperipheral_client.so)
+        sed -i "s/vndbinder/binder\x00\x00\x00/" "${2}"
+        ;;
     vendor/lib/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
+        ;;
+    vendor/lib64/libperipheral_client.so)
+        sed -i "s/vndbinder/binder\x00\x00\x00/" "${2}"
         ;;
     vendor/lib64/libril-qc-qmi-1.so)
         "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"

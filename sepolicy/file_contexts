@@ -36,6 +36,9 @@
 # Gestures
 /sys/devices/virtual/input/lge_touch/lpwg_notify                    u:object_r:sysfs_gesture:s0
 
+# GNSS
+/(vendor|system/vendor)/bin/hw/android\.hardware\.gnss@1\.0-service\.lge_msm8996   u:object_r:hal_gnss_default_exec:s0
+
 # Graphics
 /sys/devices/virtual/graphics/fb[0-2](/.*)?                         u:object_r:sysfs_graphics:s0
 
