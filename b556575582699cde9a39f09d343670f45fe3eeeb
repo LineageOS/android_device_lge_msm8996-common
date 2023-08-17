@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c64ff50_3b8fc72f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29891
+      },
+      "writtenOn": "2023-08-17T03:08:25Z",
+      "side": 1,
+      "message": "Looks good, and works on H910 with pie BCM43 FW from F800. Not merging just yet, awaiting results from [bt stack change](https://review.lineageos.org/q/I1fccfd0f8877bdc878e7a2068f654369b136956e).",
+      "revId": "b556575582699cde9a39f09d343670f45fe3eeeb",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
