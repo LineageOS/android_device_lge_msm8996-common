@@ -3,6 +3,7 @@ allow netmgrd net_data_file:file create_file_perms;
 allow netmgrd net_data_file:dir rw_dir_perms;
 get_prop(netmgrd, default_prop)
 get_prop(netmgrd, diag_prop)
+get_prop(netmgrd, radio_control_prop)
 get_prop(netmgrd, system_prop)
 get_prop(netmgrd, wifi_prop);
 set_prop(netmgrd, vendor_xlat_prop)
