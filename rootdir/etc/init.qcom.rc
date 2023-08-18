@@ -883,8 +883,5 @@ on property:sys.boot_completed=1
     # Set idle GPU to 133 Mhz
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 6
 
-on property:init.svc.media=restarting
-    restart vendor.qcamerasvr
-
 on property:init.svc.servicemanager=restarting
     restart vendor.qcamerasvr
