@@ -6,4 +6,6 @@ allow system_app cnd_core_data_file:dir w_dir_perms;
 allow system_app cnd_core_data_file:file create_file_perms;
 get_prop(system_app, vendor_cnd_vendor_prop)
 
+r_dir_file(system_app, sysfs_zram)
+
 set_prop(system_app, camera_prop)
