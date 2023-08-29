@@ -27,6 +27,17 @@ if [ ! -f "$HELPER" ]; then
 fi
 . "$HELPER"
 
+function vendor_imports() {
+    cat <<EOF >>"$1"
+                "device/lge/msm8996-common",
+                "hardware/lge",
+                "hardware/qcom-caf/msm8996",
+                "hardware/qcom-caf/wlan",
+                "vendor/qcom/opensource/dataservices",
+                "vendor/qcom/opensource/display",
+EOF
+}
+
 # Initialize the helper for common platform
 setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$ANDROID_ROOT" true
 
