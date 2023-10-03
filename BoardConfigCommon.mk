@@ -23,6 +23,7 @@ include vendor/lge/msm8996-common/BoardConfigVendor.mk
 # BUILD_BROKEN_*
 BUILD_BROKEN_DUP_RULES := true
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 
 # Architecture
 TARGET_ARCH := arm64
