@@ -94,6 +94,7 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     libexif_32 \
     libshim_camera \
+    libstdc++_vendor \
     libui_shim \
     libtinyxml \
     libyuv_32 \
