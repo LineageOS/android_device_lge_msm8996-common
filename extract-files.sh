@@ -51,6 +51,9 @@ function blob_fixup() {
     vendor/lib/hw/camera.msm8996.so)
         sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
         ;;
+    vendor/lib/libAutoContrast.so|vendor/lib/libCmcPdaf.so|vendor/lib/libSJFingerDetect.so|vendor/lib/libarcsoft_beauty_shot.so|vendor/lib/libarcsoft_object_tracking.so|vendor/lib/libchromaflash.so|vendor/lib/libcir_driver.so|vendor/lib/libfilm_emulation.so|vendor/lib/libHDR.so|vendor/lib/liblgmda.so|vendor/lib/liblghdri.so|vendor/lib/libmmcamera_hdr_gb_lib.so|vendor/lib/libmorpho_image_stab31.so|vendor/lib/libmorpho_superzoom.so|vendor/lib/libmpbase.so|vendor/lib/liboptizoom.so|vendor/lib/libseemore.so|vendor/lib/libtrueportrait.so|vendor/lib/libts_detected_face_hal.so|vendor/lib/libts_face_beautify_hal.so|vendor/lib/libubifocus.so|vendor/lib64/libcir_driver.so|vendor/lib64/libseemore.so|vendor/lib64/libts_detected_face_hal.so|vendor/lib64/libts_face_beautify_hal.so)
+        "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+        ;;
     vendor/lib/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
