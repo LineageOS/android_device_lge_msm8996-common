@@ -40,6 +40,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
+    bluetooth.core.gap.le.privacy.enabled=false \
     bluetooth.device.class_of_device=90,2,12 \
     bluetooth.hardware.power.operating_voltage_mv=1800 \
     bluetooth.le.disable_apcf_extended_features=1 \
