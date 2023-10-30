@@ -18,6 +18,8 @@
 # Inherit proprietary blobs
 $(call inherit-product, vendor/lge/msm8996-common/msm8996-common-vendor.mk)
 
+PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
