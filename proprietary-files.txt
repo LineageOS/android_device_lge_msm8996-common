@@ -457,8 +457,6 @@ vendor/lib64/libsmemlog.so
 # Radio
 system/app/QtiTelephonyService/QtiTelephonyService.apk
 system/etc/permissions/qcrilhook.xml
-system/etc/permissions/telephonyservice.xml
-system/framework/QtiTelephonyServicelibrary.jar
 system/framework/qcrilhook.jar
 system/framework/qti-telephony-common.jar
 system/lib/libdiag_system.so
