@@ -283,6 +283,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
     libhypv_intercept \
+    libminijail_32 \
     libmm-omxcore \
     libOmxAacEnc \
     libOmxAmrEnc \
