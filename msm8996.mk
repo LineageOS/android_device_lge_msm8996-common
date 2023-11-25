@@ -98,9 +98,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
+    libexif_32 \
     libshim_camera \
     libui_shim \
     libtinyxml \
+    libyuv_32 \
     vendor.qti.hardware.camera.device@1.0
 
 PRODUCT_COPY_FILES += \
