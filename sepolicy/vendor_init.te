@@ -25,6 +25,8 @@ allow vendor_init {
   bluetooth_data_file
 }:file { create getattr open read write setattr relabelfrom unlink };
 
+allow vendor_init media_userdir_file:dir r_file_perms;
+
 allow vendor_init sensors_data_file:dir relabelto;
 allow vendor_init sensors_data_file:file relabelto;
 
