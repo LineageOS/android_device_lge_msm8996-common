@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "04853779_35848591",
+        "filename": "sepolicy/domain.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-12-08T18:32:41Z",
+      "side": 1,
+      "message": "aware this is jank, but 40 processes want the camera HAL - likely due to the old shimming method not playing nicely with something - doing this _for now_ until we figure out why LD_SHIMS do this lol.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 53
+      },
+      "revId": "4c7738c97da2671279e2baecc7fc808c78514435",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
