@@ -148,6 +148,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_OVERRIDES += \
     ro.telephony.block_binder_thread_on_incoming_calls=false
 
+# LMKD
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.low=1001 \
+    ro.lmk.medium=800 \
+    ro.lmk.critical=0 \
+    ro.lmk.critical_upgrade=false \
+    ro.lmk.upgrade_pressure=100 \
+    ro.lmk.downgrade_pressure=100 \
+    ro.lmk.kill_heaviest_task=true
+
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
