@@ -198,7 +198,6 @@ vendor/bin/qseecomd
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libcppf.so
-vendor/lib/liboemcrypto.so
 vendor/lib/libqisl.so
 vendor/lib/librpmb.so
 vendor/lib/libssd.so
