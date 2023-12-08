@@ -55,6 +55,12 @@ function blob_fixup() {
     vendor/lib64/libsecureui_svcsock.so)
         "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
+    vendor/lib64/libsettings.so)
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+        ;;
+    vendor/lib64/libwvhidl.so)
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+        ;;
     vendor/lib64/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
