@@ -25,6 +25,5 @@ cc_library_shared {
     include_dirs: ["frameworks/native/include"],
 
     compile_multilib: "32",
-    vendor: true,
-
+    system_ext_specific: true,
 }
