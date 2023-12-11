@@ -125,6 +125,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.gralloc.enable_fb_ubwc=1 \
     dev.pm.dyn_samplingrate=1 \
     persist.demo.hdmirotationlock=false \
+    ro.hardware.egl=adreno \
     sdm.perf_hint_window=50 \
     persist.hwc.enable_vds=1 \
     sdm.debug.disable_rotator_split=1
