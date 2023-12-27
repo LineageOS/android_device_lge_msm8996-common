@@ -22,6 +22,30 @@
       },
       "revId": "1f2a3544c16b64d17519074f2fad910decb978db",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "dba3655b_e3f585db",
+        "filename": "overlay-lineage/packages/apps/Aperture/app/src/main/res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 24773
+      },
+      "writtenOn": "2023-12-27T15:43:20Z",
+      "side": 1,
+      "message": "Dang it not again.....",
+      "parentUuid": "f2cf296a_1fabd31a",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 1
+      },
+      "revId": "1f2a3544c16b64d17519074f2fad910decb978db",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
