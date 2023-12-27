@@ -22,6 +22,30 @@
       },
       "revId": "ea13e5173d9b5474340951c5df5be5a105d68b2f",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "751af40a_5dbbea89",
+        "filename": "overlay-lineage/packages/apps/Aperture/app/src/main/res/values/config.xml",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2023-12-27T16:55:44Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e4a003ab_1c747282",
+      "range": {
+        "startLine": 32,
+        "startChar": 43,
+        "endLine": 32,
+        "endChar": 47
+      },
+      "revId": "ea13e5173d9b5474340951c5df5be5a105d68b2f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
