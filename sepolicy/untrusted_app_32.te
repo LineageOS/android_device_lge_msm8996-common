@@ -1,0 +1,1 @@
+allow untrusted_app_32 vendor_file:file { read };
