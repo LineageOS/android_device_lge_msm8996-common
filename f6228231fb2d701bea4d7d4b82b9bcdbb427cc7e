@@ -50,6 +50,23 @@
       "message": "tested on my lg device with off data and wifi, time doesnt reset anymore, weird no one complain about it since i test even on lineage 17",
       "revId": "f6228231fb2d701bea4d7d4b82b9bcdbb427cc7e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54c82f36_4ed1f563",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-21T00:29:22Z",
+      "side": 1,
+      "message": "tested on my lg device with off data and wifi, time doesnt reset anymore, weird no one complain about it since i test even on lineage 17",
+      "revId": "f6228231fb2d701bea4d7d4b82b9bcdbb427cc7e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
