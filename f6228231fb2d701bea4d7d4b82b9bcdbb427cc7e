@@ -67,6 +67,23 @@
       "message": "tested on my lg device with off data and wifi, time doesnt reset anymore, weird no one complain about it since i test even on lineage 17",
       "revId": "f6228231fb2d701bea4d7d4b82b9bcdbb427cc7e",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd2779f6_54e63057",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-01-21T02:42:53Z",
+      "side": 1,
+      "message": "yeah, sorry, the additions here are straight audit2allow.\n\nI really recommend reading the article on how to write sepolicy on our engineering blog.\n\na few of these are useful, and I\u0027ll trim this down to the ones we can accept.",
+      "revId": "f6228231fb2d701bea4d7d4b82b9bcdbb427cc7e",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
