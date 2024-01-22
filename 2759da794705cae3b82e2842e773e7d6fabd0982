@@ -68,6 +68,24 @@
       "message": "your changes on timekeep_app.te dont work, time resets again after reboot",
       "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "07e1de4e_090aeafa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-22T05:17:06Z",
+      "side": 1,
+      "message": "i reverted to my old build and the time works fine? should we revert to the original code?\n\nallow timekeep_app { sysfs sysfs_rtc proc_vmallocinfo }:file { read open getattr };\nallow timekeep_app { sysfs sysfs_rtc }:dir search;\nallow timekeep_app vendor_time_data_file:dir { search write add_name create };\nallow timekeep_app vendor_time_data_file:file { create write open };",
+      "parentUuid": "bcb649d9_7af20d28",
+      "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
