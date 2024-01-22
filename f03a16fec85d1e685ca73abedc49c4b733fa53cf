@@ -70,6 +70,30 @@
       },
       "revId": "f03a16fec85d1e685ca73abedc49c4b733fa53cf",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2efad7b4_0fb418e6",
+        "filename": "sepolicy/timekeep_app.te",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-22T21:43:58Z",
+      "side": 1,
+      "message": "rebuild the rom,patch dont work time resets after reboot",
+      "parentUuid": "00898f68_47e717dc",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 64
+      },
+      "revId": "f03a16fec85d1e685ca73abedc49c4b733fa53cf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
