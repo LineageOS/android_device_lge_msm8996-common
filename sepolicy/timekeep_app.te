@@ -23,3 +23,11 @@ allow timekeep_app sysfs_rtc:{ file lnk_file } r_file_perms;
 
 # Set the persist.vendor.timeadjust property
 set_prop(timekeep_app, vendor_timekeep_prop)
+
+
+
+#Fix Denied Sepolicy
+allow timekeep_app { sysfs sysfs_rtc proc_vmallocinfo }:file { read open getattr };
+allow timekeep_app { sysfs sysfs_rtc }:dir search;
+allow timekeep_app vendor_time_data_file:dir { search write add_name create };
+allow timekeep_app vendor_time_data_file:file { create write open };
