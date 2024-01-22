@@ -33,6 +33,41 @@
       "message": "if it does, please leave a V+1 vote (it works) and CR+1 (it is ready to merge)",
       "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6aee797b_2907dc55",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-22T05:12:40Z",
+      "side": 1,
+      "message": "will rebuilt the rom thanks",
+      "parentUuid": "b0f81395_d6b2279f",
+      "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bcb649d9_7af20d28",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-22T05:12:40Z",
+      "side": 1,
+      "message": "your changes on timekeep_app.te dont work, time resets again after reboot",
+      "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }

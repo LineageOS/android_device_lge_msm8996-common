@@ -33,6 +33,24 @@
       "message": "hold up for a sec, going to clean this up myself.",
       "revId": "ce67affd8223830231f74aa64ce64010103a602b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "df002ded_97e7d87e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-22T05:12:40Z",
+      "side": 1,
+      "message": "i accidentally abandon it, i updated the patch and remove unnecessary sepolicy addtions",
+      "parentUuid": "9f879508_adc07efc",
+      "revId": "ce67affd8223830231f74aa64ce64010103a602b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
