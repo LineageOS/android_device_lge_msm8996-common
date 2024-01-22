@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c863ee7_5ad05780",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-22T23:22:57Z",
+      "side": 1,
+      "message": "https://github.com/xc112lg/scripts/blob/cd10/c.txt\n\nstill system_data_file denied, although this denied sepolicy exist with my build with sysfs allowed",
+      "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
