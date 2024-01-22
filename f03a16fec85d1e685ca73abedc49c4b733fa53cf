@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91d7086c_a84e41cc",
+        "filename": "sepolicy/timekeep_app.te",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2024-01-22T09:01:13Z",
+      "side": 1,
+      "message": "This is duplicated",
+      "range": {
+        "startLine": 31,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 64
+      },
+      "revId": "f03a16fec85d1e685ca73abedc49c4b733fa53cf",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
