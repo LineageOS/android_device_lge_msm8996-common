@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f879508_adc07efc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-01-22T02:23:52Z",
+      "side": 1,
+      "message": "hey, you don\u0027t need to abandon and push a new patch every time - in fact please don\u0027t do that, use the same change ID and just push it, it will auto update said change.",
+      "revId": "ce67affd8223830231f74aa64ce64010103a602b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
