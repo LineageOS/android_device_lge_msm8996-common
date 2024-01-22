@@ -12,6 +12,7 @@ app_domain(timekeep_app)
 dontaudit timekeep_app app_data_file:dir { getattr search };
 
 allow timekeep_app activity_service:service_manager find;
+allow hal_camera_default hal_power_hwservice:hwservice_manager { find };
 
 # Read from /data/vendor/time/ats_2
 allow timekeep_app vendor_time_data_file:dir create_dir_perms;
@@ -23,3 +24,10 @@ allow timekeep_app sysfs_rtc:{ file lnk_file } r_file_perms;
 
 # Set the persist.vendor.timeadjust property
 set_prop(timekeep_app, vendor_timekeep_prop)
+
+r_dir_file(timekeep_app, sysfs_rtc)
+
+allow timekeep_app proc_vmallocinfo:file r_file_perms;
+
+allow timekeep_app vendor_time_data_file:dir create_dir_perms;
+allow timekeep_app vendor_time_data_file:file create_file_perms;
