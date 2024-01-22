@@ -121,6 +121,24 @@
       "message": "01-22 14:01:00.453 W/m.sony.timekeep(4260): type\u003d1400 audit(0.0:26): avc:  denied  { search } for  name\u003d\"data\" dev\u003d\"sda18\" ino\u003d1232161 scontext\u003du:r:timekeep_app:s0 tcontext\u003du:object_r:system_data_file:s0:c512,c768 tclass\u003ddir permissive\u003d0\n01-22 14:01:05.313 W/HeapTaskDaemon(4260): type\u003d1400 audit(0.0:38): avc:  denied  { search } for  name\u003d\"data\" dev\u003d\"sda18\" ino\u003d1232161 scontext\u003du:r:timekeep_app:s0 tcontext\u003du:object_r:system_data_file:s0:c512,c768 tclass\u003ddir permissive\u003d0",
       "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7e8efe82_d4f9441a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-01-22T06:34:52Z",
+      "side": 1,
+      "message": "neither of these two are addressed by your previous patchset, but I can address these as well I guess.\n\nNew patchset addresses these, try it.",
+      "parentUuid": "b71f854d_b162fe19",
+      "revId": "2759da794705cae3b82e2842e773e7d6fabd0982",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
