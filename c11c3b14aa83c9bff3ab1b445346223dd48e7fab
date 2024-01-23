@@ -52,6 +52,24 @@
       "parentUuid": "158ce653_00d22a42",
       "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1377cf90_7f656676",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-01-23T08:14:19Z",
+      "side": 1,
+      "message": "alright, try the latest patch, this is not a clean way to do this but also, our sepolicy is already not all that clean.",
+      "parentUuid": "d819a141_924be8fc",
+      "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
