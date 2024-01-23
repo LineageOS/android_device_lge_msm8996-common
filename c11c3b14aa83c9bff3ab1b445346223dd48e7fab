@@ -34,6 +34,24 @@
       "parentUuid": "6c863ee7_5ad05780",
       "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d819a141_924be8fc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2024-01-23T06:25:59Z",
+      "side": 1,
+      "message": "system_data_file still shows up as denied with allowing sysfs but fix the time reset issue",
+      "parentUuid": "158ce653_00d22a42",
+      "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
