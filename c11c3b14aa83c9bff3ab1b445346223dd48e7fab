@@ -16,6 +16,24 @@
       "message": "https://github.com/xc112lg/scripts/blob/cd10/c.txt\n\nstill system_data_file denied, although this denied sepolicy exist with my build with sysfs allowed",
       "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "158ce653_00d22a42",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-01-23T05:15:05Z",
+      "side": 1,
+      "message": "so, that one looks unrelated to your issues.\n\nYou\u0027re saying that allowing sysfs alongside sysfs_rtc makes it work for you? But no denials show up?",
+      "parentUuid": "6c863ee7_5ad05780",
+      "revId": "c11c3b14aa83c9bff3ab1b445346223dd48e7fab",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
