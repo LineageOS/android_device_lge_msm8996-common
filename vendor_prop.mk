@@ -42,6 +42,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     bluetooth.core.gap.le.privacy.enabled=false \
     bluetooth.device.class_of_device=90,2,12 \
+    bluetooth.device.m_rsplen_workaround=true \
     bluetooth.hardware.power.operating_voltage_mv=1800 \
     bluetooth.le.disable_apcf_extended_features=1 \
     bluetooth.profile.asha.central.enabled?=true \
