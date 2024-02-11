@@ -39,5 +39,5 @@
     <bool translatable="false" name="config_wifi_turn_off_during_emergency_call">true</bool>
 
     <!-- Wifi driver supports IEEE80211AC for softap -->
-    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">true</bool>
+    <bool translatable="false" name="config_wifi_softap_ieee80211ac_supported">false</bool>
 </resources>
