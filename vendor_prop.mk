@@ -152,6 +152,24 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PRODUCT_OVERRIDES += \
     ro.telephony.block_binder_thread_on_incoming_calls=false
 
+<<<<<<< HEAD   (58ba2d msm8996-common: Disable support for softAP IEEE80211AC)
+=======
+# LMKD
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.lmk.low=1001 \
+    ro.lmk.medium=800 \
+    ro.lmk.critical=0 \
+    ro.lmk.critical_upgrade=false \
+    ro.lmk.upgrade_pressure=87 \
+    ro.lmk.downgrade_pressure=75 \
+    ro.lmk.kill_heaviest_task=false \
+    ro.lmk.kill_timeout_ms=50 \
+    ro.lmk.thrashing_limit=50 \
+    ro.lmk.thrashing_limit_decay=40 \
+    ro.lmk.swap_free_low_percentage=15 \
+    ro.lmk.swap_util_max=90
+
+>>>>>>> CHANGE (ef76fd msm8996-common: Tune LMKD parameters to improve multitasking)
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.vidc.enc.disable.pq=true \
