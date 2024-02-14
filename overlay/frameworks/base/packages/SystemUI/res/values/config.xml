@@ -43,4 +43,7 @@
     <!-- Doze: pulse parameter - delay to wait for the screen to wake up after an intent -->
     <integer name="doze_pulse_delay_in_intent">0</integer>
 
+    <!-- Whether the mobile signal icon pipeline should ignore IWlan status -->
+    <bool name="config_mobileIconIgnoresIWlan">true</bool>
+
 </resources>
