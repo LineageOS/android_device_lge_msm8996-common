@@ -16,6 +16,24 @@
       "message": "Why\u0027s com.android.settingslib.widget.OnMainSwitchChangeListener kept in place?",
       "revId": "bccd30567b43aa338cbd25d303d09667331b075b",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "281184f6_677024d7",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2024-03-29T15:11:04Z",
+      "side": 1,
+      "message": "Fixed https://review.lineageos.org/c/LineageOS/android_device_lge_msm8996-common/+/387920",
+      "parentUuid": "be8ad1a4_e956ad40",
+      "revId": "bccd30567b43aa338cbd25d303d09667331b075b",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": []
