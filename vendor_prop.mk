@@ -82,12 +82,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Data modules
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.data.mode=concurrent \
     ro.use_data_netmgrd=true \
-    persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.iwlan.enable=true \
-    persist.data.mode=concurrent \
-    persist.data.netmgrd.qos.enable=true
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -185,12 +181,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # RIL
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
     ril.subscription.types=NV,RUIM \
     DEVICE_PROVISIONED=1 \
     persist.data.qmi.adb_logmask=0 \
-    persist.net.doxlat=true \
-    persist.radio.apm_sim_not_pwdn=1 \
     persist.radio.custom_ecc=1 \
     persist.radio.force_on_dc=true \
     persist.radio.rat_on=combine \
@@ -201,17 +195,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio - Data/RMNet
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
     persist.data.df.dev_name=rmnet_usb0 \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.ul_mode=5 \
-    persist.data.iwlan.enable=true \
-    persist.data.qmi.adb_logmask=0 \
-    persist.data.wda.enable=true \
-    persist.rmnet.data.enable=true
+    persist.data.qmi.adb_logmask=0
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
