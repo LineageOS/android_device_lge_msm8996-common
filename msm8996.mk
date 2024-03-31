@@ -89,8 +89,10 @@ PRODUCT_COPY_FILES += \
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.4:64 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
+    android.hardware.camera.provider@2.5:64 \
     camera.device@3.2-impl \
     libexif_32 \
     libshim_camera \
@@ -335,7 +337,10 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libqti_vndfwk_detect \
     librmnetctl \
-    android.hardware.radio@1.4-service.legacy \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.secure_element@1.0.vendor \
     libnetutils.vendor \
     libsqlite.vendor \
     libsysutils.vendor
