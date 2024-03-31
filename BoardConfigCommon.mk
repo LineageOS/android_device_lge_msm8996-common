@@ -153,6 +153,9 @@ TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
 TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm8996
 
+# RIL
+ENABLE_VENDOR_RIL_SERVICE := true
+
 # Root directories
 BOARD_ROOT_EXTRA_FOLDERS := firmware persist persist-lg sns mpt
 
