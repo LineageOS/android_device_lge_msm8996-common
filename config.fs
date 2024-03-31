@@ -1,3 +1,6 @@
+[AID_VENDOR_QRTR]
+value:2906
+
 [AID_VENDOR_QTI_DIAG]
 value:2901
 
