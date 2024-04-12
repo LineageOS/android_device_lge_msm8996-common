@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2015 The CyanogenMod Project
- *               2017-2018 The LineageOS Project
+ *               2017-2018,2021 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -33,9 +33,6 @@ public class ProximitySensor implements SensorEventListener {
     private static final boolean DEBUG = false;
     private static final String TAG = "ProximitySensor";
 
-    // Maximum time for the hand to cover the sensor: 1s
-    private static final int HANDWAVE_MAX_DELTA_NS = 1000 * 1000 * 1000;
-
     // Minimum time until the device is considered to have been in the pocket: 2s
     private static final int POCKET_MIN_DELTA_NS = 2000 * 1000 * 1000;
 
@@ -63,7 +60,7 @@ public class ProximitySensor implements SensorEventListener {
         boolean isNear = event.values[0] < mSensor.getMaximumRange();
         if (mSawNear && !isNear) {
             if (shouldPulse(event.timestamp)) {
-                Utils.launchDozePulse(mContext);
+                DozeUtils.wakeOrLaunchDozePulse(mContext);
             }
         } else {
             mInPocketTime = event.timestamp;
@@ -74,11 +71,7 @@ public class ProximitySensor implements SensorEventListener {
     private boolean shouldPulse(long timestamp) {
         long delta = timestamp - mInPocketTime;
 
-        if (Utils.isHandwaveGestureEnabled(mContext) && Utils.isPocketGestureEnabled(mContext)) {
-            return true;
-        } else if (Utils.isHandwaveGestureEnabled(mContext)) {
-            return delta < HANDWAVE_MAX_DELTA_NS;
-        } else if (Utils.isPocketGestureEnabled(mContext)) {
+        if (DozeUtils.isPocketGestureEnabled(mContext)) {
             return delta >= POCKET_MIN_DELTA_NS;
         }
         return false;
