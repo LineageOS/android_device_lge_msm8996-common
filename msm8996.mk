@@ -336,7 +336,8 @@ PRODUCT_PACKAGES += \
     libjson \
     libprotobuf-cpp-full \
     libqti_vndfwk_detect \
-    librmnetctl
+    librmnetctl \
+    android.hardware.radio@1.4-service.legacy
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
