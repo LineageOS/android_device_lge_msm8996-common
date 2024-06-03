@@ -24,12 +24,6 @@ PRODUCT_OTA_ENFORCE_VINTF_KERNEL_REQUIREMENTS := true
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := 560dpi
 
-# APEX
-# Disable APEX compression
-# Keep this after including updatable_apex.mk
-PRODUCT_COMPRESSED_APEX := false
-
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
