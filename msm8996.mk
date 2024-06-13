@@ -170,7 +170,8 @@ PRODUCT_PACKAGES += \
 # Gatekeeper
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+    android.hardware.gatekeeper@1.0-service \
+    libion.vendor
 
 # Gesture Handler
 PRODUCT_PACKAGES += \
@@ -337,7 +338,9 @@ PRODUCT_PACKAGES += \
     libprotobuf-cpp-full \
     libqti_vndfwk_detect \
     librmnetctl \
-    android.hardware.radio@1.4-service.legacy
+    android.hardware.radio@1.4-service.legacy \
+    libsqlite.vendor \
+    libsysutils.vendor
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
