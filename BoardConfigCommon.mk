@@ -153,7 +153,12 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_msm8996
 
 # Root directories
-BOARD_ROOT_EXTRA_FOLDERS := firmware persist persist-lg sns mpt
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /vendor/firmware_mnt:/firmware \
+    /mnt/vendor/persist:/persist \
+    /mnt/vendor/persist-lg:/persist-lg \
+    /mnt/vendor/sns:/sns \
+    /mnt/vendor/mpt:/mpt
 
 # SELinux policies
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
