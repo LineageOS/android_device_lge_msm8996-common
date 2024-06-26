@@ -39,7 +39,11 @@ on early-init
     export EXTERNAL_STORAGE /sdcard
 
 on init
-   write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
+    mkdir /mnt/vendor/persist-lg 0771 system system
+    mkdir /mnt/vendor/sns 0755 system system
+    mkdir /mnt/vendor/mpt 0755 system system
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
