@@ -191,7 +191,7 @@ product/lib64/libdpmtcm.so:system_ext/lib64/libdpmtcm.so|a98ab3c419ebe49c6f3351e
 product/priv-app/dpmserviceapp/dpmserviceapp.apk:system_ext/priv-app/dpmserviceapp/dpmserviceapp.apk|9fd873c5330c03c62dfdeb6540b5984588295319
 vendor/bin/dpmQmiMgr|a43829d478ebc243b5f7307b44aa501a7a3c8211
 vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
-vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
+vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor|a70cfc1be3e06cde6318d6969e114429fe1950bb
 vendor/lib64/libdpmqmihal.so|25d74c0e867f023b71a7c599ab6d213c7de2725d
 
 # DRM
