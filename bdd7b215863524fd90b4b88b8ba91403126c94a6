@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8aeef593_0d283f5b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 29891
+      },
+      "writtenOn": "2024-08-20T22:39:50Z",
+      "side": 1,
+      "message": "A-OK by me, new kernel source built fine on h910 (with its own changes in place)",
+      "revId": "bdd7b215863524fd90b4b88b8ba91403126c94a6",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
