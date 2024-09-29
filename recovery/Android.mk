@@ -5,7 +5,7 @@ include $(CLEAR_VARS)
 LOCAL_CFLAGS += -DUSES_BOOTDEVICE_PATH
 
 LOCAL_C_INCLUDES := \
-    bootable/recovery/edify/include \
+    bootable/deprecated-ota/edify/include \
     bootable/recovery/otautil/include \
     bootable/recovery/updater/include \
     system/libbase/include
