@@ -50,10 +50,10 @@ function blob_fixup() {
         sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
         ;;
     vendor/bin/hw/vendor.display.color@1.0-service)
-        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     vendor/bin/pm-service)
-        grep -q libutils-v33.so "${2}" || "${PATCHELF}" --add-needed "libutils-v33.so" "${2}"
+        grep -q libutils-v33.so "${2}" || "${PATCHELF_0_18}" --add-needed "libutils-v33.so" "${2}"
         ;;
     vendor/lib/hw/camera.msm8996.so)
         sed -i "s/service.bootanim.exit/service.bootanim.zzzz/g" "${2}"
@@ -71,20 +71,20 @@ function blob_fixup() {
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
     vendor/lib64/libril-qc-qmi-1.so)
-        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     vendor/lib64/libsecureui_svcsock.so)
-        "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     vendor/lib64/libsettings.so)
-        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+        "${PATCHELF_0_18}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
     vendor/lib/vendor.display.color@1.0.so|vendor/lib/vendor.display.color@1.1.so|vendor/lib/vendor.display.color@1.2.so|vendor/lib/vendor.display.postproc@1.0.so|vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so|vendor/lib64/vendor.display.color@1.0.so|vendor/lib64/vendor.display.color@1.1.so|vendor/lib64/vendor.display.color@1.2.so|vendor/lib64/vendor.display.postproc@1.0.so|vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so)
          "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
     vendor/lib64/libwvhidl.so|vendor/lib64/mediadrm/libwvdrmengine.so)
-        "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
-         grep -q libcrypto_shim.so "${2}" || "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
+        "${PATCHELF_0_18}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+         grep -q libcrypto_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libcrypto_shim.so" "${2}"
         ;;
     vendor/lib64/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
