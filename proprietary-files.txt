@@ -591,5 +591,5 @@ system/priv-app/UnifiedSettingsApp/UnifiedSettingsApp.apk|74a62f02f665b4a0b20103
 vendor/bin/hw/android.hardware.drm@1.2-service.widevine|e130b8f1c8d46d8a185b00cba5ff8a2a871ee94c
 vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc|dee5b7838ac561a2292e89fc0c4ccd1932224215
 vendor/etc/vintf/manifest/manifest_android.hardware.drm@1.2-service.widevine.xml|1b556a6b981dfe8c5d62311b59758d370dd6dd10
-vendor/lib64/libwvhidl.so|a701374f4c0a6b6924b3f81c304505db48b3f9e1|049d9e9a82f66b6699611035a6f69f9d7af7c62d
-vendor/lib64/mediadrm/libwvdrmengine.so|9576cf6a0350a3b6fdc4982cede62c542f257011
+vendor/lib64/libwvhidl.so|a701374f4c0a6b6924b3f81c304505db48b3f9e1|d02ab164114f28870bf81f0f57a8ad970c984153
+vendor/lib64/mediadrm/libwvdrmengine.so|fd53782817acdb28b690af2b9cc9870df1e9ba47|5607d483ec695948c7f7f845131c2c0fa1722d64
