@@ -136,7 +136,7 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@2.0-impl-2.1 \
     gralloc.msm8996 \
     hdmi_cec.msm8996 \
-    hwcomposer.msm8996 \
+    hwcomposer.qcom \
     libdisplayconfig \
     libqdMetaData.system \
     vendor.qti.hardware.memtrack-service
