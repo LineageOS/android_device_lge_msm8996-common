@@ -285,11 +285,7 @@ PRODUCT_PACKAGES += \
     libhypv_intercept \
     libminijail_32 \
     libmm-omxcore \
-    libOmxAacEnc \
-    libOmxAmrEnc \
     libOmxCore \
-    libOmxEvrcEnc \
-    libOmxQcelp13Enc \
     libOmxVdec \
     libOmxVenc \
     libOmxVidcCommon \
