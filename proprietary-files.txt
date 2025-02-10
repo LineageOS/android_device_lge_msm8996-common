@@ -358,7 +358,6 @@ vendor/lib/libOmxApeDec.so|49b4090d2f82963e596dd2fabb30b7fe8551a21b
 vendor/lib/libOmxApeDecSw.so|d1276d42ad37fbd263ab96f9f353d4e782bb0fe9
 vendor/lib/libOmxEvrcDec.so|20a6be418df26f48751b4178f5642e3fc6902690
 vendor/lib/libOmxQcelp13Dec.so|27a75185e62e88ea84ac2448a3842c998899ae90
-vendor/lib/libOmxVideoDSMode.so|84a6b99f5ad0c7dbe827eb01258cca4c790c0fe7
 vendor/lib/libOmxVpp.so|46e4928c392716943986a3b490680d3e08fdf3e4
 vendor/lib/libOmxWmaDec.so|c3da756ae14234ae8e56cbc0b32249fbd4c8746a
 vendor/lib/libgpustats.so|75fc8f58b071f3c27d708010e1b40eafba091a14
