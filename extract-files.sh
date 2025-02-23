@@ -64,6 +64,9 @@ function blob_fixup() {
     vendor/lib/libdovi.so|vendor/lib64/libdovi.so)
         "${PATCHELF_0_18}" --add-needed "libgui_shim_vendor.so" "${2}"
         ;;
+    vendor/lib/libmmcamera_faceproc2.so)
+        "${PATCHELF_0_18}" --set-soname "libmmcamera_faceproc2.so" "${2}"
+        ;;
     vendor/lib/libmmcamera_hdr_gb_lib.so)
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
