@@ -28,6 +28,9 @@ function blob_fixup() {
     system/etc/permissions/qti_libpermissions.xml)
         sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
         ;;
+    system/lib/liblgkm.so|system/lib64/liblgkm.so)
+        grep -q libbase_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libbase_shim.so" "${2}"
+        ;;
     system_ext/etc/init/dpmd.rc)
         sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
         ;;
