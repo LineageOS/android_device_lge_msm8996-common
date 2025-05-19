@@ -1,6 +1,5 @@
 vendor_internal_prop(diag_prop)
 vendor_internal_prop(vendor_qdma_prop)
-vendor_internal_prop(vendor_timekeep_prop)
 
 vendor_public_prop(post_boot_prop)
 vendor_public_prop(vendor_camera_prop)

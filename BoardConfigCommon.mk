@@ -157,6 +157,7 @@ BOARD_ROOT_EXTRA_FOLDERS := firmware persist persist-lg sns mpt
 
 # SELinux policies
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
+include hardware/sony/timekeep/sepolicy/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy
 SELINUX_IGNORE_NEVERALLOWS := true
 
