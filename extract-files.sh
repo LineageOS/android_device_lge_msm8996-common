@@ -28,6 +28,9 @@ function blob_fixup() {
     system/etc/permissions/qti_libpermissions.xml)
         sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
         ;;
+    system/lib/libdovi.so|system/lib64/libdovi.so)
+        "${PATCHELF_0_18}" --add-needed "libgui_shim.so" "${2}"
+        ;;
     system/lib/liblgkm.so|system/lib64/liblgkm.so)
         grep -q libbase_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libbase_shim.so" "${2}"
         ;;
@@ -53,6 +56,9 @@ function blob_fixup() {
         ;;
     vendor/lib/libAutoContrast.so|vendor/lib/libCmcPdaf.so|vendor/lib/libSJFingerDetect.so|vendor/lib/libarcsoft_beauty_shot.so|vendor/lib/libarcsoft_object_tracking.so|vendor/lib/libchromaflash.so|vendor/lib/libcir_driver.so|vendor/lib/libfilm_emulation.so|vendor/lib/libHDR.so|vendor/lib/liblgmda.so|vendor/lib/liblghdri.so|vendor/lib/libmorpho_image_stab31.so|vendor/lib/libmorpho_superzoom.so|vendor/lib/libmpbase.so|vendor/lib/liboptizoom.so|vendor/lib/libseemore.so|vendor/lib/libtrueportrait.so|vendor/lib/libts_detected_face_hal.so|vendor/lib/libts_face_beautify_hal.so|vendor/lib/libubifocus.so|vendor/lib64/libcir_driver.so|vendor/lib64/libseemore.so|vendor/lib64/libts_detected_face_hal.so|vendor/lib64/libts_face_beautify_hal.so)
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+        ;;
+    vendor/lib/libdovi.so|vendor/lib64/libdovi.so)
+        "${PATCHELF_0_18}" --add-needed "libgui_shim_vendor.so" "${2}"
         ;;
     vendor/lib/libmmcamera_hdr_gb_lib.so)
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
