@@ -92,7 +92,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     camera.device@3.2-impl \
     libexif_32 \
-    libshim_camera \
+    libshim_camera_system \
     libui_shim \
     libtinyxml \
     libyuv_32 \
