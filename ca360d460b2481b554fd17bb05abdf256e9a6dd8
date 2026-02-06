@@ -16,6 +16,23 @@
       "message": "lineage os",
       "revId": "ca360d460b2481b554fd17bb05abdf256e9a6dd8",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb8df2c2_2def4528",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 36625
+      },
+      "writtenOn": "2026-02-06T11:08:46Z",
+      "side": 1,
+      "message": "lineage os",
+      "revId": "ca360d460b2481b554fd17bb05abdf256e9a6dd8",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ],
   "submitRequirementResults": [
