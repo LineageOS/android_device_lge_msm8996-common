@@ -362,6 +362,7 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
+    hardware/broadcom/libbt \
     hardware/lge
 
 # System Suspend
