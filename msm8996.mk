@@ -371,6 +371,10 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/lge
 
+# System Suspend
+PRODUCT_PACKAGES += \
+    android.system.suspend@1.0
+
 # Telephony
 PRODUCT_PACKAGES += \
     telephony-ext
