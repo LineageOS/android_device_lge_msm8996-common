@@ -13,7 +13,7 @@
 // limitations under the License.
 
 cc_library_shared {
-    name: "libshim_camera",
+    name: "libshim_camera_system",
 
     srcs: ["camera_shim.cpp"],
 
