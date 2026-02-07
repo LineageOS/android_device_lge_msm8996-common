@@ -6,7 +6,7 @@ LOCAL_CFLAGS += -DUSES_BOOTDEVICE_PATH
 
 LOCAL_C_INCLUDES := \
     bootable/deprecated-ota/edify/include \
-    bootable/deprecated-ota/updater/include/updater \
+    bootable/deprecated-ota/updater/include \
     bootable/recovery/otautil/include \
     system/libbase/include
 
