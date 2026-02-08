@@ -75,6 +75,12 @@ function blob_fixup() {
     vendor/lib64/libsettings.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
+    vendor/lib/libsymphony-1.1.1.so)
+        "${PATCHELF_0_18}" --set-soname "libsymphony-1.1.1.so" "${2}"
+        ;;
+    vendor/lib/libsymphonypower-1.1.1.so)
+        "${PATCHELF_0_18}" --set-soname "libsymphonypower-1.1.1.so" "${2}"
+        ;;
     vendor/lib64/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
