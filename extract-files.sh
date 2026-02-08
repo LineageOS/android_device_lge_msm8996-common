@@ -19,7 +19,7 @@ if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
 fi
-. "$HELPER"
+source "$HELPER"
 
 function blob_fixup() {
     case "${1}" in
@@ -89,16 +89,35 @@ function blob_fixup() {
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
-while [ "$1" != "" ]; do
-    case $1 in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
-                                ;;
-        -s | --section )        shift
-                                SECTION="$1"
-                                CLEAN_VENDOR=false
-                                ;;
-        * )                     SRC="$1"
-                                ;;
+ONLY_COMMON=
+ONLY_TARGET=
+KANG=
+SECTION=
+
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        --only-common )
+                ONLY_COMMON=true
+                ;;
+        --only-device-common )
+                ONLY_DEVICE_COMMON=true
+                ;;
+        --only-target )
+                ONLY_TARGET=true
+                ;;
+        -n | --no-cleanup )
+                CLEAN_VENDOR=false
+                ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1}"
+                ;;
     esac
     shift
 done
@@ -107,19 +126,25 @@ if [ -z "$SRC" ]; then
     SRC=adb
 fi
 
+if [ -z "${ONLY_TARGET}" ] && [ -z "${ONLY_DEVICE_COMMON}" ]; then
 # Initialize the helper for common platform
 setup_vendor "$PLATFORM_COMMON" "$VENDOR" "$ANDROID_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+fi
 
+if [ -z "${ONLY_TARGET}" ] && [ -z "${ONLY_COMMON}" ]; then
 # Initialize the helper for common device
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ANDROID_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt" "$SRC" "$SECTION"
+fi
 
+if [ -z "${ONLY_COMMON}" ] && [ -z "${ONLY_DEVICE_COMMON}" ] && [ -s "${MY_DIR}/../${DEVICE}/proprietary-files.txt" ]; then
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false $CLEAN_VENDOR
 
 extract "$MY_DIR/../$DEVICE/proprietary-files.txt" "$SRC" "$SECTION"
+fi
 
 "$MY_DIR"/setup-makefiles.sh
