@@ -129,6 +129,9 @@ setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ANDROID_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt" "$SRC" "$SECTION"
 
+grep -q '"vendor/lge/msm8996-common"' ../../../vendor/lge/g6-common/Android.bp || \
+sed -i '/imports: \[/a\                "vendor/lge/msm8996-common",' ../../../vendor/lge/g6-common/Android.bp
+
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false $CLEAN_VENDOR
 
