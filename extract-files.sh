@@ -32,6 +32,7 @@ function blob_fixup() {
         "${PATCHELF_0_18}" --add-needed "libgui_shim.so" "${2}"
         ;;
     system/lib/libkeystore_binder.so|system/lib64/libkeystore_binder.so)
+        "${PATCHELF_0_18}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
         "${PATCHELF_0_18}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
     system/lib/liblgkm.so|system/lib64/liblgkm.so)
