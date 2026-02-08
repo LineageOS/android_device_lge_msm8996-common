@@ -75,6 +75,9 @@ esac
 
 write_makefiles "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt"
 
+grep -q '"vendor/lge/msm8996-common"' ../../../vendor/lge/"$DEVICE_COMMON"/Android.bp || \
+sed -i '/imports: \[/a\                "vendor/lge/msm8996-common",' ../../../vendor/lge/"$DEVICE_COMMON"/Android.bp
+
 # We are done with common
 write_footers
 
