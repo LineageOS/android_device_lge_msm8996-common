@@ -83,6 +83,12 @@ function blob_fixup() {
     vendor/lib64/libsettings.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
+    vendor/lib/libsymphony-1.1.1.so)
+         "${PATCHELF_0_18}" --set-soname "libsymphony-1.1.1.so" "${2}"
+         ;;
+    vendor/lib/libsymphonypower-1.1.1.so)
+         "${PATCHELF_0_18}" --set-soname "libsymphonypower-1.1.1.so" "${2}"
+         ;;
     vendor/lib/vendor.display.color@1.0.so|vendor/lib/vendor.display.color@1.1.so|vendor/lib/vendor.display.color@1.2.so|vendor/lib/vendor.display.postproc@1.0.so|vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so|vendor/lib64/vendor.display.color@1.0.so|vendor/lib64/vendor.display.color@1.1.so|vendor/lib64/vendor.display.color@1.2.so|vendor/lib64/vendor.display.postproc@1.0.so|vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so)
          "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
