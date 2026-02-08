@@ -67,7 +67,7 @@ vendor/lib64/libseemore.so
 
 # Camera - postprocessing - mmcamera
 vendor/lib/libmmcamera_chromaflash_lib.so
-vendor/lib/libmmcamera_llvd.so
+vendor/lib/libmmcamera_llvd.so;DISABLE_CHECKELF
 vendor/lib/libmmcamera_optizoom_lib.so
 vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_stillmore_lib.so
@@ -161,8 +161,8 @@ vendor/lib64/libcneoplookup.so|f0bd13e3db5893ca61c0701e7c43dd355a4dfae5
 vendor/lib64/libcneqmiutils.so|d705a8301593007703fd537c17db281967fd8212
 vendor/lib64/libwms.so|ed3cc676c0951a462e81135159c53e4c79ed2bbd
 vendor/lib64/libwqe.so|5f9a4b5920fd22051355c9ab6b8dc32e27022048
+vendor/lib/libxml.so|1328fd2155ef26db4911602c160d6a99806cd9a8
 vendor/lib64/libxml.so|2c1a0141487fe37f906a6e7efb7a6f7e1b6c02dd
-vendor/lib64/vendor.qti.data.factory@1.0.so|048b26a8e72c92635d65b7c491d84ccf9f7fa075
 vendor/lib64/vendor.qti.data.factory@2.0.so|3d394f6124db5ad1987c67737bbc30d4d761cecb
 vendor/lib64/vendor.qti.hardware.cacert@1.0.so|bb56f65d5251057a306a8175daef9571cfd3457b
 vendor/lib64/vendor.qti.hardware.data.cne.internal.api@1.0.so|ed05ca4c09b5913cf5c9d87267a59c25001ddd49
@@ -185,7 +185,7 @@ product/etc/permissions/com.qti.dpmframework.xml:system_ext/etc/permissions/com.
 product/etc/permissions/dpmapi.xml:system_ext/etc/permissions/dpmapi.xml|0991b3069308620cfcad53873e9f09af181b981d|697c88d7ebef6232ef214b17b4023bbb3ff4e625
 product/framework/com.qti.dpmframework.jar:system_ext/framework/com.qti.dpmframework.jar|e39a7e06af2d1e95a3724c19c36b8716277f53a1
 product/framework/dpmapi.jar:system_ext/framework/dpmapi.jar|4696df9793ad676b305d53b5d7ce65ecf74771ad
-product/lib64/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
+product/lib64/com.qualcomm.qti.dpm.api@1.0.so:system_ext/lib64/com.qualcomm.qti.dpm.api@1.0.so;MODULE_SUFFIX=_vendor|a70cfc1be3e06cde6318d6969e114429fe1950bb
 product/lib64/libdpmctmgr.so:system_ext/lib64/libdpmctmgr.so|7ee0d1d40a8fc7fea924602db13717235ed2c2aa
 product/lib64/libdpmfdmgr.so:system_ext/lib64/libdpmfdmgr.so|cb0157da0ffe6827471662a5b7881e85165cb5aa
 product/lib64/libdpmframework.so:system_ext/lib64/libdpmframework.so|8b2183e4b50a033b10c640cbc0b14a39ed5dca16|c335716a1b71f538beb8b51719c1b099ae686328
@@ -223,13 +223,13 @@ vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so
 vendor/lib/hw/gatekeeper.msm8996.so
 vendor/lib64/hw/gatekeeper.msm8996.so
 
-# GPS - from daisy - QKQ1.191002.002
-vendor/bin/loc_launcher|06793983f836a9b42b5ff3848f8fe177134c1379
-vendor/bin/lowi-server|1fe78b543c14196169ab411acfd9dabbfb4636dd
-vendor/bin/slim_daemon|afca96474570012eabb7ef9cecb175948d69e1df
-vendor/bin/xtra-daemon|20ec9dc7d1785a1789e57cf55f8b49b79fde374c
-vendor/bin/xtwifi-client|7d737eca493d57e29cb44e0bc658dda93fc44fe4
-vendor/bin/xtwifi-inet-agent|58749dc8fc9fdce0c184f3689d50299734b0f988
+# GPS - from daisy - QKQ11.191002.002
+vendor/bin/loc_launcher;DISABLE_CHECKELF;DISABLE_DEPS|06793983f836a9b42b5ff3848f8fe177134c1379
+vendor/bin/lowi-server;DISABLE_CHECKELF;DISABLE_DEPS|1fe78b543c14196169ab411acfd9dabbfb4636dd
+vendor/bin/slim_daemon;DISABLE_CHECKELF;DISABLE_DEPS|afca96474570012eabb7ef9cecb175948d69e1df
+vendor/bin/xtra-daemon;DISABLE_CHECKELF;DISABLE_DEPS|20ec9dc7d1785a1789e57cf55f8b49b79fde374c
+vendor/bin/xtwifi-client;DISABLE_CHECKELF;DISABLE_DEPS|7d737eca493d57e29cb44e0bc658dda93fc44fe4
+vendor/bin/xtwifi-inet-agent;DISABLE_CHECKELF;DISABLE_DEPS|58749dc8fc9fdce0c184f3689d50299734b0f988
 vendor/etc/cacert_location.pem|6a05f324e7d9ff584811e62aabeb6d89a5239bbe
 vendor/etc/vintf/manifest/vendor.qti.gnss@3.0-service.xml|9b2f6691d6c224bcb9ab9a0d57adfb9e52f1b53e
 vendor/etc/xtra_root_cert.pem|f55a31ec4d9cf8ce2724acadecf00c779f8767db
@@ -240,63 +240,63 @@ vendor/lib/vendor.qti.gnss@1.2.so|020509617283c8323c71c1eec955b7a09d62aa89
 vendor/lib/vendor.qti.gnss@2.0.so|ef5e1e3718cd71a01a4ca7b06f38d56b6aca50aa
 vendor/lib/vendor.qti.gnss@2.1.so|c7eeb37d061f7978624810ccc1d1d7f25e9f95da
 vendor/lib/vendor.qti.gnss@3.0.so|e4f5a7fd2dcdf56f8d69e4d0b27e996812ebd295
-vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so|2328835a0e0221a527c8e55c72e1a0dcef3fcfbe
-vendor/lib64/libdataitems.so|0ff60a5f4273cc3eb9f1f8a4d7bd204107375cec
-vendor/lib64/libgdtap.so|f5151c6425312d37c1eeb78cce1f92b71ae79e10
-vendor/lib64/libizat_client_api.so|b85018c41fb06de3e2f877288b5d8d18ea00077b
-vendor/lib64/libizat_core.so|fe74fb6cd3320ff8c938eb6b35b8f206b7265a4b
-vendor/lib64/liblbs_core.so|a20c4f11667138d372f4318bd532bfd4282b9e23
--vendor/lib64/libloc_api_v02.so|b8649d539b3ba48d3ed63dfb35e2ee827431ffa1
-vendor/lib64/liblocationservice.so|c8c2493df1a542b9b3efe78795a4887ad81611f3
-vendor/lib64/liblocationservice_glue.so|dab65642bfba2756c5ad0a38e0107c3ab04637f9
-vendor/lib64/liblowi_client.so|7ca8773ca8f686459dee81d532e887d3beda53e0
-vendor/lib64/liblowi_wifihal.so|1a5b086558927837302965e68731000f5ddc37db
+vendor/lib64/hw/vendor.qti.gnss@3.0-impl.so;DISABLE_CHECKELF;DISABLE_DEPS|2328835a0e0221a527c8e55c72e1a0dcef3fcfbe
+vendor/lib64/libdataitems.so;DISABLE_CHECKELF;DISABLE_DEPS|0ff60a5f4273cc3eb9f1f8a4d7bd204107375cec
+vendor/lib64/libgdtap.so;DISABLE_CHECKELF;DISABLE_DEPS|f5151c6425312d37c1eeb78cce1f92b71ae79e10
+vendor/lib64/libizat_client_api.so;DISABLE_CHECKELF;DISABLE_DEPS|b85018c41fb06de3e2f877288b5d8d18ea00077b
+vendor/lib64/libizat_core.so;DISABLE_CHECKELF;DISABLE_DEPS|fe74fb6cd3320ff8c938eb6b35b8f206b7265a4b
+vendor/lib64/liblbs_core.so;DISABLE_CHECKELF;DISABLE_DEPS|a20c4f11667138d372f4318bd532bfd4282b9e23
+-vendor/lib64/libloc_api_v02.so;DISABLE_CHECKELF;DISABLE_DEPS|b8649d539b3ba48d3ed63dfb35e2ee827431ffa1
+vendor/lib64/liblocationservice.so;DISABLE_CHECKELF;DISABLE_DEPS|c8c2493df1a542b9b3efe78795a4887ad81611f3
+vendor/lib64/liblocationservice_glue.so;DISABLE_CHECKELF;DISABLE_DEPS|dab65642bfba2756c5ad0a38e0107c3ab04637f9
+vendor/lib64/liblowi_client.so;DISABLE_CHECKELF;DISABLE_DEPS|7ca8773ca8f686459dee81d532e887d3beda53e0
+vendor/lib64/liblowi_wifihal.so;DISABLE_CHECKELF;DISABLE_DEPS|1a5b086558927837302965e68731000f5ddc37db
 vendor/lib64/libpdmapper.so|cdc5b101e8f6a4e0cc18be02e1a4d95527ba9d9c
 vendor/lib64/libqdma_file_agent.so|8bb728b595a3bac39cdbd3c456d523f35a10ef1d
-vendor/lib64/libslimclient.so|d2c67e48e0f9d975a817771f5589f9e23e1ac495
+vendor/lib64/libslimclient.so;DISABLE_CHECKELF;DISABLE_DEPS|d2c67e48e0f9d975a817771f5589f9e23e1ac495
 vendor/lib64/libwifi-hal-ctrl.so|82ad45f866583980361a71da07e2863386a240de
-vendor/lib64/libxtadapter.so|5085a7d7986abc5f64b67ad42065d326662d0c2c
+vendor/lib64/libxtadapter.so;DISABLE_CHECKELF;DISABLE_DEPS|5085a7d7986abc5f64b67ad42065d326662d0c2c
 vendor/lib64/vendor.qti.gnss@1.0.so|bf11e2b7a104ed1689623f5a772269d24e00bd14
 vendor/lib64/vendor.qti.gnss@1.1.so|4b88888fcba1bc3f709889cbf086d9ba2b997b91
 vendor/lib64/vendor.qti.gnss@1.2.so|8073a3bfcfdc7aaf903852349bbbcd9e5d229d3e
 vendor/lib64/vendor.qti.gnss@2.0.so|f6f94bf22b8948c163b84cf092d86fdd25b39850
 vendor/lib64/vendor.qti.gnss@2.1.so|7f69b6098f779f6ed396bbf366b496b0b228c743
-vendor/lib64/vendor.qti.gnss@3.0-service.so|6b3c387f31f4cb91c8907362af4daa3f0cad7911
+vendor/lib64/vendor.qti.gnss@3.0-service.so;DISABLE_CHECKELF;DISABLE_DEPS|6b3c387f31f4cb91c8907362af4daa3f0cad7911
 vendor/lib64/vendor.qti.gnss@3.0.so|c5ed668d324e7c898ca026fc12dad8829cd8a944
 
 # Graphics (Adreno) - from daisy - QKQ1.191002.002
 vendor/lib/egl/eglSubDriverAndroid.so|d0f0f243aeb41720cbc052c2344918c5d588659c
 vendor/lib/egl/libEGL_adreno.so|a3bb3c748cc180521a3b0ea173e714a55c01b118
-vendor/lib/egl/libGLESv1_CM_adreno.so|43c864f0c3f384085f9d19a2e1d56e672f319ea6
+vendor/lib/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF|43c864f0c3f384085f9d19a2e1d56e672f319ea6
 vendor/lib/egl/libGLESv2_adreno.so|15104ce575d5fb6282502fcf73ea27b6f52429bc
 vendor/lib/egl/libQTapGLES.so|957d9c98f3c29e7bf1da02fedac0789ada49dc70
-vendor/lib/egl/libq3dtools_adreno.so|b4b7bda387620de5f6ea2a29406f9351e855b8ed
-vendor/lib/egl/libq3dtools_esx.so|1972c5a7747579d14519681855e6bc4e424fc7f0
+vendor/lib/egl/libq3dtools_adreno.so;DISABLE_CHECKELF|b4b7bda387620de5f6ea2a29406f9351e855b8ed
+vendor/lib/egl/libq3dtools_esx.so;DISABLE_CHECKELF|1972c5a7747579d14519681855e6bc4e424fc7f0
 vendor/lib/libC2D2.so|c04a5ac1e576f63ebe91aba14bf917ee9e382be0
-vendor/lib/libCB.so|15986a50f98c979833e5d651eedcffaf19e54e3b
+vendor/lib/libCB.so;DISABLE_CHECKELF|15986a50f98c979833e5d651eedcffaf19e54e3b
 vendor/lib/libOpenCL.so|9ee3900265f9b855f526c0ce4fcfdaed51d62003
 vendor/lib/libadreno_utils.so|3a09e6720121f5b459a1fc7f9639b632da5832ec
 vendor/lib/libbccQTI.so|124156259b7900ac44c48dd9cf83b210d02d8c9d
 vendor/lib/libc2d30_bltlib.so|4a486823ef2a9ea14f4f02c9eb9053ac5fb028af
 vendor/lib/libfastcvopt.so|2df00c3827fe1db322084cb3935241f17d1532f4
-vendor/lib/libgsl.so|2ddafd66848dfd146bbaf184b69f92df9f79c99f
+vendor/lib/libgsl.so;DISABLE_CHECKELF|2ddafd66848dfd146bbaf184b69f92df9f79c99f
 vendor/lib/libllvm-glnext.so|a28adae3ae758cdffc889d681b3cdefe24351c32
 vendor/lib/libllvm-qcom.so|3079ae9049c8758664e6ade78837e0fc6c2272d5
 vendor/lib64/egl/eglSubDriverAndroid.so|8edb19893decd259ba43d752b48e0a69c5788db4
 vendor/lib64/egl/libEGL_adreno.so|c97c8e14d26f53398c50122daf80a599f077398a
-vendor/lib64/egl/libGLESv1_CM_adreno.so|0adf2e094afdc3476198ef8ad52101cf9004eb5d
+vendor/lib64/egl/libGLESv1_CM_adreno.so;DISABLE_CHECKELF|0adf2e094afdc3476198ef8ad52101cf9004eb5d
 vendor/lib64/egl/libGLESv2_adreno.so|4c9e3f723daf6a3f6d4301e3527472654c8bedf1
 vendor/lib64/egl/libQTapGLES.so|104e9cec67678174b92a698849aa2bcf52ba46ce
-vendor/lib64/egl/libq3dtools_adreno.so|8f6043f22c23c76e7e17bc9642957f648bec1e50
-vendor/lib64/egl/libq3dtools_esx.so|4f9b2bb6f492ea05b3da17b68e02effe611de0e8
+vendor/lib64/egl/libq3dtools_adreno.so;DISABLE_CHECKELF|8f6043f22c23c76e7e17bc9642957f648bec1e50
+vendor/lib64/egl/libq3dtools_esx.so;DISABLE_CHECKELF|4f9b2bb6f492ea05b3da17b68e02effe611de0e8
 vendor/lib64/libC2D2.so|ff2d4947c7924376ff66517461246d238e221e05
-vendor/lib64/libCB.so|df167809abe16674a61742ba6efb208edd069a3b
+vendor/lib64/libCB.so;DISABLE_CHECKELF|df167809abe16674a61742ba6efb208edd069a3b
 vendor/lib64/libOpenCL.so|84c7d8be13885c9346f73c09aaaedc3bce7667d9
 vendor/lib64/libadreno_utils.so|04b3878ea84a99f133934580adfd6905f6cc102b
 vendor/lib64/libbccQTI.so|e79ba0450ce215bfb81e518cce310f378314b4e5
 vendor/lib64/libc2d30_bltlib.so|644a88f490cc883492d94b9f581127fb33f51415
 vendor/lib64/libfastcvopt.so|f5e25aa055a57e23530b858bf7dd204a6009effc
-vendor/lib64/libgsl.so|5453da1723c3b014850165b42236ba26af11a7ad
+vendor/lib64/libgsl.so;DISABLE_CHECKELF|5453da1723c3b014850165b42236ba26af11a7ad
 vendor/lib64/libllvm-glnext.so|dad8139672a9dcff4270a58599aa1b72d13e62fc
 vendor/lib64/libllvm-qcom.so|88f4199538ce887c91936bf70eef31615c938aa2
 
@@ -328,10 +328,14 @@ vendor/lib64/hw/vulkan.msm8953.so:system/lib64/vulkan.msm8996.so|8c01e237bdc542c
 # Keymaster - LG
 system/lib/hw/lgkm.default.so
 system/lib/hw/lgkm.msm8996.so
+system/lib/libkeystore_binder.so
 system/lib/liblgkm.so
+system/lib/libsecureks.so
 system/lib64/hw/lgkm.default.so
 system/lib64/hw/lgkm.msm8996.so
+system/lib64/libkeystore_binder.so
 system/lib64/liblgkm.so
+system/lib64/libsecureks.so
 
 # Keystore
 vendor/lib/hw/keystore.msm8996.so
@@ -345,7 +349,6 @@ system/lib/libmmparser_lite.so|c3656bbcd33d44d5b22743061261989fffd0382f
 system/lib64/libFileMux.so|8d07dde58a8b629ccce4dd9c778e76a6513ca555
 system/lib64/libmmosal.so|9ceff2581e86d32bc2795dffb96ebe4bdc88f2f7
 system/lib64/libmmparser_lite.so|bea6788f2f0924c74a3bb7c1fdd24bc59202550c
-vendor/lib/libOmxVideoDSMode.so|84a6b99f5ad0c7dbe827eb01258cca4c790c0fe7
 vendor/lib/libOmxVpp.so|46e4928c392716943986a3b490680d3e08fdf3e4
 vendor/lib/libgpustats.so|75fc8f58b071f3c27d708010e1b40eafba091a14
 vendor/lib/libmmosal_proprietary.so|4b0788590e1ecfccd3b20b3181a4add528acb2b6
@@ -405,6 +408,8 @@ system/etc/permissions/qti_libpermissions.xml
 vendor/bin/irsc_util
 vendor/lib/libdiag.so
 vendor/lib/libdsi_netctrl.so
+vendor/lib/libnetmgr.so
+vendor/lib/libconfigdb.so
 vendor/lib/libdsutils.so
 vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
@@ -417,10 +422,12 @@ vendor/lib/libqmi_client_qmux.so
 -vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
-vendor/lib/libquipc_os_api.so
+vendor/lib/libquipc_os_api.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib/libsmemlog.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
+vendor/lib64/libnetmgr.so
+vendor/lib64/libconfigdb.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
 vendor/lib64/libqcci_legacy.so
@@ -433,7 +440,7 @@ vendor/lib64/libqmi_client_qmux.so
 -vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-vendor/lib64/libquipc_os_api.so
+vendor/lib64/libquipc_os_api.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libsmemlog.so
 
 # QMI (shared dependencies) - from daisy - QKQ1.191002.002
@@ -448,7 +455,8 @@ system/framework/qti-telephony-common.jar
 system/lib/libdiag_system.so
 system/lib64/libdiag_system.so
 system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/netmgrd
+# _ZN7android6system3net4netd4V1_05INetd10getServiceERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEb, _ZN7android6system3net4netd4V1_05INetd24registerForNotificationsERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKNS_2spINS_4hidl7manager4V1_020IServiceNotificationEEE
+vendor/bin/netmgrd;DISABLE_CHECKELF
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
@@ -458,16 +466,13 @@ vendor/lib/libmdmdetect.so
 vendor/lib/libpcas_vendor.so
 -vendor/lib/libqmiservices.so
 vendor/lib/libuicc_vendor.so
-vendor/lib/libvss_common_core.so
 vendor/lib/libvss_common_idl.so
 vendor/lib/libvss_common_iface.so
 vendor/lib/libvss_dmi_qcci.so
 vendor/lib/libvss_gnss_qcci.so
 vendor/lib/libvss_ims_qcci.so
-vendor/lib/libvss_nv_core.so
 vendor/lib/libvss_nv_idl.so
 vendor/lib/libvss_nv_iface.so
-vendor/lib/libvss_resim_core.so
 vendor/lib/libvss_resim_idl.so
 vendor/lib/libvss_resim_iface.so
 vendor/lib/libvssims-impl.so
@@ -486,7 +491,9 @@ vendor/lib64/libnetmgr.so
 vendor/lib64/libpcas_vendor.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so|bd5ebb5a8407cf5643c133f009516812c30d59d5
+vendor/lib64/libril-qc-qmi-1.so;DISABLE_CHECKELF;DISABLE_DEPS|bd5ebb5a8407cf5643c133f009516812c30d59d5
+vendor/lib64/libvss_nv_core.so
+vendor/lib64/libvss_resim_core.so
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
@@ -494,13 +501,13 @@ vendor/lib64/libsettings.so
 vendor/lib64/libsystem_health_mon.so
 vendor/lib64/libuicc_vendor.so
 vendor/lib64/libvss_bsp_qcci.so
-vendor/lib64/libvss_common_core.so
+# RIL_property, qcci_qmi_lge_ind_cb
+vendor/lib64/libvss_common_core.so;DISABLE_CHECKELF
 vendor/lib64/libvss_common_idl.so
 vendor/lib64/libvss_common_iface.so
 vendor/lib64/libvss_dmi_qcci.so
 vendor/lib64/libvss_gnss_qcci.so
 vendor/lib64/libvss_ims_qcci.so
-vendor/lib64/libvss_nv_core.so
 vendor/lib64/libvss_nv_idl.so
 vendor/lib64/libvss_nv_iface.so
 vendor/lib64/libvss_resim_core.so

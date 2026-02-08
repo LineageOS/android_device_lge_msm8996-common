@@ -14,8 +14,6 @@ if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
 
 ANDROID_ROOT="$MY_DIR/../../.."
 
-export TARGET_ENABLE_CHECKELF=false
-
 HELPER="${ANDROID_ROOT}/tools/extract-utils/extract_utils.sh"
 if [ ! -f "$HELPER" ]; then
     echo "Unable to find helper script at $HELPER"
@@ -27,6 +25,10 @@ function blob_fixup() {
     case "${1}" in
     system/etc/permissions/qti_libpermissions.xml)
         sed -i "s/name=\"android.hidl.manager-V1.0-java/name=\"android.hidl.manager@1.0-java/g" "${2}"
+        ;;
+    system/lib*/liblgkm.so)
+        grep -q liblog.so "${2}" || "${PATCHELF}" --add-needed "liblog.so" "${2}"
+        grep -q libbase_shim.so "${2}" || "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
         ;;
     system_ext/etc/init/dpmd.rc)
         sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
@@ -51,6 +53,24 @@ function blob_fixup() {
     vendor/lib/vulkan.msm8996.so)
         sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
+    vendor/lib/libmmcamera_llvd.so)
+        "${PATCHELF_0_18}" --remove-needed "libllvd_smore.so" "${2}"
+        ;;
+    vendor/lib*/vendor.qti.hardware.tui_comm@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib*/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib64/vendor.display.postproc@1.0.so|vendor/lib64/vendor.display.color@1.0.so|vendor/lib64/vendor.display.color@1.1.so|vendor/lib64/vendor.display.color@1.2.so|vendor/lib64/vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so)
+        "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
+        ;;
+    vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so|vendor/lib/libmmcamera_hdr_gb_lib.so)
+        "${PATCHELF_0_18}" --add-needed liblog.so "${2}"
+        ;;
+    system/lib*/libdovi.so)
+        "${PATCHELF_0_18}" --add-needed libgui_shim.so "${2}"
+        ;;
+    vendor/lib*/libdovi.so)
+        "${PATCHELF_0_18}" --add-needed libgui_shim_vendor.so "${2}"
+        ;;
+    vendor/lib/liblgmda.so|vendor/lib*/libseemore.so|vendor/lib*/libcir_driver.so|vendor/lib*/libts_detected_face_hal.so|vendor/lib/liblghdri.so|vendor/lib/libmorpho_image_stab31.so|vendor/lib/libtrueportrait.so|vendor/lib/libchromaflash.so|vendor/lib/libCmcPdaf.so|vendor/lib/libmorpho_superzoom.so|vendor/lib/liboptizoom.so|vendor/lib/libtrueportrait.so|vendor/lib/libubifocus.so|vendor/lib/libmmcamera_hdr_gb_lib.so|vendor/lib/libts_face_beautify_hal.so|vendor/lib/libAutoContrast.so|vendor/lib/libSJFingerDetect.so|vendor/lib/libarcsoft_beauty_shot.so|vendor/lib/libarcsoft_object_tracking.so|vendor/lib/libfilm_emulation.so|vendor/lib/libmpbase.so)
+        "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
+        ;;
     vendor/lib64/libril-qc-qmi-1.so)
         "${PATCHELF}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
         ;;
@@ -60,7 +80,12 @@ function blob_fixup() {
     vendor/lib64/libsettings.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
         ;;
-    vendor/lib64/libwvhidl.so)
+    system/lib*/libkeystore_binder.so)
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
+        "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
+        "${PATCHELF}" --replace-needed "libbinder.so" "libbinder-v32.so" "${2}"
+        ;;
+    vendor/lib64/libwvhidl.so|vendor/lib*/libwvdrmengine.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
          grep -q libcrypto_shim.so "${2}" || "${PATCHELF}" --add-needed "libcrypto_shim.so" "${2}"
         ;;
@@ -100,6 +125,8 @@ extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$ANDROID_ROOT" true $CLEAN_VENDOR
 
 extract "$MY_DIR/../$DEVICE_COMMON/proprietary-files.txt" "$SRC" "$SECTION"
+grep -q '"vendor/lge/msm8996-common"' ../../../vendor/lge/g6-common/Android.bp || \
+sed -i '/imports: \[/a\                "vendor/lge/msm8996-common",' ../../../vendor/lge/g6-common/Android.bp
 
 # Reinitialize the helper for device
 setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false $CLEAN_VENDOR
@@ -107,3 +134,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false $CLEAN_VENDOR
 extract "$MY_DIR/../$DEVICE/proprietary-files.txt" "$SRC" "$SECTION"
 
 "$MY_DIR"/setup-makefiles.sh
+
+# TODO
+#patchelf-0_18  --set-soname libsymphony-1.1.1.so g6-common/proprietary/vendor/lib/libsymphony-1.1.1.so
