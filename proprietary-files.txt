@@ -4,7 +4,6 @@
 # Current blobs with ELF checks disabled:
 # libdataitems.so, libgdtap.so, libizat_client_api.so, libizat_core.so, liblbs_core.so, libloc_api_v02.so, liblocationservice.so, liblocationservice_glue.so, liblowi_client.so, liblowi_wifihal.so, libslimclient.so, libquipc_os_api, libxtadapter.so, loc_launcher, lowi-server, slim_daemon, vendor.qti.gnss@3.0-impl.so, vendor.qti.gnss@3.0-service.so, xtra-daemon, xtwifi-client, xtwifi-inet-agent depend on libgps.utils, liblbs_core, libloc_core, libloc_api_v02, libloc_pla, liblocation_api which are GNU makefile targets
 # libGLESv1_CM_adreno.so, libq3dtools_adreno.so, libq3dtools_esx.so, libCB.so, libgsl.so, librs_adreno.so are unable to resolve the following symbol: __aeabi_uldivmod (32-bit)
-# netmgrd is unable to resolve the following symbols: _ZN7android6system3net4netd4V1_05INetd10getServiceERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEb, _ZN7android6system3net4netd4V1_05INetd24registerForNotificationsERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKNS_2spINS_4hidl7manager4V1_020IServiceNotificationEEE
 
 # ADSP
 vendor/bin/adsprpcd
@@ -454,7 +453,7 @@ system/framework/qti-telephony-common.jar
 system/lib/libdiag_system.so
 system/lib64/libdiag_system.so
 system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/netmgrd;DISABLE_CHECKELF
+vendor/bin/netmgrd
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
