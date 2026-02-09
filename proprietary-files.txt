@@ -463,16 +463,13 @@ vendor/lib/libnetmgr.so
 vendor/lib/libpcas_vendor.so
 -vendor/lib/libqmiservices.so
 vendor/lib/libuicc_vendor.so
-vendor/lib/libvss_common_core.so
 vendor/lib/libvss_common_idl.so
 vendor/lib/libvss_common_iface.so
 vendor/lib/libvss_dmi_qcci.so
 vendor/lib/libvss_gnss_qcci.so
 vendor/lib/libvss_ims_qcci.so
-vendor/lib/libvss_nv_core.so
 vendor/lib/libvss_nv_idl.so
 vendor/lib/libvss_nv_iface.so
-vendor/lib/libvss_resim_core.so
 vendor/lib/libvss_resim_idl.so
 vendor/lib/libvss_resim_iface.so
 vendor/lib/libvssims-impl.so
