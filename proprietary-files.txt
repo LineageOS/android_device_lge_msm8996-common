@@ -69,11 +69,9 @@ vendor/lib64/libseemore.so
 vendor/lib/libmmcamera_chromaflash_lib.so
 vendor/lib/libmmcamera_llvd.so
 vendor/lib/libmmcamera_optizoom_lib.so
-vendor/lib/libmmcamera_quadracfa.so
 vendor/lib/libmmcamera_stillmore_lib.so
 vendor/lib/libmmcamera_trueportrait_lib.so
 vendor/lib/libmmcamera_ubifocus_lib.so
-vendor/lib/libremosaic_daemon.so
 vendor/lib/libts_detected_face_hal.so
 vendor/lib/libts_face_beautify_hal.so
 vendor/lib64/libts_detected_face_hal.so
