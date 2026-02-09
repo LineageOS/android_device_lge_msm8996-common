@@ -393,7 +393,7 @@ vendor/lib64/libqti-util.so|0c34c7cbb07197841e9f097925fe961f3226e621
 
 # Peripheral manager - from daisy - QKQ1.191002.002
 vendor/bin/pm-proxy|1f216a6f54e9b97c026f3f3bc4d7d441d58d90a7
-vendor/bin/pm-service|8a521f14576d0d2edf03b4500a54379d37e15d4e
+vendor/bin/pm-service|8a521f14576d0d2edf03b4500a54379d37e15d4e|7e9872f00b18aaf800fd75777bb0218320464b1e
 vendor/lib/libperipheral_client.so|b75a6adac094ddcd6ded9415cae83e18d1e7e5d0
 vendor/lib64/libperipheral_client.so|20c8ab21fe28e41f60b59af0ba72de9f6b1996d2
 
@@ -492,7 +492,7 @@ vendor/lib64/libnetmgr.so
 vendor/lib64/libpcas_vendor.so
 -vendor/lib64/libqmiservices.so
 vendor/lib64/libril-qc-ltedirectdisc.so
-vendor/lib64/libril-qc-qmi-1.so|bd5ebb5a8407cf5643c133f009516812c30d59d5
+vendor/lib64/libril-qc-qmi-1.so|bd5ebb5a8407cf5643c133f009516812c30d59d5|6177fd8e12832cfd561ecc6d0de8edb05a2511fe
 vendor/lib64/libril-qc-radioconfig.so
 vendor/lib64/libril-qcril-hook-oem.so
 vendor/lib64/librilqmiservices.so
