@@ -38,16 +38,11 @@ function blob_fixup() {
     system/lib/liblgkm.so|system/lib64/liblgkm.so)
         grep -q libbase_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libbase_shim.so" "${2}"
         ;;
-    system_ext/etc/init/dpmd.rc)
-        sed -i "s/\/system\/product\/bin\//\/system\/system_ext\/bin\//g" "${2}"
-        ;;
-    system_ext/etc/permissions/com.qti.dpmframework.xml)
-        ;&
-    system_ext/etc/permissions/dpmapi.xml)
-        sed -i "s/\/system\/product\/framework\//\/system\/system_ext\/framework\//g" "${2}"
+    system_ext/etc/init/dpmd.rc|system_ext/etc/permissions/dpmapi.xml)
+        sed -i "s#/system/product/#/system/system_ext/#g" "${2}"
         ;;
     system_ext/lib64/libdpmframework.so)
-        sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
+        "${PATCHELF_0_18}" --replace-needed "libhidltransport.so" "libcutils-v29.so" "${2}"
         ;;
     vendor/bin/hw/vendor.display.color@1.0-service|vendor/lib/vendor.display.color@1.0.so|vendor/lib/vendor.display.color@1.1.so|vendor/lib/vendor.display.color@1.2.so|vendor/lib/vendor.display.postproc@1.0.so|vendor/lib/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so|vendor/lib64/android.system.net.netd@1.0_vendor.so|vendor/lib64/libril-qc-qmi-1.so|vendor/lib64/libsecureui_svcsock.so|vendor/lib64/vendor.display.color@1.0.so|vendor/lib64/vendor.display.color@1.1.so|vendor/lib64/vendor.display.color@1.2.so|vendor/lib64/vendor.display.postproc@1.0.so|vendor/lib64/vendor.qti.hardware.radio.am@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.atcmdfwd@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.ims@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.lpa@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.qcrilhook@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so|vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so)
         "${PATCHELF_0_18}" --replace-needed "libhidlbase.so" "libhidlbase-v32.so" "${2}"
@@ -74,8 +69,8 @@ function blob_fixup() {
     vendor/lib/libfpfactory_jni.so|vendor/lib/liblgae_main.so|vendor/lib/liblgawb_main.so|vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so|vendor/lib64/libfpfactory_jni.so)
         grep -q liblog.so "${2}" || "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
-    vendor/lib/vulkan.msm8996.so)
-        sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
+    vendor/lib/vulkan.msm8996.so|vendor/lib64/vulkan.msm8996.so)
+        "${PATCHELF_0_18}" --set-soname "vulkan.msm8996.so" "${2}"
         ;;
     vendor/lib64/libsettings.so)
         "${PATCHELF_0_18}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v29.so" "${2}"
@@ -89,9 +84,6 @@ function blob_fixup() {
     vendor/lib64/libwvhidl.so|vendor/lib64/mediadrm/libwvdrmengine.so)
         "${PATCHELF_0_18}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
          grep -q libcrypto_shim.so "${2}" || "${PATCHELF_0_18}" --add-needed "libcrypto_shim.so" "${2}"
-        ;;
-    vendor/lib64/vulkan.msm8996.so)
-        sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
     esac
 }
