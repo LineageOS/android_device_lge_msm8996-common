@@ -71,6 +71,9 @@ function blob_fixup() {
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
+    vendor/lib/libmmcamera_llvd.so)
+        "${PATCHELF_0_18}" --remove-needed "libllvd_smore.so" "${2}"
+        ;;
     vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so)
         "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
