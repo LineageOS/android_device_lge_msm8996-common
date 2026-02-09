@@ -257,7 +257,6 @@ PRODUCT_COPY_FILES += \
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
-    android.system.net.netd@1.0_vendor \
     libandroid_net \
     netutils-wrapper-1.0
 
