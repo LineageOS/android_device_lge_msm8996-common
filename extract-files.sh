@@ -89,6 +89,7 @@ function blob_fixup() {
 CLEAN_VENDOR=true
 
 ONLY_COMMON=
+ONLY_EXTRACT=
 ONLY_TARGET=
 KANG=
 SECTION=
@@ -100,6 +101,9 @@ while [ "${#}" -gt 0 ]; do
                 ;;
         --only-device-common )
                 ONLY_DEVICE_COMMON=true
+                ;;
+        --only-extract )
+                ONLY_EXTRACT=true
                 ;;
         --only-target )
                 ONLY_TARGET=true
@@ -146,4 +150,6 @@ setup_vendor "$DEVICE" "$VENDOR" "$ANDROID_ROOT" false $CLEAN_VENDOR
 extract "$MY_DIR/../$DEVICE/proprietary-files.txt" "$SRC" "$SECTION"
 fi
 
+if [ -z "${ONLY_EXTRACT}" ]; then
 "$MY_DIR"/setup-makefiles.sh
+fi
