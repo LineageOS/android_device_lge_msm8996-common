@@ -227,7 +227,7 @@ vendor/lib64/hw/gatekeeper.msm8996.so
 # GPS - from daisy - QKQ1.191002.002
 vendor/bin/loc_launcher|06793983f836a9b42b5ff3848f8fe177134c1379
 vendor/bin/lowi-server|1fe78b543c14196169ab411acfd9dabbfb4636dd
-vendor/bin/slim_daemon|afca96474570012eabb7ef9cecb175948d69e1df
+vendor/bin/slim_daemon|925da604895b095d7e39cf84c7031c6825f32ac0
 vendor/bin/xtra-daemon|20ec9dc7d1785a1789e57cf55f8b49b79fde374c
 vendor/bin/xtwifi-client|7d737eca493d57e29cb44e0bc658dda93fc44fe4
 vendor/bin/xtwifi-inet-agent|58749dc8fc9fdce0c184f3689d50299734b0f988
