@@ -3,7 +3,6 @@
 
 # Current blobs with ELF checks disabled:
 # libGLESv1_CM_adreno.so, libmmcamera_llvd.so, libq3dtools_adreno.so, libq3dtools_esx.so, libCB.so, libgsl.so, librs_adreno.so are unable to resolve the following symbol: __aeabi_uldivmod (32-bit)
-# netmgrd is unable to resolve the following symbols: _ZN7android6system3net4netd4V1_05INetd10getServiceERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEEb, _ZN7android6system3net4netd4V1_05INetd24registerForNotificationsERKNSt3__112basic_stringIcNS5_11char_traitsIcEENS5_9allocatorIcEEEERKNS_2spINS_4hidl7manager4V1_020IServiceNotificationEEE
 
 # ADSP
 vendor/bin/adsprpcd
@@ -456,7 +455,7 @@ system/framework/qti-telephony-common.jar
 system/lib/libdiag_system.so
 system/lib64/libdiag_system.so
 system/priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
-vendor/bin/netmgrd;DISABLE_CHECKELF
+vendor/bin/netmgrd
 vendor/bin/qti
 vendor/bin/rmt_storage
 vendor/bin/tftp_server
@@ -485,6 +484,7 @@ vendor/lib/vendor.qti.hardware.radio.qtiradio@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.uim@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_client@1.0_vendor.so
 vendor/lib/vendor.qti.hardware.radio.uim_remote_server@1.0_vendor.so
+vendor/lib64/android.system.net.netd@1.0_vendor.so
 vendor/lib64/libconfigdb.so
 vendor/lib64/liblqe.so
 vendor/lib64/libmdmdetect.so
