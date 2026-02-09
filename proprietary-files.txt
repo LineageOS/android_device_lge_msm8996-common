@@ -394,7 +394,7 @@ vendor/bin/pm-service|8a521f14576d0d2edf03b4500a54379d37e15d4e|7e9872f00b18aaf80
 vendor/lib/libperipheral_client.so|b75a6adac094ddcd6ded9415cae83e18d1e7e5d0
 vendor/lib64/libperipheral_client.so|20c8ab21fe28e41f60b59af0ba72de9f6b1996d2
 
-# Postprocessing - from op3 - PKQ1.181203.001
+# PostprocessColor - from op3 - PKQ1.181203.001
 vendor/bin/hw/vendor.display.color@1.0-service|2ca340c7fd7689ac8ddf36f948fd95a7cd3bfc2e|da8ce4ce6dade6a1c750a62c95956617b68ecdee
 vendor/bin/mm-pp-dpps|c89656e2349f6c81fe9a26e7c70e304ea77e1079
 vendor/etc/init/vendor.display.color@1.0-service.rc|5ad673f879b3685a0e79b5633437e5499cb94f48
@@ -441,7 +441,7 @@ vendor/lib64/libqmi_encdec.so
 vendor/lib64/libquipc_os_api.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libsmemlog.so
 
-# QMI (shared dependencies) - from daisy - QKQ1.191002.002
+# QMI-dependencies - from daisy - QKQ1.191002.002
 -vendor/lib/libqmi_cci.so|a921e84ec500f7cfb7fe88a4ffba149581410a44
 -vendor/lib64/libqmi_cci.so|411a074dc765fb263bec50531ce5c408dd72388f
 
