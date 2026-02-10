@@ -422,7 +422,7 @@ vendor/lib/libqmi_client_qmux.so
 -vendor/lib/libqmi_common_so.so
 vendor/lib/libqmi_csi.so
 vendor/lib/libqmi_encdec.so
-vendor/lib/libquipc_os_api.so
+vendor/lib/libquipc_os_api.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib/libsmemlog.so
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
@@ -438,7 +438,7 @@ vendor/lib64/libqmi_client_qmux.so
 -vendor/lib64/libqmi_common_so.so
 vendor/lib64/libqmi_csi.so
 vendor/lib64/libqmi_encdec.so
-vendor/lib64/libquipc_os_api.so
+vendor/lib64/libquipc_os_api.so;DISABLE_CHECKELF;DISABLE_DEPS
 vendor/lib64/libsmemlog.so
 
 # QMI-dependencies - from daisy - QKQ1.191002.002
