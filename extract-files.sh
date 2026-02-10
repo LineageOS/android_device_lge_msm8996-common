@@ -81,7 +81,7 @@ function blob_fixup() {
     vendor/lib/libsymphonypower-1.1.1.so)
         "${PATCHELF_0_18}" --set-soname "libsymphonypower-1.1.1.so" "${2}"
         ;;
-    vendor/lib64/libwvhidl.so)
+    vendor/lib64/libwvhidl.so|vendor/lib64/mediadrm/libwvdrmengine.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v29.so" "${2}"
         ;;
     vendor/lib64/vulkan.msm8996.so)
