@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "49a7f9e7_e7e9c5d2",
+        "filename": "proprietary-files.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 321,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-02-10T19:32:30Z",
+      "side": 1,
+      "message": "we don\u0027t have IMS so I went with the bare minimum needed...\n\nWill remove commented files once completed",
+      "range": {
+        "startLine": 321,
+        "startChar": 0,
+        "endLine": 321,
+        "endChar": 36
+      },
+      "revId": "bd79a725ee53cad5264b5da02212213d32e35423",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
