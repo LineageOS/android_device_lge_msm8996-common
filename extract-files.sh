@@ -64,7 +64,7 @@ function blob_fixup() {
         "${PATCHELF_0_18}" --replace-needed "libstdc++.so" "libstdc++_vendor.so" "${2}"
         grep -q liblog.so "${2}" || "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
-    vendor/lib/liblgawb_main.so|vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so)
+    vendor/lib/libfpfactory_jni.so|vendor/lib/liblgae_main.so|vendor/lib/liblgawb_main.so|vendor/lib/libmmcamera_pdaf.so|vendor/lib/libmmcamera_pdafcamif.so|vendor/lib/libmmcamera_tintless_bg_pca_algo.so|vendor/lib64/libfpfactory_jni.so)
         grep -q liblog.so "${2}" || "${PATCHELF_0_18}" --add-needed "liblog.so" "${2}"
         ;;
     vendor/lib/vulkan.msm8996.so|vendor/lib64/vulkan.msm8996.so)
