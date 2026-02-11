@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "13500ad8_4dfb8f2f",
+        "filename": "overlay/frameworks/base/packages/SystemUI/res/values/config.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-02-11T04:40:27Z",
+      "side": 0,
+      "message": "not in OG commit, but part of it, needed to make things display correctly, and anyone else picking this should remove this if they have it.",
+      "range": {
+        "startLine": 47,
+        "startChar": 0,
+        "endLine": 47,
+        "endChar": 58
+      },
+      "revId": "f43b4eecaa1a2d242cb605997be39bfffffe56cd",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}

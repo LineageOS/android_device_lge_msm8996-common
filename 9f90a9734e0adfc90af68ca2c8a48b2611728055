@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97fe835d_98a2cb94",
+        "filename": "manifest.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 323,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-02-11T04:40:27Z",
+      "side": 1,
+      "message": "this may look like a typo, but it is not, need to declare 1.0 and 2.3 bc with just 2.3 it complained the superclass didn\u0027t exist and the service wouldn\u0027t start.",
+      "revId": "9f90a9734e0adfc90af68ca2c8a48b2611728055",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9af5ec1d_08693a04",
+        "filename": "msm8996.mk",
+        "patchSetId": 6
+      },
+      "lineNbr": 330,
+      "author": {
+        "id": 16185
+      },
+      "writtenOn": "2026-02-11T04:40:27Z",
+      "side": 1,
+      "message": "had to split this while I was here.",
+      "range": {
+        "startLine": 329,
+        "startChar": 0,
+        "endLine": 330,
+        "endChar": 142
+      },
+      "revId": "9f90a9734e0adfc90af68ca2c8a48b2611728055",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
