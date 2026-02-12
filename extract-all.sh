@@ -62,9 +62,11 @@ for SECTION_HEADER in \
   "Graphics (HDR) - from daisy - QKQ1.191002.002" \
   "Graphics (SDM) - from daisy - QKQ1.191002.002" \
   "Graphics (Vulkan) - from daisy - QKQ1.191002.002" \
+  "IMS - from daisy - QKQ1.191002.002" \
   "Media - from daisy - QKQ1.191002.002" \
   "Peripheral manager - from daisy - QKQ1.191002.002" \
-  "QMI-dependencies - from daisy - QKQ1.191002.002" \
+  "QMI - from daisy - QKQ1.191002.002" \
+  "RIL - from daisy - QKQ1.191002.002" \
   "Time services - from daisy - QKQ1.191002.002" \
   "Widevine - from daisy - QKQ1.191002.002"
 do
