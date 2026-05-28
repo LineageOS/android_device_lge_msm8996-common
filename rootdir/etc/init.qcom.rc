@@ -348,15 +348,15 @@ on boot
     start vendor.qcrild2
 
 service vendor.conn_init /vendor/bin/hwaddrs
-    class core
+    disabled
     user root
     group system wifi bluetooth
     oneshot
 
 on property:init.svc.vendor.conn_init=stopped
-    chmod 0644 /data/misc/wifi/config
+    chmod 0664 /data/misc/wifi/config
     chown system wifi /data/misc/wifi/config
-    chmod 0644 /data/misc/bluetooth/bdaddr
+    chmod 0664 /data/misc/bluetooth/bdaddr
     chown bluetooth bluetooth /data/misc/bluetooth/bdaddr
 
 on post-fs
@@ -413,6 +413,7 @@ on post-fs-data
     mkdir /data/vendor/wifi 0770 wifi wifi
     mkdir /data/misc/wifi 0770 wifi wifi
     mkdir /data/misc/wifi/wpa_supplicant 0770 wifi wifi
+    start vendor.conn_init
     mkdir /data/vendor/wifi 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa 0770 wifi wifi
     mkdir /data/vendor/wifi/wpa/sockets 0770 wifi wifi
