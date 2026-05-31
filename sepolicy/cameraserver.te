@@ -6,4 +6,5 @@ allow cameraserver mpctl_socket:sock_file write;
 allow cameraserver sysfs_kgsl:file r_file_perms;
 allow cameraserver camera_data_file:dir search;
 allow cameraserver mm-qcamerad:unix_dgram_socket sendto;
+set_prop(cameraserver, vendor_camera_prop)
 #r_dir_file(cameraserver, camera_data_file);
