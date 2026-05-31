@@ -89,7 +89,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.qualcomm.cabl=0 \
     ro.sf.lcd_density=560 \
-    debug.stagefright.ccodec=0 \
+    debug.stagefright.ccodec=1 \
     vendor.display.disable_scaler=1
 
 # Factory Reset Protection (FRP)
