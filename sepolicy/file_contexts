@@ -105,7 +105,7 @@
 /sns                                                                u:object_r:sensors_data_file:s0
 /sns/cal(/.*)?                                                      u:object_r:sensors_data_file:s0
 /persist-lg/sensors(/.*)?                                           u:object_r:sensors_persist_file:s0
-/sns/(/.*)?                                                         u:object_r:sensors_persist_file:s0
+/sns(/.*)?                                                          u:object_r:sensors_persist_file:s0
 
 # SPI
 /sys/bus/spi/devices                                                u:object_r:sysfs_spi:s0
