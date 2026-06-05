@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b29a823_c6554b91",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4550
+      },
+      "writtenOn": "2026-06-05T21:33:36Z",
+      "side": 1,
+      "message": "So you\u0027re removing things in previous commit just to add them back here?",
+      "revId": "9167b27ea5c5ad6fc208f7a574e5491ca8abcb51",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ]
+}
