@@ -1,6 +1,8 @@
 allow sensors sensors_data_file:file create_file_perms;
 allow sensors sensors_data_file:dir create_dir_perms;
 
+allow sensors system_file:file { read open getattr };
+
 allow sensors self:capability dac_override;
 
 set_prop(netmgrd, system_prop)
