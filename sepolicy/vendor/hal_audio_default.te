@@ -12,6 +12,9 @@ allow hal_audio_default vendor_data_file:dir rw_dir_perms;
 
 allow hal_audio_default property_socket:property_service set;
 
+allow hal_audio_default init:unix_stream_socket connectto;
+
 get_prop(hal_audio_default, audio_prop)
 get_prop(hal_audio_default, default_prop)
 get_prop(hal_audio_default, system_prop)
+set_prop(hal_audio_default, vendor_audio_prop)
