@@ -4,6 +4,10 @@ allow system_app vendor_file:file rx_file_perms;
 # Allow system_app to read and create files in cnd_core_data_file
 allow system_app cnd_core_data_file:dir w_dir_perms;
 allow system_app cnd_core_data_file:file create_file_perms;
+
+allow system_app lge_unified_settings_service:service_manager add;
+allow system_app system_suspend_control_internal_service:service_manager find;
+
 get_prop(system_app, vendor_cnd_vendor_prop)
 
 r_dir_file(system_app, sysfs_zram)
