@@ -32,6 +32,7 @@ ELSA_P_KOR="/mnt/storage/dumps/lge/elsa-p-kor"
 # lucye (g6)
 LUCYE_O_H870="/mnt/storage/dumps/lge/lucye-o-h870"
 LUCYE_O_H872="/mnt/storage/dumps/lge/lucye-o-h872"
+LUCYE_O_H873="/mnt/storage/dumps/lge/lucye-o-h873"
 LUCYE_O_US997="/mnt/storage/dumps/lge/lucye-o-us997"
 LUCYE_P_KOR="/mnt/storage/dumps/lge/lucye-p-kor"
 
@@ -45,6 +46,7 @@ declare -A TARGETS=(
   [h870]="$LUCYE_O_H870"
   [h870d]="$LUCYE_O_H870"
   [h872]="$LUCYE_O_H872"
+  [h873]="$LUCYE_O_H873"
   [h918]="$ELSA_O_H918"
   [h990]="$ELSA_O_H990"
   [us996]="$ELSA_O_US996"
@@ -101,6 +103,6 @@ done
 ( cd ../h850 && ./extract-files.sh --only-extract --only-device-common "${ALICE_O_H850}" )
 
 ## Extract for all target trees (stable order)
-for dir in h830 h850 h870 h870d h872 h918 h990 us996 us996d us997 vs995; do
+for dir in h830 h850 h870 h870d h872 h873 h918 h990 us996 us996d us997 vs995; do
   ( cd "../$dir" && ./extract-files.sh --only-target "${TARGETS[$dir]}" )
 done
