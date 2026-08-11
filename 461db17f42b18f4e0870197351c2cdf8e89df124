@@ -16,6 +16,41 @@
       "message": "Super confused what this is supposed to fix.\n\nMTP/PTP works fine on both Linux and Windows.\n\nADB and non ADB paths of these are fine on G5 and G6.\n\nWhat is broken for you? @dtiven13@gmail.com",
       "revId": "461db17f42b18f4e0870197351c2cdf8e89df124",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1619c7e0_49fc39dd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2026-08-11T01:29:48Z",
+      "side": 1,
+      "message": "i see, so its isolated issue, h872 doesnt detect the drive",
+      "revId": "461db17f42b18f4e0870197351c2cdf8e89df124",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed7307dd_11a79edb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 33386
+      },
+      "writtenOn": "2026-08-11T01:29:48Z",
+      "side": 1,
+      "message": "i see, so its isolated issue, h872 doesnt detect drive",
+      "parentUuid": "ff84e346_ee53d4a6",
+      "revId": "461db17f42b18f4e0870197351c2cdf8e89df124",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
