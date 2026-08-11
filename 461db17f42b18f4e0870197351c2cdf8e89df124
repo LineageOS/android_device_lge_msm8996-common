@@ -51,6 +51,23 @@
       "parentUuid": "ff84e346_ee53d4a6",
       "revId": "461db17f42b18f4e0870197351c2cdf8e89df124",
       "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "060918d5_a89e2527",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 37348
+      },
+      "writtenOn": "2026-08-11T02:44:18Z",
+      "side": 1,
+      "message": "If h872 has USB issues i\u0027m not sure this is the right way to fix it, you should probably file an issue including more information like your PC OS and logs (however possible)",
+      "revId": "461db17f42b18f4e0870197351c2cdf8e89df124",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
     }
   ]
 }
